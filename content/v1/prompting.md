@@ -1,0 +1,45 @@
+---
+title: Prompting
+weight: 2
+---
+
+> This guide is based on Meta's official documentation and has been adapted for the LLM workshop. Please refer to the [original prompting guide for llama](https://www.llama.com/docs/how-to-guides/prompting/) for a more detailed explanation.
+
+Prompt engineering is a technique to improve the performance of language models by providing them with more context and information about the task at hand. It involves creating prompts, which are short pieces of text that provide additional information or guidance to the model, such as the topic or genre of the text it will generate.
+
+## Sample Task
+
+We will use the following text as an example to work on prompts. We will use some of the promting techniques to generate different outputs, and gradually improve the quality of the output.
+
+```
+John Steinbeck’s “Of Mice and Men” was published in English in 1937. Then there’s Gabriel García Márquez who wrote Cien años de soledad, a Spanish-language novel, published in 1967. Oh, and who can forget “Pride and Prejudice” by Jane Austen? That one came out way back in 1813 and, of course, is in English. Meanwhile, Haruki Murakami penned the Japanese novel ノルウェイの森 (Noruwei no Mori), published in 1987.
+
+Jumping to modern times, “The Midnight Library” by Matt Haig was published in 2020 in English. In German literature, there’s Die Verwandlung (The Metamorphosis) by Franz Kafka, first published in 1915. Russian author Fyodor Dostoevsky wrote Преступление и наказание (Crime and Punishment), which was released in 1866. Oh, and in the realm of French literature, we have Les Misérables by Victor Hugo, first published in 1862.
+
+Let’s not miss out on J.K. Rowling’s “Harry Potter and the Philosopher’s Stone,” which was released in English in 1997, or Don Quixote by Miguel de Cervantes—originally written in Spanish and first published in two parts, 1605 and 1615. Speaking of older classics, Homer’s Odyssey was written in Ancient Greek sometime in the 8th century BC.
+
+In science fiction, Isaac Asimov’s “Foundation” series, originally published in English starting in 1951, stands out. Similarly, Jules Verne’s Vingt mille lieues sous les mers (Twenty Thousand Leagues Under the Sea), written in French, debuted in 1869.
+
+For poetry, Pablo Neruda’s Cien sonetos de amor (One Hundred Love Sonnets), a Spanish collection, was first published in 1959. “Leaves of Grass” by Walt Whitman, an English collection of poetry, was originally published in 1855. From Persian literature, there’s رباعیات خیام (The Rubaiyat of Omar Khayyam), a collection of quatrains attributed to Omar Khayyam, written in the 12th century.
+
+In contemporary Chinese literature, Mo Yan’s 蛙 (Frog) was published in 2009. Similarly, Jhumpa Lahiri wrote “The Namesake,” an English novel, published in 2003, focusing on Indian-American experiences. On the topic of India, गुंजन (Gunjan), a Hindi poetry collection by Harivansh Rai Bachchan, was published in 1935.
+
+And don’t forget the Scandinavian gem “Pippi Longstocking” (Pippi Långstrump) by Astrid Lindgren, a Swedish novel published in 1945. “The Little Prince” (Le Petit Prince) by Antoine de Saint-Exupéry, a French novella, was released in 1943. In Italian literature, we have Dante Alighieri’s Divina Commedia (The Divine Comedy), written between 1308 and 1320 in Italian.
+```
+
+## Crafting Effective Prompts
+
+### Tips for Effective Prompts
+1. **Be clear and concise**: Provide enough information for the model to generate relevant output. Avoid using jargon or overly technical terms.
+2. **Use specific examples**: Help the model understand expectations by including examples.
+3. **Vary the prompts**: Experiment with different styles, tones, and formats.
+4. **Test and refine**: Evaluate prompts to ensure they yield desired results.
+5. **Use feedback**: Continuously improve based on user or model feedback.
+
+### Explicit Instructions
+Detailed instructions improve results:
+- **Stylization**: Tailor instructions to specific styles or tones.
+    - Example: "Explain this topic like a children’s educational network show."
+- **Formatting**: Specify output format (e.g., bullet points, JSON).
+    - Example: "Return the response as a JSON object."
+- **Restrictions**: Provide boundaries (e.g., "Only use academic papers published after 2020.").

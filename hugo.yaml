@@ -1,0 +1,53 @@
+# Hugo configuration file
+title: LLM Workshop
+
+theme: workshop
+
+markup:
+  # allow raw html
+  goldmark:
+    renderer:
+      unsafe: true
+
+  # enable hextra syntax highlight
+  highlight:
+    noClasses: false
+
+menu:
+  main:
+    - name: Version 1
+      pageRef: /v1/
+      weight: 1
+    - name: Search
+      weight: 2
+      params:
+        type: search
+
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: false
+    logo:
+      # path: images/logo.svg
+      # dark: images/logo-dark.svg
+      # width: 60
+      # height: 20
+      # link: /
+      #width: wide
+
+  page:
+    # full (100%), wide (90rem), normal (1280px)
+    width: normal
+
+  theme:
+    # light | dark | system
+    default: light
+    displayToggle: true
+
+  footer:
+    displayCopyright: false
+    displayPoweredBy: false
+
+  editURL:
+    enable: true
+    base: "https://github.com/nishad/llm-workshop/edit/main/content"
