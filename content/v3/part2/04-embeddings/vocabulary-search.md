@@ -31,7 +31,7 @@ From the executed notebook 03, 15 October 2026. This is one STW descriptor: the 
 
 ## Embed the German labels in one batch
 
-About 20,000 short labels. Building the index takes about five minutes on an Apple Silicon Mac with 64 GB and far longer on a CPU-only laptop. The prebuilt file `runs/stw-de-labels.sqlite` is linked from the download post on the SWIB26 forum topic (see the [environment page](/v3/part2/01-environment)); put it in `runs/` and the cell loads it instead of building. On the 8 GB tier, downloading it is the way to follow this notebook live. The helper applies the embedding model's prefix convention (qwen3-embedding wants an instruction in front of every query and nothing in front of documents) and returns unit vectors.
+About 20,000 short labels. In the executed notebook the index was built in 313 s on an Apple Silicon Mac with 64 GB; it takes far longer on a CPU-only laptop. You can load the prebuilt file `runs/stw-de-labels.sqlite` instead; it is linked from the download post on the SWIB26 forum topic (see the [environment page](/v3/part2/01-environment)). Put it in `runs/` and the cell loads it instead of building. On the 8 GB tier, downloading it is the way to follow this notebook live. The helper applies the embedding model's prefix convention (qwen3-embedding wants an instruction in front of every query and nothing in front of documents) and returns unit vectors.
 
 ```python
 entries = []   # (entry id, label): every German preferred and alternative label, remembering its concept
@@ -52,10 +52,10 @@ else:
 ```
 
 ```text
-loaded 19688 label vectors from runs/stw-de-labels.sqlite
+embedded 19688 labels in 313 s, dimension 1024, saved to runs/stw-de-labels.sqlite
 ```
 
-From the executed notebook 03, 15 October 2026 (the imports are omitted). The warning line prints only if the file was built with a different embedding model than the one in use; here it stayed silent.
+From the executed notebook 03, 15 October 2026 (the imports are omitted). The warning line prints only if the file was built with a different embedding model than the one in use; here it stayed silent because the cell built the index.
 
 ## Four kinds of query
 
@@ -112,7 +112,7 @@ The alternative label matches itself, and the concept it belongs to comes back.
 
 | score | concept | matched label | id |
 |:--|:--|:--|:--|
-| 0.580 | Erbschaftsteuer | Erbschaftsteuerrecht | 11651-4 |
+| 0.581 | Erbschaftsteuer | Erbschaftsteuerrecht | 11651-4 |
 | 0.545 | Besteuerungsprinzip | Grundsatz der Besteuerung | 11684-3 |
 | 0.537 | Vermögensteuer | Vermögenssteuer | 11682-0 |
 
@@ -151,9 +151,9 @@ for q in ("Grossesse", "bibliothèque numérique", "Rechte der Frau", "changemen
 ```
 
 ```text
-Grossesse → [('Gross national product', 0.425), ('Overpopulation', 0.422), ('Grade repetition', 0.408)]
+Grossesse → [('Gross national product', 0.426), ('Overpopulation', 0.423), ('Grade repetition', 0.408)]
 bibliothèque numérique → [('Library automation', 0.703), ('Digital libraries', 0.675), ('Information/library networks', 0.673)]
-Rechte der Frau → [('Womens rights', 0.608), ('Womens status', 0.567), ('Civil and political rights', 0.555)]
+Rechte der Frau → [('Womens rights', 0.609), ('Womens status', 0.567), ('Civil and political rights', 0.555)]
 changement climatique → [('Environmental degradation', 0.666), ('Climate change', 0.661), ('Climate change adaptation', 0.641)]
 ```
 

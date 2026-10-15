@@ -56,7 +56,7 @@ In JupyterLab, open `00_check_setup.ipynb` and run all cells.
 Every line must be green, including the "Ollama 0.40 or newer" line. The readiness notebook pulls nothing itself, so any missing model must be downloaded as described in [Download the models](/v3/before-you-start/download-models).
 {{< /callout >}}
 
-The materials were built in October 2026 on Ollama 0.35.1 and are re-verified on 0.40 before the workshop.
+The materials were built and verified on Ollama 0.40.4 on 15 October 2026.
 
 ## What to paste when asking for help
 

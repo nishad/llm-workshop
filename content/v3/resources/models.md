@@ -3,7 +3,7 @@ title: Model guide
 weight: 1
 ---
 
-Every model the workshop uses or mentions, with the facts that decide whether it suits your machine. Measurements were made in October 2026 with Ollama 0.35.1. To choose a model for your memory size, start with [Choose a model size for your hardware](/v3/before-you-start/hardware).
+Every model the workshop uses or mentions, with the facts that decide whether it suits your machine. Measurements were made in October 2026 on Ollama 0.35.1 and repeated on 0.40.4 with identical counts. To choose a model for your memory size, start with [Choose a model size for your hardware](/v3/before-you-start/hardware).
 
 ## Apertus models
 
@@ -72,7 +72,7 @@ The public Apertus v1.5 training mixture was audited by a community member in Se
 
 ## Verification of the tags
 
-Run with Ollama 0.35.1 on 2026-10-15, one run per model through the OpenAI-compatible endpoint.
+Run on Ollama 0.35.1 and repeated on 0.40.4 on 15 October 2026 with identical counts, one run per model through the OpenAI-compatible endpoint.
 
 | Tag | Structured tool calls | Controls clean | Multi-turn loops | Structured output |
 |---|---|---|---|---|

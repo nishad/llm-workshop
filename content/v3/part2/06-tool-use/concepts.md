@@ -29,7 +29,7 @@ The notebook's loop runs one call per turn. If the model proposes several calls 
 
 ## What Apertus does with tools
 
-Tool calling is where small models are least reliable, so the workshop measured it before building on it. In the 9 October 2026 probe, the 8B produced a structured call for 44 of 44 English prompts, 1 of 9 German prompts and 4 of 6 French prompts, 49 of 59 in all. In the harness run of 15 October 2026 (Ollama 0.35.1, one run per tag):
+Tool calling is where small models are least reliable, so the workshop measured it before building on it. In the 9 October 2026 probe, the 8B produced a structured call for 44 of 44 English prompts, 1 of 9 German prompts and 4 of 6 French prompts, 49 of 59 in all. In the harness run of 15 October 2026 (Ollama 0.35.1, repeated on 0.40.4 with identical counts; one run per tag):
 
 | Tag | Tool prompts with a structured call | Controls clean | Multi-turn loops | Structured output |
 |---|---|---|---|---|
@@ -63,7 +63,7 @@ The check verifies identifiers only. A summary that gets a date, a profession or
 - **Do not combine tools with `format`.** A request with both a tool list and a `format` or `response_format` suppresses tool parsing.
 - **`tool_choice` is ignored** on Ollama's OpenAI-compatible endpoint, so you cannot force a call.
 
-These come from the October 2026 behavior tests. They describe Ollama 0.35.1 and these tags; test again after an upgrade.
+These come from the October 2026 behavior tests. They describe these tags, run on Ollama 0.35.1 and repeated on 0.40.4 on 15 October 2026 with identical counts; test again after an upgrade.
 
 ## Next
 

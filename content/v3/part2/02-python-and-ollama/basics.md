@@ -18,8 +18,8 @@ for m in client.list().models:
 
 ```text
 qwen3-embedding:0.6b                            0.6 GB  digest ac6da0dfba84
-nishad/apertus:4b                               2.4 GB  digest 87ca69a79aed
 nishad/apertus:8b-v1.5-preview                  5.1 GB  digest 6f25f6ba0b62
+nishad/apertus:4b                               2.4 GB  digest 87ca69a79aed
 nishad/apertus:8b                               5.1 GB  digest 4a85a6fea0b8
 …
 ```
@@ -114,9 +114,9 @@ for temp in (0, 0.8):
 2 "Open Data in Libraries: Insights and Innovations"
 3 "Open Data in Libraries: Insights and Innovations"
 --- temperature 0.8 ---
-1 OpenDataInLibraries Newsletter
-2 "Open Data in Libraries: Shining a Light on Transparency and Access"
-3 "Open Data Insights: A Library's Newsletter"
+1 "Open Data Insights: Libraries and the Future of Knowledge"
+2 "Open Data in Libraries: Transparency, Accessibility, and Community Building"
+3 "Library Open Data: Discovering Transparency and Accessibility"
 ```
 
 From the executed notebook 01, 15 October 2026. The output is quoted as committed (blank lines between the notebook's print calls removed).

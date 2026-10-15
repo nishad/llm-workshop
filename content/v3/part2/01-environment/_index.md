@@ -47,8 +47,8 @@ Download the two prebuilt vocabulary index files for notebook 03 from the link i
 
 | File | Size | sha256 |
 | --- | --- | --- |
-| `stw-de-labels.sqlite` | 85.7 MB | `5d89c6704268b0c0ae29656dcfc31ea3d1402469edbd76f80a043f1843b07e8c` |
-| `unesco-en-labels.sqlite` | 34.4 MB | `c4755d17a9c00c742f9f2b601e82e51165f69d5380395adaa083a7ea43ae10c7` |
+| `stw-de-labels.sqlite` | 85.7 MB | `d85108cd6d38b949ac6c80decbf405021a61a7db4670495b2dea4e63807559bf` |
+| `unesco-en-labels.sqlite` | 34.4 MB | `47728635aff8bd8fb9d19197c34d1f1e5e05efea039bd9429bbfa4448ddda537` |
 
 Check a file with `shasum -a 256 runs/stw-de-labels.sqlite`. Building the two indexes takes about seven minutes for both (about five for STW, two for UNESCO) on an Apple Silicon Mac with 64 GB and far longer on a CPU-only laptop, so on the 8 GB tier downloading them is the way to follow notebook 03 live.
 
@@ -97,8 +97,8 @@ Download the two prebuilt vocabulary index files for notebook 03 from the link i
 
 | File | Size | sha256 |
 | --- | --- | --- |
-| `stw-de-labels.sqlite` | 85.7 MB | `5d89c6704268b0c0ae29656dcfc31ea3d1402469edbd76f80a043f1843b07e8c` |
-| `unesco-en-labels.sqlite` | 34.4 MB | `c4755d17a9c00c742f9f2b601e82e51165f69d5380395adaa083a7ea43ae10c7` |
+| `stw-de-labels.sqlite` | 85.7 MB | `d85108cd6d38b949ac6c80decbf405021a61a7db4670495b2dea4e63807559bf` |
+| `unesco-en-labels.sqlite` | 34.4 MB | `47728635aff8bd8fb9d19197c34d1f1e5e05efea039bd9429bbfa4448ddda537` |
 
 Check a file with `Get-FileHash runs\stw-de-labels.sqlite`. Building the two indexes takes about seven minutes for both (about five for STW, two for UNESCO) on an Apple Silicon Mac with 64 GB and far longer on a CPU-only laptop, so on the 8 GB tier downloading them is the way to follow notebook 03 live.
 
@@ -148,15 +148,17 @@ The readiness report is cell 00.02 of the notebook. This is how it looks on a cu
 ✅ Python 3.12 or newer: found 3.12.12
 ✅ Memory: 64 GB, use nishad/apertus:8b (16 GB tier)
 ✅ Free disk 20 GB: 635 GB free
-✅ Ollama 0.40 or newer: version 0.40.1 at http://localhost:11434
+✅ Ollama 0.40 or newer: version 0.40.4 at http://localhost:11434
 ✅ Model nishad/apertus:8b: present
 ✅ Chat template (Unsloth fixes): present
 ✅ Embedding model qwen3-embedding:0.6b: 1024 dimensions
 ✅ Smoke chat: model said: 'OK'
 ✅ Smoke tool call: proposed lookup_authority({'name': 'Hannah Arendt'})
+
+All good.
 ```
 
-Quoted from the executed notebook 00 (15 October 2026) with the Ollama line changed to what a 0.40 install prints; the committed run shows that line red because the facilitator's machine was on 0.35.1. The materials were built in October 2026 on Ollama 0.35.1 and are re-verified on 0.40 before the workshop.
+From the executed notebook 00, 15 October 2026. The materials were built and verified on Ollama 0.40.4 on 15 October 2026.
 
 Your memory and disk numbers will differ. The Memory line tells you which tier you are on: 16 GB or more uses `nishad/apertus:8b`, 8 GB uses `nishad/apertus:4b`. On an 8 GB laptop, set `WORKSHOP_TIER` to `8gb` in the first cell. The repository also holds notebooks 04 and 05 as executed on the 8 GB tier, in `tier-8gb/`, so you can see what the 4B does before you run it.
 

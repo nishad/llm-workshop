@@ -57,10 +57,10 @@ print(f"indexed {len(chunks)} chunks in {time.time()-t:.0f} s")
 ```
 
 ```text
-indexed 173 chunks in 17 s
+indexed 173 chunks in 19 s
 ```
 
-From the executed notebook 04, 15 October 2026. The embedding model is `qwen3-embedding:0.6b`. The index lives in memory for the session, so closing the notebook discards it. The 17 seconds are the time on the machine that executed the notebook; expect longer on a slower or CPU-only machine.
+From the executed notebook 04, 15 October 2026. The embedding model is `qwen3-embedding:0.6b`. The index lives in memory for the session, so closing the notebook discards it. The 19 seconds are the time on the machine that executed the notebook; expect longer on a slower or CPU-only machine.
 
 ## 04.04 Look at what was retrieved first
 
@@ -158,7 +158,7 @@ except ollama.ResponseError as err:
 
 ```text
 helper refused: About 25842 tokens of prompt for a 8192-token window. Use fewer or shorter chunks (lower k or size).
-Ollama said: {"error":{"code":400,"message":"request (10162 tokens) exceeds the available context size (8192 tokens), try increasing it","type":"exceed_context_size_error","n_prompt_tokens":10162,"n_ctx":8192}} (status code: 400)
+Ollama said: request (10162 tokens) exceeds the available context size (8192 tokens), try increasing it (status code: 400)
 ```
 
 From the executed notebook 04, 15 October 2026. The helper's number is an estimate (one token per 3.5 characters, deliberately high) of the whole prompt, and it keeps 25 percent of the window free for the system prompt and the answer. Ollama's number, 10,162 tokens, is a real count of the shorter text the cell sent. Both refuse.
