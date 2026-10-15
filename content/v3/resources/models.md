@@ -39,7 +39,7 @@ For 8 GB machines.
 | Size | 2.43 GB |
 | Memory in use | about 2.8 GB |
 | Context | 4,096 tokens (hard limit) |
-| Licence | As the 8B; check the model card |
+| Licence | Apache-2.0 weights, with the Apertus LLM Acceptable Use Policy |
 | Openness tier | Fully open (tier 3) |
 | Digest | `87ca69a79aed` |
 | Source | `hf.co/jondale/Apertus-v1.1-4B-Instruct-GGUF:Q4_K_M` |
@@ -58,7 +58,7 @@ An optional preview for people with 16 GB or more who want to compare.
 | Size | 5.06 GB |
 | Memory in use | as the 8B |
 | Context | 8,192 set in the tag; the file's metadata says 262k |
-| Licence | Check the Apertus v1.5 model card; the Acceptable Use Policy applies |
+| Licence | Apache-2.0, with the Apertus Acceptable Use Policy v1.5 (14 July 2026) |
 | Openness tier | Fully open (tier 3) for Apertus 1.5 itself |
 | Digest | `6f25f6ba0b62` |
 | Source | `hf.co/Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF:Q4_K_M` |
