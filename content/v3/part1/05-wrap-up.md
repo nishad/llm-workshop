@@ -51,7 +51,7 @@ Look it up in a real source (the DNB catalogue, Crossref, the thesaurus). Ask th
 
 Part 2 runs notebooks on your machine. Before the break, tick these:
 
-- [ ] The model is pulled: `ollama pull nishad/apertus:8b` finished.
+- [ ] The model is pulled: `ollama pull nishad/apertus:8b` (or `nishad/apertus:4b` on an 8 GB machine) finished.
 - [ ] `ollama ps` shows the model while it is loaded.
 - [ ] Python 3.12 or 3.13 is installed.
 - [ ] `uv` is installed.

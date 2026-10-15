@@ -46,3 +46,13 @@ Three examples, as of October 2026:
 - **Qwen3**: tier 2. The licence is OSI-approved, but the training data and code are closed.
 - **OLMo 3**: tier 3. Weights, code, data and checkpoints are all published.
 {{< /details >}}
+
+## Check yourself
+
+- [ ] I can name the four tiers of the ladder.
+- [ ] I looked up a licence and the training-data statement for one model.
+- [ ] I can say why "open weights" is not the same as "open source".
+
+{{< callout type="success" >}}
+**What you should see:** one model placed on a tier, with the licence and the data statement as your two reasons.
+{{< /callout >}}

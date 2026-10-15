@@ -67,7 +67,7 @@ There is no desktop app on Linux. Use the terminal, or install [LM Studio](/v3/b
 
 ## First run
 
-On the first start, on every platform, Ollama shows "Welcome to Ollama" and then a "Create an account" screen.
+On the first start of the app (macOS and Windows), Ollama shows "Welcome to Ollama" and then a "Create an account" screen.
 
 <!-- screenshot ollama-onboarding-account.png: Ollama first run, the "Create an account" screen with the "No thanks, I'll use Ollama locally" button visible; add in Task 14 -->
 

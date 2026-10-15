@@ -38,7 +38,7 @@ Zoom opens at 03:30 UTC for installation help. Each half stands on its own: leav
 | Way | What you do | What you need |
 |---|---|---|
 | GUI only | Part 1 fully, Part 2 as a listener | Ollama or LM Studio and the model |
-| Run the notebooks | Follow Part 2 hands-on | Python 3.12+, uv, the notebooks repository, Ollama |
+| Run the notebooks | Follow Part 2 hands-on | Python 3.12 or 3.13, uv, the notebooks repository, Ollama |
 | Read afterwards | Work through the executed notebooks and these pages | Nothing to install |
 
 ## Before the workshop

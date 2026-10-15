@@ -3,7 +3,7 @@ title: Choose a model size for your hardware
 weight: 2
 ---
 
-Pick one row of the table below and use that model throughout. The numbers on this page are October 2026 measurements on Apple Silicon; other machines will differ a little.
+Pick one row of the table below and use that model throughout. The Apple Silicon numbers on this page are October 2026 measurements; the Windows and Linux rows are estimates from published benchmarks.
 
 ## Two numbers decide everything
 
@@ -24,7 +24,7 @@ flowchart LR
 | Your memory | Model tag | File | In memory | Context | What it cannot do |
 |---|---|---|---|---|---|
 | 8 GB | `nishad/apertus:4b` | 2.4 GB | about 2.8 GB | 4,096 tokens (hard limit) | Long documents in RAG; tools only with the wrapped tag; quality below the 8B |
-| 16 GB or more | `nishad/apertus:8b` | 5.1 GB | about 5.4 GB at 4k, 6.3 GB at 8k | 8,192 tokens by default, up to 65,536 | Nothing in this workshop |
+| 16 GB or more | `nishad/apertus:8b` | 5.1 GB | about 5.3 GB at 4,096 and 5.8 GB at 8,192 context | 8,192 tokens by default, up to 65,536 | Nothing in this workshop |
 | 16 GB, curious | `nishad/apertus:8b-v1.5-preview` | 5.1 GB | as the 8B | 8,192 by default | A community conversion; see [Resources](/v3/resources/models) |
 
 {{< callout type="warning" >}}

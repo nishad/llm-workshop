@@ -170,3 +170,14 @@ Add `confidence: float = Field(description="0 to 1")`, run five cards, and compa
 A second stretch is the same extraction through the OpenAI client: create the client as in the [portability page](/v3/part2/02-python-and-ollama/portability), then `oa.chat.completions.parse(model=MODEL, messages=..., response_format=Record)` returns `completion.choices[0].message.parsed`.
 
 The next chapter turns from the chat model to a second, smaller model: [embeddings](/v3/part2/04-embeddings).
+
+## Check yourself
+
+- [ ] I can define a record as a Pydantic model and hand its schema to the model.
+- [ ] I can say what grammar-enforced output guarantees and what it does not.
+- [ ] I saw the model invent a place and a rule that catches it.
+- [ ] I can run a batch and read the field accuracy against a gold file.
+
+{{< callout type="success" >}}
+**What you should see:** one valid record for the first card, a rejected invented place on the silent card, and a batch line close to `20 cards, field accuracy 97/120 = 81%`.
+{{< /callout >}}

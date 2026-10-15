@@ -39,4 +39,4 @@ Building the two indexes takes about seven minutes for both (about five for STW,
 
 ## Retired dataset
 
-The dataset used in the 2025 edition is no longer used. Its correct licence is CC BY-SA 4.0.
+The 2025 edition's sample book is no longer used. Its correct licence is CC BY-SA 4.0.

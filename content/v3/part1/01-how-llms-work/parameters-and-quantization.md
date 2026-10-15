@@ -65,5 +65,3 @@ Two refinements exist. QAT (quantization-aware training) builds are trained with
 {{< callout type="info" >}}
 Rule of thumb: memory needed is about the model file, plus the context memory, plus about 3 GB for the operating system and your other apps. See [Hardware](/v3/before-you-start/hardware) for tiers.
 {{< /callout >}}
-
-Next: [Temperature](/v3/part1/01-how-llms-work/temperature).

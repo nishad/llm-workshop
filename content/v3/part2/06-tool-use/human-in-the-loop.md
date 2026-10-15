@@ -311,6 +311,13 @@ Fetch the HLS article found in 05.05 (CC BY-SA) with `requests`, chunk it with `
 
 Run 05.03 with `nishad/apertus:4b`. It needs the wrapper tag and only simple tools, so use the single-parameter lookups and skip the chains. Compare its answer with the 8B's above: in the executed 8 GB copy it called the tool and gave the identifier as a URL.
 
-## What you should have now
+## Check yourself
 
-Tools are functions, the model proposes calls, you decide, and results flow back. Identifiers that were not looked up are marked, and text-shaped calls stop the loop. You know when to ask again in English and when to refuse a call. The [wrap-up](/v3/part2/07-wrap-up) collects what to record and what never to let the model do on its own.
+- [ ] I can say what a tool is and who decides whether a call runs.
+- [ ] I approved, corrected and refused at least one proposed call.
+- [ ] I know that identifiers the tools did not return are marked `[UNVERIFIED]`.
+- [ ] I can say what the SPARQL guard stops.
+
+{{< callout type="success" >}}
+**What you should see:** a proposed call and your decision at each step, tool results flowing back into the answer, identifiers marked when they were not looked up, and text-shaped calls that stop the loop. The [wrap-up](/v3/part2/07-wrap-up) collects what to record and what never to let the model do on its own.
+{{< /callout >}}

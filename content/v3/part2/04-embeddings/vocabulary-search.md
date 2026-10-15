@@ -241,3 +241,14 @@ Swap the embedding model: set `WORKSHOP_EMBED_MODEL=embeddinggemma` (pull it fir
 ## Data and licences
 
 STW Thesaurus for Economics: CC BY 4.0. UNESCO Thesaurus: CC BY-SA 3.0 IGO. See the [data page](/v3/resources/data) for sources and dates, and the [models page](/v3/resources/models) for the embedding models and their licences. The next chapter uses an index like this one: [RAG](/v3/part2/05-rag).
+
+## Check yourself
+
+- [ ] I can turn a list of labels into an index and query it.
+- [ ] I know which kinds of query find the right concept and which do not.
+- [ ] I can read recall@1 and recall@5 and say what they measure.
+- [ ] I treat the suggestions as candidates for a person to choose from.
+
+{{< callout type="success" >}}
+**What you should see:** ranked suggestions for German, English and French queries, the gold-set line `qwen3-embedding:0.6b: recall@1 0.62, recall@5 0.82` if you ran the optional cell, and two `.sqlite` files in `runs/`.
+{{< /callout >}}

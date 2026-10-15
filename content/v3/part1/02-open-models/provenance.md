@@ -65,3 +65,13 @@ A domain with no results in the index may not have been captured in this crawl. 
 {{< /details >}}
 
 For how this connects to repeatable results, see [Part 2](/v3/part2).
+
+## Check yourself
+
+- [ ] I looked up a domain in the Common Crawl index.
+- [ ] I counted a name in infini-gram and read the number with care.
+- [ ] I can say why only a tier 3 model lets me check what it read.
+
+{{< callout type="success" >}}
+**What you should see:** a list of crawl captures (or none) for your domain, and a count for your institution's name, with a note on spelling variants.
+{{< /callout >}}

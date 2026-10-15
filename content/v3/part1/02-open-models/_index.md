@@ -5,6 +5,15 @@ cascade:
   type: docs
 ---
 
+This chapter takes about 20 minutes in the workshop.
+
+## What you will be able to do
+
+1. Place any model on the four-tier openness ladder.
+2. Say what is open and what is not in Apertus.
+3. Look up what a model was trained on, and what you cannot find out.
+4. Name the three reasons "open" matters for a library.
+
 The model in this workshop is open, and that is a choice, not a detail. For a library, "open" matters for three reasons.
 
 - **Provenance**: what did the model read, and can you check?

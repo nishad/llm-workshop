@@ -12,10 +12,17 @@ Work through both checklists. Part 1 needs only the first.
 
 ## Part 2
 
-- [ ] Python 3.12 or newer is installed.
+- [ ] Python 3.12 or 3.13 is installed.
 - [ ] `uv` is installed.
 - [ ] The notebooks repository is cloned and `uv sync` finished.
 - [ ] `00_check_setup.ipynb` is green on every line.
+
+### Install the two tools the commands need
+
+1. **uv.** The one-line installers for macOS, Linux and Windows are on the [environment page](/v3/part2/01-environment). uv installs the right Python (3.12 or 3.13) for you if the system one is older or newer.
+2. **git.** Windows does not ship git: install Git for Windows from https://git-scm.com/download/win, or use the repository's green Code button and Download ZIP, then unpack it. macOS asks to install the command line tools on the first `git` call.
+
+Then run the commands:
 
 {{< tabs >}}
 

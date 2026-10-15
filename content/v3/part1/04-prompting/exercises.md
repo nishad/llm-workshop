@@ -533,3 +533,7 @@ Tick what you can do now.
 - [ ] I know that small models miss exact counts and numeric filters.
 - [ ] I check identifiers and vocabulary terms against a real source.
 - [ ] I can say why a confident answer is not the same as a correct one.
+
+{{< callout type="success" >}}
+**What you should see:** a table from Exercise 1, JSON that parses in Exercise 3, and in Exercise 6 a confident answer that your own check shows to be wrong. If a model ignored a numeric filter or invented an identifier, that is the expected result, not a mistake of yours.
+{{< /callout >}}

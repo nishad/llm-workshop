@@ -103,7 +103,7 @@ Hannah Arendt, "Vita activa oder Vom tätigen Leben", Piper. The ISBNs on record
 - 1987 and 1989 editions: 978-3-492-10217-9 (3-492-10217-4).
 - 2005, 2008 and 2011 Piper paperbacks: 978-3-492-23623-2 (3-492-23623-5).
 
-The model's answer, 0141039689, matches none of them. It was invented, and it was delivered as calmly as a correct answer would have been.
+The model's answer, 0141039689, matches none of them. It was invented (it also fails the ISBN-10 check: the check digit would have to be X), and it was delivered as calmly as a correct answer would have been.
 
 Source: Checked against the DNB catalogue through lobid-resources, 15 October 2026.
 

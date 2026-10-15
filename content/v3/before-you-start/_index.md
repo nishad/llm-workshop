@@ -5,7 +5,7 @@ cascade:
   type: docs
 ---
 
-Plan on 20 to 30 minutes of setup, plus download time. Download instructions with exact commands are posted in the forum topic about a week before the workshop; the same text is on [Download the models](download-models).
+Plan on 20 to 30 minutes of setup, plus download time. Download instructions with exact commands are posted in the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732) about a week before the workshop; the same text is on [Download the models](download-models).
 
 ## Readiness checklist
 
@@ -13,7 +13,7 @@ Plan on 20 to 30 minutes of setup, plus download time. Download instructions wit
 - [ ] Ollama or LM Studio is installed and opened once.
 - [ ] The model for my tier is downloaded.
 - [ ] A first message was answered.
-- [ ] For Part 2: Python 3.12 or newer, uv, the notebooks repository, and `00_check_setup` all green.
+- [ ] For Part 2: Python 3.12 or 3.13, uv, the notebooks repository, and `00_check_setup` all green.
 
 Part 1 needs only the first four items. Part 2 needs all five.
 

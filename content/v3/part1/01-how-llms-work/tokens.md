@@ -39,6 +39,4 @@ The SPARQL query costs about twice as many tokens per character as ordinary pros
 
 ## Try it
 
-Paste your own sentences into the [tiktokenizer playground](https://tiktokenizer.vercel.app/) to see how the GPT and Llama tokenizers split them. The Apertus tokenizer itself is shown in Part 2, notebook 01. For the curious, the `tokcount.py` script in the research artefacts counts tokens for several models.
-
-Next: [Context](/v3/part1/01-how-llms-work/context).
+Paste your own sentences into the [tiktokenizer playground](https://tiktokenizer.vercel.app/) to see how the GPT and Llama tokenizers split them. Part 2 shows the real count for any text you send: the response object's `prompt_eval_count` and `eval_count` fields (see [Basics](/v3/part2/02-python-and-ollama/basics)).

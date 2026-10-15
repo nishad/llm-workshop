@@ -57,7 +57,7 @@ Lower the context. Try these in order:
 2. In a CLI chat, type `/set parameter num_ctx 4096`.
 3. Set the environment variable `OLLAMA_CONTEXT_LENGTH=4096` for the server.
 
-For the third option, the app (macOS and Windows) or the systemd service (Linux) already holds port 11434, so `ollama serve` fails with "address already in use" unless you stop it first. Linux users with the installer's service use the systemd tab; running `ollama serve` beside the service fails with 'address already in use'.
+For the third option, the app (macOS and Windows) or the systemd service (Linux) already holds port 11434, so `ollama serve` fails with "address already in use" unless you stop it first. Linux users with the installer's service use the systemd tab; running `ollama serve` beside the service fails with "address already in use".
 
 {{< tabs >}}
 

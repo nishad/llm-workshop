@@ -3,7 +3,7 @@ title: Notebooks
 weight: 8
 ---
 
-The workshop uses six notebooks, numbered 00 to 05. Each one ends with a Checkpoint cell that says where you should be. The picture under each row shows what that cell should look like in JupyterLab.
+The workshop uses six notebooks, numbered 00 to 05. Each one ends with a Checkpoint cell that says where you should be.
 
 ## The six notebooks
 
@@ -15,6 +15,8 @@ The workshop uses six notebooks, numbered 00 to 05. Each one ends with a Checkpo
 | `03_vocabulary_search` | 25 min | Embeddings, cross-lingual search over STW and UNESCO labels, a sqlite-vec index | On the 8 GB tier, download the prebuilt index files | [03_vocabulary_search.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/03_vocabulary_search.ipynb) |
 | `04_rag` | 20 min | Chunk documents, retrieve, answer with numbered citations, hit the context limit on purpose | 8 GB tier: 3 chunks, 4,096-token window; copy in `tier-8gb/` | [04_rag.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/04_rag.ipynb) |
 | `05_tool_use` | 15 min | Let the model propose GND, Wikidata and SPARQL calls; approve, correct or refuse each one | 8 GB tier: single-tool cells only; copy in `tier-8gb/` | [05_tool_use.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/05_tool_use.ipynb) |
+
+The links point to the `main` branch of the repository. Until the facilitator merges the `swib26` branch and pushes the `swib25` tag, they open the 2025 files or return a 404.
 
 <!-- screenshot nb-00-checkpoint.png: JupyterLab, notebook 00: the Checkpoint cell after a green run; add in Task 14 -->
 <!-- screenshot nb-01-checkpoint.png: JupyterLab, notebook 01: the Checkpoint cell; add in Task 14 -->

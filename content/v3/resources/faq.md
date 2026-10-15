@@ -53,7 +53,7 @@ Ollama keeps them in `~/.ollama/models` on macOS and Linux and in `%HOMEPATH%\.o
 
 ### Why Python 3.12?
 
-The notebooks' environment requires Python 3.12 or newer, below 3.14. Python 3.10 reached end of life on 1 October 2026.
+The notebooks' environment requires Python 3.12 or 3.13. Python 3.10 reached end of life on 1 October 2026.
 
 ### Why not chromadb?
 

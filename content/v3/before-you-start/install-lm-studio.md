@@ -27,7 +27,7 @@ Install LM Studio for your system and open it.
 
 ### Choose User mode
 
-Choose **User** mode for Part 1. Developer mode shows every setting and is not needed.
+User mode is enough to install and download a model. The First chat chapter switches to Developer mode, which shows the sidebar with the system prompt and temperature that Part 1's exercises use.
 
 <!-- screenshot lmstudio-mode.png: the LM Studio mode switch with User selected; add in Task 14 -->
 

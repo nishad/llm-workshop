@@ -15,7 +15,7 @@ A **seed** fixes the random choices, so the same prompt, settings and seed give 
 
 ## Two captured experiments
 
-Both use nishad/apertus:8b with three runs per setting. Captured with nishad/apertus:8b, 2026-10-15.
+Both use nishad/apertus:8b with three runs per setting. Captured with nishad/apertus:8b, 15 October 2026.
 
 ### Experiment 1: a question with one answer
 
@@ -96,6 +96,8 @@ Paris.
 ```
 
 Both settings give the same completion in every run, and that is the point. When the model is nearly certain, the top token takes almost all the probability and temperature has nothing to change.
+
+This prompt is also the chapter's captured failure: it asks for a five-word completion, and every run answers with the single word "Paris." The model ignored the five-word form and answered the question instead of completing the sentence, which is a reminder that an instruction in a prompt is a request, not a rule.
 
 ### Experiment 2: an open prompt
 

@@ -213,6 +213,13 @@ Rerank. Ask the chat model, with `format=` and a tiny Pydantic model `{"relevant
 
 The same notebook runs with `WORKSHOP_TIER=8gb`: three chunks per question and a 4,096-token window. Expect bare citations and no refusals, as above, and treat every answer as unchecked until you have read the cited chunk.
 
-## What you should have now
+## Check yourself
 
-You can turn documents into cited chunks, read the retrieved passages before the answer, see the model cite and refuse, and know what happens when a prompt does not fit. Next: [tool use](/v3/part2/06-tool-use), for the questions a document index cannot answer.
+- [ ] I can turn documents into chunks and embed them once.
+- [ ] I read the retrieved chunks before I read the answer.
+- [ ] I checked a citation against the passage it points to.
+- [ ] I know what happens when a prompt does not fit the window.
+
+{{< callout type="success" >}}
+**What you should see:** numbered citations in the answers, one retrieval miss that produced a confidently wrong answer, one refusal when the documents are silent, and a helper error for the oversized prompt. Next: [tool use](/v3/part2/06-tool-use), for the questions a document index cannot answer.
+{{< /callout >}}

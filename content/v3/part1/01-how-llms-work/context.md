@@ -32,5 +32,3 @@ The workshop model tags use 8,192 tokens: enough for a record, a short document 
 ## Demo (type-along, optional)
 
 In a terminal, run `ollama ps` while a model is loaded and note the size. Raise the context length slider in the Ollama app, send one message, and run `ollama ps` again. The size grows with the slider.
-
-Next: [Parameters and quantization](/v3/part1/01-how-llms-work/parameters-and-quantization).

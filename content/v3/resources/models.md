@@ -18,7 +18,7 @@ The reference model for both parts. Also available as `nishad/apertus:latest`.
 | Model | Apertus-8B-Instruct-2509, Unsloth Q4_K_M |
 | Parameters | 8 billion |
 | Size | 5.06 GB |
-| Memory in use | about 5.4 GB at 4k context, 6.3 GB at 8k |
+| Memory in use | about 5.3 GB at 4,096 and 5.8 GB at 8,192 context |
 | Context | 65,536 tokens supported; 8,192 set in the tag |
 | Licence | Apache-2.0 plus the Apertus Acceptable Use Policy |
 | Openness tier | Fully open (tier 3) |
@@ -93,7 +93,7 @@ Embedding models turn text into vectors for semantic search (see [Glossary](/v3/
 
 `embeddinggemma` scored higher but its licence is not an open-source one, so it is a documented alternative. `bge-m3` is permissively licensed and its fine-tuning data is released, but it scored lowest on this gold set. Index design matters as much as the model; notebook 03 shows the difference.
 
-Why Apertus has no embedding model: Apertus is a family of generative chat models, and no Apertus embedding model is available in the Ollama library, so embeddings come from a separate, smaller model.
+Apertus has no embedding model; the workshop uses `qwen3-embedding:0.6b` beside it.
 
 ## Small open-weight fallbacks
 

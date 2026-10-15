@@ -5,6 +5,15 @@ cascade:
   type: docs
 ---
 
+This chapter takes about 25 minutes in the workshop.
+
+## What you will be able to do
+
+1. Send a first message to Apertus in the Ollama app or LM Studio.
+2. Choose between the two tools using the comparison table.
+3. Run five starter prompts and judge the answers.
+4. Recognize a confident wrong answer in the hallucination probe.
+
 This chapter is the first hands-on block. You install nothing new: the tools and the model come from [Before you start](/v3/before-you-start). If a step is missing, go back to [Download the models](/v3/before-you-start/download-models) first.
 
 ## The two tools side by side

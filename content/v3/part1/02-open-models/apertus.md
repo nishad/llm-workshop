@@ -28,11 +28,11 @@ Two design choices stand out: retroactive robots.txt opt-outs, applied back to c
 
 These points come from independent 2026 evaluations. Read them as "what to expect, and why validation matters".
 
-- On general understanding, it is on par with Llama 3.1 8B.
-- It is behind on code, maths and instruction following.
-- It is strong at extracting fields from documents, and at German.
-- The 8B invents a value instead of answering null when a field is missing.
-- Faithfulness in RAG is below that of frontier models.
+- On general understanding, the 1.0 base model is on par with Llama 3.1 8B.
+- The 1.0 instruct model is behind on code, maths and instruction following.
+- The independent v1.5 evaluations found it strong at extracting fields from documents, and at German.
+- The 8B sometimes fills a missing field from a neighbouring one (a place of publication from the publisher) instead of leaving it empty. This is what the workshop's 1.0 runs showed.
+- The v1.5 evaluations found faithfulness in RAG below that of frontier models.
 
 {{< callout type="warning" >}}
 A model that invents a value for a missing field is a reason to validate its output and keep a person in the loop. Part 2 returns to this.

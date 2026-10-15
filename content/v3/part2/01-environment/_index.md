@@ -156,7 +156,7 @@ The readiness report is cell 00.02 of the notebook. This is how it looks on a cu
 ✅ Smoke tool call: proposed lookup_authority({'name': 'Hannah Arendt'})
 ```
 
-From the executed notebook 00, 15 October 2026. The materials were built in October 2026 on Ollama 0.35.1 and are re-verified on 0.40 before the workshop.
+Quoted from the executed notebook 00 (15 October 2026) with the Ollama line changed to what a 0.40 install prints; the committed run shows that line red because the facilitator's machine was on 0.35.1. The materials were built in October 2026 on Ollama 0.35.1 and are re-verified on 0.40 before the workshop.
 
 Your memory and disk numbers will differ. The Memory line tells you which tier you are on: 16 GB or more uses `nishad/apertus:8b`, 8 GB uses `nishad/apertus:4b`. On an 8 GB laptop, set `WORKSHOP_TIER` to `8gb` in the first cell. The repository also holds notebooks 04 and 05 as executed on the 8 GB tier, in `tier-8gb/`, so you can see what the 4B does before you run it.
 

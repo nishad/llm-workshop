@@ -5,6 +5,15 @@ cascade:
   type: docs
 ---
 
+This chapter takes about 25 minutes in the workshop.
+
+## What you will be able to do
+
+1. Explain next-token prediction in plain words.
+2. Say what a token is and why the same sentence costs different amounts in different languages.
+3. Connect context size, parameter count and quantization to memory, file size and speed.
+4. Describe what temperature and a seed change in an answer.
+
 A large language model does one thing: it predicts the next token, again and again.
 
 ```mermaid

@@ -48,7 +48,7 @@ Notebook 00 shows the full record as JSON. Besides the fields above, it has `par
 
 ## The log file
 
-`runs/log.jsonl` holds one JSON object per line, one line per logged call. It is plain text, so you can open it in an editor, load it with any JSON tool or search it with `grep`. `workshop.llm.chat` appends a line for every call, with the time, the model, its digest, the options and the first 300 characters of the prompt and of the answer; the RAG helper, the tool loop and the setup check's smoke calls go through it too. Two calls bypass the helper and are not logged: the OpenAI client call in 01.06 and the oversized prompt in 04.07. Embedding calls are not logged either. Keep the file with your results.
+`runs/log.jsonl` holds one JSON object per line, one line per logged call. It is plain text, so you can open it in an editor, load it with any JSON tool or search it with `grep`. `workshop.llm.chat` appends a line for every call, with the time, the model, its digest, the options and the end of the prompt (its last 300 characters) and the start of the answer (its first 300); streamed calls log the request only; the RAG helper, the tool loop and the setup check's smoke calls go through it too. Two calls bypass the helper and are not logged: the OpenAI client call in 01.06 and the oversized prompt in 04.07. Embedding calls are not logged either. Keep the file with your results.
 
 ## Citing a model in a workflow document
 
