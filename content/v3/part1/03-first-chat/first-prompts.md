@@ -98,7 +98,7 @@ Hannah Arendt, "Vita activa oder Vom tätigen Leben", Piper. The ISBNs on record
 - 1987 and 1989 editions: 978-3-492-10217-9 (3-492-10217-4).
 - 2005, 2008 and 2011 Piper paperbacks: 978-3-492-23623-2 (3-492-23623-5).
 
-The model's answer, 0141039689, matches none of them. It was invented (it also fails the ISBN-10 check: the check digit would have to be X), and it was delivered as calmly as a correct answer would have been.
+The model's answer, 0141039689, matches none of them. It was invented. It even fails the ISBN-10 check, which would need X as the last digit. Yet the model gave it as calmly as it would give a correct answer.
 
 Source: Checked against the DNB catalog through lobid-resources, 15 October 2026.
 
@@ -110,7 +110,7 @@ A model answers confidently whether it knows or not. Check names, numbers, dates
 
 - A model file, a few gigabytes of numbers, was loaded into your computer's memory.
 - Your computer did all the computation for each token.
-- Nothing was sent anywhere. Only the picker lookup and the model download touch the internet.
+- Your prompts and the answers were not sent anywhere. Only the picker lookup and the model download used the internet.
 
 ## Speed FAQ
 

@@ -3,7 +3,7 @@ title: Environment
 weight: 1
 ---
 
-This page takes about 10 minutes. You install `uv`, get the notebooks, start JupyterLab, run one notebook that checks everything, and download two index files for notebook 03. Ollama and the models come from [Am I ready?](/v3/before-you-start/check); this page assumes they are done.
+This page takes about 10 minutes. You install `uv`, get the notebooks, start JupyterLab, run one notebook that checks everything, and download two index files for notebook 03. It assumes Ollama and the models are already installed (see [Install Ollama](/v3/before-you-start/install-ollama) and [Download the models](/v3/before-you-start/download-models)).
 
 {{< tabs >}}
 
@@ -149,6 +149,6 @@ All good.
 
 From the executed notebook 00, run on Ollama 0.40.4 on 15 October 2026.
 
-Your memory and disk numbers will differ. The Memory line tells you which tier you are on: 16 GB or more uses `nishad/apertus:8b`, 8 GB uses `nishad/apertus:4b`. On an 8 GB laptop, set `WORKSHOP_TIER` to `8gb` in the first cell. The repository also holds notebooks 04 and 05 as executed on the 8 GB tier, in `tier-8gb/`, so you can see what the 4B does before you run it.
+Your memory and disk numbers will differ. The Memory line tells you which tier you are on: 16 GB or more uses `nishad/apertus:8b`, 8 GB uses `nishad/apertus:4b`. On an 8 GB laptop, set the environment variable `WORKSHOP_TIER=8gb` before you start JupyterLab, or change `"16gb"` to `"8gb"` in the first cell of each notebook. The repository also holds notebooks 04 and 05 as executed on the 8 GB tier, in `tier-8gb/`, so you can see what the 4B does before you run it.
 
-If a line is red, follow the hint in it and run the cell again. Paste the output into the shared document when you ask for help. More fixes are on [Am I ready?](/v3/before-you-start/check).
+If a line is red, follow the hint in it and run the cell again. Paste the output into the shared document when you ask for help. More fixes are on [Troubleshooting](/v3/before-you-start/troubleshooting).

@@ -38,11 +38,11 @@ Tool calling is where small models are least reliable, so the workshop measured 
 
 The four misses of the 8B were two calls that leaked out as text and two prompts where the model made no call. Controls are prompts that should not trigger a tool. The sixth structured-output request is the empty-enum schema, which returns HTTP 400 as expected. The numbers are in the notebooks repository, in `models/README.md`.
 
-There is one more failure to know about. When the model did not call a tool, it sometimes invented a GND number. That is the reason for the gate and for the check described below.
+When the model did not call a tool, it sometimes invented a GND number. That is the reason for the gate and for the check described below.
 
 ## Why a gate
 
-A model that cannot be trusted to call a tool also cannot be trusted to use the result carefully, and a wrong call can do harm: a query that overloads a public service, a lookup of the wrong person, a number that is accepted because it looks like a GND number. The gate turns a confident guess into a checked fact. You see the exact call before it runs, and you can fix it, as the next page shows with a misspelled name.
+A model that cannot be trusted to call a tool also cannot be trusted to use the result carefully, and a wrong call can do harm: a query that overloads a public service, a lookup of the wrong person, a number that is accepted because it looks like a GND number. The gate lets a person check each call before it runs. You see the exact call before it runs, and you can fix it, as the next page shows with a misspelled name.
 
 ## What the loop catches
 
@@ -57,7 +57,7 @@ The check verifies identifiers only. A summary that gets a date, a profession or
 
 ## Rules for this model
 
-- **Prompt in English.** The 8B v1 narrates instead of calling when the prompt is not in English.
+- **Prompt in English.** In German the 8B usually describes the call in prose instead of making it (1 of 9 German prompts produced a call; French did better, 4 of 6).
 - **One tool per turn.** Chains are possible, but the model must wait for each result.
 - **Never send `think`.** Ollama returns HTTP 400 for both builds.
 - **Do not combine tools with `format`.** A request with both a tool list and a `format` or `response_format` suppresses tool parsing.
@@ -67,4 +67,4 @@ These come from the October 2026 behavior tests. They describe these tags, run o
 
 ## Next
 
-The [human in the loop](/v3/part2/06-tool-use/human-in-the-loop) page runs the loop with real outputs. Services and their etiquette are listed under [Library endpoints](/v3/resources/endpoints). If a long prompt is the problem, see [Limits](/v3/part1/04-prompting/limits) for what small models get wrong.
+The [human in the loop](/v3/part2/06-tool-use/human-in-the-loop) page runs the loop with real outputs. Services and their etiquette are listed under [Library endpoints](/v3/resources/endpoints). If a long prompt is the problem, see [the context budget](/v3/part2/05-rag/pipeline#0407-the-context-budget) in the RAG chapter.

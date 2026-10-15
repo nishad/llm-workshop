@@ -37,9 +37,9 @@ Paris.
 Paris.
 ```
 
-Both settings give the same completion in every run, and that is the point. When the model is nearly certain, the top token takes almost all the probability and temperature has nothing to change.
+Both settings give the same completion in every run. When the model is nearly certain, the top token takes almost all the probability and temperature has nothing to change.
 
-There is a second lesson in this prompt. It asked for a five-word completion, and every run answered with one word. The model answered the question instead of completing the sentence. An instruction in a prompt is a request, not a rule.
+The prompt also asked for five words, and every run answered with one: the model answered the question instead of completing the sentence. A model does not always follow the instructions in a prompt.
 
 ### Experiment 2: an open prompt
 
@@ -85,7 +85,3 @@ At temperature 0 the three runs repeat themselves exactly. At 1.0 each run gives
 {{< callout type="info" >}}
 For the Part 1 exercise, use LM Studio if you want to change the temperature setting.
 {{< /callout >}}
-
-## Thinking models
-
-Some models reason at length before they answer, and the reasoning burns tokens and time. In testing, a 4B thinking model spent 821 characters of hidden reasoning on a one-sentence answer, and 82 seconds on a short SPARQL query. Apertus 1.0 has no thinking mode, which keeps things simple here.

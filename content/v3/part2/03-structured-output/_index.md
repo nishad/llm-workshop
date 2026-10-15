@@ -7,7 +7,7 @@ cascade:
 
 A catalog wants fields: a title, a creator, a place, a year. A chat answer gives you a paragraph. A person can read a paragraph. A spreadsheet, a record store or a validation script cannot. This chapter makes the model fill a fixed set of fields instead, and then checks every answer.
 
-Notebook 02, `02_structured_output`, takes about 25 minutes in the workshop. We give the model a catalog card, get a record back, watch it invent a value the card never stated, add a rule that catches the invention, and then measure twenty cards against a gold file.
+Notebook 02, `02_structured_output`, has a 25-minute budget; in the session it gets about 22 (minutes 28 to 50 of Part 2). We give the model a catalog card, get a record back, watch it invent a value the card never stated, add a rule that catches the invention, and then measure twenty cards against a gold file.
 
 ## What the notebook covers
 
@@ -27,4 +27,4 @@ A small model will confidently fill a field the card is silent about. Valid JSON
   {{< card link="/v3/part2/03-structured-output/exercise" title="Exercise" icon="clipboard-check" subtitle="One card, one invented place, twenty cards measured." >}}
 {{< /cards >}}
 
-Set-up is on the [environment page](/v3/part2/01-environment) and the notebooks are listed on the [notebooks page](/v3/part2/notebooks).
+Setup is on the [environment page](/v3/part2/01-environment) and the notebooks are listed on the [notebooks page](/v3/part2/notebooks).

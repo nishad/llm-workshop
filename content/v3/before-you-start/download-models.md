@@ -71,12 +71,12 @@ The total stays well under the 20 GB prerequisite. At 20 Mbit/s the 8B takes abo
 
 ## Two index files for Part 2
 
-Notebook 03 builds two vector indexes, one over about 20,000 STW labels and one over the UNESCO English labels. Building them takes about seven minutes on an Apple Silicon Mac with 64 GB (five for STW, two for UNESCO) and far longer on a CPU-only laptop. Prebuilt files will be linked here the week before the workshop (link to follow):
+Notebook 03 needs two vector index files. Building them yourself is slow on most laptops, so download the prebuilt files instead. The link will be in the download post the week before the workshop (link to follow):
 
 - `stw-de-labels.sqlite` (85.7 MB)
 - `unesco-en-labels.sqlite` (34.4 MB)
 
-Put them in the `runs/` folder of the notebooks repository.
+Put them in the `runs/` folder of the notebooks repository. The checksums and the command to check them are on the [environment page](/v3/part2/01-environment#download-the-prebuilt-index-files).
 
 ## Offline alternative
 

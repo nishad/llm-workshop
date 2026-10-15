@@ -5,7 +5,7 @@ weight: 4
 
 ## Parameters
 
-**Parameters** are the numbers a model learns during training. Think of them as dials, billions of them. Training turns the dials until the model turns an input (a sentence) into a useful output (the next token).
+**Parameters** are the numbers a model learns during training. Think of them as dials, billions of them. Training adjusts the dials until the model maps an input (a sentence) to a useful output (the next token).
 
 When you learn a language, the patterns, grammar and vocabulary you pick up are stored somewhere in your head. In a model, the parameters are that store. "8B" means eight billion of them.
 
@@ -19,7 +19,7 @@ Each parameter is a number, and a number takes bytes:
 
 **Quantization** stores those numbers with less precision. It works like compressing an image: the file shrinks a lot, and most of what you see survives. The file size is also the memory the model needs, because the whole file is loaded.
 
-Apertus 8B GGUF file sizes:
+Apertus 8B file sizes in GGUF, the single-file format that Ollama and LM Studio load:
 
 | Quantization | Size |
 |---|---|
@@ -34,7 +34,7 @@ The 70B model at Q4_K_M is 43.7 GB.
 
 ## What quantization costs
 
-The llama.cpp project measured the quality cost on Llama 3 8B as the increase in perplexity (lower is better, so a smaller increase is better):
+The llama.cpp project measured the quality cost on Llama 3 8B as the increase in perplexity, a measure of how surprised a model is by real text. The smaller the increase, the less quality was lost:
 
 | Quantization | Perplexity increase |
 |---|---|

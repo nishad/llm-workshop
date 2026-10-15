@@ -54,7 +54,7 @@ From the executed notebook 01, 15 October 2026. Read it as a recap of Part 1:
 - **8.05B parameters** is the "8B" in the name.
 - **Q4_K_M** is the quantization: a few bits per parameter instead of 16, which is why the file is 5.1 GB.
 - **65,536** is the most the model can hold in its context window. Ollama's default is far below that, 4,096 tokens on most laptops (see [Context](/v3/part1/01-how-llms-work/context)). The notebooks set the value for your tier, as the next cell shows.
-- **tools** in the capabilities list says this build can call tools. Part 2 needs it for the last notebook.
+- **tools** in the capabilities list says this build can propose tool calls in a form Ollama can read. Part 2 needs it for the last notebook.
 - The **template** header tells you which chat template is in use. `{# Unsloth template fixes #}` is the one the workshop tags carry.
 
 ## A first chat with a system prompt
@@ -93,11 +93,11 @@ The helper sets `temperature` to 0 and `num_ctx` to the value for your tier (8,1
 
 ## The response object
 
-`response` is more than the text. Besides `message`, it carries the numbers Ollama reports for the call: how many tokens it read from your prompt (`prompt_eval_count`), how many it generated (`eval_count`), and how long each phase took (`total_duration`, `load_duration` and the others, in nanoseconds). Those are the tokens and the speed from Part 1, now available to your code. Divide `eval_count` by the generation time and you have your own tokens per second, for every call you make.
+`response` is more than the text. Besides `message`, it carries the numbers Ollama reports for the call: how many tokens it read from your prompt (`prompt_eval_count`), how many it generated (`eval_count`), and how long each phase took (`total_duration`, `load_duration` and the others, in nanoseconds). Those are the tokens and the speed from Part 1, now available to your code. Divide `eval_count` by `eval_duration` (converted from nanoseconds to seconds) and you have your own tokens per second, for every call you make.
 
 ## Temperature, seed and repeatability
 
-The same question runs three times at temperature 0 with a fixed seed, then three times at 0.8. This is the difference between a reproducible pipeline and a creative assistant.
+The same question runs three times at temperature 0 with a fixed seed, then three times at 0.8. The first setting suits a pipeline that must give the same answer every time; the second suits brainstorming.
 
 ```python
 question = [{"role": "user", "content": "Suggest a title for a newsletter about open data in libraries. One line, no explanation."}]

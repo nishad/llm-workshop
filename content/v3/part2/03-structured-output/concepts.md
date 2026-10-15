@@ -3,8 +3,6 @@ title: Concepts
 weight: 1
 ---
 
-This chapter rests on five ideas, each of them short.
-
 ## A JSON schema describes the shape of an answer
 
 A JSON schema is a small JSON document that says which keys an answer has, what type each value is, and which values are allowed. It can also carry a description for each key. The model sees those descriptions, so they work as instructions.
@@ -27,15 +25,16 @@ class Record(BaseModel):
     identifier: str = Field(max_length=60, description="ISBN or DOI if the card has one, digits and hyphens only (no 'ISBN' or 'doi:' prefix); empty string if none")
 ```
 
-Three design choices are worth copying:
+Four design choices are worth copying:
 
-- Every free-text field has a `max_length`. It travels into the schema, and a small model with an open-ended string can run away.
-- An empty string means "the card does not say". `Literal` limits the language to a fixed list.
+- Every free-text field has a `max_length`. It travels into the schema. Without a limit, a small model can keep writing into an open-ended string field.
+- An empty string means "the card does not say".
+- `Literal` limits the language to a fixed list.
 - The fields follow the order of the card itself, and the descriptions are written as instructions.
 
 ### Why not `Optional` with `null`?
 
-The notebook tried it, in October 2026. At temperature 0 the 8B model answered `null` for every optional field in turn, and then poured the whole imprint line into the first free-text field, sometimes repeating it until the window filled. Schema design is prompt design. The call also passes `options={"num_predict": 300}`, a hard ceiling on output tokens, so a runaway answer cannot eat the session.
+The notebook tried it, in October 2026. At temperature 0 the 8B model answered `null` for every optional field in turn, and then poured the whole imprint line into the first free-text field, sometimes repeating it until the window filled. The schema works as part of the prompt, so how you design it changes the answers. The call also passes `options={"num_predict": 300}`, a hard ceiling on output tokens, so a runaway answer cannot eat the session.
 
 ## Enforced decoding: what `format=` guarantees
 
@@ -58,8 +57,8 @@ Pydantic can run your own checks after parsing. A rule such as "the place of pub
 
 When a rule fails, send the answer back with the error message and ask for a fix. The pattern is: call, validate, and on failure append the model's answer and the error to the conversation and call once more. One retry is usually enough, and you cap it so a stubborn case cannot loop.
 
-## The OpenAI twin
+## The same call through the OpenAI client
 
-The same extraction through the OpenAI client is one call: `oa.chat.completions.parse(model=MODEL, messages=..., response_format=Record)` returns `completion.choices[0].message.parsed`. See the [portability page](/v3/part2/02-python-and-ollama/portability) for the client set-up.
+The same extraction through the OpenAI client is one call: `oa.chat.completions.parse(model=MODEL, messages=..., response_format=Record)` returns `completion.choices[0].message.parsed`. See the [portability page](/v3/part2/02-python-and-ollama/portability) for the client setup.
 
 Next, [run it on real cards](/v3/part2/03-structured-output/exercise).

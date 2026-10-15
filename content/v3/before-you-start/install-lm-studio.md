@@ -3,7 +3,7 @@ title: Install LM Studio
 weight: 4
 ---
 
-LM Studio is a graphical alternative to Ollama. It is enough for Part 1. In Part 2 the notebooks talk to Ollama.
+LM Studio is a graphical alternative to Ollama. It is enough for Part 1.
 
 {{< callout type="warning" >}}
 The download page lists **LM Studio Bionic** first. That is a different product with paid cloud plans. Download the second entry, **LM Studio** (0.4.26 or newer).

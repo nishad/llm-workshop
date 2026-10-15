@@ -20,7 +20,7 @@ After Part 2 you can:
 - call a local model from Python with controlled options and record what was used;
 - obtain schema-valid structured output and validate it, handling missing values;
 - embed vocabulary concepts and run cross-lingual semantic search;
-- build a small RAG pipeline that cites and refuses;
+- build a small RAG pipeline that cites its sources and says so when the documents do not answer;
 - let a model propose a tool call (authority lookup, SPARQL) and approve or correct it before execution;
 - explain the limits of small local models from evidence they produced themselves.
 
@@ -51,12 +51,12 @@ In Part 1 you worked by hand:
 In Part 2 you work with code:
 
 - a script handles hundreds of records;
-- every run is repeatable, because the model, options and prompt are fixed;
+- a run can be repeated and checked, because the model, options and prompt are recorded;
 - every call is logged, so any result can be traced.
 
 ## Three ways to take part
 
-- **GUI only.** Part 1 entirely. In Part 2 you follow as a reader and watch the notebooks run.
+- **GUI only.** Part 1 entirely. In Part 2 you follow as a listener and watch the notebooks run.
 - **Run the notebooks.** You need the environment from the [next page](/v3/part2/01-environment) and the model pulled.
 - **Read afterwards.** Every notebook is committed with its outputs, so you can read it later without running anything.
 

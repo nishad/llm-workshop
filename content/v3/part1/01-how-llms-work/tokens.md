@@ -9,7 +9,7 @@ Common words are usually one token. Rare or long words, names and identifiers ar
 
 ## What things cost
 
-Counts with the Apertus tokenizer unless stated otherwise. Models are named where their count differs.
+Counts are for the Apertus tokenizer. Where another model's tokenizer gives a different count, it is shown in brackets.
 
 | Text | Tokens |
 |---|---|
@@ -35,7 +35,7 @@ The SPARQL query costs about twice as many tokens per character as ordinary pros
 
 - **Context costs tokens.** Everything you send and everything the model answers counts against the [context window](/v3/part1/01-how-llms-work/context).
 - **Identifiers are brittle.** An ISBN or a DOI is split into many small pieces, so the model handles it as a string of fragments, not as one thing. Copying one exactly is harder than it looks.
-- **Languages are not equal.** Depending on the tokenizer, non-English text can cost noticeably more. The Apertus tokenizer was chosen for coverage of 55 languages, so its counts for German, Japanese and Hindi stay modest.
+- **Languages are not equal.** Depending on the tokenizer, non-English text can cost noticeably more. The Apertus tokenizer was built for broad multilingual coverage, so its counts for German, Japanese and Hindi stay modest.
 
 ## Try it
 

@@ -7,7 +7,7 @@ cascade:
 
 Think of an open-book exam. A student who has memorized the course may still get a detail wrong, but a student who may look in the book can find the page and quote it. Retrieval-augmented generation (RAG) gives the model the book: your program finds the few passages that matter, puts them in the prompt, and asks for an answer that cites them.
 
-Notebook 04, `04_rag`, takes about 20 minutes in the workshop. It builds the whole pipeline in a few cells, without a framework: load two standards documents, cut them into chunks, embed each chunk once, retrieve the best chunks for a question, and ask the model to answer from them with numbered citations or to say that the documents do not answer.
+Notebook 04, `04_rag`, has a 20-minute budget; in the session it gets about 18 (minutes 72 to 90 of Part 2). It builds the whole pipeline in a few cells, without a framework: load two standards documents, cut them into chunks, embed each chunk once, retrieve the best chunks for a question, and ask the model to answer from them with numbered citations or to say that the documents do not answer.
 
 ## What the notebook covers
 

@@ -20,7 +20,7 @@ Work through both checklists. Part 1 needs only the first.
 ### Install the two tools the commands need
 
 1. **uv.** The one-line installers for macOS, Linux and Windows are on the [environment page](/v3/part2/01-environment). uv installs the right Python (3.12 or 3.13) for you if the system one is older or newer.
-2. **git.** Windows does not ship git: install Git for Windows from https://git-scm.com/download/win, or use the repository's green Code button and Download ZIP, then unpack it. macOS asks to install the command line tools on the first `git` call.
+2. **git.** Windows does not ship git: install Git for Windows from https://git-scm.com/download/win, or use the repository's green Code button and Download ZIP, unpack it, and in the commands below skip the `git clone` line and `cd` into the unpacked folder instead. macOS asks to install the command line tools on the first `git` call.
 
 Then run the commands:
 

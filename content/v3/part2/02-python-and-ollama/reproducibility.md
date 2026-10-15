@@ -19,9 +19,9 @@ Write these down with every result:
 
 ## Why
 
-The same digest and temperature 0 with a seed give the same answer. Without the digest, you cannot say you used the same model: a tag can be moved to a new file. A different quantization is a different model, with different answers. The runtime version belongs in the record too, so that a later difference can be traced. Each item on the list closes one way for two runs to differ without anyone noticing.
+On the same runtime and hardware, the same digest at temperature 0 with a seed gives the same answer. Without the digest, you cannot say you used the same model: a tag can be moved to a new file. A different quantization is a different model, with different answers. The runtime version belongs in the record too, so that a later difference can be traced. Each item on the list closes one way for two runs to differ without anyone noticing.
 
-For metadata work this matters twice. A record that a model created needs to say how, and a later check needs to be able to repeat the run.
+This matters for metadata work in two ways. A record that a model created needs to say how, and a later check needs to be able to repeat the run.
 
 ## The provenance record
 
@@ -48,7 +48,7 @@ Notebook 00 shows the full record as JSON. Besides the fields above, it has `par
 
 ## The log file
 
-`runs/log.jsonl` holds one JSON object per line, one per logged call. It is plain text: open it in an editor, load it with any JSON tool or search it with `grep`. Every `workshop.llm.chat` call appends a line with the time, the model and its digest, the options, the last 300 characters of the prompt and the first 300 of the answer. Streamed calls log the request only. The RAG helper, the tool loop and the setup check's smoke calls all go through `chat`, so they are logged too. Three things are not logged: the OpenAI client call in 01.06 and the oversized prompt in 04.07, which bypass the helper on purpose, and embedding calls. Keep the file with your results.
+`runs/log.jsonl` holds one JSON object per line, one per logged call. It is plain text: open it in an editor, load it with any JSON tool or search it with `grep`. Every `workshop.llm.chat` call appends a line with the time, the model and its digest, the options, the last 300 characters of the prompt and the first 300 of the answer. Streamed calls log the request only. The RAG helper, the tool loop and the setup check's smoke calls all go through `chat`, so they are logged too. Three kinds of call are not logged: embedding calls, and two calls that bypass the helper on purpose (the OpenAI client call in 01.06 and the oversized prompt in 04.07). Keep the file with your results.
 
 ## Citing a model in a workflow document
 

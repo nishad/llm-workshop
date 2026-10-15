@@ -64,7 +64,7 @@ Collection Folio essais
 place should be empty; the model said: 'Gallimard'
 ```
 
-From the executed notebook 02, 15 October 2026. Valid JSON, wrong fact: the model filled the missing place with the publisher's name. (It also labeled a French book `en`.) In the October 2026 tests both Apertus builds did this. The grammar cannot catch it, so a rule has to.
+From the executed notebook 02, 15 October 2026. Valid JSON, wrong fact: the model filled the missing place with the publisher's name. (It also labeled a French book `en`.) In the October 2026 tests both the 8B and the 4B did this. The grammar cannot catch it, so a rule has to.
 
 ## A rule and a retry
 
@@ -165,9 +165,9 @@ Add a field `pages: str = Field(default="", max_length=40, ...)` with a descript
 
 ### Stretch
 
-Add `confidence: float = Field(description="0 to 1")`, run five cards, and compare the confidence values with the actual errors from the batch. Small models fill this field without meaning; a real confidence needs a second check, not a number.
+Add `confidence: float = Field(description="0 to 1")`, run five cards, and compare the confidence values with the actual errors from the batch. Small models fill this field with numbers that do not track their errors. To judge reliability, compare the answers with the gold file instead.
 
-A second stretch is the same extraction through the OpenAI client: create the client as in the [portability page](/v3/part2/02-python-and-ollama/portability), then `oa.chat.completions.parse(model=MODEL, messages=..., response_format=Record)` returns `completion.choices[0].message.parsed`.
+A second stretch: run the same extraction through the OpenAI client, as shown at the end of the [concepts page](/v3/part2/03-structured-output/concepts).
 
 The next chapter turns from the chat model to a second, smaller model: [embeddings](/v3/part2/04-embeddings).
 
@@ -175,7 +175,7 @@ The next chapter turns from the chat model to a second, smaller model: [embeddin
 
 - [ ] I can define a record as a Pydantic model and hand its schema to the model.
 - [ ] I can say what grammar-enforced output guarantees and what it does not.
-- [ ] I saw the model invent a place and a rule that catches it.
+- [ ] I saw the model invent a place, and saw a rule catch it.
 - [ ] I can run a batch and read the field accuracy against a gold file.
 
 {{< callout type="success" >}}

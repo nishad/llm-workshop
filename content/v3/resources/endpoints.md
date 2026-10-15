@@ -9,7 +9,7 @@ Library and linked-data services you can call from the tool loop. Most need no k
 
 | Service | URL | Key needed | Checked | Notes |
 |---|---|---|---|---|
-| Wikidata SPARQL | `https://query.wikidata.org/sparql` | No | October 2026 | A descriptive User-Agent is required; generic Python agents get 403. Queries stop after 60 s. Avoid `SERVICE wikibase:label`. QLever v2 endpoints open to the community in November 2026. |
+| Wikidata SPARQL | `https://query.wikidata.org/sparql` | No | October 2026 | A descriptive User-Agent is required; generic Python agents get 403. Queries stop after 60 s. The label service (`SERVICE wikibase:label`) is slow on large result sets and not every mirror supports it; fetch labels with `rdfs:label` and a language filter where you can. QLever v2 endpoints are due to open to the community in November 2026. |
 | QLever (Wikidata fallback) | `https://qlever.dev/api/wikidata` | No | October 2026 | A working fallback for Wikidata queries. |
 | lobid-gnd | `https://lobid.org/gnd/search` | No | October 2026 | Use `format=json:suggest` for lookups. |
 | lobid-gnd reconciliation | `https://lobid.org/gnd/reconcile` | No | October 2026 | OpenRefine reconciliation API. |
@@ -47,5 +47,5 @@ The notebooks and fixtures contain the exact request forms that were tested.
 - **Never scrape Dewey.** Its endpoint is gone and its terms are restrictive. See [Data and licenses](/v3/resources/data).
 
 {{< callout type="warning" >}}
-Part 2 lets a model draft SPARQL, but you read the query and approve it before it runs. Do not point a loop at a public endpoint.
+Part 2 lets a model draft SPARQL, but you read the query and approve it before it runs. Do not let a loop send queries to a public endpoint without a person approving each one.
 {{< /callout >}}

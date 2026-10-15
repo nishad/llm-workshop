@@ -61,7 +61,7 @@ The model proposes: search_gnd({"name": "Hannah Arendt", "type": "Person"})
 Run it? [y]es / [n]o / or paste corrected JSON arguments:
 ```
 
-Type `y` to run it, `n` to refuse it, or paste corrected JSON arguments to run a different call. The prompt text comes from `workshop.tools.approve`. The committed run is headless and approves every call.
+Type `y` to run it, `n` to refuse it, or paste corrected JSON arguments to run a different call. The prompt text comes from `workshop.tools.approve`. The committed run was unattended, so it approved every call automatically.
 
 ```python
 from workshop.tools import run_tool_loop
@@ -158,7 +158,7 @@ On the 8 GB tier this cell is skipped; the notebook prints `Skipped on the 4B: t
 
 ## 05.05 Two tools in a row: GND, Wikidata, HLS
 
-Wikidata links authority files. Property P227 holds the GND identifier and P902 holds the article id in the Historical Dictionary of Switzerland (HLS). One question needs two tool rounds, and because the loop runs one call per turn, the second call can only be made after the first result is in.
+Wikidata links authority files. Property P227 holds the GND identifier and P902 holds the article id in the Historical Dictionary of Switzerland (HLS, from its German name, Historisches Lexikon der Schweiz). One question needs two tool rounds, and because the loop runs one call per turn, the second call can only be made after the first result is in.
 
 ```mermaid
 flowchart LR
@@ -187,9 +187,11 @@ USER → Call the next tool now, or give your final answer.
 ASSISTANT → ```
 ```
 
-From the executed notebook 05, 15 October 2026. This is what the 8B did in the committed run: it made no tool call at all. It answered with an empty code fence, the loop gave its one reminder ("Call the next tool now, or give your final answer."), and the model answered with an empty code fence again, which ended the loop. In earlier runs the model sometimes looked up the GND record and then stopped, either pasting the URL form of the identifier or announcing the second call without making it. Two-step chains are where an 8B model at this quantization gets unreliable. Nothing was invented, which is what the gate is for.
+From the executed notebook 05, 15 October 2026. This is what the 8B did in the committed run: it made no tool call at all. It answered with an empty code fence, the loop gave its one reminder ("Call the next tool now, or give your final answer."), and the model answered with an empty code fence again, which ended the loop.
 
-### When the model stops, you finish
+In earlier runs the model sometimes looked up the GND record and then stopped, either pasting the URL form of the identifier or announcing the second call without making it. Two-step chains are where an 8B model at this quantization gets unreliable. The model failed, but it invented nothing.
+
+### Finishing the chain by hand
 
 The tools are plain functions, so you can call them yourself. Take the identifier a tool returned, never one the model wrote, and run the second step by hand. If the model made no call at all, make the first one too. These are the same two calls the model was asked to make.
 
@@ -309,7 +311,7 @@ Fetch the HLS article found in 05.05 (CC BY-SA) with `requests`, chunk it with `
 
 ### On the 8 GB tier
 
-Run 05.03 with `nishad/apertus:4b`. It needs the wrapper tag and only simple tools, so use the single-parameter lookups and skip the chains. Compare its answer with the 8B's above: in the executed 8 GB copy it called the tool and gave the identifier as a URL.
+Run 05.03 with `nishad/apertus:4b`. Its tag carries the wrapper template that makes tool calls work, and it copes only with simple tools, so use the single-parameter lookups and skip the chains. Compare its answer with the 8B's above: in the executed 8 GB copy it called the tool and gave the identifier as a URL.
 
 ## Check yourself
 
@@ -319,5 +321,5 @@ Run 05.03 with `nishad/apertus:4b`. It needs the wrapper tag and only simple too
 - [ ] I can say what the SPARQL guard stops.
 
 {{< callout type="success" >}}
-**What you should see:** a proposed call and your decision at each step, tool results flowing back into the answer, identifiers marked when they were not looked up, and text-shaped calls that stop the loop. The [wrap-up](/v3/part2/07-wrap-up) collects what to record and what never to let the model do on its own.
+**What you should see:** a proposed call and your decision at each step, tool results flowing back into the answer, identifiers marked when they were not looked up, and, if the model writes a call as plain text, a loop that stops with an explanation. The [wrap-up](/v3/part2/07-wrap-up) collects what to record and what never to let the model do on its own.
 {{< /callout >}}

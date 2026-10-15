@@ -3,11 +3,11 @@ title: Concepts
 weight: 1
 ---
 
-## Vectors are coordinates of meaning
+## Embeddings are lists of numbers
 
 An embedding model turns a piece of text into a list of numbers, a vector. The specific values are learned during training. Texts with similar meanings end up with similar vectors; texts with different meanings end up far apart. `qwen3-embedding:0.6b` produces 1,024 numbers per text.
 
-## Cosine is a dot product of unit vectors
+## Comparing vectors with cosine similarity
 
 To compare two texts you compare their vectors. The usual measure is the cosine of the angle between them:
 
@@ -51,7 +51,7 @@ Ollama adds nothing; the helper does. If you call an embedding model from your o
 
 ## Short records and prose
 
-An embedding captures the whole text it is given. A short label such as "Bibliothek" has one clear meaning. A long document with a label, its alternatives and a scope note mixes several. In notebook 03 this matters: one document per concept put "Fernsehproduktion" below "Produktionsprozess" although the word was in the document, while one entry per label put the right concept first. Long prose should be chunked into pieces before embedding.
+An embedding captures the whole text it is given. A short label such as "Bibliothek" has one clear meaning. A long document with a label, its alternatives and a scope note mixes several. Notebook 03 shows the effect: with one long document per concept, a query that was itself one of a concept's labels ranked a different concept first; with one entry per label, the right concept came first (see [Vocabulary search](/v3/part2/04-embeddings/vocabulary-search)). Long prose should be chunked into pieces before embedding.
 
 ## When semantic search struggles
 

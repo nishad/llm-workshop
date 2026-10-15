@@ -42,7 +42,7 @@ flowchart LR
 
 ## Chunking
 
-Embeddings work best on a paragraph-sized piece of text, not a whole book, and a prompt has room for only a few pieces. So the documents are cut into chunks that overlap a little, so that a sentence on a boundary is not lost.
+Embeddings work best on a paragraph-sized piece of text, not a whole book, and a prompt has room for only a few pieces. The documents are therefore cut into chunks that overlap a little, so that a sentence on a boundary is not lost.
 
 | Guideline | Value | Why |
 |---|---|---|

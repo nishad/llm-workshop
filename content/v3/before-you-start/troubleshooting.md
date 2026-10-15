@@ -47,7 +47,8 @@ Look at the PROCESSOR column. `100% GPU` is best; a CPU percentage means part of
 
 1. Close browsers and other large applications.
 2. On an 8 GB machine, use the 4B tag.
-3. On Windows, integrated graphics are not used by Ollama, so a CPU-only speed is expected.
+
+On Windows laptops with integrated graphics, Ollama runs on the CPU, so slower answers are expected.
 
 ## Memory errors or swapping
 

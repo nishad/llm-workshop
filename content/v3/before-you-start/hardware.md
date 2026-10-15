@@ -5,10 +5,10 @@ weight: 2
 
 Pick one row of the table below and use that model throughout. The Apple Silicon numbers on this page are October 2026 measurements; the Windows and Linux rows are estimates from published benchmarks.
 
-## Two numbers decide everything
+## What uses your memory
 
-1. **The model file.** About 0.6 GB per billion parameters at Q4_K_M, 1.07 GB at Q8_0, 2 GB at BF16.
-2. **The context window's memory.** For the 8B model this is 128 KiB per token, so 0.5 GiB per 4,096 tokens.
+1. **The model file.** About 0.6 GB per billion parameters in the compressed form the workshop uses (Q4_K_M); higher-precision versions are larger. [Parameters and quantization](/v3/part1/01-how-llms-work/parameters-and-quantization) explains the names.
+2. **The context window's memory.** For the 8B model this is about 0.5 GB for every 4,096 tokens of context.
 
 Both must fit in RAM next to your operating system and open applications.
 
@@ -23,9 +23,9 @@ flowchart LR
 
 | Your memory | Model tag | File | In memory | Context | What it cannot do |
 |---|---|---|---|---|---|
-| 8 GB | `nishad/apertus:4b` | 2.4 GB | about 2.8 GB | 4,096 tokens (hard limit) | Long documents in RAG; tools only with the wrapped tag; quality below the 8B |
+| 8 GB | `nishad/apertus:4b` | 2.4 GB | about 2.8 GB | 4,096 tokens (hard limit) | Long documents in RAG; tool calls less reliable (11 of 20 in testing); quality below the 8B |
 | 16 GB or more | `nishad/apertus:8b` | 5.1 GB | about 5.3 GB at 4,096 and 5.8 GB at 8,192 context | 8,192 tokens by default, up to 65,536 | Nothing in this workshop |
-| 16 GB, curious | `nishad/apertus:8b-v1.5-preview` | 5.1 GB | as the 8B | 8,192 by default | A community conversion; see [Resources](/v3/resources/models) |
+| 16 GB, curious | `nishad/apertus:8b-v1.5-preview` | 5.1 GB | as the 8B | 8,192 by default | Unofficial build, not checked against the original; see the [Model guide](/v3/resources/models) |
 
 {{< callout type="warning" >}}
 Do not try the 8B on an 8 GB machine. It will swap to disk and every answer will take minutes.
@@ -33,9 +33,9 @@ Do not try the 8B on an 8 GB machine. It will swap to disk and every answer will
 
 ## Speed you can expect
 
-These are estimates for the 8B, in tokens per second. The 4B is roughly twice as fast.
+Speeds for the 8B in tokens per second: measured on Apple Silicon, estimated for Windows and Linux. The 4B is roughly twice as fast.
 
-| Machine | Tokens per second (estimate) |
+| Machine | Tokens per second |
 |---|---|
 | Base Apple M1, M2 or M4 | about 14 to 24 |
 | Apple M-Pro and M-Max | 40 to 80 |

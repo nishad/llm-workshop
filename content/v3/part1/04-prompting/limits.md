@@ -3,7 +3,7 @@ title: Limits
 weight: 4
 ---
 
-A small local model is useful and wrong in predictable ways. This page shows five of them, each with a captured example. Knowing the shapes of these errors is half of catching them.
+Small local models are useful, and they make mistakes in predictable ways. This page shows five, each with a captured example, so you can recognize them in your own work.
 
 All captures: nishad/apertus:8b, temperature 0.8, 15 October 2026, unless stated.
 
@@ -79,7 +79,7 @@ Now, let's add up the total late fees for all items: $6 (books) + $8 (DVD) + $0.
 Therefore, Sarah owes a total of $14.75 in late fees.
 ```
 
-Each multiplication is correct: 2 books at 12 days is 2 x 0.25 x 12 = $6. The policy also says the maximum fee is $5.00 per item, and the DVD at 8 days would cost $8. The model ignored the cap and charged $8. The right total is $6 + $5 + $0.75 = $11.75. The model's $14.75 is $3 too much. The working is on the page and looks careful, which makes the mistake easy to miss.
+Each multiplication is correct: 2 books at 12 days is 2 x 0.25 x 12 = $6. But the policy caps the fee at $5.00 per item, so the DVD should cost $5. The model ignored the cap and charged $8. The right total is $6 + $5 + $0.75 = $11.75. The model's $14.75 is $3 too much. The working is on the page and looks careful, which makes the mistake easy to miss.
 
 ## 4. A missed word limit
 
@@ -130,7 +130,7 @@ Four of the five are acceptable English that differs from the label in the thesa
 ## Two checks anyone can do
 
 1. **Ask for the source, then look it up.** Ask "Where does this come from?" and check what you get against a catalog, Crossref, the thesaurus or the original text. If the model names a source, confirm that it exists and says what the model claims. If it cannot name one, treat the answer as unverified.
-2. **Ask the same question twice and compare.** Run the prompt again in a new chat (temperature 0.8 is the default in the apps). Facts the model really holds tend to come back the same. A guess changes between runs. If two runs disagree, neither answer is a fact.
+2. **Ask the same question twice and compare.** Run the prompt again in a new chat (temperature 0.8 is the default in the apps). Facts the model really holds tend to come back the same. A guess changes between runs. If two runs disagree, treat both answers as unverified.
 
 Neither check proves an answer is right. They only tell you where to look.
 

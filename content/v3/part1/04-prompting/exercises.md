@@ -73,7 +73,7 @@ All 22 works are there, in the right order, with the right years and languages. 
 - For the Divina Commedia it wrote "La Divina Commedia", which is not in the text. It filled a gap from memory.
 - For the Japanese and Persian works it repeated the romanized or bracketed form from the text.
 
-A cell the text does not support should stay empty. Add "leave the cell empty if the text does not give it. Do not use your own knowledge" to the prompt and compare.
+A cell the text does not support should stay empty. The prompt already asked for that. Add "Do not use your own knowledge." and compare.
 
 {{< /details >}}
 
@@ -204,7 +204,11 @@ Author Talk with Jane Smith is scheduled for March 15th at 7pm in the Main Hall.
 ```
 ````
 
-The JSON itself is right, and it is valid. Two things to notice. First, the prompt said "Return only valid JSON", and the model still wrapped it in a code fence (the answer above is shown as the model wrote it, so you see a fence inside a fence). A program that reads the answer has to strip that. Second, the values are copied as written ("every Tuesday", "on Saturdays", "6pm"). That is faithful to the text and not yet clean data. Only one event has a date, and it has no year, so an ISO date would need a guess. For the stretch task, decide what should go into a date field for the three recurring events.
+The JSON is valid and the values are right.
+
+The prompt said "Return only valid JSON", and the model still wrapped it in a code fence (the answer above is shown as the model wrote it, so you see a fence inside a fence). A program that reads the answer has to strip that.
+
+The values are copied as written ("every Tuesday", "on Saturdays", "6pm"). That is faithful to the text and not yet clean data. Only one event has a date, and it has no year, so an ISO date would need a guess. For the stretch task, decide what should go into a date field for the three recurring events.
 
 {{< /details >}}
 
@@ -256,7 +260,7 @@ Teuerung: yes
 Bibliotheksnutzung: yes
 ```
 
-I checked these five terms against the STW 9.20 data held in the notebooks repository, as preferred and as alternative labels, German and English:
+We checked these five terms against the STW 9.20 data held in the notebooks repository, as preferred and as alternative labels, German and English:
 
 | Term | The model said | In STW 9.20 |
 |---|---|---|
@@ -358,7 +362,7 @@ What is the DOI of the article "The FAIR Guiding Principles for scientific data 
 The DOI for the article "The FAIR Guiding Principles for scientific data management and stewardship" by Mark D. Wilkinson and colleagues is 10.1038/sdata.2016.44.
 ```
 
-I checked both on 15 October 2026.
+We checked both on 15 October 2026.
 
 **The ISBN.** The number 9783257061675 is not a valid ISBN-13. Its check digit is wrong: the check digit for those twelve digits is 3, not 5. A search for it in the DNB catalog (through lobid-resources) returns no records. The same number with the correct check digit, 9783257061673, belongs to a different book: "Verrechnet" by Dick Francis, published by Diogenes (Zürich, 1998). The DNB records for Patrick Süskind, "Das Parfum", published by Diogenes include these ISBNs, among others: 978-3-257-22800-7, 978-3-257-06540-4, 978-3-257-80233-7, 978-3-257-80037-1, 978-3-257-01787-8 and 978-3-257-01678-9. None matches the model's answer.
 
@@ -392,8 +396,8 @@ How do I fix this?
 
 What is wrong:
 
-- **Prompt 1:** "stuff" and "libraries" are both open. No audience, no length, no angle.
-- **Prompt 2:** at least five unrelated tasks, no priority, no format. Split them.
+- **Prompt 1:** "stuff" and "libraries" are both vague. No audience, no length, no angle.
+- **Prompt 2:** six unrelated tasks, no priority, no format. Split them.
 - **Prompt 3:** "this" has no referent, and there is no error message, system or goal.
 
 Here is the first prompt as written:

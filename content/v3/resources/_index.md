@@ -5,7 +5,7 @@ cascade:
   type: docs
 ---
 
-Reference pages for during and after the workshop. Model facts live on the model guide; the other pages link there instead of repeating them.
+Reference pages for during and after the workshop. For model facts (tags, sizes, digests and licenses), start with the model guide.
 
 ## The pages
 

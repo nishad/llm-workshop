@@ -26,7 +26,7 @@ The reference model for both parts. Also available as `nishad/apertus:latest`.
 | Source | `hf.co/unsloth/Apertus-8B-Instruct-2509-GGUF:Q4_K_M` |
 | GGUF sha256 | `87e7f0eb5a1d33e1a8ea4e7fdd2363764e0465061dd92962e0073aec31a7944d` |
 
-Good at: extracting fields from catalog-style text, German, French and Italian, structured output, and calling tools when the prompt is in English. Weak at: code, maths and instruction following (IFEval 71.7), and it tends to invent a value instead of answering null when a field is missing. It uses the GGUF's own chat template with Unsloth's fixes for tool arguments.
+Good at: extracting fields from catalog-style text, German, French and Italian, structured output, and calling tools when the prompt is in English. Weak at: code, math and following instructions (an IFEval benchmark score of 71.7). When a field is missing it sometimes fills it from a neighboring field, such as the publisher as the place (see notebook 02). It uses the GGUF's own chat template with Unsloth's fixes for tool arguments.
 
 ### `nishad/apertus:4b`
 
@@ -45,7 +45,7 @@ For 8 GB machines.
 | Source | `hf.co/jondale/Apertus-v1.1-4B-Instruct-GGUF:Q4_K_M` |
 | GGUF sha256 | checksum not recorded |
 
-The tag uses a workshop wrapper template that renders tools in Apertus's TypeScript-style format, so Ollama can parse tool calls. Without it, tool requests hang. Quality is visibly below the 8B: in testing it failed a two-turn recall and a 2,300-token needle test.
+The tag uses a workshop wrapper template that renders tools in Apertus's TypeScript-style format, so Ollama can parse tool calls. Without it, tool requests hang. Quality is visibly below the 8B: in testing it could not recall a fact from the previous turn, nor find one fact hidden in a 2,300-token text.
 
 ### `nishad/apertus:8b-v1.5-preview`
 
@@ -67,14 +67,14 @@ An optional preview for people with 16 GB or more who want to compare.
 This is an unofficial community conversion. Someone extracted the text part of the gated multimodal v1.5 checkpoint; vision and audio are removed, and no parity check against the original exists. Thinking is not available in Ollama. The 262k metadata means a large Mac would allocate far more memory than you expect, so set the context yourself (the tag does). In testing it scored slightly better on tool calls than the 8B.
 
 {{< callout type="info" >}}
-The public Apertus v1.5 training mixture was audited by a community member in September 2026 and found to contain verbatim benchmark items and duplicates. The maintainers acknowledged it. Openness is what made that audit possible.
+A community audit of the published v1.5 fine-tuning data in September 2026 found benchmark items and duplicates; see [Apertus](/v3/part1/02-open-models/apertus#an-audit-in-september-2026).
 {{< /callout >}}
 
 ## Verification of the tags
 
 Run on Ollama 0.35.1 and repeated on 0.40.4 on 15 October 2026 with identical counts, one run per model through the OpenAI-compatible endpoint.
 
-| Tag | Structured tool calls | Controls clean | Multi-turn loops | Structured output |
+| Tag | Tool prompts with a structured call | Controls clean | Multi-turn loops | Structured output |
 |---|---|---|---|---|
 | `nishad/apertus:8b` | 16 of 20 | 10 of 10 | 5 of 5 | 5 of 6 |
 | `nishad/apertus:4b` | 11 of 20 | 10 of 10 | 3 of 5 | 5 of 6 |
@@ -115,11 +115,10 @@ These are open weights only: the weights are downloadable and the license is Apa
 | `ollama ps` | Show models loaded in memory |
 | `ollama stop NAME` | Unload a model from memory |
 
-## What to re-check before the workshop
+## What may change after October 2026
 
-The facilitator re-checks these one week before the session and re-verifies the tags with Ollama 0.40 or newer:
+These facts were checked in October 2026 and will be checked again the week before the workshop. Each would change something for you:
 
-- the Ollama library entry at `ollama.com/library/apertus`
-- an official Apertus GGUF
-- Ollama pull request 17555, llama.cpp pull request 26226 and transformers pull request 47662
-- the swiss-ai collection on Hugging Face
+- An official Apertus entry in the Ollama library, or an official GGUF from the Apertus team, would replace the community builds behind the workshop tags.
+- Support for the v1.5 architecture in llama.cpp and Ollama would make the preview tag unnecessary.
+- New releases in the swiss-ai collection on Hugging Face may add sizes or versions.

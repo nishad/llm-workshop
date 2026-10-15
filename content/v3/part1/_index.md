@@ -34,7 +34,7 @@ Minutes are counted from 04:00 UTC.
 
 ## Three ways to take part
 
-GUI-only (all of Part 1, Part 2 as a reader), run the notebooks (Part 2), or read the executed notebooks afterwards (both parts).
+Follow with the graphical tools only, run the notebooks in Part 2, or read the executed notebooks afterwards. The [workshop page](/v3#three-ways-to-take-part) says what each needs.
 
 ## The chapters
 

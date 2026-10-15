@@ -31,7 +31,7 @@ From the executed notebook 01, 15 October 2026.
 | Ollama | `http://localhost:11434/v1` |
 | LM Studio | `http://localhost:1234/v1` |
 | llama.cpp's server | `http://localhost:8080/v1` |
-| The Llama app | `http://localhost:9931/v1` |
+| Llama, the llama.cpp team's menu-bar app | `http://localhost:9931/v1` |
 | A hosted provider | the URL and API key from the provider |
 
 The `model` name is whatever the server calls the model. For a hosted provider, the key is real and your prompts leave your machine.

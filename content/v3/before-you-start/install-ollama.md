@@ -86,7 +86,7 @@ ollama --version
 ```
 
 {{< callout type="success" >}}
-The command must print 0.40.1 or newer.
+The command must print 0.40 or newer. The materials were tested on 0.40.4.
 {{< /callout >}}
 
 ## Where models live
@@ -94,7 +94,7 @@ The command must print 0.40.1 or newer.
 | System | Folder |
 |---|---|
 | macOS and Linux (user install) | `~/.ollama/models` |
-| Windows | `%HOMEPATH%\.ollama\models` |
+| Windows | `%USERPROFILE%\.ollama\models` |
 | Linux (system service) | `/usr/share/ollama/.ollama/models` |
 
 You can change the location in Settings, under Model location.

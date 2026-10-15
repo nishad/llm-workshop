@@ -71,7 +71,7 @@ Short, model-agnostic definitions. Model names, sizes and speeds are on the [Mod
 
 **Open weights.** The trained parameters can be downloaded and run. The license may still restrict use, and data and code may be closed.
 
-**Open source (OSI).** Software, or a model under the Open Source Initiative's definitions, that grants broad freedoms to use, study, modify and share. Open weights alone do not meet it.
+**Open source (OSI).** Software or a model whose license meets the Open Source Initiative's definition, which grants the freedom to use, study, modify and share it. Open weights alone do not meet it.
 
 **Fully open.** Weights, training code, and the training data or a way to rebuild it are all available, along with intermediate checkpoints. Others can inspect and reproduce the work.
 
@@ -81,7 +81,7 @@ Short, model-agnostic definitions. Model names, sizes and speeds are on the [Mod
 
 **Training data.** The text a model learned from. Its sources and licenses affect trust and legal risk.
 
-**Provenance.** The documented origin of data or a model, including where it came from and what changed. Libraries care about it by profession.
+**Provenance.** The documented origin of data or a model, including where it came from and what changed. Libraries already record it for their own collections.
 
 **Reproducibility.** The ability to get the same result again from the same inputs and settings. Releasing data, code and checkpoints makes it possible.
 
@@ -107,7 +107,7 @@ Short, model-agnostic definitions. Model names, sizes and speeds are on the [Mod
 
 **Thinking model.** A model that writes out reasoning steps before its answer. It is slower and may need that mode switched off for structured output.
 
-**Digest.** A short hash that identifies the exact contents of a downloaded model. Two tags with the same digest are the same model.
+**Digest.** A hash that identifies the exact contents of a downloaded model; `ollama list` shows its first 12 characters. Two tags with the same digest are the same model.
 
 ## Units
 
@@ -115,6 +115,7 @@ Short, model-agnostic definitions. Model names, sizes and speeds are on the [Mod
 |---|---|
 | B | Billions of parameters, as in 8B |
 | GB | Gigabytes; file sizes and memory |
-| K | Thousand, as in a 4K context window of about 4,000 tokens; strictly 4,096 |
+| k | Thousand, as in a 4k context window of about 4,000 tokens; strictly 4,096 |
+| KiB, GiB | Binary units used for context memory; 1 GiB is about 1.07 GB |
 | ms | Milliseconds; one thousandth of a second |
 | Tokens per second | Generation speed; higher is faster |

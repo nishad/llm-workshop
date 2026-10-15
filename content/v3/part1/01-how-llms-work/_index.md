@@ -29,7 +29,7 @@ The chosen token is added to the text, and the loop runs again until the answer 
 
 ## The prompting mindset
 
-Four habits follow from that loop, and every prompting technique in Part 1 works with them rather than against them.
+Four traits of the model follow from that loop. Every prompting technique in Part 1 is built around them.
 
 - It is **literal**. It does what you asked, not what you meant.
 - It knows only **what is in the context**. Anything you did not provide, it guesses.
@@ -37,12 +37,12 @@ Four habits follow from that loop, and every prompting technique in Part 1 works
 - It is **not deterministic** unless you make it so. The same prompt can give a different answer next time.
 
 {{< callout type="info" >}}
-An LLM does not understand in the human sense. It predicts a likely continuation. Prompting well means giving it something good to continue.
+Prompting well means giving the model something good to continue.
 {{< /callout >}}
 
 ## Before you read on
 
-Will the German sentence cost more or fewer tokens than the English one? Make a guess, then open the first page.
+The first page counts the tokens in an English sentence and its German translation. Before you open it, guess: will the German cost more tokens or fewer?
 
 ## The pages
 

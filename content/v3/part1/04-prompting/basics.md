@@ -3,7 +3,7 @@ title: Basics
 weight: 1
 ---
 
-All the examples on this page work on one text. Learn it once, then watch one task get better with each rewrite of the prompt.
+The first examples on this page all work on one sample text, so you can watch one task improve with each rewrite of the prompt. The five principles further down use short inputs.
 
 ## The sample text
 
@@ -113,7 +113,7 @@ Books mentioned in the text:
 22. Divina Commedia (The Divine Comedy) - Dante Alighieri
 ```
 
-Now 22 entries, but the format is loose. Some lines have the title first, some have a translated title in brackets, and the Rubaiyat has no author.
+Now 22 entries, but the format is loose. Some titles are in the original script, some are romanized, some carry a translation in brackets, and the Rubaiyat has no author.
 
 ### Version 3: a format
 
@@ -153,7 +153,7 @@ Text:
 22. "Divina Commedia" (The Divine Comedy) by Dante Alighieri (Written between 1308 and 1320 in Italian)
 ```
 
-Every entry now follows Title by Author (Year), with a few exceptions: Homer's Odyssey puts the author first, and the Rubaiyat gets an "Attributed to" note. Several entries carry extra notes in brackets. Formats are followed approximately, not exactly.
+Most entries now follow Title by Author (Year). The exceptions: Homer's Odyssey puts the author first, and the Rubaiyat gets an "Attributed to" note. Several entries carry extra notes in brackets. Formats are followed approximately, not exactly.
 
 ### Version 4: sorting and a filter
 
@@ -202,7 +202,7 @@ Version 4 asked for three things at once: the format, a chronological sort and a
 A small model treats "before 1950" as a phrase to echo rather than a rule to apply to each year. Comparing numbers is exactly where small models slip. The usual repair is to split the task: first extract everything with the year, then filter and sort in a second prompt, or in a spreadsheet. [Techniques](/v3/part1/04-prompting/techniques) shows the multi-step version.
 
 {{< callout type="warning" >}}
-Read the answer before you trust it. The list looked tidy. Five of its entries should not have been there, one that belonged was missing, and nothing was sorted.
+Read the answer before you trust it. A tidy list can still be wrong.
 {{< /callout >}}
 
 ## Five principles

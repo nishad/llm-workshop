@@ -22,7 +22,7 @@ Click the model name in the chat window to open the picker.
 Type `nishad/apertus:8b` exactly. Use `nishad/apertus:4b` if your machine is small (see [Hardware](/v3/before-you-start/hardware)).
 
 {{< callout type="info" >}}
-Typing `apertus` alone shows "No models found". The picker looks names up on ollama.com, so it needs the full name, and the lookup contacts ollama.com. Chatting afterwards does not.
+Typing `apertus` alone shows "No models found". The picker looks names up on ollama.com, so it needs the full name. Only this lookup goes online; chatting afterwards does not.
 {{< /callout >}}
 
 <!-- screenshot ollama-picker-typed.png: the Ollama model picker with nishad/apertus:8b typed and the entry with the download arrow; add in Task 14 -->

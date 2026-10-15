@@ -9,7 +9,7 @@ The notebook's query tables are HTML; here they are Markdown with the same cells
 
 ## From SKOS to index entries
 
-Each preferred and alternative label becomes one entry that remembers its concept, so a one-word query meets one-word entries. In the October 2026 tests, one long document per concept (label, all alternatives, scope note) put *Fernsehproduktion* below *Produktionsprozess* although the word is in the document; the label index puts it first.
+Each preferred and alternative label becomes one entry that remembers its concept, so a one-word query meets one-word entries. In the October 2026 tests, with one long document per concept (label, all alternatives, scope note), the query "Fernsehproduktion" ranked *Produktionsprozess* above *Filmproduktion*, even though "Fernsehproduktion" is one of Filmproduktion's labels. With one entry per label, *Filmproduktion* comes first.
 
 ```python
 from scripts.build_vocab_extracts import load_vocab, concept_document
@@ -118,7 +118,7 @@ The alternative label matches itself, and the concept it belongs to comes back.
 
 ## Suggest three, let a person choose
 
-A score is not a decision. Below a threshold we show nothing; above it we show up to three candidates and record the choice. The machine proposes, the cataloger decides.
+Below a threshold the notebook shows nothing; above it, it shows up to three candidates, a cataloger picks one or none, and the choice is recorded.
 
 ```python
 def suggest(text, k=3, threshold=0.55):
@@ -139,7 +139,7 @@ print("chosen:", suggest("Streik der Lokführer"))
 chosen: http://zbw.eu/stw/descriptor/11348-5
 ```
 
-From the executed notebook 03, 15 October 2026. Only two candidates cleared the threshold, so only two are shown. The notebook was run unattended, so the first was chosen automatically; in the room, you choose.
+From the executed notebook 03, 15 October 2026. Only two candidates cleared the threshold, so only two are shown. The notebook was run unattended, so the first was chosen automatically; when you run it yourself, you choose.
 
 ## The UNESCO Thesaurus in French and German
 
@@ -157,9 +157,9 @@ Rechte der Frau → [('Womens rights', 0.609), ('Womens status', 0.567), ('Civil
 changement climatique → [('Environmental degradation', 0.666), ('Climate change', 0.661), ('Climate change adaptation', 0.641)]
 ```
 
-From the executed notebook 03, 15 October 2026. Three of the four work. "Grossesse" (pregnancy) misses: the model matched the look of the word ("Gross national product", "Grade repetition"), not its meaning. All three scores are below 0.45, which a threshold would have caught. Even for the good queries, the right concept is not always first: for "changement climatique", *Climate change* is second.
+From the executed notebook 03, 15 October 2026. Three of the four work. "Grossesse" (pregnancy) misses: the model matched the look of the word ("Gross national product", "Grade repetition"), not its meaning. All three scores are below 0.45, which a threshold would have caught. Even for the good queries, the right concept is not always first: *Digital libraries* and *Climate change* both come second.
 
-## Measure, don't guess: recall on the gold set
+## Recall on the gold set
 
 Fifty queries with known targets (held-out German synonyms, STW English to German, UNESCO French and English, scope-note questions), scored against one document per concept with the synonym removed. This is the hard case, and it is the same corpus for every model. recall@1 is the share of queries whose correct concept is the top hit; recall@5 is the share found in the top five. This cell embeds 15,198 documents and takes about six minutes; it is optional.
 
@@ -183,7 +183,7 @@ From the executed notebook 03, 15 October 2026.
 | E | UNESCO scope-note question to concept | 2/6 | 4/6 |
 | All | 50 queries | 0.62 | 0.82 |
 
-Last year's English-only model scored 0.17 on kind B (English to German). The alternatives measured on the same gold set are on the [models page](/v3/resources/models); the headline is that `embeddinggemma` scored higher under a license that is not open source, and `bge-m3` scored lower.
+The English-only model used in the SWIB25 edition, `nomic-embed-text`, scored 0.17 on kind B (English to German). On the same gold set, `embeddinggemma` scored higher under a license that is not open source, and `bge-m3` scored lower; the [models page](/v3/resources/models) has the numbers.
 
 ### The same queries against the label index
 
@@ -203,7 +203,7 @@ From the executed notebook 03, 15 October 2026.
 | B, recall@1 | 8/12 | 6/12 |
 | B, recall@5 | 10/12 | 10/12 |
 
-The label index helps the synonym kind most and does not help the cross-lingual kind at rank 1: one-word labels carry less context for a translation than a document does. Index design changed recall as much as the model did.
+The label index helps the synonym kind most and hurts the cross-lingual kind at rank 1 (8/12 down to 6/12): one-word labels carry less context for a translation than a document does. Index design changed recall as much as the model did.
 
 ## sqlite-vec
 
@@ -236,7 +236,7 @@ Lower the threshold in the suggest cell to 0.4 and query something outside econo
 
 ### Stretch
 
-Swap the embedding model: set `WORKSHOP_EMBED_MODEL=embeddinggemma` (pull it first; it is under Google's Gemma Terms of Use, not an open-source license), delete or rename the two index files in `runs/` first (they hold qwen3-embedding vectors), restart the kernel and run from the setup cell to the gold-set cell. Note the prefixes the helper adds for each model (`workshop.embed.prefix_for`). Or build an index over a GND subject-heading subset (the DNB publishes GND dumps under CC0 at https://data.dnb.de/opendata/) and query it with STW labels, a first step towards vocabulary mapping.
+Swap the embedding model. Pull `embeddinggemma` (it is under Google's Gemma Terms of Use, which is not an open-source license). Delete or rename the two index files in `runs/`, because they hold qwen3-embedding vectors. Set `WORKSHOP_EMBED_MODEL=embeddinggemma`, restart the kernel, and run from the setup cell to the gold-set cell. Note the prefixes the helper adds for each model (`workshop.embed.prefix_for`). Or build an index over a GND subject-heading subset (the DNB publishes GND dumps under CC0 at https://data.dnb.de/opendata/) and query it with STW labels, a first step toward vocabulary mapping.
 
 ## Data and licenses
 

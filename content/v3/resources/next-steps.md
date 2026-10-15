@@ -42,7 +42,7 @@ See the SWIB26 program for times.
 
 ## Reading list
 
-- The Apertus technical report, arXiv 2509.14233
-- The Open Source Initiative's Open Source AI Definition
-- The European Union's AI Act template for the public summary of training content
-- Simon Willison's writing on embeddings
+- [The Apertus technical report](https://arxiv.org/abs/2509.14233), arXiv 2509.14233
+- [The Open Source Initiative's Open Source AI Definition](https://opensource.org/ai/open-source-ai-definition)
+- The European Commission's template for the public summary of training content under the AI Act
+- [Simon Willison's writing on embeddings](https://simonwillison.net/tags/embeddings/)

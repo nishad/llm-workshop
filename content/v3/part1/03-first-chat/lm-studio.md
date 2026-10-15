@@ -15,7 +15,7 @@ Click Discover in the left bar.
 
 ### Paste the Hugging Face URL
 
-Paste `https://huggingface.co/unsloth/Apertus-8B-Instruct-2509-GGUF` into the search field.
+Paste `https://huggingface.co/unsloth/Apertus-8B-Instruct-2509-GGUF` into the search field. On an 8 GB machine, paste `https://huggingface.co/jondale/Apertus-v1.1-4B-Instruct-GGUF` instead and pick its Q4_K_M file (2.43 GB).
 
 ### Choose Q4_K_M
 
@@ -29,7 +29,7 @@ Click Download and wait for it to finish.
 
 ### Load with context length 8192
 
-Load the model and set the context length to 8192 before you confirm. The context setting is chosen at load time.
+Load the model and set the context length to 8192 (4096 for the 4B) before you confirm. The context setting is chosen at load time.
 
 ### Chat
 
@@ -55,7 +55,7 @@ Attach a PDF to your message in a chat.
 
 ### Ask a question about it
 
-Ask something the document can answer, for example for a summary of one section.
+Ask something the document can answer, for example a summary of one section.
 
 {{% /steps %}}
 
@@ -66,6 +66,6 @@ LM Studio handles an attached document in one of two ways:
 - **Full document**: if the whole file fits in the context, it is put into the prompt as is.
 - **Retrieval (RAG)**: if it does not fit, only the passages that seem relevant to your question are added.
 
-This is a no-code preview of the RAG you build in Part 2. The model never reads a document it was not given, so a too-small context is a common reason for a poor answer.
+This is a no-code preview of the RAG you build in Part 2. The model sees only the text that was put into its context. If the context is too small, or retrieval picks the wrong passages, the answer suffers.
 
 Models and sizes are covered in [Download the models](/v3/before-you-start/download-models). Next, try the [first prompts](/v3/part1/03-first-chat/first-prompts).

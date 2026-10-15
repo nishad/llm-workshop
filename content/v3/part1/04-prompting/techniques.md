@@ -3,7 +3,7 @@ title: Techniques
 weight: 2
 ---
 
-Five techniques are live in the session. Five more are in a closed block at the end, for self-study. Each live technique has a captured answer from nishad/apertus:8b (temperature 0.8, 15 October 2026).
+Five techniques are live in the session. Five more, for self-study, are in a collapsed section at the end. Each live technique has a captured answer from nishad/apertus:8b (temperature 0.8, 15 October 2026).
 
 ## 1. Few-shot: show the pattern
 
@@ -221,7 +221,7 @@ Quantitative
 Justification: The study uses surveys and quantitative methods to evaluate the effect of the course on participants' knowledge and attitudes. Interviews (45 participants) provide qualitative insights but are not the primary method of data collection.
 ```
 
-Each step fits on one screen, so a person can see where it went wrong. This chain also shows why checkpoints matter. At step 2 the model listed surveys and interviews. At step 3 it called the study "Quantitative", yet its own justification says the interviews provide qualitative insight. A study with both surveys and interviews is usually called mixed methods. If you had only looked at the final label, you would not have seen the shaky reasoning.
+Each step fits on one screen, so you can see at which step the chain went wrong. At step 2 the model listed surveys and interviews. At step 3 it called the study "Quantitative", yet its own justification says the interviews provide qualitative insight. A study with both surveys and interviews is usually called mixed methods. If you had only looked at the final label, you would not have seen the shaky reasoning.
 
 ## Combining techniques
 
@@ -243,7 +243,7 @@ Do not use all techniques at once. Pick one or two that fit the task.
 
 ## Thinking models and Apertus
 
-Some newer models have a thinking mode: they write out a stretch of reasoning before the final answer, and the app may hide or show it. Apertus 1.0 has no thinking mode. When you ask it to "think step by step", the steps are simply part of its answer. That helps with arithmetic and multi-part questions, but nothing checks the steps. You are the checker.
+Some newer models have a thinking mode: they write out a stretch of reasoning before the final answer, and the app may hide or show it. The reasoning costs tokens and time. In testing, a 4B thinking model spent 821 characters of hidden reasoning on a one-sentence answer, and 82 seconds on a short SPARQL query. Apertus 1.0 has no thinking mode. When you ask it to "think step by step", the steps are simply part of its answer. That helps with arithmetic and multi-part questions, but nobody checks the steps except you.
 
 ## Self-study: five more techniques
 

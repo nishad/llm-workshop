@@ -5,7 +5,7 @@ cascade:
   type: docs
 ---
 
-Local large language models (LLMs) have moved on since the first edition of this workshop in 2024. The privacy and cost arguments still apply, but many capable models now run on an ordinary laptop and come with permissive licenses, and a few are fully open: weights, training data and training code are all published. For libraries, that turns provenance, reproducibility and vendor independence from talking points into practical choices. This third edition is built around Apertus, a fully open multilingual model family from the Swiss AI Initiative (EPFL, ETH Zurich, CSCS).
+Local large language models (LLMs) have moved on since the first edition of this workshop in 2024. The privacy and cost arguments still apply, but many capable models now run on an ordinary laptop and come with permissive licenses, and a few are fully open: the weights, the training code, and the training data or the scripts to rebuild it are all published. For libraries, provenance, reproducibility and independence from a single vendor become things you can check on your own machine. This third edition is built around Apertus, a fully open multilingual model family from the Swiss AI Initiative (EPFL, ETH Zurich, CSCS).
 
 **Part 1 - Fundamentals**
 
@@ -15,11 +15,11 @@ How LLMs work (parameters, tokens, quantization, context); the difference betwee
 
 Working with LLMs from Python. Generating structured output and validating it. Embeddings and semantic search over controlled vocabularies. Retrieval-augmented generation (RAG) over your own documents. Basics of tool use, such as querying a SPARQL endpoint or an authority file, with a human in the loop.
 
-This is a hands-on workshop. You can follow along with the graphical tools only, run the notebooks, or work through the materials afterwards. The four hours are split into two halves. Part 1 is for beginners and needs no prior experience. Part 2 assumes you can already run a local model and builds on it with Python. Each half stands on its own: you can leave at the break, or join at the break for Part 2. The times are below.
+This is a hands-on workshop. You can follow along with the graphical tools only, run the notebooks, or work through the materials afterwards. The four hours are split into two halves. Part 1 is for beginners and needs no prior experience. Part 2 assumes you can already run a local model and builds on it with Python. Each half stands on its own: you can leave at the break, or join at the break for Part 2.
 
 ## What you need
 
-A computer running Windows, macOS or Linux with 20 GB of free storage. 8 GB of RAM is enough for the small model; 16 GB lets you run the larger one. You need an internet connection to download the models, or you can download them in advance (the instructions are posted about a week before). For Part 2 you also need Python 3.12 or newer.
+A computer running Windows, macOS or Linux with 20 GB of free storage. 8 GB of RAM is enough for the small model; 16 GB lets you run the larger one. You need an internet connection to download the models, or you can download them in advance (the instructions are posted about a week before). For Part 2 you also need Python 3.12 or 3.13 (uv can install it for you).
 
 ## When
 

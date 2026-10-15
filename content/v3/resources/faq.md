@@ -25,7 +25,7 @@ It is fully open: the weights, training code, reconstruction scripts for the dat
 
 ### Why not Llama?
 
-Meta's Llama models are open weights under a custom license, with restrictions on use, and an exclusion for the EU on its multimodal models. That puts them a step below Apertus on the openness ladder, and the training data is closed.
+Meta's Llama models are open weights under a custom license, with restrictions on use, and an exclusion for the EU on its multimodal models. That puts them on tier 1 of the openness ladder, two tiers below Apertus, and their training data is closed.
 
 ### Why is the 8B not for 8 GB machines?
 
@@ -47,13 +47,13 @@ No. Prompts stay on your machine. See [Privacy](/v3/before-you-start/privacy) fo
 
 ### Where are models stored?
 
-Ollama keeps them in `~/.ollama/models` on macOS and Linux and in `%HOMEPATH%\.ollama\models` on Windows. See [Install Ollama](/v3/before-you-start/install-ollama).
+Ollama keeps them in `~/.ollama/models` on macOS and Linux and in `%USERPROFILE%\.ollama\models` on Windows. See [Install Ollama](/v3/before-you-start/install-ollama).
 
 ## Part 2
 
 ### Why Python 3.12?
 
-The notebooks' environment requires Python 3.12 or 3.13. Python 3.10 reached end of life on 1 October 2026.
+The notebooks' environment is pinned to Python 3.12 or 3.13, the versions they were written and tested on. uv installs one for you, so your system Python does not matter.
 
 ### Why not chromadb?
 
@@ -64,10 +64,10 @@ It pulls in about 250 MB of dependencies and has an open Windows install issue. 
 Check these in order:
 
 1. Write the prompt in English. The 8B may narrate instead of calling a tool when prompted in German or French.
-2. Use a tag with a working tool template, such as `nishad/apertus:8b`, or the 4B wrapper tag.
+2. Use a tag with a working tool template: `nishad/apertus:8b`, or `nishad/apertus:4b`, whose wrapper template makes its tool calls readable by Ollama.
 3. Know what the loop does: the notebooks run one tool call per turn, mark any identifier that no tool returned as unverified, and remind the model once if it announces a call without making it.
 
-In headless runs the 8B did not complete the two-step GND to Wikidata chain on its own, so you finish that step by hand.
+When the notebook ran unattended, the 8B did not complete the two-step GND to Wikidata chain on its own, so you finish that step by hand.
 
 ### What does "exceeds the available context size" mean?
 

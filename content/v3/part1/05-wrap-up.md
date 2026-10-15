@@ -38,7 +38,7 @@ Split the task. First extract every book with its year, then filter and sort in 
 **4. Which tier of the openness ladder is Apertus, and why is that not the same as open source?**
 
 {{< details title="Show the answer" >}}
-Tier 3, fully open: weights, training code, a reproducible way to rebuild the data and checkpoints. Open weights alone is a lower tier. The OSI definition of open source asks for data information, and Llama 2, for example, fails it although its weights are downloadable.
+Tier 3, fully open: the weights, training code and checkpoints are published, with scripts to rebuild the training data. Open weights alone is a lower tier. The OSI definition of open source asks for data information, and Llama 2, for example, fails it although its weights are downloadable.
 {{< /details >}}
 
 **5. The model gives you an ISBN, a DOI or a thesaurus term. Name two checks.**
@@ -51,7 +51,8 @@ Look it up in a real source (the DNB catalog, Crossref, the thesaurus). Ask the 
 
 Part 2 runs notebooks on your machine. Before the break, tick these:
 
-- [ ] The model is pulled: `ollama pull nishad/apertus:8b` (or `nishad/apertus:4b` on an 8 GB machine) finished.
+- [ ] `ollama pull nishad/apertus:8b` (or `nishad/apertus:4b` on an 8 GB machine) has finished.
+- [ ] `ollama pull qwen3-embedding:0.6b` has finished.
 - [ ] `ollama ps` shows the model while it is loaded.
 - [ ] Python 3.12 or 3.13 is installed.
 - [ ] `uv` is installed.

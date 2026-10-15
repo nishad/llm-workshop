@@ -13,26 +13,26 @@ Common Crawl is a public archive of web pages, and many training sets start from
 https://index.commoncrawl.org/CC-MAIN-2026-39-index?url=*.swib.org&output=json&limit=5
 ```
 
-Each line is one captured page. It proves your pages were crawled. It does not prove they were used: that depends on the filters of the model's builders and on your robots.txt. swib.org publishes no robots.txt.
+Each line is one captured page. A result shows that your pages were crawled. It does not prove they were used: that depends on the filters of the model's builders and on your robots.txt. swib.org publishes no robots.txt.
 
 ## Lookup 2: infini-gram
 
 Open the web demo at infini-gram.io and count a phrase in a training set. The same count works as a POST request with this body:
 
 ```json
-{"index": "v4_dolma-v1_7_llama", "query_type": "count", "query": "Deutsche Nationalbibliothek"}
+{"index": "v4_dolma-v1_7_llama", "query_type": "count", "query": "Semantic Web in Libraries"}
 ```
 
 Counts from October 2026:
 
 - "Semantic Web in Libraries" appears 159 times in Dolma 1.7.
-- "Deutsche Nationalbibliothek" appears 4,291 times in OLMo 2's training data.
+- "Deutsche Nationalbibliothek" appears 4,291 times in OLMo 2's training data (a different index in the same demo).
 
-It proves the phrase is in the data, and how often.
+A count shows that the phrase is in the data, and how often.
 
 ## Lookup 3: OlmoTrace
 
-In the Ai2 Playground, OlmoTrace links spans of a model's output back to the training documents that contain them. It proves where a phrase in an answer can come from.
+In the Ai2 Playground, OlmoTrace links spans of a model's output back to the training documents that contain them. It shows training documents that contain the same phrase as the answer.
 
 ## Why only tier 3
 
@@ -49,12 +49,12 @@ The EU public summary is the best single document to read. Five things to find i
 - Size bands for the data.
 
 {{< callout type="info" >}}
-A summary is a claim you can read. A dataset you can query is a claim you can test.
+A summary tells you what the developers say they used. Only a dataset you can query lets you check it.
 {{< /callout >}}
 
 ## Exercise
 
-Do as many tiers as you like.
+Do as many of these as you like.
 
 1. Look up your institution's domain in the Common Crawl index.
 2. Count your institution's name in infini-gram.
@@ -64,7 +64,7 @@ Do as many tiers as you like.
 A domain with no results in the index may not have been captured in this crawl. Try another crawl. A name with a low count may be spelled differently in other languages, so try variants.
 {{< /details >}}
 
-For how this connects to repeatable results, see [Part 2](/v3/part2).
+For how this connects to repeatable results, see [Reproducibility](/v3/part2/02-python-and-ollama/reproducibility) in Part 2.
 
 ## Check yourself
 

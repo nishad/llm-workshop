@@ -84,7 +84,7 @@ for cid, text, score in search(question, index, k=K):
       resource. ### FileFormat Class More details → URI http://purl.org/dc/terms/FileFormat Label File Format Definition A digital resource format. Subclass of http:/...
 ```
 
-From the executed notebook 04, 15 October 2026. This is a retrieval failure. The expected answer is `dcterms:issued`, and none of the four chunks is the one that defines it. The top hit is the generic definition of Date; the others are neighbors about date subproperties, spatial coverage and file formats. The notebook says so before the answer: if the right passage is not in the top hits, no prompt can fix it.
+From the executed notebook 04, 15 October 2026. This is a retrieval failure. The expected answer is `dcterms:issued`, and none of the four chunks is the one that defines it. The top hit is the generic definition of Date; the others are neighbors about date subproperties, spatial coverage and file formats.
 
 ## 04.05 Ask with the documents in the prompt
 
@@ -110,7 +110,9 @@ Cited material:
 [4] dcmi-terms#24: resource. ### FileFormat Class More details → URI http://purl.org/dc/terms/FileFormat Label File For...
 ```
 
-From the executed notebook 04, 15 October 2026. The answer is wrong: `dateAccepted` is a different term. Retrieval put a near neighbor first, the chunk `dcmi-terms#7` that holds `dateAccepted`, and left the right passage out of the top four. The model then answered confidently from the retrieved-but-wrong passage: the definition it quotes is in chunk [1]. Its last sentences claim that none of the four chunks provides the information, which contradicts its own answer. Two lessons follow. First, retrieval decided this; the passage that defines `dcterms:issued` was never in the prompt. Second, a wrong answer with a real citation is harder to spot than an invented one. Read the cited passage and check that it answers the question asked, not a neighboring one.
+From the executed notebook 04, 15 October 2026. The answer is wrong: `dateAccepted` is a different term. The top chunk, `dcmi-terms#7`, holds the generic definition of Date and the neighboring term `dateAccepted`; the passage that defines `dcterms:issued` was not in the top four. The model then answered confidently from the retrieved-but-wrong passage: the definition it quotes is in chunk [1]. Its last sentences claim that none of the four chunks provides the information, which contradicts its own answer.
+
+Retrieval decided this; the passage that defines `dcterms:issued` was never in the prompt. And a wrong answer with a real citation is harder to spot than an invented one. Read the cited passage and check that it answers the question asked, not a neighboring one.
 
 On the 8 GB tier the 4B, with three chunks, answered with the single line `Date (http://purl.org/dc/terms/date)`, which is also wrong (from the executed notebook 04 on the 8 GB tier, 15 October 2026).
 
@@ -161,13 +163,13 @@ helper refused: About 25842 tokens of prompt for a 8192-token window. Use fewer 
 Ollama said: request (10162 tokens) exceeds the available context size (8192 tokens), try increasing it (status code: 400)
 ```
 
-From the executed notebook 04, 15 October 2026. The helper's number is an estimate (one token per 3.5 characters, deliberately high) of the whole prompt, and it keeps 25 percent of the window free for the system prompt and the answer. Ollama's number, 10,162 tokens, is a real count of the shorter text the cell sent. Both refuse.
+From the executed notebook 04, 15 October 2026. The helper estimates the whole prompt at one token per 3.5 characters, which deliberately errs high, and keeps 25 percent of the window free for the system prompt and the answer. Ollama's number, 10,162 tokens, is a real count of the shorter text the cell sent. Both refuse.
 
 The 8 GB tier behaved differently. The helper refused as before (`About 25842 tokens of prompt for a 4096-token window`), but then the cell printed `Ollama accepted the long prompt (it may have truncated silently; check num_ctx).` (from the executed notebook 04 on the 8 GB tier, 15 October 2026). Ollama's server log for that run recorded the 5,076-token prompt cut to 2,051 tokens. The part that was cut off is gone and nothing tells the model or you. The helper's refusal is the only guard you can rely on there.
 
 ## 04.08 Five questions, scored by you
 
-The questions come from `data/docs/questions.json`. The score is a judgement, not a string match; that is deliberate. Each answer was cut at 400 characters by the notebook.
+The questions come from `data/docs/questions.json`. The score is a judgment, not a string match; that is deliberate. Each answer was cut at 400 characters by the notebook.
 
 ```python
 import json
@@ -185,11 +187,11 @@ for q in questions:
 | What is the range of dcterms:language? | `LinguisticSystem` | "The range of dcterms:language is Includes http://purl.org/dc/terms/LinguisticSystem [1]. This is specified in the document [1] which provides details on the dcterms:language property. The document [1] also mentions that the recommended practice is to use either a non-literal value representing a language from a controlled vocabulary such as ISO 639-2 or ISO 639-3, or a literal value consisting of…" | `[2]` |
 | Who won the 2026 Nobel Prize in Literature? | not in the documents (the model must say so) | "The documents do not answer the question. The question asks who won the 2026 Nobel Prize in Literature, but the documents are about bibliographic identities, context of use, and the recognition of distinct bibliographic identities. They do not contain information about the Nobel Prize in Literature or its winners." | `[2]` |
 
-My reading of the 8B column: question 1 starts correctly and the visible part matches the expected entities; question 2 is wrong, as in 04.05; question 3 gets the item right and the manifestation roughly right; question 4 names `LinguisticSystem`, though the opening sentence is awkward; question 5 refuses correctly. Four out of five are usable, and you only know which four by reading. On the 4B every answer is a bare citation or a wrong term, so none of them can be trusted. The 4B column is from the executed notebook 04 on the 8 GB tier, 15 October 2026.
+Reading the 8B column: question 1 starts correctly and the visible part matches the expected entities; question 2 is wrong, as in 04.05; question 3 gets the item right and the manifestation roughly right; question 4 names `LinguisticSystem`, though the opening sentence is awkward; question 5 refuses correctly. Four out of five are usable, and you only know which four by reading. On the 4B every answer is a bare citation or a wrong term, so none of them can be trusted. The 4B column is from the executed notebook 04 on the 8 GB tier, 15 October 2026.
 
 ## 04.09 Bring your own document
 
-Drop a PDF, Markdown or text file into `data/my/` and run the cell. It chunks the files with the default sizes, builds an index, and asks one question. When you run it headless it asks a fixed question, "What is this document about?"; in a live session it waits for yours. On the executed run `data/my/` was empty, so the cell printed `Put a .pdf, .md or .txt file into data/my/ and run this cell again.`
+Drop a PDF, Markdown or text file into `data/my/` and run the cell. It chunks the files with the default sizes, builds an index, and asks one question. When the notebook runs unattended, as it did for the committed copy, it asks a fixed question, "What is this document about?"; in a live session it waits for yours. On the executed run `data/my/` was empty, so the cell printed `Put a .pdf, .md or .txt file into data/my/ and run this cell again.`
 
 {{< callout type="warning" >}}
 Text is read as UTF-8. Two-column PDFs extract badly: the text of the left and right columns can interleave line by line. Print a few hundred characters of the extracted text and compare it with the page before you trust any answer.

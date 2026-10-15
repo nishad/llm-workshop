@@ -3,7 +3,7 @@ title: Apertus
 weight: 2
 ---
 
-Apertus is the model this workshop uses. This page covers where it comes from, what is open, and what to expect from it.
+Apertus is the model this workshop uses.
 
 ## Who and when
 
@@ -15,23 +15,23 @@ Apertus comes from the Swiss AI Initiative (EPFL, ETH Zurich and CSCS).
 
 ## What is open in 1.0
 
-- The weights, under Apache-2.0. The Apertus LLM Acceptable Use Policy (version 1.0, 1 September 2025) applies to them.
+- The weights, under Apache-2.0, with an acceptable-use policy (see below).
 - Data reconstruction scripts (not a hosted corpus).
-- The SFT mixture.
+- The SFT (supervised fine-tuning) mixture: the data that turns the base model into a chat model.
 - Intermediate checkpoints.
 - The training code.
 - The EU public training summary, rated A for transparency and A+ for usefulness by an independent assessment.
 
-Two design choices stand out: retroactive robots.txt opt-outs, applied back to crawls from 2013, and a loss trick against verbatim memorization.
+Two design choices stand out: retroactive robots.txt opt-outs, applied back to crawls from 2013, and a change to the training objective (the Goldfish loss) that discourages reproducing training text word for word.
 
 ## What to expect
 
-These points come from independent 2026 evaluations. They tell you what to expect, and why the checks in Part 2 matter.
+These points come from independent 2026 evaluations and from the workshop's own runs. They tell you what to expect, and why the checks in Part 2 matter.
 
 - On general understanding, the 1.0 base model is on par with Llama 3.1 8B.
-- The 1.0 instruct model is behind on code, maths and instruction following.
+- The 1.0 instruct model is behind on code, math and instruction following.
 - The independent v1.5 evaluations found it strong at extracting fields from documents, and at German.
-- The 8B sometimes fills a missing field from a neighboring one (a place of publication from the publisher) instead of leaving it empty. This is what the workshop's 1.0 runs showed.
+- The 8B sometimes fills a missing field from a neighboring one (a place of publication from the publisher) instead of leaving it empty. The workshop's own runs showed this.
 - The v1.5 evaluations found faithfulness in RAG below that of frontier models.
 
 {{< callout type="warning" >}}
@@ -44,13 +44,13 @@ The Apertus LLM Acceptable Use Policy (version 1.0, 1 September 2025) comes with
 
 - You indemnify ETH and EPFL.
 - If you redistribute the model, you pass the policy on.
-- An output filter, reviewed every six months, is "strongly advised". That filter does not yet exist.
+- An output filter, reviewed every six months, is "strongly advised". No such filter has been published yet.
 
 An OSI forum thread asked whether this fits the Open Source Definition. There has been no ruling.
 
 ## Why the workshop teaches 1.0 and only shows 1.5
 
-The workshop uses `nishad/apertus:8b`, which is Apertus-8B-Instruct-2509 in the Unsloth GGUF build. Version 1.5 is shown only as a preview. The reason is the last mile of openness: a model is usable on a laptop only when every link of the support chain has caught up.
+The workshop uses `nishad/apertus:8b`, which is Apertus-8B-Instruct-2509 in the Unsloth GGUF build. Version 1.5 is shown only as a preview. The reason is software support: a model runs on a laptop only once every tool in the chain below supports it.
 
 ```mermaid
 flowchart LR
@@ -59,7 +59,7 @@ flowchart LR
   C --> D[Your laptop]
 ```
 
-For v1.5 the chain is incomplete. There is no official GGUF yet. Version 1.0 runs in llama.cpp, Ollama and LM Studio today; v1.5's architecture does not yet, so the only Ollama-ready v1.5 builds are community text-only conversions with no parity check.
+For v1.5 the chain is incomplete. There is no official GGUF yet. Version 1.0 runs in llama.cpp, Ollama and LM Studio today. llama.cpp does not yet support v1.5's architecture, so the only Ollama-ready v1.5 builds are community conversions of the text part, with no check that they match the original.
 
 ## An audit, in September 2026
 
