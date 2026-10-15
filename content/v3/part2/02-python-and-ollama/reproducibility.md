@@ -25,7 +25,7 @@ For metadata work this matters twice. A record that a model created needs to say
 
 ## The provenance record
 
-The helper `provenance()` collects the facts from Ollama. The notebook then writes one record per call.
+The helper `provenance()` collects the facts from Ollama. Since `workshop.llm.chat` already logs every call (see below), this cell shows the full provenance record once and writes it with `log_run`, the same function the helper uses.
 
 ```python
 from workshop.llm import provenance, log_run
@@ -38,7 +38,7 @@ print("appended to runs/log.jsonl")
 ```
 
 ```text
-{'model': 'nishad/apertus:8b', 'digest': '4a85a6fea0b8748229840a797cdeb5f45075b681040dc538f8ed17bf9e55059e', 'quantization': 'Q4_K_M', 'ollama_version': '0.35.1', 'captured_at': '2026-10-15T07:46:30+00:00'}
+{'model': 'nishad/apertus:8b', 'digest': '4a85a6fea0b8748229840a797cdeb5f45075b681040dc538f8ed17bf9e55059e', 'quantization': 'Q4_K_M', 'ollama_version': '0.35.1', 'captured_at': '2026-10-15T08:54:38+00:00'}
 appended to runs/log.jsonl
 ```
 
@@ -48,7 +48,7 @@ Notebook 00 shows the full record as JSON. Besides the fields above, it has `par
 
 ## The log file
 
-`runs/log.jsonl` holds one JSON object per line, one line per logged call. It is plain text, so you can open it in an editor, load it with any JSON tool or search it with `grep`. The other notebooks append to it for you. Keep it with your results.
+`runs/log.jsonl` holds one JSON object per line, one line per logged call. It is plain text, so you can open it in an editor, load it with any JSON tool or search it with `grep`. `workshop.llm.chat` appends a line for every call, with the time, the model, its digest, the options and the first 300 characters of the prompt and of the answer; the RAG helper, the tool loop and the setup check's smoke calls go through it too. Two calls bypass the helper and are not logged: the OpenAI client call in 01.06 and the oversized prompt in 04.07. Embedding calls are not logged either. Keep the file with your results.
 
 ## Citing a model in a workflow document
 

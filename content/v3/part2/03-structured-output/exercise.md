@@ -157,7 +157,7 @@ From the executed notebook 02, 15 October 2026. Title and language are where the
 
 ### GUI
 
-Open the chat window from Part 1 and paste card 03. Ask for the record as JSON, with the same field names. Compare the answer with the enforced version above. Does the chat window invent the place too? Is its JSON always well-formed?
+Paste the text of `data/cards/card-03.txt` into the Ollama app together with the `INSTRUCTIONS` text from the first cell above and the field list from the `Record` model, and see whether the model invents a place of publication. Compare the answer with the enforced version above. Is its JSON always well-formed?
 
 ### Run and change
 
@@ -166,5 +166,7 @@ Add a field `pages: str = Field(default="", max_length=40, ...)` with a descript
 ### Stretch
 
 Add `confidence: float = Field(description="0 to 1")`, run five cards, and compare the confidence values with the actual errors from the batch. Small models fill this field without meaning; a real confidence needs a second check, not a number.
+
+A second stretch is the same extraction through the OpenAI client: create the client as in the [portability page](/v3/part2/02-python-and-ollama/portability), then `oa.chat.completions.parse(model=MODEL, messages=..., response_format=Record)` returns `completion.choices[0].message.parsed`.
 
 The next chapter turns from the chat model to a second, smaller model: [embeddings](/v3/part2/04-embeddings).

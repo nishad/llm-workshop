@@ -41,6 +41,17 @@ uv run jupyter lab
 
 Open `00_check_setup.ipynb` and choose Run All Cells.
 
+### Download the prebuilt index files
+
+Download the two prebuilt vocabulary index files for notebook 03 from the link in the download post on the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732) into the `runs/` folder of the repository (create it if it does not exist):
+
+| File | Size | sha256 |
+| --- | --- | --- |
+| `stw-de-labels.sqlite` | 85.7 MB | `5d89c6704268b0c0ae29656dcfc31ea3d1402469edbd76f80a043f1843b07e8c` |
+| `unesco-en-labels.sqlite` | 34.4 MB | `c4755d17a9c00c742f9f2b601e82e51165f69d5380395adaa083a7ea43ae10c7` |
+
+Check a file with `shasum -a 256 runs/stw-de-labels.sqlite`. Building the two indexes takes about five minutes on an Apple Silicon Mac with 64 GB and far longer on a CPU-only laptop, so on the 8 GB tier downloading them is the way to follow notebook 03 live.
+
 {{% /steps %}}
 {{< /tab >}}
 
@@ -79,6 +90,17 @@ uv run jupyter lab
 ### Run the check
 
 Open `00_check_setup.ipynb` and choose Run All Cells.
+
+### Download the prebuilt index files
+
+Download the two prebuilt vocabulary index files for notebook 03 from the link in the download post on the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732) into the `runs/` folder of the repository (create it if it does not exist):
+
+| File | Size | sha256 |
+| --- | --- | --- |
+| `stw-de-labels.sqlite` | 85.7 MB | `5d89c6704268b0c0ae29656dcfc31ea3d1402469edbd76f80a043f1843b07e8c` |
+| `unesco-en-labels.sqlite` | 34.4 MB | `c4755d17a9c00c742f9f2b601e82e51165f69d5380395adaa083a7ea43ae10c7` |
+
+Check a file with `Get-FileHash runs\stw-de-labels.sqlite`. Building the two indexes takes about five minutes on an Apple Silicon Mac with 64 GB and far longer on a CPU-only laptop, so on the 8 GB tier downloading them is the way to follow notebook 03 live.
 
 {{% /steps %}}
 {{< /tab >}}
@@ -136,6 +158,6 @@ The readiness report is cell 00.02 of the notebook. This is how it looks on a cu
 
 From the executed notebook 00, 15 October 2026. The materials were built in October 2026 on Ollama 0.35.1 and are re-verified on 0.40 before the workshop.
 
-Your memory and disk numbers will differ. The Memory line tells you which tier you are on: 16 GB or more uses `nishad/apertus:8b`, 8 GB uses `nishad/apertus:4b`. On an 8 GB laptop, set `WORKSHOP_TIER` to `8gb` in the first cell.
+Your memory and disk numbers will differ. The Memory line tells you which tier you are on: 16 GB or more uses `nishad/apertus:8b`, 8 GB uses `nishad/apertus:4b`. On an 8 GB laptop, set `WORKSHOP_TIER` to `8gb` in the first cell. The repository also holds notebooks 04 and 05 as executed on the 8 GB tier, in `tier-8gb/`, so you can see what the 4B does before you run it.
 
 If a line is red, follow the hint in it and run the cell again. Paste the output into the shared document when you ask for help. More fixes are on [Am I ready?](/v3/before-you-start/check).

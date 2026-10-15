@@ -55,7 +55,7 @@ Imagine plotting labels in two dimensions (real embeddings have hundreds or thou
 Apertus is a chat model; the embedding model is a second, small open-weights model.
 {{< /callout >}}
 
-Apertus generates text and has no embedding model in the Ollama library. The workshop uses `qwen3-embedding:0.6b` beside it: Apache-2.0, 639 MB, 1,024 dimensions, a 32k-token context, and an instruction prefix on queries that the notebooks' helper adds. Two alternatives were measured on the same gold set (`bge-m3` and `embeddinggemma`); the numbers and licences are on the [models page](/v3/resources/models).
+Apertus generates text and is not an embedding model. The workshop uses `qwen3-embedding:0.6b` beside it: Apache-2.0, 639 MB, 1,024 dimensions, a 32k-token context, and an instruction prefix on queries that the notebooks' helper adds. Two alternatives were measured on the same gold set (`bge-m3` and `embeddinggemma`); the numbers and licences are on the [models page](/v3/resources/models).
 
 ## What the notebook covers
 

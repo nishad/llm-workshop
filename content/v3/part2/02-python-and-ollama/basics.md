@@ -80,7 +80,7 @@ The notebook displays the answer as formatted text:
 From the executed notebook 01, 15 October 2026.
 
 {{< details title="How the helper differs from calling ollama directly" >}}
-The helper adds two defaults and nothing else. Without it, the same call is three lines:
+The helper adds two defaults and a log line (see the [reproducibility page](/v3/part2/02-python-and-ollama/reproducibility)). Without it, the same call is three lines:
 
 ```python
 import ollama
@@ -100,7 +100,7 @@ The helper sets `temperature` to 0 and `num_ctx` to the value for your tier (8,1
 The same question runs three times at temperature 0 with a fixed seed, then three times at 0.8. This is the difference between a reproducible pipeline and a creative assistant.
 
 ```python
-question = [{"role": "user", "content": "Name three controlled vocabularies used in libraries. One line each."}]
+question = [{"role": "user", "content": "Suggest a title for a newsletter about open data in libraries. One line, no explanation."}]
 for temp in (0, 0.8):
     print(f"--- temperature {temp} ---")
     for run in range(3):
@@ -110,18 +110,18 @@ for temp in (0, 0.8):
 
 ```text
 --- temperature 0 ---
-1 1. Library of Congress Subject Headings (LCSH) | 2. Dewey Decimal Classification (DDC) | 3. Medical Subject Headings (MeSH)
-2 1. Library of Congress Subject Headings (LCSH) | 2. Dewey Decimal Classification (DDC) | 3. Medical Subject Headings (MeSH)
-3 1. Library of Congress Subject Headings (LCSH) | 2. Dewey Decimal Classification (DDC) | 3. Medical Subject Headings (MeSH)
+1 "Open Data in Libraries: Insights and Innovations"
+2 "Open Data in Libraries: Insights and Innovations"
+3 "Open Data in Libraries: Insights and Innovations"
 --- temperature 0.8 ---
-1 1. Library of Congress Subject Headings (LCSH) | 2. Dewey Decimal Classification (DDC) | 3. Medical Subject Headings (MeSH)
-2 1. Library of Congress Subject Headings (LCSH) | 2. Dewey Decimal Classification (DDC) | 3. Medical Subject Headings (MeSH)
-3 1. Library of Congress Subject Headings (LCSH) | 2. Dewey Decimal Classification (DDC) | 3. Medical Subject Headings (MeSH)
+1 OpenDataInLibraries Newsletter
+2 "Open Data in Libraries: Shining a Light on Transparency and Access"
+3 "Open Data Insights: A Library's Newsletter"
 ```
 
 From the executed notebook 01, 15 October 2026. The output is quoted as committed (blank lines between the notebook's print calls removed).
 
-Look at the six lines. At temperature 0 the three answers are the same, as expected. At 0.8 they are also the same this time. This question has a strongly favored answer, so even a sampled run picks the same tokens. Sampling makes variation possible, not certain. Longer and more open questions vary more. Try the 0.8 loop with a different question and see.
+Look at the six lines. At temperature 0 the three answers are identical, as expected. At 0.8 all three differ. A creative prompt has no single favored answer, so sampling picks different tokens on each run. Sampling makes variation possible, not certain: for a short factual question the top candidates dominate, and a higher temperature may change nothing. Try the 0.8 loop with a factual question such as "Name three controlled vocabularies used in libraries" and compare.
 
 Run and change: change the seed in one of the temperature-0 runs. Does the answer change? Then ask the question in German and compare.
 

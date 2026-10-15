@@ -15,7 +15,7 @@ To compare two texts you compare their vectors. The usual measure is the cosine 
 cosine(a, b) = (a · b) / (|a| |b|)
 ```
 
-If you scale every vector to length 1 (a unit vector), the denominator is 1 and the cosine is just the dot product `a · b`. The notebooks' helper returns unit vectors, so a whole index can be scored against a query with one matrix product. A score near 1 means "pointing the same way"; a score near 0 means unrelated.
+If you scale every vector to length 1 (a unit vector), the denominator is 1 and the cosine is just the dot product `a · b`. The notebooks' helper returns unit vectors, so a whole index can be scored against a query with one matrix product. A score near 1 means "pointing the same way"; unrelated texts score noticeably lower, and in this notebook a good match is about 0.6 or more.
 
 Picture two arrows from the same point. A small angle between them gives a score near 1; a wide angle gives a low score.
 

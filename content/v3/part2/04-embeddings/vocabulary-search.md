@@ -31,7 +31,7 @@ From the executed notebook 03, 15 October 2026. This is one STW descriptor: the 
 
 ## Embed the German labels in one batch
 
-About 20,000 short labels. On Apple Silicon this takes a few minutes the first time, on a CPU-only laptop considerably longer. If you are short on time, download the prebuilt index from the workshop page into `runs/`; the cell loads it instead of building.
+About 20,000 short labels. Building the index takes about five minutes on an Apple Silicon Mac with 64 GB and far longer on a CPU-only laptop. The prebuilt file `runs/stw-de-labels.sqlite` is linked from the download post on the SWIB26 forum topic (see the [environment page](/v3/part2/01-environment)); put it in `runs/` and the cell loads it instead of building. On the 8 GB tier, downloading it is the way to follow this notebook live. The helper applies the embedding model's prefix convention (qwen3-embedding wants an instruction in front of every query and nothing in front of documents) and returns unit vectors.
 
 ```python
 entries = []   # (entry id, label): every German preferred and alternative label, remembering its concept
@@ -40,9 +40,12 @@ for c in stw:
         if label:
             entries.append((f'{c["id"]}#{n}', label))
 pref = {c["id"]: c["pref"].get("de", "") for c in stw}
+Path("runs").mkdir(exist_ok=True)
 index_path = "runs/stw-de-labels.sqlite"
 if Path(index_path).exists():
     index = load_index(index_path); print("loaded", len(index.ids), "label vectors from", index_path)
+    if index.model != EMBED_MODEL:
+        print(f"warning: index built with {index.model} but the session uses {EMBED_MODEL}; delete the file to rebuild")
 else:
     t = time.time(); index = build_index([e for e, _ in entries], [l for _, l in entries], model=EMBED_MODEL); save_index(index, index_path)
     print(f"embedded {len(entries)} labels in {time.time()-t:.0f} s, dimension {index.vectors.shape[1]}, saved to {index_path}")
@@ -52,7 +55,7 @@ else:
 loaded 19688 label vectors from runs/stw-de-labels.sqlite
 ```
 
-From the executed notebook 03, 15 October 2026 (cut to the essential lines, with the imports omitted).
+From the executed notebook 03, 15 October 2026 (the imports are omitted). The warning line prints only if the file was built with a different embedding model than the one in use; here it stayed silent.
 
 ## Four kinds of query
 
@@ -125,7 +128,7 @@ def suggest(text, k=3, threshold=0.55):
     for n, (cid, p, label, s) in enumerate(hits, 1):
         print(f"[{n}] {s:.3f}  {p}  (matched: {label})")
     choice = input("Pick 1-3, or 0 for none: ") if os.environ.get("WORKSHOP_AUTO_APPROVE") != "1" else "1"
-    return hits[int(choice) - 1][0] if choice in ("1", "2", "3") else None
+    return hits[int(choice) - 1][0] if choice in ("1", "2", "3") and int(choice) <= len(hits) else None
 
 print("chosen:", suggest("Streik der Lokführer"))
 ```
@@ -140,7 +143,7 @@ From the executed notebook 03, 15 October 2026. Only two candidates cleared the 
 
 ## The UNESCO Thesaurus in French and German
 
-A second label index from the English labels, queried in French and German. Cross-lingual retrieval is where embedding models differ most.
+A second label index from the English labels, queried in French and German. Cross-lingual retrieval is where embedding models differ most. The prebuilt file `runs/unesco-en-labels.sqlite` is the second file in the download post; with it in `runs/`, the notebook loads the index instead of building it.
 
 ```python
 for q in ("Grossesse", "bibliothèque numérique", "Rechte der Frau", "changement climatique"):
@@ -154,7 +157,7 @@ Rechte der Frau → [('Womens rights', 0.608), ('Womens status', 0.567), ('Civil
 changement climatique → [('Environmental degradation', 0.666), ('Climate change', 0.661), ('Climate change adaptation', 0.641)]
 ```
 
-From the executed notebook 03, 15 October 2026. Three of the four work. "Grossesse" (pregnancy) misses: the model matched the look of the word ("Gross national product", "Grade repetition"), not its meaning. Note also that the scores are low, all below 0.45, which a threshold would have caught. Even for the good queries, the right concept is not always first: for "changement climatique", *Climate change* is second.
+From the executed notebook 03, 15 October 2026. Three of the four work. "Grossesse" (pregnancy) misses: the model matched the look of the word ("Gross national product", "Grade repetition"), not its meaning. Note also that the scores are low: all three scores are below 0.45, which a threshold would have caught. Even for the good queries, the right concept is not always first: for "changement climatique", *Climate change* is second.
 
 ## Measure, don't guess: recall on the gold set
 
@@ -225,7 +228,7 @@ From the executed notebook 03, 15 October 2026. Here a smaller distance is bette
 
 ### GUI
 
-Ask the chat model in the Part 1 window for the STW term for a concept, for example "What is the STW descriptor for the taxation of inheritances?". Then compare its answer with the vocabulary's own preferred label from the tables above. Does the chat model give you a term that exists in the thesaurus?
+This notebook has no chat-app equivalent. Read the four tables above and decide for each query which hit a cataloguer would accept.
 
 ### Run and change
 
@@ -233,7 +236,7 @@ Lower the threshold in the suggest cell to 0.4 and query something outside econo
 
 ### Stretch
 
-Swap the embedding model: set `WORKSHOP_EMBED_MODEL=embeddinggemma` (pull it first; it is under Google's Gemma Terms of Use, not an open-source licence), restart the kernel and re-run the gold-set cell. Note the prefixes the helper adds for each model (`workshop.embed.prefix_for`). Or build an index over a GND subject-heading subset (the DNB publishes GND dumps under CC0 at https://data.dnb.de/opendata/) and query it with STW labels, a first step towards vocabulary mapping.
+Swap the embedding model: set `WORKSHOP_EMBED_MODEL=embeddinggemma` (pull it first; it is under Google's Gemma Terms of Use, not an open-source licence), delete or rename the two index files in `runs/` first (they hold qwen3-embedding vectors), restart the kernel and run from the setup cell to the gold-set cell. Note the prefixes the helper adds for each model (`workshop.embed.prefix_for`). Or build an index over a GND subject-heading subset (the DNB publishes GND dumps under CC0 at https://data.dnb.de/opendata/) and query it with STW labels, a first step towards vocabulary mapping.
 
 ## Data and licences
 
