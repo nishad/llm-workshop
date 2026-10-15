@@ -54,13 +54,13 @@ def check_links(build_dir: Path) -> list[str]:
         parser = Links()
         parser.feed(page.read_text(encoding="utf-8", errors="replace"))
         for href in parser.hrefs:
+            href = re.sub(r"^https?://llm-workshop\.thalhath\.org", "", href)
             if href.startswith(("http://", "https://", "mailto:", "#", "data:")):
                 continue
             target = href.split("#")[0].split("?")[0]
             if not target:
                 continue
-            path = re.sub(r"^https?://llm-workshop\.thalhath\.org", "", target)
-            local = (build_dir / path.lstrip("/")) if path.startswith("/") else (page.parent / path)
+            local = (build_dir / target.lstrip("/")) if target.startswith("/") else (page.parent / target)
             if local.is_dir():
                 local = local / "index.html"
             if not local.exists():
