@@ -5,9 +5,9 @@ weight: 4
 
 ## Parameters
 
-**Parameters** are the numbers a model learns during training. They are the knobs and dials of the model: training turns them until the model transforms input (a sentence) into a useful output (the next token).
+**Parameters** are the numbers a model learns during training. Think of them as dials, billions of them. Training turns the dials until the model turns an input (a sentence) into a useful output (the next token).
 
-Think of your brain learning a new language. With practice you pick up patterns, grammar and vocabulary, and they are stored somewhere. In a model, the parameters are that store. "8B" means eight billion of them.
+When you learn a language, the patterns, grammar and vocabulary you pick up are stored somewhere in your head. In a model, the parameters are that store. "8B" means eight billion of them.
 
 ## From parameters to file size
 

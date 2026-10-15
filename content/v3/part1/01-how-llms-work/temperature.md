@@ -19,77 +19,19 @@ Both ran three times per setting with nishad/apertus:8b (digest 4a85a6fea0b8) on
 
 ### Experiment 1: a question with one answer
 
-**Temperature 0**
-
 **Prompt:**
 
 ```
 Complete this sentence in five words: The capital of France is
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.0, 15 October 2026):
+**Temperature 0**, all three runs:
 
 ```
 Paris.
 ```
 
-**Prompt:**
-
-```
-Complete this sentence in five words: The capital of France is
-```
-
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.0, 15 October 2026):
-
-```
-Paris.
-```
-
-**Prompt:**
-
-```
-Complete this sentence in five words: The capital of France is
-```
-
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.0, 15 October 2026):
-
-```
-Paris.
-```
-
-**Temperature 1.0**
-
-**Prompt:**
-
-```
-Complete this sentence in five words: The capital of France is
-```
-
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 1.0, 15 October 2026):
-
-```
-Paris.
-```
-
-**Prompt:**
-
-```
-Complete this sentence in five words: The capital of France is
-```
-
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 1.0, 15 October 2026):
-
-```
-Paris.
-```
-
-**Prompt:**
-
-```
-Complete this sentence in five words: The capital of France is
-```
-
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 1.0, 15 October 2026):
+**Temperature 1.0**, all three runs:
 
 ```
 Paris.
@@ -97,81 +39,35 @@ Paris.
 
 Both settings give the same completion in every run, and that is the point. When the model is nearly certain, the top token takes almost all the probability and temperature has nothing to change.
 
-This prompt is also the chapter's captured failure: it asks for a five-word completion, and every run answers with the single word "Paris." The model ignored the five-word form and answered the question instead of completing the sentence, which is a reminder that an instruction in a prompt is a request, not a rule.
+There is a second lesson in this prompt. It asked for a five-word completion, and every run answered with one word. The model answered the question instead of completing the sentence. An instruction in a prompt is a request, not a rule.
 
 ### Experiment 2: an open prompt
 
-**Temperature 0**
-
 **Prompt:**
 
 ```
 Suggest a title for a library newsletter about local AI tools. Answer with the title only.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.0, 15 October 2026):
+**Temperature 0**, all three runs:
 
 ```
 "AI Insights: Local Tools & Innovations"
 ```
 
-**Prompt:**
-
-```
-Suggest a title for a library newsletter about local AI tools. Answer with the title only.
-```
-
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.0, 15 October 2026):
-
-```
-"AI Insights: Local Tools & Innovations"
-```
-
-**Prompt:**
-
-```
-Suggest a title for a library newsletter about local AI tools. Answer with the title only.
-```
-
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.0, 15 October 2026):
-
-```
-"AI Insights: Local Tools & Innovations"
-```
-
-**Temperature 1.0**
-
-**Prompt:**
-
-```
-Suggest a title for a library newsletter about local AI tools. Answer with the title only.
-```
-
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 1.0, 15 October 2026):
+**Temperature 1.0**, run 1:
 
 ```
 Local AI Tools Newsletter
 ```
 
-**Prompt:**
-
-```
-Suggest a title for a library newsletter about local AI tools. Answer with the title only.
-```
-
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 1.0, 15 October 2026):
+Run 2:
 
 ```
 "AI Insights: Local Tools, Global Impact"
 ```
 
-**Prompt:**
-
-```
-Suggest a title for a library newsletter about local AI tools. Answer with the title only.
-```
-
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 1.0, 15 October 2026):
+Run 3:
 
 ```
 "AI Tools: Local Innovations & Community Insights"

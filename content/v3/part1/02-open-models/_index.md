@@ -14,13 +14,13 @@ This chapter takes about 20 minutes in the workshop.
 3. Look up what a model was trained on, and what you cannot find out.
 4. Name the three reasons "open" matters for a library.
 
-The model in this workshop is open, and that is a choice, not a detail. For a library, "open" matters for three reasons.
+The workshop uses an open model on purpose. For a library, "open" matters for three reasons.
 
 - **Provenance**: what did the model read, and can you check?
 - **Reproducibility**: can you get the same answer next year, with the same model file?
 - **Vendor independence**: if a provider changes its terms or its prices, can you move?
 
-The 2025 pillars still hold: **privacy** (your data stays on your machine), **cost** (no per-token bill), **offline use** and **control** over the version you run.
+The reasons from the earlier editions still hold too: privacy (your data stays on your machine), cost (no per-token bill), offline use, and control over the version you run.
 
 SWIB's own draft community AI policy (October 2026) points the same way. It prefers locally hosted, open models, and it says a model whose training data is unavailable should not be called open source.
 

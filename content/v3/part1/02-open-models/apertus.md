@@ -26,7 +26,7 @@ Two design choices stand out: retroactive robots.txt opt-outs, applied back to c
 
 ## What to expect
 
-These points come from independent 2026 evaluations. Read them as "what to expect, and why validation matters".
+These points come from independent 2026 evaluations. They tell you what to expect, and why the checks in Part 2 matter.
 
 - On general understanding, the 1.0 base model is on par with Llama 3.1 8B.
 - The 1.0 instruct model is behind on code, maths and instruction following.
@@ -40,7 +40,7 @@ A model that invents a value for a missing field is a reason to validate its out
 
 ## The acceptable-use policy in plain words
 
-Apertus comes with the Apertus LLM Acceptable Use Policy (version 1.0, 1 September 2025). In plain words:
+The Apertus LLM Acceptable Use Policy (version 1.0, 1 September 2025) comes with the weights. In plain words:
 
 - You indemnify ETH and EPFL.
 - If you redistribute the model, you pass the policy on.

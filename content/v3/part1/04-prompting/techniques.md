@@ -39,7 +39,7 @@ Now classify:
 ```
 
 
-The four labels are right. The examples carried the label set (BOOK, JOURNAL, DVD, DATABASE) and the output shape. Note that the model copied the "->" arrow from the examples.
+The four labels are right. The examples carried the label set (BOOK, JOURNAL, DVD, DATABASE) and the output shape. The model even copied the "->" arrow from the examples.
 
 Few-shot works best when the format is unusual or domain-specific. Two to four examples are enough. Choose examples that differ from each other.
 
@@ -144,7 +144,7 @@ Text:
 ```
 
 
-Both are correct for the four works. Notice what the model chose to do on its own: it kept the romanized form in brackets in the table, and in the JSON it dropped the romanization.
+Both are correct for the four works. Look at what the model decided on its own: in the table it kept the romanized form in brackets, in the JSON it dropped it.
 
 {{< callout type="info" >}}
 Here the shape is only requested. A model can add a sentence before the JSON, wrap it in a code fence or leave out a key. In Part 2 the shape is enforced with a schema, and the answer is checked by code.

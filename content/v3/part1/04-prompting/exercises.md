@@ -474,7 +474,7 @@ In summary, public libraries are dynamic and integral to modern communities, off
 ```
 
 
-The first answer is a 340-word tour of everything. The repaired one is about 150 words and aimed at the stated reader. It is not perfect (the opening sentence is awkward), but it is on target. Note that the model took "about 150 words" well, in contrast to exact counts.
+The first answer is a 340-word tour of everything. The repaired one is about 150 words and aimed at the stated reader. It is not perfect (the opening sentence is awkward), but it is on target. The model handled "about 150 words" well. It is exact counts that it misses.
 
 {{< /details >}}
 

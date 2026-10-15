@@ -195,7 +195,7 @@ Text:
 ```
 
 
-### The failure we keep
+### What went wrong in version 4
 
 Version 4 asked for three things at once: the format, a chronological sort and a filter on the year. The model did the format and gave up on the rest.
 
@@ -203,7 +203,7 @@ Version 4 asked for three things at once: the format, a chronological sort and a
 - **The filter let five works through.** Cien años de soledad (1967), Norwegian Wood (1987), Foundation (1951), Frog (2009) and The Namesake (2003) were published after 1950. Of the 18 entries, 13 belong and 5 do not.
 - **One work that belongs is missing.** Don Quixote (1605 and 1615) is not on the list.
 
-A small model reads the instruction "before 1950" as a pattern to imitate, not as a rule to apply to each year. It is a comparison, and comparing numbers is exactly where small models slip. The usual repair is to split the task: first extract everything with the year, then filter and sort in a second prompt, or in a spreadsheet. [Techniques](/v3/part1/04-prompting/techniques) shows the multi-step version.
+A small model treats "before 1950" as a phrase to echo rather than a rule to apply to each year. Comparing numbers is exactly where small models slip. The usual repair is to split the task: first extract everything with the year, then filter and sort in a second prompt, or in a spreadsheet. [Techniques](/v3/part1/04-prompting/techniques) shows the multi-step version.
 
 {{< callout type="warning" >}}
 Read the answer before you trust it. The list looked tidy. Five of its entries should not have been there, one that belonged was missing, and nothing was sorted.

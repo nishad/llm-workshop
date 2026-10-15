@@ -13,7 +13,7 @@ Models are open in different degrees. This ladder has four tiers, with verified 
 | 3 Fully open | weights + training code + data or reproducible recipe + checkpoints | Apertus 1.0 and 1.5, OLMo 3, SmolLM3, Marin, Pythia, EuroLLM-22B (claimed) |
 | 3+ Open data | trained only on public-domain or openly licensed text | Pleias 1.0 on Common Corpus, Comma v0.1 on the Common Pile (which includes HathiTrust/IA pre-1929 books, Library of Congress digitized books, BHL, Project Gutenberg) |
 
-Apertus sits in tier 3 through "obtainable sources plus reconstruction scripts". There is no hosted corpus to download. That is a weaker kind of openness than a published dataset, and it is better to say so plainly.
+Apertus reaches tier 3 through obtainable sources plus reconstruction scripts; there is no hosted corpus to download. That is a weaker kind of openness than a published dataset, and it is worth saying so plainly.
 
 ## Four yardsticks
 
@@ -24,7 +24,7 @@ Different bodies measure openness differently.
 - **EU AI Act, Article 53**. Since August 2025, every provider of a general-purpose model in the EU must publish a summary of its training content on the Commission's template. Providers of open-source models are included. Fines apply since August 2026.
 - **SWIB draft policy**. Training data must be available.
 
-## Four "does not equal" pairs
+## Four things that are easy to confuse
 
 - **Open weights are not the same as open source.** OSI's definition is failed by Mixtral, Phi-2 and Meta's Llama 2, all of which you can download.
 - **Fully open is not the same as ethically sourced.** Pythia is tier 3, yet its training set, the Pile, contained Books3.

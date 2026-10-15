@@ -5,7 +5,7 @@ weight: 2
 
 A model does not read words. It reads **tokens**: pieces of text, some whole words, some word fragments, some single characters or digits.
 
-Think of tokens as bricks. A house is built from bricks, and a sentence is built from tokens. Common words are often one brick; rare or long words are assembled from several.
+Common words are usually one token. Rare or long words, names and identifiers are assembled from several, and the split is rarely the one a person would make.
 
 ## What things cost
 
