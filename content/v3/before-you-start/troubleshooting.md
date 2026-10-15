@@ -51,21 +51,50 @@ Look at the PROCESSOR column. `100% GPU` is best; a CPU percentage means part of
 
 ## Memory errors or swapping
 
-Lower the context. Any one of these works:
+Lower the context. Try these in order:
 
-- In the Ollama app, set Settings, then Context length, to 4k.
-- In a CLI chat, type `/set parameter num_ctx 4096`.
-- Start the server with `OLLAMA_CONTEXT_LENGTH=4096`.
+1. In the Ollama app, set Settings, then Context length, to 4k.
+2. In a CLI chat, type `/set parameter num_ctx 4096`.
+3. Set the environment variable `OLLAMA_CONTEXT_LENGTH=4096` for the server.
+
+For the third option, the app (macOS and Windows) or the systemd service (Linux) already holds port 11434, so `ollama serve` fails with "address already in use" unless you stop it first.
+
+{{< tabs >}}
+
+{{< tab name="macOS and Linux (terminal)" >}}
+Quit the Ollama app first, then start the server from a terminal where the variable is set:
 
 ```bash
-OLLAMA_CONTEXT_LENGTH=4096 ollama serve
+export OLLAMA_CONTEXT_LENGTH=4096
+ollama serve
 ```
+{{< /tab >}}
+
+{{< tab name="Windows PowerShell" >}}
+Quit the Ollama app first, then start the server from a terminal where the variable is set:
 
 ```powershell
-$env:OLLAMA_CONTEXT_LENGTH = "4096"; ollama serve
+$env:OLLAMA_CONTEXT_LENGTH = "4096"
+ollama serve
+```
+{{< /tab >}}
+
+{{< tab name="Linux (systemd service)" >}}
+Run `sudo systemctl edit ollama`, add these lines, then restart the service:
+
+```ini
+[Service]
+Environment="OLLAMA_CONTEXT_LENGTH=4096"
 ```
 
-`OLLAMA_KV_CACHE_TYPE=q8_0` halves the context memory.
+```bash
+sudo systemctl restart ollama
+```
+{{< /tab >}}
+
+{{< /tabs >}}
+
+`OLLAMA_KV_CACHE_TYPE=q8_0` halves the context memory; set it the same way, with the app quit first or in the systemd unit.
 
 {{< callout type="warning" >}}
 Never use `q4_0` for the cache with Apertus.

@@ -25,7 +25,7 @@ flowchart LR
 |---|---|---|---|---|---|
 | 8 GB | `nishad/apertus:4b` | 2.4 GB | about 2.8 GB | 4,096 tokens (hard limit) | Long documents in RAG; tools only with the wrapped tag; quality below the 8B |
 | 16 GB or more | `nishad/apertus:8b` | 5.1 GB | about 5.4 GB at 4k, 6.3 GB at 8k | 8,192 tokens by default, up to 65,536 | Nothing in this workshop |
-| 16 GB, curious | `nishad/apertus:8b-v1.5-preview` | 5.1 GB | as the 8B | 8,192 by default | A community conversion; see [Resources](/v3/resources) |
+| 16 GB, curious | `nishad/apertus:8b-v1.5-preview` | 5.1 GB | as the 8B | 8,192 by default | A community conversion; see [Resources](/v3/resources/models) |
 
 {{< callout type="warning" >}}
 Do not try the 8B on an 8 GB machine. It will swap to disk and every answer will take minutes.
