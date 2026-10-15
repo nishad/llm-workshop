@@ -31,7 +31,7 @@ These points come from independent 2026 evaluations. Read them as "what to expec
 - On general understanding, the 1.0 base model is on par with Llama 3.1 8B.
 - The 1.0 instruct model is behind on code, maths and instruction following.
 - The independent v1.5 evaluations found it strong at extracting fields from documents, and at German.
-- The 8B sometimes fills a missing field from a neighbouring one (a place of publication from the publisher) instead of leaving it empty. This is what the workshop's 1.0 runs showed.
+- The 8B sometimes fills a missing field from a neighboring one (a place of publication from the publisher) instead of leaving it empty. This is what the workshop's 1.0 runs showed.
 - The v1.5 evaluations found faithfulness in RAG below that of frontier models.
 
 {{< callout type="warning" >}}
