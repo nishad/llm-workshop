@@ -10,10 +10,10 @@ Reference pages for during and after the workshop. Model facts live on the model
 ## The pages
 
 {{< cards >}}
-  {{< card link="models" title="Model guide" icon="chip" subtitle="Tags, digests, licences, embedding models and Ollama commands." >}}
+  {{< card link="models" title="Model guide" icon="chip" subtitle="Tags, digests, licenses, embedding models and Ollama commands." >}}
   {{< card link="glossary" title="Glossary" icon="book-open" subtitle="Short definitions of the terms used in both parts." >}}
   {{< card link="endpoints" title="Library endpoints" icon="globe-alt" subtitle="Verified services and how to be a polite client." >}}
-  {{< card link="data" title="Data and licences" icon="database" subtitle="What the workshop data is and under which terms." >}}
+  {{< card link="data" title="Data and licenses" icon="database" subtitle="What the workshop data is and under which terms." >}}
   {{< card link="next-steps" title="Next steps" icon="arrow-circle-right" subtitle="Tasks, tools, sessions and reading after the workshop." >}}
   {{< card link="faq" title="FAQ" icon="question-mark-circle" subtitle="Quick answers, grouped by topic." >}}
 {{< /cards >}}

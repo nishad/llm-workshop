@@ -64,7 +64,7 @@ Collection Folio essais
 place should be empty; the model said: 'Gallimard'
 ```
 
-From the executed notebook 02, 15 October 2026. Valid JSON, wrong fact: the model filled the missing place with the publisher's name. (It also labelled a French book `en`.) In the October 2026 tests both Apertus builds did this. The grammar cannot catch it, so a rule has to.
+From the executed notebook 02, 15 October 2026. Valid JSON, wrong fact: the model filled the missing place with the publisher's name. (It also labeled a French book `en`.) In the October 2026 tests both Apertus builds did this. The grammar cannot catch it, so a rule has to.
 
 ## A rule and a retry
 

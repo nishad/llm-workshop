@@ -1,17 +1,17 @@
 ---
-title: Data and licences
+title: Data and licenses
 weight: 4
 ---
 
 The data files for Part 2 live in the notebooks repository under `data/`. Each file's source and terms are recorded in `data/ATTRIBUTION.md`, summarized here.
 
-## Licence table
+## License table
 
-| File | Source | Licence | Retrieved | Changes |
+| File | Source | License | Retrieved | Changes |
 |---|---|---|---|---|
 | `vocab/stw.json` | STW Thesaurus for Economics, ZBW | CC BY 4.0 | 2026-10-15 | Descriptors with prefLabel, altLabel, scopeNote and broader extracted into JSON |
 | `vocab/unesco.json` | UNESCO Thesaurus | CC BY-SA 3.0 IGO | 2026-10-15 | Concepts with labels and scope notes extracted into JSON |
-| `vocab/goldset.json`, `vocab/goldset-corpora.json` | Built for this workshop from the two vocabularies above | Labels keep their source licences; structure CC BY 4.0 | 2026-10-09 | Held-out synonyms and cross-lingual pairs |
+| `vocab/goldset.json`, `vocab/goldset-corpora.json` | Built for this workshop from the two vocabularies above | Labels keep their source licenses; structure CC BY 4.0 | 2026-10-09 | Held-out synonyms and cross-lingual pairs |
 | `texts/sample-works.txt` | Written for the 2024 edition of this workshop | CC BY 4.0 | 2024-11 | None |
 | `cards/*.txt`, `cards/cards-gold.json` | Written for this workshop | CC BY 4.0 | 2026-10 | None |
 | `docs/ifla-lrm.md` | IFLA Library Reference Model | CC BY 4.0 | 2026-10-15 | Text extracted from the PDF, section titles kept as plain lines |
@@ -20,7 +20,7 @@ The data files for Part 2 live in the notebooks repository under `data/`. Each f
 
 ## Prebuilt index files
 
-Notebook 03 builds two label indexes and loads them from `runs/` when the files exist. The prebuilt files are not in the repository; the download post on the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732) links to them. They are built from the two vocabularies above, so their labels keep the source licences.
+Notebook 03 builds two label indexes and loads them from `runs/` when the files exist. The prebuilt files are not in the repository; the download post on the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732) links to them. They are built from the two vocabularies above, so their labels keep the source licenses.
 
 | File | Size | sha256 |
 | --- | --- | --- |
@@ -39,4 +39,4 @@ Building the two indexes takes about seven minutes for both (about five for STW,
 
 ## Retired dataset
 
-The 2025 edition's sample book is no longer used. Its correct licence is CC BY-SA 4.0.
+The 2025 edition's sample book is no longer used. Its correct license is CC BY-SA 4.0.

@@ -5,9 +5,9 @@ cascade:
   type: docs
 ---
 
-A catalogue wants fields: a title, a creator, a place, a year. A chat answer gives you a paragraph. You can paste a paragraph into a human reader, but you cannot load it into a spreadsheet, a record store or a validation script. This chapter makes the model fill a fixed set of fields instead, and then checks every answer.
+A catalog wants fields: a title, a creator, a place, a year. A chat answer gives you a paragraph. You can paste a paragraph into a human reader, but you cannot load it into a spreadsheet, a record store or a validation script. This chapter makes the model fill a fixed set of fields instead, and then checks every answer.
 
-Notebook 02, `02_structured_output`, takes about 25 minutes in the workshop. We give the model a catalogue card, get a record back, watch it invent a value the card never stated, add a rule that catches the invention, and then measure twenty cards against a gold file.
+Notebook 02, `02_structured_output`, takes about 25 minutes in the workshop. We give the model a catalog card, get a record back, watch it invent a value the card never stated, add a rule that catches the invention, and then measure twenty cards against a gold file.
 
 ## What the notebook covers
 

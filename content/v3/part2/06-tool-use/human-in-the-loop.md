@@ -3,7 +3,7 @@ title: Human in the loop
 weight: 2
 ---
 
-This page follows the cells of notebook 05 in order. Each code cell is quoted with the output it produced when the notebook was executed on 15 October 2026 with `nishad/apertus:8b`, and notebook outputs are labelled as such. The 8 GB tier copy in `tier-8gb/` was executed with `nishad/apertus:4b`; where it differs, the page says so. Printed lines are cut at 300 characters by the notebook, and long lines are cut again here and marked "…". The notebook's HTML answers are shown as plain text.
+This page follows the cells of notebook 05 in order. Each code cell is quoted with the output it produced when the notebook was executed on 15 October 2026 with `nishad/apertus:8b`, and notebook outputs are labeled as such. The 8 GB tier copy in `tier-8gb/` was executed with `nishad/apertus:4b`; where it differs, the page says so. Printed lines are cut at 300 characters by the notebook, and long lines are cut again here and marked "…". The notebook's HTML answers are shown as plain text.
 
 ## 05.02 Three tools
 

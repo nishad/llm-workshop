@@ -7,7 +7,7 @@ Ideas for continuing after the workshop. Start small, keep a person in the loop,
 
 ## Library tasks to try next
 
-**Subject indexing against GND or LCSH, with review.** Ask the model to propose subject headings for a title and abstract, then match each proposal to a real heading by search, and have a cataloguer accept or reject. Builds on notebook 03 (vocabulary search) and notebook 02 (structured output). For production indexing, look at Annif first.
+**Subject indexing against GND or LCSH, with review.** Ask the model to propose subject headings for a title and abstract, then match each proposal to a real heading by search, and have a cataloger accept or reject. Builds on notebook 03 (vocabulary search) and notebook 02 (structured output). For production indexing, look at Annif first.
 
 **Authority reconciliation.** Match names in a spreadsheet to GND records with the lobid reconciliation API, using OpenRefine as the interface. A model can help by normalizing messy name strings before matching. Builds on notebook 05 (tool use).
 
@@ -15,7 +15,7 @@ Ideas for continuing after the workshop. Start small, keep a person in the loop,
 
 **OCR post-correction.** Give the model a noisy OCR passage and ask for a corrected version, then compare the two with a diff before accepting anything. Builds on notebook 01 (Python and Ollama).
 
-**Multilingual catalogue text.** Extract fields from German, French or Italian cards, or translate subject notes, and keep the original beside the result. Builds on notebook 02.
+**Multilingual catalog text.** Extract fields from German, French or Italian cards, or translate subject notes, and keep the original beside the result. Builds on notebook 02.
 
 **SPARQL drafting with human review.** Let the model propose a query from a plain-language question, show it to the user, and run it only after approval. Builds on notebook 05.
 
@@ -32,7 +32,7 @@ Ideas for continuing after the workshop. Start small, keep a person in the loop,
 - The talk on open LLMs for keyword assignment
 - The AI policy community session
 
-See the SWIB26 programme for times.
+See the SWIB26 program for times.
 
 ## Communities
 

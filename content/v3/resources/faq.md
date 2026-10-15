@@ -25,7 +25,7 @@ It is fully open: the weights, training code, reconstruction scripts for the dat
 
 ### Why not Llama?
 
-Meta's Llama models are open weights under a custom licence, with restrictions on use, and an exclusion for the EU on its multimodal models. That puts them a step below Apertus on the openness ladder, and the training data is closed.
+Meta's Llama models are open weights under a custom license, with restrictions on use, and an exclusion for the EU on its multimodal models. That puts them a step below Apertus on the openness ladder, and the training data is closed.
 
 ### Why is the 8B not for 8 GB machines?
 
@@ -77,7 +77,7 @@ The prompt is longer than the context window set for the model. Retrieve fewer c
 
 ### Can I share the materials?
 
-Yes, under CC BY 4.0. Keep the attribution, and check the licence of any data file in [Data and licences](/v3/resources/data).
+Yes, under CC BY 4.0. Keep the attribution, and check the license of any data file in [Data and licenses](/v3/resources/data).
 
 ### I missed it. What now?
 
@@ -85,4 +85,4 @@ Everything is self-paced. Work through the pages and notebooks in your own time 
 
 ### Will it be recorded?
 
-The organisers decide; the answer is posted in the forum topic once agreed.
+The organizers decide; the answer is posted in the forum topic once agreed.

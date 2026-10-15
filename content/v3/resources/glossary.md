@@ -39,7 +39,7 @@ Short, model-agnostic definitions. Model names, sizes and speeds are on the [Mod
 
 **Citation.** A pointer from a statement to the passage that supports it. In RAG it names the chunk the answer came from.
 
-**Hallucination.** Fluent output that is wrong or invented, such as an identifier that does not exist. Checking and review are the defence.
+**Hallucination.** Fluent output that is wrong or invented, such as an identifier that does not exist. Checking and review are the defense.
 
 ## Structured work
 
@@ -53,7 +53,7 @@ Short, model-agnostic definitions. Model names, sizes and speeds are on the [Mod
 
 **Tool use (function calling).** The model asks the program to run a function, and the result goes back to the model. The program, not the model, performs the call.
 
-**Human in the loop.** A person reviews or approves the model's output or actions. It is how errors are caught before they reach a catalogue.
+**Human in the loop.** A person reviews or approves the model's output or actions. It is how errors are caught before they reach a catalog.
 
 ## Library terms
 
@@ -69,23 +69,23 @@ Short, model-agnostic definitions. Model names, sizes and speeds are on the [Mod
 
 ## Openness and licensing
 
-**Open weights.** The trained parameters can be downloaded and run. The licence may still restrict use, and data and code may be closed.
+**Open weights.** The trained parameters can be downloaded and run. The license may still restrict use, and data and code may be closed.
 
 **Open source (OSI).** Software, or a model under the Open Source Initiative's definitions, that grants broad freedoms to use, study, modify and share. Open weights alone do not meet it.
 
 **Fully open.** Weights, training code, and the training data or a way to rebuild it are all available, along with intermediate checkpoints. Others can inspect and reproduce the work.
 
-**Licence.** The legal terms that say what you may do with a model or dataset. Read it before reuse.
+**License.** The legal terms that say what you may do with a model or dataset. Read it before reuse.
 
-**Acceptable use policy.** Rules about permitted uses that come with a model in addition to its licence. They can bind redistributors as well as users.
+**Acceptable use policy.** Rules about permitted uses that come with a model in addition to its license. They can bind redistributors as well as users.
 
-**Training data.** The text a model learned from. Its sources and licences affect trust and legal risk.
+**Training data.** The text a model learned from. Its sources and licenses affect trust and legal risk.
 
 **Provenance.** The documented origin of data or a model, including where it came from and what changed. Libraries care about it by profession.
 
 **Reproducibility.** The ability to get the same result again from the same inputs and settings. Releasing data, code and checkpoints makes it possible.
 
-**Model card.** A document that describes a model's purpose, training, limits and licence. Read it before relying on a model.
+**Model card.** A document that describes a model's purpose, training, limits and license. Read it before relying on a model.
 
 ## Software and formats
 

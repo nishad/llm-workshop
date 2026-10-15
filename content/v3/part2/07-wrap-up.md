@@ -21,8 +21,8 @@ You do not have to write this by hand. Every `workshop.llm.chat` call appends a 
 ## What never to let the model do unreviewed
 
 - **Mint identifiers.** A model will produce a number that looks like a GND number. The October 2026 runs showed it, and the loop marked the invented numbers as `[UNVERIFIED]`. An identifier belongs in a record only if a service returned it and a person saw it.
-- **Write to the catalogue.** Let the model propose a record, then have a person review and load it.
-- **Assign subject headings without a person choosing.** Let it suggest candidates from a vocabulary, as in the embeddings chapter, and let a cataloguer accept or reject.
+- **Write to the catalog.** Let the model propose a record, then have a person review and load it.
+- **Assign subject headings without a person choosing.** Let it suggest candidates from a vocabulary, as in the embeddings chapter, and let a cataloger accept or reject.
 
 The pattern throughout Part 2 is the same: the model proposes, a check catches what it can, and a person decides.
 
@@ -35,9 +35,9 @@ Every notebook is committed with its executed outputs, so you can read it later 
 - [Next steps](/v3/resources/next-steps): library tasks to try, tools to look at, communities.
 - [Model guide](/v3/resources/models): the models, their sizes and measured behavior.
 - [Library endpoints](/v3/resources/endpoints): services you can call from the tool loop, and the etiquette.
-- [Data and licences](/v3/resources/data): what is in `data/` and under which terms.
+- [Data and licenses](/v3/resources/data): what is in `data/` and under which terms.
 - [FAQ](/v3/resources/faq) and [Glossary](/v3/resources/glossary).
 
 ## The same day at SWIB26
 
-The workshop runs alongside the conference sessions on the same day. The programme is on the SWIB site; questions about this workshop go to the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732). The [next steps page](/v3/resources/next-steps) names the sessions that fit this topic.
+The workshop runs alongside the conference sessions on the same day. The program is on the SWIB site; questions about this workshop go to the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732). The [next steps page](/v3/resources/next-steps) names the sessions that fit this topic.

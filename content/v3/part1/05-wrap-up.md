@@ -10,7 +10,7 @@ Part 1 is done. This page recaps what you can now do, checks it with five questi
 1. Explain next-token prediction, tokens, context window, parameters and quantization in plain words, and connect them to file size, memory and speed.
 2. Place a model on the four-tier openness ladder and say why libraries care (provenance, reproducibility, vendor independence).
 3. Install Ollama or LM Studio, configure privacy settings, download a model that fits your hardware and verify it works.
-4. Write and iteratively improve prompts for cataloguing-style tasks.
+4. Write and iteratively improve prompts for cataloging-style tasks.
 5. Recognize a confident wrong answer and know two checks for it.
 
 ## Self-check
@@ -44,7 +44,7 @@ Tier 3, fully open: weights, training code, a reproducible way to rebuild the da
 **5. The model gives you an ISBN, a DOI or a thesaurus term. Name two checks.**
 
 {{< details title="Show the answer" >}}
-Look it up in a real source (the DNB catalogue, Crossref, the thesaurus). Ask the same question twice in new chats and compare the answers.
+Look it up in a real source (the DNB catalog, Crossref, the thesaurus). Ask the same question twice in new chats and compare the answers.
 {{< /details >}}
 
 ## What Part 2 assumes

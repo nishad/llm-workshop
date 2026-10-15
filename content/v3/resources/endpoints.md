@@ -30,7 +30,7 @@ Rows marked "October 2026" were tested live from Python in October 2026 at the U
 | EU Vocabularies SPARQL | `https://publications.europa.eu/webapi/rdf/sparql` | No | October 2026 | Includes EuroVoc. |
 | LINDAS | `https://lindas.admin.ch/query` | No | October 2026 | Swiss federal linked data. |
 | swisscovery SRU | `https://swisscovery.slsp.ch/view/sru/41SLSP_NETWORK` | No | October 2026 | MARC records carry GND identifiers. |
-| K10plus SRU | `https://sru.k10plus.de/opac-de-627` | No | October 2026 | Union catalogue of the German libraries. |
+| K10plus SRU | `https://sru.k10plus.de/opac-de-627` | No | October 2026 | Union catalog of the German libraries. |
 | Kalliope SRU | `https://kalliope-verbund.info/sru` | No | October 2026 | Version 1.2, MODS records. |
 | EconBiz | `https://api.econbiz.de/v1/search` | No | October 2026 | No key and no quota. |
 | RVK | `https://rvk.uni-regensburg.de/api/json/node/AN%2073000` | No | October 2026 | Regensburg classification; the example fetches one notation. |
@@ -46,7 +46,7 @@ The notebooks and fixtures contain the exact request forms that were tested.
 - **Set timeouts.** Give every request a timeout, for example 60 seconds for SPARQL, so a slow service cannot hang your notebook.
 - **Go slowly.** Send one request at a time to Finto, and respect any stated rate limit.
 - **Cache results.** Save responses and reuse them. The notebooks ship recorded fixtures for offline use.
-- **Never scrape Dewey.** Its endpoint is gone and its terms are restrictive. See [Data and licences](/v3/resources/data).
+- **Never scrape Dewey.** Its endpoint is gone and its terms are restrictive. See [Data and licenses](/v3/resources/data).
 
 {{< callout type="warning" >}}
 Part 2 lets a model draft SPARQL, but you read the query and approve it before it runs. Do not point a loop at a public endpoint.

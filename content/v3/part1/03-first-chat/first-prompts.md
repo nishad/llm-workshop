@@ -58,7 +58,7 @@ List five subject headings a library might assign to a book about the history of
 ```
 
 
-The model gives plausible headings. Whether a real authority list contains them is for a cataloguer to check.
+The model gives plausible headings. Whether a real authority list contains them is for a cataloger to check.
 
 ## 4. Rewrite for another audience
 
@@ -105,10 +105,10 @@ Hannah Arendt, "Vita activa oder Vom tätigen Leben", Piper. The ISBNs on record
 
 The model's answer, 0141039689, matches none of them. It was invented (it also fails the ISBN-10 check: the check digit would have to be X), and it was delivered as calmly as a correct answer would have been.
 
-Source: Checked against the DNB catalogue through lobid-resources, 15 October 2026.
+Source: Checked against the DNB catalog through lobid-resources, 15 October 2026.
 
 {{< callout type="warning" >}}
-A model answers confidently whether it knows or not. Check names, numbers, dates and identifiers against a catalogue or another source before you use them.
+A model answers confidently whether it knows or not. Check names, numbers, dates and identifiers against a catalog or another source before you use them.
 {{< /callout >}}
 
 ## What just happened

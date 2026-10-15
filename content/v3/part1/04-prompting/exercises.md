@@ -330,7 +330,7 @@ Every descriptor comes from the list, and the pairs are sensible. Abstract 1 has
 
 Ask for identifiers the model cannot look up.
 
-- **GUI:** ask for the ISBN of a book and the DOI of an article, both real. Look the answers up in a catalogue (for example the DNB catalogue or your own) and in Crossref. Write down what is wrong.
+- **GUI:** ask for the ISBN of a book and the DOI of an article, both real. Look the answers up in a catalog (for example the DNB catalog or your own) and in Crossref. Write down what is wrong.
 - **Run and change:** ask for the same identifier twice in new chats. Do the two answers agree?
 - **Stretch:** ask "How sure are you? Where did you get this?" and see what the model offers.
 
@@ -368,11 +368,11 @@ The DOI for the article "The FAIR Guiding Principles for scientific data managem
 
 I checked both on 15 October 2026.
 
-**The ISBN.** The number 9783257061675 is not a valid ISBN-13. Its check digit is wrong: the check digit for those twelve digits is 3, not 5. A search for it in the DNB catalogue (through lobid-resources) returns no records. The same number with the correct check digit, 9783257061673, belongs to a different book: "Verrechnet" by Dick Francis, published by Diogenes (Zürich, 1998). The DNB records for Patrick Süskind, "Das Parfum", published by Diogenes include these ISBNs, among others: 978-3-257-22800-7, 978-3-257-06540-4, 978-3-257-80233-7, 978-3-257-80037-1, 978-3-257-01787-8 and 978-3-257-01678-9. None matches the model's answer.
+**The ISBN.** The number 9783257061675 is not a valid ISBN-13. Its check digit is wrong: the check digit for those twelve digits is 3, not 5. A search for it in the DNB catalog (through lobid-resources) returns no records. The same number with the correct check digit, 9783257061673, belongs to a different book: "Verrechnet" by Dick Francis, published by Diogenes (Zürich, 1998). The DNB records for Patrick Süskind, "Das Parfum", published by Diogenes include these ISBNs, among others: 978-3-257-22800-7, 978-3-257-06540-4, 978-3-257-80233-7, 978-3-257-80037-1, 978-3-257-01787-8 and 978-3-257-01678-9. None matches the model's answer.
 
 **The DOI.** Crossref lists the FAIR article by Wilkinson and colleagues (Scientific Data, 2016) under 10.1038/sdata.2016.18. The model's DOI, 10.1038/sdata.2016.44, is real, but it belongs to another paper: "The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments" (Scientific Data, 2016). So the model produced a DOI that resolves and points to the wrong article. That is worse than an invalid one, because a quick click on the link would look like success.
 
-Sources: DNB catalogue via lobid-resources (lobid.org/resources) and the Crossref REST API, queried 15 October 2026.
+Sources: DNB catalog via lobid-resources (lobid.org/resources) and the Crossref REST API, queried 15 October 2026.
 
 {{< /details >}}
 
@@ -478,7 +478,7 @@ The first answer is a 340-word tour of everything. The repaired one is about 150
 
 {{< /details >}}
 
-## Exercise 8: Challenge, the rare-book cataloguer
+## Exercise 8: Challenge, the rare-book cataloger
 
 Write one prompt that combines four techniques: a role, two examples, a JSON shape and constraints. The book:
 
@@ -486,7 +486,7 @@ Write one prompt that combines four techniques: a role, two examples, a JSON sha
 Pride and Prejudice by Jane Austen, 1813, original boards partially detached, pages complete with some browning and no tears, bookplate of a previous owner present.
 ```
 
-Ask for a catalogue entry with title, author, year, condition and notes. Do not ask for a valuation.
+Ask for a catalog entry with title, author, year, condition and notes. Do not ask for a valuation.
 
 - **GUI:** build the prompt in your chat window.
 - **Run and change:** change the condition scale and see if the model follows it.
@@ -518,7 +518,7 @@ Pride and Prejudice by Jane Austen, 1813, original boards partially detached, pa
 ```
 
 
-The JSON is valid, the keys are right and there is no valuation. The condition grade is a matter for debate: with the boards partially detached, "Fine" is generous, and "Fair" or "Good" would be easier to defend. The model followed the format and the constraints, and it chose the grade by pattern. A cataloguer reads the grade and decides.
+The JSON is valid, the keys are right and there is no valuation. The condition grade is a matter for debate: with the boards partially detached, "Fine" is generous, and "Fair" or "Good" would be easier to defend. The model followed the format and the constraints, and it chose the grade by pattern. A cataloger reads the grade and decides.
 
 {{< /details >}}
 

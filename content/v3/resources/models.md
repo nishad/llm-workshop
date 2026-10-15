@@ -20,13 +20,13 @@ The reference model for both parts. Also available as `nishad/apertus:latest`.
 | Size | 5.06 GB |
 | Memory in use | about 5.3 GB at 4,096 and 5.8 GB at 8,192 context |
 | Context | 65,536 tokens supported; 8,192 set in the tag |
-| Licence | Apache-2.0 plus the Apertus Acceptable Use Policy |
+| License | Apache-2.0 plus the Apertus Acceptable Use Policy |
 | Openness tier | Fully open (tier 3) |
 | Digest | `4a85a6fea0b8` |
 | Source | `hf.co/unsloth/Apertus-8B-Instruct-2509-GGUF:Q4_K_M` |
 | GGUF sha256 | `87e7f0eb5a1d33e1a8ea4e7fdd2363764e0465061dd92962e0073aec31a7944d` |
 
-Good at: extracting fields from catalogue-style text, German, French and Italian, structured output, and calling tools when the prompt is in English. Weak at: code, maths and instruction following (IFEval 71.7), and it tends to invent a value instead of answering null when a field is missing. It uses the GGUF's own chat template with Unsloth's fixes for tool arguments.
+Good at: extracting fields from catalog-style text, German, French and Italian, structured output, and calling tools when the prompt is in English. Weak at: code, maths and instruction following (IFEval 71.7), and it tends to invent a value instead of answering null when a field is missing. It uses the GGUF's own chat template with Unsloth's fixes for tool arguments.
 
 ### `nishad/apertus:4b`
 
@@ -39,7 +39,7 @@ For 8 GB machines.
 | Size | 2.43 GB |
 | Memory in use | about 2.8 GB |
 | Context | 4,096 tokens (hard limit) |
-| Licence | Apache-2.0 weights, with the Apertus LLM Acceptable Use Policy |
+| License | Apache-2.0 weights, with the Apertus LLM Acceptable Use Policy |
 | Openness tier | Fully open (tier 3) |
 | Digest | `87ca69a79aed` |
 | Source | `hf.co/jondale/Apertus-v1.1-4B-Instruct-GGUF:Q4_K_M` |
@@ -58,7 +58,7 @@ An optional preview for people with 16 GB or more who want to compare.
 | Size | 5.06 GB |
 | Memory in use | as the 8B |
 | Context | 8,192 set in the tag; the file's metadata says 262k |
-| Licence | Apache-2.0, with the Apertus Acceptable Use Policy v1.5 (14 July 2026) |
+| License | Apache-2.0, with the Apertus Acceptable Use Policy v1.5 (14 July 2026) |
 | Openness tier | Fully open (tier 3) for Apertus 1.5 itself |
 | Digest | `6f25f6ba0b62` |
 | Source | `hf.co/Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF:Q4_K_M` |
@@ -85,21 +85,21 @@ The one structured-output request that fails is a schema with an empty enum, whi
 
 Embedding models turn text into vectors for semantic search (see [Glossary](/v3/resources/glossary)). The workshop default is `qwen3-embedding:0.6b`. It had the best result among the openly licensed models on a gold set built for this workshop: 50 queries over the STW Thesaurus for Economics and the UNESCO Thesaurus, evaluated in October 2026.
 
-| Model | Licence | Size | Dimensions | Context | Prefixes | recall@1 | recall@5 |
+| Model | License | Size | Dimensions | Context | Prefixes | recall@1 | recall@5 |
 |---|---|---|---|---|---|---|---|
 | `qwen3-embedding:0.6b` (default) | Apache-2.0 | 639 MB | 1,024 | 32k tokens | instruction prefix on queries, added by the notebooks' helper | 0.62 | 0.82 |
-| `embeddinggemma` | Google's Gemma Terms of Use, not an open-source licence | 621 MB | 768 | not recorded here | task-string prefixes | 0.68 | 0.92 |
+| `embeddinggemma` | Google's Gemma Terms of Use, not an open-source license | 621 MB | 768 | not recorded here | task-string prefixes | 0.68 | 0.92 |
 | `bge-m3` | MIT | 1.2 GB | 1,024 | 8k tokens | none | 0.34 | 0.48 |
 
-`embeddinggemma` scored higher but its licence is not an open-source one, so it is a documented alternative. `bge-m3` is permissively licensed and its fine-tuning data is released, but it scored lowest on this gold set. Index design matters as much as the model; notebook 03 shows the difference.
+`embeddinggemma` scored higher but its license is not an open-source one, so it is a documented alternative. `bge-m3` is permissively licensed and its fine-tuning data is released, but it scored lowest on this gold set. Index design matters as much as the model; notebook 03 shows the difference.
 
 Apertus has no embedding model; the workshop uses `qwen3-embedding:0.6b` beside it.
 
 ## Small open-weight fallbacks
 
-These are open weights only: the weights are downloadable and the licence is Apache-2.0, but training data and code are not fully open. Use them only if no Apertus tag runs on your machine.
+These are open weights only: the weights are downloadable and the license is Apache-2.0, but training data and code are not fully open. Use them only if no Apertus tag runs on your machine.
 
-| Tag | Licence | Size | Note |
+| Tag | License | Size | Note |
 |---|---|---|---|
 | `qwen3.5:4b` | Apache-2.0 | 3.3 GB | Thinking must be switched off |
 | `granite4.1:3b` | Apache-2.0 | 2.1 GB | Smallest option |

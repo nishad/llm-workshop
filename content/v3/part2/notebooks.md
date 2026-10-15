@@ -11,7 +11,7 @@ The workshop uses six notebooks, numbered 00 to 05. Each one ends with a Checkpo
 |---|---|---|---|---|
 | `00_check_setup` | 10 min | Check Python, memory, disk, Ollama, the chat and embedding models (8 GB machines pull `nishad/apertus:4b` instead of the 8B) and one smoke call each | Same notebook on both tiers (per the README) | [00_check_setup.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/00_check_setup.ipynb) |
 | `01_python_and_ollama` | 20 min | Chat, system prompts, temperature, streaming, the OpenAI client, provenance logging | Same notebook on both tiers (per the README) | [01_python_and_ollama.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/01_python_and_ollama.ipynb) |
-| `02_structured_output` | 25 min | Extract catalogue card records into a Pydantic schema, validate them, measure against a gold file | Same notebook on both tiers (per the README) | [02_structured_output.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/02_structured_output.ipynb) |
+| `02_structured_output` | 25 min | Extract catalog card records into a Pydantic schema, validate them, measure against a gold file | Same notebook on both tiers (per the README) | [02_structured_output.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/02_structured_output.ipynb) |
 | `03_vocabulary_search` | 25 min | Embeddings, cross-lingual search over STW and UNESCO labels, a sqlite-vec index | On the 8 GB tier, download the prebuilt index files | [03_vocabulary_search.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/03_vocabulary_search.ipynb) |
 | `04_rag` | 20 min | Chunk documents, retrieve, answer with numbered citations, hit the context limit on purpose | 8 GB tier: 3 chunks, 4,096-token window; copy in `tier-8gb/` | [04_rag.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/04_rag.ipynb) |
 | `05_tool_use` | 15 min | Let the model propose GND, Wikidata and SPARQL calls; approve, correct or refuse each one | 8 GB tier: single-tool cells only; copy in `tier-8gb/` | [05_tool_use.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/05_tool_use.ipynb) |
@@ -41,11 +41,11 @@ Every notebook is committed with its executed outputs, so you can read it on Git
 
 The notebooks from the 2025 edition stay available at the repository tag [`swib25`](https://github.com/nishad/llm-workshop-notebooks/tree/swib25).
 
-## Licences
+## Licenses
 
 - Code: MIT.
 - Vocabularies: STW under CC BY 4.0; UNESCO Thesaurus under CC BY-SA 3.0 IGO.
-- Documents and catalogue cards: CC BY 4.0.
+- Documents and catalog cards: CC BY 4.0.
 - Model weights: Apache-2.0, with the Apertus LLM Acceptable Use Policy.
 
-Sources, licences and retrieval dates for every data file are on the [data and licences page](/v3/resources/data).
+Sources, licenses and retrieval dates for every data file are on the [data and licenses page](/v3/resources/data).

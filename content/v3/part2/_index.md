@@ -67,7 +67,7 @@ Each exercise has three tiers: GUI, Run-and-change and Stretch.
 {{< cards >}}
   {{< card link="/v3/part2/01-environment" title="Environment" icon="terminal" subtitle="Install uv, clone the notebooks, run the readiness check." >}}
   {{< card link="/v3/part2/02-python-and-ollama" title="Python and Ollama" icon="code" subtitle="Chat, options, streaming, the OpenAI client, provenance." >}}
-  {{< card link="/v3/part2/03-structured-output" title="Structured output" icon="table" subtitle="Schema-valid records from catalogue cards." >}}
+  {{< card link="/v3/part2/03-structured-output" title="Structured output" icon="table" subtitle="Schema-valid records from catalog cards." >}}
   {{< card link="/v3/part2/04-embeddings" title="Embeddings" icon="search" subtitle="Cross-lingual search over a controlled vocabulary." >}}
   {{< card link="/v3/part2/05-rag" title="RAG" icon="document-text" subtitle="Answers with citations, and refusals." >}}
   {{< card link="/v3/part2/06-tool-use" title="Tool use" icon="adjustments" subtitle="The model proposes, you approve." >}}

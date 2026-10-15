@@ -16,7 +16,7 @@ After Part 1 you can:
 1. Explain next-token prediction, tokens, context window, parameters and quantization in plain words, and connect them to file size, memory and speed.
 2. Place a model on the four-tier openness ladder and say why libraries care (provenance, reproducibility, vendor independence).
 3. Install Ollama or LM Studio, configure privacy settings, download a model that fits your hardware and verify it works.
-4. Write and iteratively improve prompts for cataloguing-style tasks.
+4. Write and iteratively improve prompts for cataloging-style tasks.
 5. Recognize a confident wrong answer and know two checks for it.
 
 ## Timeline

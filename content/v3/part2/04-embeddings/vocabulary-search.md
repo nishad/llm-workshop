@@ -118,7 +118,7 @@ The alternative label matches itself, and the concept it belongs to comes back.
 
 ## Suggest three, let a person choose
 
-A score is not a decision. Below a threshold we show nothing; above it we show up to three candidates and record the choice. The machine proposes, the cataloguer decides.
+A score is not a decision. Below a threshold we show nothing; above it we show up to three candidates and record the choice. The machine proposes, the cataloger decides.
 
 ```python
 def suggest(text, k=3, threshold=0.55):
@@ -183,7 +183,7 @@ From the executed notebook 03, 15 October 2026.
 | E | UNESCO scope-note question to concept | 2/6 | 4/6 |
 | All | 50 queries | 0.62 | 0.82 |
 
-Last year's English-only model scored 0.17 on kind B (English to German). The alternatives measured on the same gold set are on the [models page](/v3/resources/models); the headline is that `embeddinggemma` scored higher under a licence that is not open source, and `bge-m3` scored lower.
+Last year's English-only model scored 0.17 on kind B (English to German). The alternatives measured on the same gold set are on the [models page](/v3/resources/models); the headline is that `embeddinggemma` scored higher under a license that is not open source, and `bge-m3` scored lower.
 
 ### The same queries against the label index
 
@@ -228,19 +228,19 @@ From the executed notebook 03, 15 October 2026. Here a smaller distance is bette
 
 ### GUI
 
-This notebook has no chat-app equivalent. Read the four tables above and decide for each query which hit a cataloguer would accept.
+This notebook has no chat-app equivalent. Read the four tables above and decide for each query which hit a cataloger would accept.
 
 ### Run and change
 
-Lower the threshold in the suggest cell to 0.4 and query something outside economics, such as "Mondlandung". What does the model suggest, and would a cataloguer accept it? Then query the German index in Italian or Spanish. Which kinds of terms survive translation, and which do not?
+Lower the threshold in the suggest cell to 0.4 and query something outside economics, such as "Mondlandung". What does the model suggest, and would a cataloger accept it? Then query the German index in Italian or Spanish. Which kinds of terms survive translation, and which do not?
 
 ### Stretch
 
-Swap the embedding model: set `WORKSHOP_EMBED_MODEL=embeddinggemma` (pull it first; it is under Google's Gemma Terms of Use, not an open-source licence), delete or rename the two index files in `runs/` first (they hold qwen3-embedding vectors), restart the kernel and run from the setup cell to the gold-set cell. Note the prefixes the helper adds for each model (`workshop.embed.prefix_for`). Or build an index over a GND subject-heading subset (the DNB publishes GND dumps under CC0 at https://data.dnb.de/opendata/) and query it with STW labels, a first step towards vocabulary mapping.
+Swap the embedding model: set `WORKSHOP_EMBED_MODEL=embeddinggemma` (pull it first; it is under Google's Gemma Terms of Use, not an open-source license), delete or rename the two index files in `runs/` first (they hold qwen3-embedding vectors), restart the kernel and run from the setup cell to the gold-set cell. Note the prefixes the helper adds for each model (`workshop.embed.prefix_for`). Or build an index over a GND subject-heading subset (the DNB publishes GND dumps under CC0 at https://data.dnb.de/opendata/) and query it with STW labels, a first step towards vocabulary mapping.
 
-## Data and licences
+## Data and licenses
 
-STW Thesaurus for Economics: CC BY 4.0. UNESCO Thesaurus: CC BY-SA 3.0 IGO. See the [data page](/v3/resources/data) for sources and dates, and the [models page](/v3/resources/models) for the embedding models and their licences. The next chapter uses an index like this one: [RAG](/v3/part2/05-rag).
+STW Thesaurus for Economics: CC BY 4.0. UNESCO Thesaurus: CC BY-SA 3.0 IGO. See the [data page](/v3/resources/data) for sources and dates, and the [models page](/v3/resources/models) for the embedding models and their licenses. The next chapter uses an index like this one: [RAG](/v3/part2/05-rag).
 
 ## Check yourself
 

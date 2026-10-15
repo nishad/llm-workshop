@@ -9,7 +9,7 @@ All captures: nishad/apertus:8b, temperature 0.8, 15 October 2026, unless stated
 
 ## 1. An invented place of publication
 
-This one comes from the notebooks in Part 2. Notebook 02 reads catalogue cards and fills a record with a schema. Card 03 has no place of publication:
+This one comes from the notebooks in Part 2. Notebook 02 reads catalog cards and fills a record with a schema. Card 03 has no place of publication:
 
 ```
 Beauvoir, Simone de
@@ -45,7 +45,7 @@ The ISBN of the book "Das Parfum" by Patrick Süskind, published by Diogenes, is
 ```
 
 
-The ISBN is not valid: its check digit is wrong, and the DNB catalogue has no record of it. The same number with the correct check digit is a different book, "Verrechnet" by Dick Francis. The model gave one number, with no hedge. The DOI in the same exercise was real but belonged to a different article. The full check is on the exercises page.
+The ISBN is not valid: its check digit is wrong, and the DNB catalog has no record of it. The same number with the correct check digit is a different book, "Verrechnet" by Dick Francis. The model gave one number, with no hedge. The DOI in the same exercise was real but belonged to a different article. The full check is on the exercises page.
 
 ## 3. A rule missed in a calculation
 
@@ -133,7 +133,7 @@ Four of the five are acceptable English that differs from the label in the thesa
 
 ## Two checks anyone can do
 
-1. **Ask for the source, then look it up.** Ask "Where does this come from?" and check what you get against a catalogue, Crossref, the thesaurus or the original text. If the model names a source, confirm that it exists and says what the model claims. If it cannot name one, treat the answer as unverified.
+1. **Ask for the source, then look it up.** Ask "Where does this come from?" and check what you get against a catalog, Crossref, the thesaurus or the original text. If the model names a source, confirm that it exists and says what the model claims. If it cannot name one, treat the answer as unverified.
 2. **Ask the same question twice and compare.** Run the prompt again in a new chat (temperature 0.8 is the default in the apps). Facts the model really holds tend to come back the same. A guess changes between runs. If two runs disagree, neither answer is a fact.
 
 Neither check proves an answer is right. They only tell you where to look.

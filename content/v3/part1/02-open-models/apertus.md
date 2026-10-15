@@ -22,7 +22,7 @@ Apertus comes from the Swiss AI Initiative (EPFL, ETH Zurich and CSCS).
 - The training code.
 - The EU public training summary, rated A for transparency and A+ for usefulness by an independent assessment.
 
-Two design choices stand out: retroactive robots.txt opt-outs, applied back to crawls from 2013, and a loss trick against verbatim memorisation.
+Two design choices stand out: retroactive robots.txt opt-outs, applied back to crawls from 2013, and a loss trick against verbatim memorization.
 
 ## What to expect
 

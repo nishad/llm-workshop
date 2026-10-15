@@ -55,7 +55,7 @@ Imagine plotting labels in two dimensions (real embeddings have hundreds or thou
 Apertus is a chat model; the embedding model is a second, small open-weights model.
 {{< /callout >}}
 
-Apertus generates text and is not an embedding model. The workshop uses `qwen3-embedding:0.6b` beside it: Apache-2.0, 639 MB, 1,024 dimensions, a 32k-token context, and an instruction prefix on queries that the notebooks' helper adds. Two alternatives were measured on the same gold set (`bge-m3` and `embeddinggemma`); the numbers and licences are on the [models page](/v3/resources/models).
+Apertus generates text and is not an embedding model. The workshop uses `qwen3-embedding:0.6b` beside it: Apache-2.0, 639 MB, 1,024 dimensions, a 32k-token context, and an instruction prefix on queries that the notebooks' helper adds. Two alternatives were measured on the same gold set (`bge-m3` and `embeddinggemma`); the numbers and licenses are on the [models page](/v3/resources/models).
 
 ## What the notebook covers
 
@@ -71,4 +71,4 @@ Apertus generates text and is not an embedding model. The workshop uses `qwen3-e
   {{< card link="/v3/part2/04-embeddings/vocabulary-search" title="Vocabulary search" icon="search" subtitle="STW and UNESCO queries, with a measured recall." >}}
 {{< /cards >}}
 
-The data and its licences are listed on the [data page](/v3/resources/data). Embeddings feed the next chapter, [RAG](/v3/part2/05-rag).
+The data and its licenses are listed on the [data page](/v3/resources/data). Embeddings feed the next chapter, [RAG](/v3/part2/05-rag).

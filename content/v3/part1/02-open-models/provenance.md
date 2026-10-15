@@ -42,7 +42,7 @@ These lookups work because the training data is public. For Qwen, gpt-oss or Dee
 
 The EU public summary is the best single document to read. Five things to find in it:
 
-- Named datasets, with their licences.
+- Named datasets, with their licenses.
 - Domains visited by the custom crawler.
 - Which other models generated the synthetic data.
 - The opt-out method.

@@ -60,4 +60,4 @@ Add the full digest in an appendix or the log.
 
 ## What a digest does and does not tell you
 
-A digest identifies the artefact: this exact file. It does not tell you what the model read. For that, you need the model's public documentation, such as the EU training-data summary that [Apertus](/v3/part1/02-open-models/apertus) publishes. The [provenance chapter](/v3/part1/02-open-models/provenance) shows how to look it up. Record both: the digest for the file, the summary for the data.
+A digest identifies the artifact: this exact file. It does not tell you what the model read. For that, you need the model's public documentation, such as the EU training-data summary that [Apertus](/v3/part1/02-open-models/apertus) publishes. The [provenance chapter](/v3/part1/02-open-models/provenance) shows how to look it up. Record both: the digest for the file, the summary for the data.
