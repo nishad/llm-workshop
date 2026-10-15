@@ -28,7 +28,7 @@ BANNED = [
     (r"GDPR/HIPAA", "compliance overclaim"),
     (r"[Ll]lama ?3\.2", "2025 model reference"),
     (r"[Mm]ade with [Cc]reative [Cc]ommons", "retired dataset"),
-    (r"ollama\.ai", "old domain"),
+    (r"(?<!registry\.)ollama\.ai", "old domain"),
     (r"[Nn]etlify", "wrong host"),
     (r"search for apertus\b", "picker needs the full tag name"),
     (r"\b[Oo]pen [Ss]ource\b.{0,20}\b[Ll]lama\b|\b[Ll]lama\b.{0,20}\b[Oo]pen [Ss]ource\b", "Llama is open weights, not open source"),
