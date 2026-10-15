@@ -13,9 +13,11 @@ weight: 5
 
 A **seed** fixes the random choices, so the same prompt, settings and seed give the same answer again. That is how you make a run repeatable.
 
-## A captured demo
+## Two captured experiments
 
-The same prompt, three runs at each setting. Captured with nishad/apertus:8b, 2026-10-15.
+Both use nishad/apertus:8b with three runs per setting. Captured with nishad/apertus:8b, 2026-10-15.
+
+### Experiment 1: a question with one answer
 
 **Temperature 0**
 
@@ -55,7 +57,6 @@ Complete this sentence in five words: The capital of France is
 Paris.
 ```
 
-
 **Temperature 1.0**
 
 **Prompt:**
@@ -94,8 +95,87 @@ Complete this sentence in five words: The capital of France is
 Paris.
 ```
 
+Both settings give the same completion in every run, and that is the point. When the model is nearly certain, the top token takes almost all the probability and temperature has nothing to change.
 
-All six runs gave the same answer. For a prompt with one overwhelmingly likely continuation, even a high temperature rarely changes the pick. The difference shows on open-ended prompts, such as "Suggest a title for a talk about library catalogues", where many continuations are plausible. Try one in LM Studio at 0 and at 1.2.
+### Experiment 2: an open prompt
+
+**Temperature 0**
+
+**Prompt:**
+
+```
+Suggest a title for a library newsletter about local AI tools. Answer with the title only.
+```
+
+**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.0, 15 October 2026):
+
+```
+"AI Insights: Local Tools & Innovations"
+```
+
+**Prompt:**
+
+```
+Suggest a title for a library newsletter about local AI tools. Answer with the title only.
+```
+
+**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.0, 15 October 2026):
+
+```
+"AI Insights: Local Tools & Innovations"
+```
+
+**Prompt:**
+
+```
+Suggest a title for a library newsletter about local AI tools. Answer with the title only.
+```
+
+**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.0, 15 October 2026):
+
+```
+"AI Insights: Local Tools & Innovations"
+```
+
+**Temperature 1.0**
+
+**Prompt:**
+
+```
+Suggest a title for a library newsletter about local AI tools. Answer with the title only.
+```
+
+**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 1.0, 15 October 2026):
+
+```
+Local AI Tools Newsletter
+```
+
+**Prompt:**
+
+```
+Suggest a title for a library newsletter about local AI tools. Answer with the title only.
+```
+
+**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 1.0, 15 October 2026):
+
+```
+"AI Insights: Local Tools, Global Impact"
+```
+
+**Prompt:**
+
+```
+Suggest a title for a library newsletter about local AI tools. Answer with the title only.
+```
+
+**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 1.0, 15 October 2026):
+
+```
+"AI Tools: Local Innovations & Community Insights"
+```
+
+At temperature 0 the three runs repeat themselves exactly. At 1.0 each run gives a different title. Temperature matters where the model is unsure. Try your own prompt in LM Studio at 0 and at 1.2.
 
 ## Where the setting lives
 
