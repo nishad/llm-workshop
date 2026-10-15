@@ -50,7 +50,7 @@ Download the two prebuilt vocabulary index files for notebook 03 from the link i
 | `stw-de-labels.sqlite` | 85.7 MB | `5d89c6704268b0c0ae29656dcfc31ea3d1402469edbd76f80a043f1843b07e8c` |
 | `unesco-en-labels.sqlite` | 34.4 MB | `c4755d17a9c00c742f9f2b601e82e51165f69d5380395adaa083a7ea43ae10c7` |
 
-Check a file with `shasum -a 256 runs/stw-de-labels.sqlite`. Building the two indexes takes about five minutes on an Apple Silicon Mac with 64 GB and far longer on a CPU-only laptop, so on the 8 GB tier downloading them is the way to follow notebook 03 live.
+Check a file with `shasum -a 256 runs/stw-de-labels.sqlite`. Building the two indexes takes about seven minutes for both (about five for STW, two for UNESCO) on an Apple Silicon Mac with 64 GB and far longer on a CPU-only laptop, so on the 8 GB tier downloading them is the way to follow notebook 03 live.
 
 {{% /steps %}}
 {{< /tab >}}
@@ -100,7 +100,7 @@ Download the two prebuilt vocabulary index files for notebook 03 from the link i
 | `stw-de-labels.sqlite` | 85.7 MB | `5d89c6704268b0c0ae29656dcfc31ea3d1402469edbd76f80a043f1843b07e8c` |
 | `unesco-en-labels.sqlite` | 34.4 MB | `c4755d17a9c00c742f9f2b601e82e51165f69d5380395adaa083a7ea43ae10c7` |
 
-Check a file with `Get-FileHash runs\stw-de-labels.sqlite`. Building the two indexes takes about five minutes on an Apple Silicon Mac with 64 GB and far longer on a CPU-only laptop, so on the 8 GB tier downloading them is the way to follow notebook 03 live.
+Check a file with `Get-FileHash runs\stw-de-labels.sqlite`. Building the two indexes takes about seven minutes for both (about five for STW, two for UNESCO) on an Apple Silicon Mac with 64 GB and far longer on a CPU-only laptop, so on the 8 GB tier downloading them is the way to follow notebook 03 live.
 
 {{% /steps %}}
 {{< /tab >}}

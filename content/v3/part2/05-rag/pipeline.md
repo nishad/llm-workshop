@@ -110,7 +110,7 @@ Cited material:
 [4] dcmi-terms#24: resource. ### FileFormat Class More details → URI http://purl.org/dc/terms/FileFormat Label File For...
 ```
 
-From the executed notebook 04, 15 October 2026. The answer is wrong: `dateAccepted` is a different term. The model quotes a definition that is not in any of the four numbered chunks, and then says that none of the four chunks provides the information. Two lessons follow. First, the retrieval failure in 04.04 caused this; the model had no chance. Second, the answer has no citation marks on its first claim, and its own last sentences contradict it. A citation you cannot find in the cited material is a warning sign.
+From the executed notebook 04, 15 October 2026. The answer is wrong: `dateAccepted` is a different term. Retrieval put a near neighbor first, the chunk `dcmi-terms#7` that holds `dateAccepted`, and left the right passage out of the top four. The model then answered confidently from the retrieved-but-wrong passage: the definition it quotes is in chunk [1]. Its last sentences claim that none of the four chunks provides the information, which contradicts its own answer. Two lessons follow. First, retrieval decided this; the passage that defines `dcterms:issued` was never in the prompt. Second, a wrong answer with a real citation is harder to spot than an invented one. Read the cited passage and check that it answers the question asked, not a neighboring one.
 
 On the 8 GB tier the 4B, with three chunks, answered with the single line `Date (http://purl.org/dc/terms/date)`, which is also wrong (from the executed notebook 04 on the 8 GB tier, 15 October 2026).
 

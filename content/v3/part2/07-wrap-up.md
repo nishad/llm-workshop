@@ -16,7 +16,7 @@ For any result you may use later, write down:
 - [ ] **Date.** When the run happened. Services and models change.
 - [ ] **Who approved what.** Which tool calls a person approved, corrected or refused, and who checked which outputs.
 
-You do not have to write this by hand. Every `workshop.llm.chat` call appends a line to `runs/log.jsonl` with the time, the model, its digest, the options and the first 300 characters of the prompt and of the answer. The RAG helper, the tool loop and the setup check's smoke calls go through that function, so they are logged too. Two calls bypass it on purpose and are not logged (the OpenAI client call in 01.06 and the oversized prompt in 04.07), and embedding calls are not logged either. Keep `runs/log.jsonl` with your results. The format is described on the [reproducibility page](/v3/part2/02-python-and-ollama/reproducibility).
+You do not have to write this by hand. Every `workshop.llm.chat` call appends a line to `runs/log.jsonl` with the time, the model, its digest, the options and the end of the prompt (its last 300 characters) and the start of the answer (its first 300). Streamed calls log the request only. The RAG helper, the tool loop and the setup check's smoke calls go through that function, so they are logged too. Two calls bypass it on purpose and are not logged (the OpenAI client call in 01.06 and the oversized prompt in 04.07), and embedding calls are not logged either. Keep `runs/log.jsonl` with your results. The format is described on the [reproducibility page](/v3/part2/02-python-and-ollama/reproducibility).
 
 ## What never to let the model do unreviewed
 
