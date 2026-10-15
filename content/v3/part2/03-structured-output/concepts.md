@@ -3,7 +3,7 @@ title: Concepts
 weight: 1
 ---
 
-Five ideas carry this chapter. Each is short.
+This chapter rests on five ideas, each of them short.
 
 ## A JSON schema describes the shape of an answer
 

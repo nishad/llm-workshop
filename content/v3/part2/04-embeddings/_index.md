@@ -32,7 +32,7 @@ Matches: similar vectors, representing:
 ```
 
 {{< callout type="info" >}}
-**Key insight:** an embedding model can place "library" and "bibliothèque" (French) close together, even though the two words share almost no letters.
+An embedding model can place "library" and "bibliothèque" close together, although the two words share almost no letters.
 {{< /callout >}}
 
 Imagine plotting labels in two dimensions (real embeddings have hundreds or thousands):
@@ -50,10 +50,6 @@ Imagine plotting labels in two dimensions (real embeddings have hundreds or thou
 ```
 
 ## A second model
-
-{{< callout type="info" >}}
-Apertus is a chat model; the embedding model is a second, small open-weights model.
-{{< /callout >}}
 
 Apertus generates text and is not an embedding model. The workshop uses `qwen3-embedding:0.6b` beside it: Apache-2.0, 639 MB, 1,024 dimensions, a 32k-token context, and an instruction prefix on queries that the notebooks' helper adds. Two alternatives were measured on the same gold set (`bge-m3` and `embeddinggemma`); the numbers and licenses are on the [models page](/v3/resources/models).
 

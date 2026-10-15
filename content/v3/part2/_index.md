@@ -38,7 +38,7 @@ Minutes are counted from 06:10 UTC. Type-along means we run the cells together; 
 | 90-105 | Tool use with a human in the loop | demo then exercise | `05_tool_use` | [Tool use](/v3/part2/06-tool-use) |
 | 105-110 | Wrap-up: provenance checklist, next steps | demo | | [Wrap-up](/v3/part2/07-wrap-up) |
 
-The Stretch tiers of RAG and tool use are the reserve. They are cut first if the half runs late, and they stay in the notebooks for self-study.
+If the half runs late, the Stretch tiers of RAG and tool use are cut first. They stay in the notebooks for self-study.
 
 ## From manual to automated
 

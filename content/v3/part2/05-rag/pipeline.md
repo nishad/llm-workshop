@@ -44,7 +44,7 @@ print(chunks[5].id, "→", chunks[5].text[:200], "...")
 dcmi-terms#5 → The distinction between titles and alternative titles is application-specific. Has Range http://www.w3.org/2000/01/rdf-schema#Literal Subproperty of Title (http://purl.org/dc/elements/1.1/title) Title ...
 ```
 
-From the executed notebook 04, 15 October 2026. Two documents became 173 chunks of about 300 words with 50 words of overlap. The id `dcmi-terms#5` is the source and the position, which a citation points back to. Notice that chunk 5 starts in the middle of a term's description: the chunker cuts on word counts, not on the document's structure.
+From the executed notebook 04, 15 October 2026. Two documents became 173 chunks of about 300 words with 50 words of overlap. The id `dcmi-terms#5` is the source and the position, which a citation points back to. Chunk 5 starts in the middle of a term's description: the chunker cuts on word counts, not on the document's structure.
 
 ## 04.03 Embed once
 

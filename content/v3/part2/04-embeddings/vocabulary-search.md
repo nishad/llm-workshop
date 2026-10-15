@@ -31,7 +31,7 @@ From the executed notebook 03, 15 October 2026. This is one STW descriptor: the 
 
 ## Embed the German labels in one batch
 
-About 20,000 short labels. In the executed notebook the index was built in 313 s on an Apple Silicon Mac with 64 GB; it takes far longer on a CPU-only laptop. You can load the prebuilt file `runs/stw-de-labels.sqlite` instead; it is linked from the download post on the SWIB26 forum topic (see the [environment page](/v3/part2/01-environment)). Put it in `runs/` and the cell loads it instead of building. On the 8 GB tier, downloading it is the way to follow this notebook live. The helper applies the embedding model's prefix convention (qwen3-embedding wants an instruction in front of every query and nothing in front of documents) and returns unit vectors.
+About 20,000 short labels. In the executed notebook the index was built in 313 s on an Apple Silicon Mac with 64 GB; a CPU-only laptop takes far longer. With the prebuilt file `runs/stw-de-labels.sqlite` in place (see the [environment page](/v3/part2/01-environment)), the cell loads it instead of building, which is how to follow this notebook live on an 8 GB machine. The helper adds the embedding model's prefix (qwen3-embedding wants an instruction in front of every query and nothing in front of documents) and returns unit vectors.
 
 ```python
 entries = []   # (entry id, label): every German preferred and alternative label, remembering its concept
@@ -157,7 +157,7 @@ Rechte der Frau → [('Womens rights', 0.609), ('Womens status', 0.567), ('Civil
 changement climatique → [('Environmental degradation', 0.666), ('Climate change', 0.661), ('Climate change adaptation', 0.641)]
 ```
 
-From the executed notebook 03, 15 October 2026. Three of the four work. "Grossesse" (pregnancy) misses: the model matched the look of the word ("Gross national product", "Grade repetition"), not its meaning. Note also that the scores are low: all three scores are below 0.45, which a threshold would have caught. Even for the good queries, the right concept is not always first: for "changement climatique", *Climate change* is second.
+From the executed notebook 03, 15 October 2026. Three of the four work. "Grossesse" (pregnancy) misses: the model matched the look of the word ("Gross national product", "Grade repetition"), not its meaning. All three scores are below 0.45, which a threshold would have caught. Even for the good queries, the right concept is not always first: for "changement climatique", *Climate change* is second.
 
 ## Measure, don't guess: recall on the gold set
 

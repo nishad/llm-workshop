@@ -5,7 +5,7 @@ cascade:
   type: docs
 ---
 
-In Part 1 you typed into a chat window. Here the same model answers your code. That is the whole point of scripting what you did by hand: you can send it a hundred records, keep every answer, and record exactly which model produced what.
+In Part 1 you typed into a chat window. Here the same model answers your code. Once the call is in a script you can send a hundred records, keep every answer, and record exactly which model produced what.
 
 Notebook 01, `01_python_and_ollama`, takes about 18 minutes in the workshop (minutes 10 to 28 of Part 2). It is a type-along: we run the cells together and you change a few.
 

@@ -50,7 +50,7 @@ print(json.loads(sparql("SELECT ?item WHERE { ?item wdt:P227 '11850391X' }", "wi
 {'results': [{'item': 'http://www.wikidata.org/entity/Q60025'}], 'fixture': False, 'query': "SELECT ?item WHERE { ?item wdt:P227 '11850391X' }\nLIMIT 50"}
 ```
 
-From the executed notebook 05, 15 October 2026. These were live calls (`'fixture': False`). Note that the SPARQL tool added `LIMIT 50` to the query before running it, and that every GND result carries the bare number in `gnd`, so a model can pass it on as a string literal.
+From the executed notebook 05, 15 October 2026. These were live calls (`'fixture': False`). The SPARQL tool added `LIMIT 50` to the query before running it, and every GND result carries the bare number in `gnd`, so a model can pass it on as a string literal.
 
 ## 05.03 One proposed call, one decision
 
@@ -187,7 +187,7 @@ USER → Call the next tool now, or give your final answer.
 ASSISTANT → ```
 ```
 
-From the executed notebook 05, 15 October 2026. This is what the 8B did in the committed run: it made no tool call at all. It answered with an empty code fence, the loop gave its one reminder ("Call the next tool now, or give your final answer."), and the model answered with an empty code fence again, which ended the loop. In earlier runs the model sometimes looked up the GND record and then stopped, either pasting the URL form of the identifier or announcing the second call without making it. Two-step chains are where an 8B model at this quantization gets unreliable. Nothing was invented, which is the point of the gate.
+From the executed notebook 05, 15 October 2026. This is what the 8B did in the committed run: it made no tool call at all. It answered with an empty code fence, the loop gave its one reminder ("Call the next tool now, or give your final answer."), and the model answered with an empty code fence again, which ended the loop. In earlier runs the model sometimes looked up the GND record and then stopped, either pasting the URL form of the identifier or announcing the second call without making it. Two-step chains are where an 8B model at this quantization gets unreliable. Nothing was invented, which is what the gate is for.
 
 ### When the model stops, you finish
 
@@ -242,7 +242,7 @@ The GND identifier for Hannah Arendt is "100000000000000000000000 Arendt, Hannah
 [UNVERIFIED: 100000000000000000000000 did not come from any tool result.]
 ```
 
-From the executed notebook 05 on the 8 GB tier, 15 October 2026. The marker is the point: you can see the number was not looked up.
+From the executed notebook 05 on the 8 GB tier, 15 October 2026. The marker is what matters: you can see that the number was not looked up.
 
 ## 05.07 What the SPARQL guard does
 

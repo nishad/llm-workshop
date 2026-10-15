@@ -3,7 +3,7 @@ title: Environment
 weight: 1
 ---
 
-This page takes about 10 minutes. You install `uv`, get the notebooks, start JupyterLab and run one notebook that checks everything. Ollama and the models come from [Am I ready?](/v3/before-you-start/check); this page assumes they are done.
+This page takes about 10 minutes. You install `uv`, get the notebooks, start JupyterLab, run one notebook that checks everything, and download two index files for notebook 03. Ollama and the models come from [Am I ready?](/v3/before-you-start/check); this page assumes they are done.
 
 {{< tabs >}}
 
@@ -40,17 +40,6 @@ uv run jupyter lab
 ### Run the check
 
 Open `00_check_setup.ipynb` and choose Run All Cells.
-
-### Download the prebuilt index files
-
-Download the two prebuilt vocabulary index files for notebook 03 from the link in the download post on the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732) into the `runs/` folder of the repository (create it if it does not exist):
-
-| File | Size | sha256 |
-| --- | --- | --- |
-| `stw-de-labels.sqlite` | 85.7 MB | `d85108cd6d38b949ac6c80decbf405021a61a7db4670495b2dea4e63807559bf` |
-| `unesco-en-labels.sqlite` | 34.4 MB | `47728635aff8bd8fb9d19197c34d1f1e5e05efea039bd9429bbfa4448ddda537` |
-
-Check a file with `shasum -a 256 runs/stw-de-labels.sqlite`. Building the two indexes takes about seven minutes for both (about five for STW, two for UNESCO) on an Apple Silicon Mac with 64 GB and far longer on a CPU-only laptop, so on the 8 GB tier downloading them is the way to follow notebook 03 live.
 
 {{% /steps %}}
 {{< /tab >}}
@@ -91,17 +80,6 @@ uv run jupyter lab
 
 Open `00_check_setup.ipynb` and choose Run All Cells.
 
-### Download the prebuilt index files
-
-Download the two prebuilt vocabulary index files for notebook 03 from the link in the download post on the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732) into the `runs/` folder of the repository (create it if it does not exist):
-
-| File | Size | sha256 |
-| --- | --- | --- |
-| `stw-de-labels.sqlite` | 85.7 MB | `d85108cd6d38b949ac6c80decbf405021a61a7db4670495b2dea4e63807559bf` |
-| `unesco-en-labels.sqlite` | 34.4 MB | `47728635aff8bd8fb9d19197c34d1f1e5e05efea039bd9429bbfa4448ddda537` |
-
-Check a file with `Get-FileHash runs\stw-de-labels.sqlite`. Building the two indexes takes about seven minutes for both (about five for STW, two for UNESCO) on an Apple Silicon Mac with 64 GB and far longer on a CPU-only laptop, so on the 8 GB tier downloading them is the way to follow notebook 03 live.
-
 {{% /steps %}}
 {{< /tab >}}
 
@@ -128,6 +106,17 @@ pip install -r requirements.txt
 jupyter lab
 ```
 {{< /details >}}
+
+## Download the prebuilt index files
+
+Notebook 03 builds two vocabulary indexes. Building them takes about seven minutes on an Apple Silicon Mac with 64 GB (five for STW, two for UNESCO) and far longer on a CPU-only laptop, so download the prebuilt files instead. The link is in the download post on the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732). Put both files in the `runs/` folder of the repository (create it if it does not exist); the notebook then loads them instead of building.
+
+| File | Size | sha256 |
+| --- | --- | --- |
+| `stw-de-labels.sqlite` | 85.7 MB | `d85108cd6d38b949ac6c80decbf405021a61a7db4670495b2dea4e63807559bf` |
+| `unesco-en-labels.sqlite` | 34.4 MB | `47728635aff8bd8fb9d19197c34d1f1e5e05efea039bd9429bbfa4448ddda537` |
+
+Check a file with `shasum -a 256 runs/stw-de-labels.sqlite` on macOS and Linux, or `Get-FileHash runs\stw-de-labels.sqlite` in PowerShell. On an 8 GB machine this download is the only way to follow notebook 03 live.
 
 ## VS Code instead of JupyterLab
 

@@ -39,7 +39,7 @@ Leipzig : Weygandsche Buchhandlung, 1774
 {'title': 'Die Leiden des jungen Werthers : Roman', 'creators': ['Goethe, Johann Wolfgang von'], 'place': 'Leipzig', 'publisher': 'Weygandsche Buchhandlung', 'date': '1774', 'language': 'de', 'identifier': ''}
 ```
 
-From the executed notebook 02, 15 October 2026. The structure is perfect and most values are right. Note that the title still carries its subtitle ` : Roman`, although the description asked for the title proper. That slip comes back in the accuracy count below.
+From the executed notebook 02, 15 October 2026. The structure is perfect and most values are right. The title still carries its subtitle ` : Roman`, although the description asked for the title proper. That slip comes back in the accuracy count below.
 
 ## A card that is silent about the place
 
