@@ -1,7 +1,14 @@
 ---
 title: Local LLM Workshop - SWIB 2025
 toc: false
+cascade:
+  type: docs
+  excludeSearch: true
 ---
+
+{{< callout type="warning" >}}
+**Archived edition.** This is the material of the SWIB2025 workshop, kept for reference. The current edition is at [/v3/](/v3/). Model names, versions and commands on these pages are out of date.
+{{< /callout >}}
 
 **A hands-on guide to running large language models on your own hardware**
 

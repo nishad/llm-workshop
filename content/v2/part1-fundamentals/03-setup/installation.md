@@ -25,9 +25,9 @@ Select your operating system and download the installer.
 
 The installation process varies slightly by platform:
 
-{{< tabs items="macOS,Windows,Linux" >}}
+{{< tabs >}}
 
-{{< tab >}}
+{{< tab name="macOS" >}}
 ### macOS Installation
 
 1. **Download the .dmg file** from ollama.com/download
@@ -56,7 +56,7 @@ The installation process varies slightly by platform:
 
 {{< /tab >}}
 
-{{< tab >}}
+{{< tab name="Windows" >}}
 ### Windows Installation
 
 1. **Download the .exe installer** from ollama.com/download
@@ -87,7 +87,7 @@ The installation process varies slightly by platform:
 
 {{< /tab >}}
 
-{{< tab >}}
+{{< tab name="Linux" >}}
 ### Linux Installation
 
 {{< callout type="warning" >}}

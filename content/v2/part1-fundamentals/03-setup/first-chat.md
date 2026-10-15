@@ -11,9 +11,9 @@ Now that Ollama is installed, let's download a model and start chatting!
 
 Llama 3.2 is our primary model for this workshop. It's efficient, capable, and runs well on consumer hardware.
 
-{{< tabs items="GUI Method,CLI Method" >}}
+{{< tabs >}}
 
-{{< tab >}}
+{{< tab name="GUI" >}}
 ### Using the Ollama GUI
 
 1. **Open the Ollama application**
@@ -49,7 +49,7 @@ Llama 3.2 is our primary model for this workshop. It's efficient, capable, and r
 
 {{< /tab >}}
 
-{{< tab >}}
+{{< tab name="CLI" >}}
 ### Using the Command Line
 
 Open your terminal (macOS/Linux) or Command Prompt (Windows) and run:
@@ -118,9 +118,9 @@ llama3.2:latest   8eeb52dfb3bb    2.0 GB    2 minutes ago
 
 Now for the exciting part - talking to your local LLM!
 
-{{< tabs items="GUI Chat,CLI Chat" >}}
+{{< tabs >}}
 
-{{< tab >}}
+{{< tab name="GUI" >}}
 ### Using the Ollama GUI
 
 1. **Select llama3.2:3b** from the model dropdown at the bottom of the window
@@ -159,7 +159,7 @@ private and don't require an internet connection. How can I help you today?
 
 {{< /tab >}}
 
-{{< tab >}}
+{{< tab name="CLI" >}}
 ### Using the CLI
 
 Start an interactive chat session:
