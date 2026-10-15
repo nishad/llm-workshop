@@ -15,13 +15,11 @@ How LLMs work (parameters, tokens, quantization, context); the difference betwee
 
 Working with LLMs from Python. Generating structured output and validating it. Embeddings and semantic search over controlled vocabularies. Retrieval-augmented generation (RAG) over your own documents. Basics of tool use, such as querying a SPARQL endpoint or an authority file, with a human in the loop.
 
-This is a hands-on workshop. Participants can follow along with the graphical tools only, run the notebooks, or work through the materials afterward. The workshop runs for four hours in two halves. Part 1 (first two hours) is for beginners and needs no prior experience; Part 2 (second two hours) assumes you can already run a local model and builds on it with Python. Each half stands on its own, so you can attend only Part 1 and leave at the break, or join at the break for Part 2. Exact times will be posted with the programme.
+This is a hands-on workshop. You can follow along with the graphical tools only, run the notebooks, or work through the materials afterwards. The four hours are split into two halves. Part 1 is for beginners and needs no prior experience. Part 2 assumes you can already run a local model and builds on it with Python. Each half stands on its own: you can leave at the break, or join at the break for Part 2. The times are below.
 
-Prerequisites:
+## What you need
 
-A computer running Windows, macOS, or Linux with 20 GB of free storage. 8 GB of RAM is sufficient with a small model; 16 GB is recommended for a larger model. A stable internet connection is needed to download models, or you can download them in advance (instructions will be posted about a week before). For Part 2, a working Python environment (3.12 or newer) is needed to follow along.
-
-The Zoom room opens 30 minutes early for installation help.
+A computer running Windows, macOS or Linux with 20 GB of free storage. 8 GB of RAM is enough for the small model; 16 GB lets you run the larger one. You need an internet connection to download the models, or you can download them in advance (the instructions are posted about a week before). For Part 2 you also need Python 3.12 or newer.
 
 ## When
 
@@ -31,7 +29,7 @@ The Zoom room opens 30 minutes early for installation help.
 | Break | 06:00-06:10 | | | | | |
 | Part 2 | 06:10-08:00 | 15:10-17:00 | 17:10-19:00 | 11:40-13:30 | 07:10-09:00 | 01:10-03:00 |
 
-Zoom opens at 03:30 UTC for installation help. Each half stands on its own: leave at the break, or join at the break for Part 2.
+Zoom opens at 03:30 UTC for installation help.
 
 ## Three ways to take part
 

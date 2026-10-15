@@ -3,11 +3,9 @@ title: Library endpoints
 weight: 3
 ---
 
-Services checked in October 2026 from Python with a descriptive User-Agent. Most need no key. Services change, so treat this table as a starting point and test before you depend on one.
+Library and linked-data services you can call from the tool loop. Most need no key. Rows marked "October 2026" were tested live from Python in October 2026 at the URL shown, with a descriptive User-Agent. Rows marked "not checked" link to the service's documentation instead. Services change, so test before you depend on one.
 
 ## Services
-
-Rows marked "October 2026" were tested live from Python in October 2026 at the URL shown, with a descriptive User-Agent. Rows marked "not checked" link to the service's documentation instead. Services change, so test before you depend on one.
 
 | Service | URL | Key needed | Checked | Notes |
 |---|---|---|---|---|

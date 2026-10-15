@@ -25,7 +25,7 @@ In contemporary Chinese literature, Mo Yan’s 蛙 (Frog) was published in 2009.
 And don’t forget the Scandinavian gem “Pippi Longstocking” (Pippi Långstrump) by Astrid Lindgren, a Swedish novel published in 1945. “The Little Prince” (Le Petit Prince) by Antoine de Saint-Exupéry, a French novella, was released in 1943. In Italian literature, we have Dante Alighieri’s Divina Commedia (The Divine Comedy), written between 1308 and 1320 in Italian.
 ```
 
-In the prompts below, the placeholder [the sample text from above] stands for this text. The model received the whole text each time.
+In the prompts below, the placeholder [the sample text from above] stands for the whole text, and [the first paragraph of the sample text] stands for its first paragraph only (the four works from Steinbeck to Murakami). The model received the actual text each time; the placeholder only keeps this page short.
 
 ## From "List the books." to a usable list
 
@@ -206,7 +206,7 @@ Version 4 asked for three things at once: the format, a chronological sort and a
 A small model reads the instruction "before 1950" as a pattern to imitate, not as a rule to apply to each year. It is a comparison, and comparing numbers is exactly where small models slip. The usual repair is to split the task: first extract everything with the year, then filter and sort in a second prompt, or in a spreadsheet. [Techniques](/v3/part1/04-prompting/techniques) shows the multi-step version.
 
 {{< callout type="warning" >}}
-Read the answer to the last version before you trust it. The list looked tidy, and it was wrong in six entries and not sorted.
+Read the answer before you trust it. The list looked tidy. Five of its entries should not have been there, one that belonged was missing, and nothing was sorted.
 {{< /callout >}}
 
 ## Five principles

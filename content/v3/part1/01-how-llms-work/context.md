@@ -18,7 +18,7 @@ A pasted 20-page PDF does not fit in 4,096 tokens; the model sees the end of it 
 
 For the 8B model, each token of context takes 128 KiB. That gives about 0.5 GiB at 4k, 1 GiB at 8k and 8 GiB at 64k, on top of the model file.
 
-Measured with `ollama ps` (measured October 2026 on an Apple Silicon laptop):
+Measured with `ollama ps` in October 2026 on an Apple Silicon laptop:
 
 | Context length | Memory in use |
 |---|---|

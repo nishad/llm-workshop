@@ -15,7 +15,7 @@ A **seed** fixes the random choices, so the same prompt, settings and seed give 
 
 ## Two captured experiments
 
-Both use nishad/apertus:8b with three runs per setting. Captured with nishad/apertus:8b, 15 October 2026.
+Both ran three times per setting with nishad/apertus:8b (digest 4a85a6fea0b8) on 15 October 2026.
 
 ### Experiment 1: a question with one answer
 

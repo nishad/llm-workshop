@@ -53,7 +53,7 @@ From the executed notebook 01, 15 October 2026. Read it as a recap of Part 1:
 
 - **8.05B parameters** is the "8B" in the name.
 - **Q4_K_M** is the quantization: a few bits per parameter instead of 16, which is why the file is 5.1 GB.
-- **65,536** is the most the model can hold in its context window. What you get by default is much smaller; the notebooks set it for you, as the next cell shows.
+- **65,536** is the most the model can hold in its context window. Ollama's default is far below that, 4,096 tokens on most laptops (see [Context](/v3/part1/01-how-llms-work/context)). The notebooks set the value for your tier, as the next cell shows.
 - **tools** in the capabilities list says this build can call tools. Part 2 needs it for the last notebook.
 - The **template** header tells you which chat template is in use. `{# Unsloth template fixes #}` is the one the workshop tags carry.
 
