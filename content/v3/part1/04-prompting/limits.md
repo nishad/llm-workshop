@@ -44,7 +44,6 @@ What is the ISBN of the book "Das Parfum" by Patrick Süskind, published by Diog
 The ISBN of the book "Das Parfum" by Patrick Süskind, published by Diogenes, is 9783257061675.
 ```
 
-
 The ISBN is not valid: its check digit is wrong, and the DNB catalog has no record of it. The same number with the correct check digit is a different book, "Verrechnet" by Dick Francis. The model gave one number, with no hedge. The DOI in the same exercise was real but belonged to a different article. The full check is on the exercises page.
 
 ## 3. A rule missed in a calculation
@@ -80,7 +79,6 @@ Now, let's add up the total late fees for all items: $6 (books) + $8 (DVD) + $0.
 Therefore, Sarah owes a total of $14.75 in late fees.
 ```
 
-
 Each multiplication is correct: 2 books at 12 days is 2 x 0.25 x 12 = $6. The policy also says the maximum fee is $5.00 per item, and the DVD at 8 days would cost $8. The model ignored the cap and charged $8. The right total is $6 + $5 + $0.75 = $11.75. The model's $14.75 is $3 too much. The working is on the page and looks careful, which makes the mistake easy to miss.
 
 ## 4. A missed word limit
@@ -96,7 +94,6 @@ Summarize in no more than 15 words: The library will close for two weeks in Augu
 ```
 The library will close for two weeks in August to replace the roof, move periodicals to the basement, and install a new self-service checkout system. All loans are automatically extended until the day after reopening.
 ```
-
 
 The prompt asked for no more than 15 words. The answer has 35, and it is a near copy of the original text. The model has no word counter. Earlier on the [techniques page](/v3/part1/04-prompting/techniques), a request for exactly 20 words produced 21.
 
@@ -119,7 +116,6 @@ Translate these German economics terms into English, one per line: Schattenwirts
 4. Copyright
 5. Ownership
 ```
-
 
 | German | Model | STW 9.20 English label |
 |---|---|---|

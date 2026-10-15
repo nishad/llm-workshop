@@ -21,7 +21,6 @@ Explain in three sentences what an authority file is and why a library catalogue
 An authority file is a centralized list of standardized terms used to refer to an entity, such as a person, organization, or concept. Library catalogues use authority files to ensure consistency in the way information about an entity is recorded and retrieved. This helps in providing accurate and efficient access to information.
 ```
 
-
 ## 2. Translate (German to English and French)
 
 **Prompt:**
@@ -37,7 +36,6 @@ An authority file is a centralized list of standardized terms used to refer to a
 
 Übersetzung ins Französische: 'Production de films de cinéma, de télévision ou publicitaires.'
 ```
-
 
 ## 3. Suggest subject headings
 
@@ -57,7 +55,6 @@ List five subject headings a library might assign to a book about the history of
 5. Basel, Cultural History of, Printing
 ```
 
-
 The model gives plausible headings. Whether a real authority list contains them is for a cataloger to check.
 
 ## 4. Rewrite for another audience
@@ -74,7 +71,6 @@ Rewrite this for a public-library newsletter in two sentences: 'The repository i
 At our library, we're excited to announce that we're integrating a state-of-the-art repository that not only harvests metadata through the open archive interface (OAI-PMH) but also presents it as interconnected data, making it easier for users to discover and access a wealth of information. This innovation allows us to create a more accessible and user-friendly platform for our patrons to explore and enjoy a broad spectrum of digital resources.
 ```
 
-
 ## 5. The hallucination probe
 
 This prompt asks for a fact the model cannot look up.
@@ -90,7 +86,6 @@ What is the ISBN of 'Vita activa' by Hannah Arendt?
 ```
 The ISBN of 'Vita activa' by Hannah Arendt is 0141039689.
 ```
-
 
 The model states one ISBN, with no hedge. Now check it.
 

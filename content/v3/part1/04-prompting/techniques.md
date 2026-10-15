@@ -38,7 +38,6 @@ Now classify:
 4. "Annual Review of Psychology" -> JOURNAL
 ```
 
-
 The four labels are right. The examples carried the label set (BOOK, JOURNAL, DVD, DATABASE) and the output shape. The model even copied the "->" arrow from the examples.
 
 Few-shot works best when the format is unusual or domain-specific. Two to four examples are enough. Choose examples that differ from each other.
@@ -68,7 +67,6 @@ A patron brings in what they say is a first edition of Pride and Prejudice from 
 4. The book's binding and paper quality for age.
 5. The presence of an inscription or ownership mark which could indicate a later addition.
 ```
-
 
 The answer is brief and practical, as the system prompt asked: five lines, one check each. A role changes the tone and the focus of an answer, not what the model knows. Whether this is the checklist a rare books specialist would give is for a specialist to judge.
 
@@ -103,7 +101,6 @@ Text:
 | Pride and Prejudice | Jane Austen | 1813 |
 | ノルウェイの森 (Noruwei no Mori) | Haruki Murakami | 1987 |
 ```
-
 
 **A JSON list:**
 
@@ -143,7 +140,6 @@ Text:
 ]
 ```
 
-
 Both are correct for the four works. Look at what the model decided on its own: in the table it kept the romanized form in brackets, in the JSON it dropped it.
 
 {{< callout type="info" >}}
@@ -165,7 +161,6 @@ Explain what a call number is in exactly 20 words. Do not use the word "shelf".
 ```
 A call number is a unique identifier assigned to a book, allowing it to be located in a library's catalog system.
 ```
-
 
 The prompt asked for exactly 20 words and no "shelf". The answer has 21 words and avoids the forbidden word. Small models do not count: they predict one token at a time and have no counter running. Expect "about 20", not "exactly 20". If a limit matters, count the words yourself or check them with a script.
 
@@ -189,7 +184,6 @@ Public libraries in three cities ran a six-week course on computer skills for ad
 This abstract is about a six-week course on computer skills for adults in public libraries in three cities. The course involved 450 participants, who were surveyed before and after the course, and 45 were interviewed. The results showed that participants had better basic computer skills and a greater awareness of online safety, particularly among those over 60.
 ```
 
-
 **Step 2: extract**
 
 **Prompt:**
@@ -206,7 +200,6 @@ This abstract is about a six-week course on computer skills for adults in public
 1. Surveys (before and after the course) involving 450 participants.
 2. Interviews (45 participants).
 ```
-
 
 **Step 3: classify**
 
@@ -227,7 +220,6 @@ Quantitative
 
 Justification: The study uses surveys and quantitative methods to evaluate the effect of the course on participants' knowledge and attitudes. Interviews (45 participants) provide qualitative insights but are not the primary method of data collection.
 ```
-
 
 Each step fits on one screen, so a person can see where it went wrong. This chain also shows why checkpoints matter. At step 2 the model listed surveys and interviews. At step 3 it called the study "Quantitative", yet its own justification says the interviews provide qualitative insight. A study with both surveys and interviews is usually called mixed methods. If you had only looked at the final label, you would not have seen the shaky reasoning.
 

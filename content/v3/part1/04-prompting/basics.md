@@ -71,7 +71,6 @@ The list of books includes:
 This list represents a diverse selection of books from various languages and genres, showcasing the richness of literary history across different cultures.
 ```
 
-
 Count the list: 20 entries. The text has 22 works. Harry Potter and Don Quixote are missing, and the model added a closing comment nobody asked for. Nothing in the prompt said how complete or how plain the answer should be.
 
 ### Version 2: clear task, no format
@@ -114,7 +113,6 @@ Books mentioned in the text:
 22. Divina Commedia (The Divine Comedy) - Dante Alighieri
 ```
 
-
 Now 22 entries, but the format is loose. Some lines have the title first, some have a translated title in brackets, and the Rubaiyat has no author.
 
 ### Version 3: a format
@@ -155,7 +153,6 @@ Text:
 22. "Divina Commedia" (The Divine Comedy) by Dante Alighieri (Written between 1308 and 1320 in Italian)
 ```
 
-
 Every entry now follows Title by Author (Year), with a few exceptions: Homer's Odyssey puts the author first, and the Rubaiyat gets an "Attributed to" note. Several entries carry extra notes in brackets. Formats are followed approximately, not exactly.
 
 ### Version 4: sorting and a filter
@@ -193,7 +190,6 @@ Text:
 17. “The Little Prince” by Antoine de Saint-Exupéry (1943)
 18. Divina Commedia by Dante Alighieri (written between 1308 and 1320)
 ```
-
 
 ### What went wrong in version 4
 
@@ -243,7 +239,6 @@ For example, if a book is about the history of the Roman Empire, the subject hea
 Overall, subject headings play a critical role in information retrieval and organization, enabling users to locate specific information and navigate complex topics efficiently.
 ```
 
-
 **Better:**
 
 **Prompt:**
@@ -257,7 +252,6 @@ Explain in three sentences what a subject heading is, for a new library assistan
 ```
 Subject headings are like keywords that help people find books or resources in the library. They are used to describe the main topic or theme of a book, article, or other material. For example, if you're looking for books about cats, you could use the subject heading "cats" or "felines." This makes it easier for others to find what they need.
 ```
-
 
 The poor prompt returned a lecture of about 250 words that nobody can use at a reference desk. The better prompt names the audience, the length and the register. It returned about 60 words. (It also wrote four sentences where three were asked for, a first sign that length instructions are approximate.)
 
@@ -303,7 +297,6 @@ If you are referring to organizing digital information, like files or emails, th
 Please provide more context so I can give you more specific advice.
 ```
 
-
 **Better:**
 
 **Prompt:**
@@ -321,7 +314,6 @@ I am a librarian organizing 500 historical photographs from the 1920s to the 194
 - **Event or Occasion**: Categorize photographs by significant events or occasions they depict, such as elections, wars, festivals, or inaugurations.
 - **Technique or Style**: Use photographic techniques or styles as a category, such as black and white, color, documentary, or artistic photography, to help researchers find images with specific aesthetic qualities.
 ```
-
 
 Without context the model guessed at three different meanings of "organize" (a project, physical items, digital files) and asked for more information. With the role, the collection and the purpose, it answered the actual question.
 
@@ -342,7 +334,6 @@ Book Title: Homo faber
 Author: Max Frisch
 Year Published: 1957
 ```
-
 
 **Better (two examples):**
 
@@ -367,7 +358,6 @@ Output:
 Title: Homo faber | Author: Max Frisch | Year: 1957
 ```
 
-
 Both are correct. Only the second matches the format you wanted, so you can paste it into a spreadsheet or parse it.
 
 ### 4. Say how the answer should look
@@ -391,7 +381,6 @@ Text:
 3. "Pride and Prejudice" by Jane Austen (1813)
 4. "ノルウェイの森" (Noruwei no Mori) by Haruki Murakami (1987)
 ```
-
 
 **Better:**
 
@@ -431,7 +420,6 @@ Text:
 ]
 ```
 
-
 The second answer is JSON, ready for a program to read. The first is text a person has to read.
 
 ### 5. Set constraints
@@ -450,7 +438,6 @@ Summarize why libraries keep authority files.
 Libraries keep authority files to maintain consistency in the way they organize and record information about entities such as authors, subjects, and geographic locations. This ensures that all records relating to a particular entity are treated in the same way, which helps to improve the accuracy and reliability of the library's catalog and database. Authority files are also used to provide a standardized vocabulary for searching and retrieving information, making it easier for users to find what they are looking for. By maintaining authority files, libraries can also ensure that information is correctly linked and cross-referenced, which is essential for creating a comprehensive and cohesive collection of resources.
 ```
 
-
 **Better:**
 
 **Prompt:**
@@ -464,7 +451,6 @@ Summarize why libraries keep authority files. Use at most 40 words. Mention one 
 ```
 Libraries keep authority files to ensure consistency in cataloging. A benefit of this is that it helps users find and access information more efficiently and accurately.
 ```
-
 
 The poor prompt produced a paragraph of 108 words. The better one stayed under 40 words (it used 26) and followed the other two rules. Constraints about content and style work well. Constraints about exact numbers work less well, as the [techniques page](/v3/part1/04-prompting/techniques) shows.
 

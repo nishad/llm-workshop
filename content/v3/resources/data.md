@@ -27,7 +27,7 @@ Notebook 03 builds two label indexes and loads them from `runs/` when the files 
 | `stw-de-labels.sqlite` | 85.7 MB | `d85108cd6d38b949ac6c80decbf405021a61a7db4670495b2dea4e63807559bf` |
 | `unesco-en-labels.sqlite` | 34.4 MB | `47728635aff8bd8fb9d19197c34d1f1e5e05efea039bd9429bbfa4448ddda537` |
 
-Building the two indexes takes about seven minutes for both (about five for STW, two for UNESCO) on an Apple Silicon Mac with 64 GB and far longer on a CPU-only laptop, so on the 8 GB tier downloading them is the way to follow notebook 03 live.
+Building them takes about seven minutes on an Apple Silicon Mac with 64 GB (five for STW, two for UNESCO) and far longer on a CPU-only laptop. On an 8 GB machine, downloading them is the only way to follow notebook 03 live.
 
 ## Vocabularies considered and not used
 

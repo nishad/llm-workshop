@@ -66,7 +66,6 @@ Text:
 | Divina Commedia    | Dante Alighieri | 1308–1320 | Italian | La Divina Commedia |
 ```
 
-
 All 22 works are there, in the right order, with the right years and languages. Look closely at the last column:
 
 - Where the text gives no original title, the model wrote "None" instead of leaving the cell empty.
@@ -134,7 +133,6 @@ Format: Number. "Title" -> CATEGORY (confidence: high, medium or low)
 4. "Annual Review of Psychology" -> JOURNAL (confidence: high)
 5. "Hamlet (audio recording, 2 CDs)" -> DVD (confidence: high)
 ```
-
 
 The books and the journal are right. The other three are open to argument. The Documentary Collection could be DVDs or a streaming database. The audio recording of Hamlet fits none of the four labels, and the model forced it into DVD and called it "high" confidence. Every answer carries "high". The confidence word shows what the model writes, not how reliable it is.
 
@@ -206,7 +204,6 @@ Author Talk with Jane Smith is scheduled for March 15th at 7pm in the Main Hall.
 ```
 ````
 
-
 The JSON itself is right, and it is valid. Two things to notice. First, the prompt said "Return only valid JSON", and the model still wrapped it in a code fence (the answer above is shown as the model wrote it, so you see a fence inside a fence). A program that reads the answer has to strip that. Second, the values are copied as written ("every Tuesday", "on Saturdays", "6pm"). That is faithful to the text and not yet clean data. Only one event has a date, and it has no year, so an ISO date would need a guess. For the stretch task, decide what should go into a date field for the three recurring events.
 
 {{< /details >}}
@@ -239,7 +236,6 @@ Give the German, French and English preferred term for these concepts: inflation
 | Climate Change        | Klimawandel     | Changement climatique | Climate Change |
 ```
 
-
 The German and French terms are plausible and consistent. For comparison, the STW Thesaurus for Economics (version 9.20) uses Inflation, Urheberrecht with the English label "Copyright law", and Klimawandel with "Climate change".
 
 **Step 2: do they exist in STW?**
@@ -259,7 +255,6 @@ Klimawandel: no
 Teuerung: yes
 Bibliotheksnutzung: yes
 ```
-
 
 I checked these five terms against the STW 9.20 data held in the notebooks repository, as preferred and as alternative labels, German and English:
 
@@ -321,7 +316,6 @@ Abstract 2: Urheberrecht, Filmproduktion
 Abstract 3: Energiepolitik, Klimawandel
 ```
 
-
 Every descriptor comes from the list, and the pairs are sensible. Abstract 1 has three topics (prices, interest rates, unemployment) and room for only two, so the model dropped Arbeitslosigkeit. That is a judgment call. In the stretch version, a quote for each choice shows what the model relied on. An instruction such as "use only these descriptors" can still be broken, so check each answer against the list.
 
 {{< /details >}}
@@ -350,7 +344,6 @@ What is the ISBN of the book "Das Parfum" by Patrick Süskind, published by Diog
 The ISBN of the book "Das Parfum" by Patrick Süskind, published by Diogenes, is 9783257061675.
 ```
 
-
 **Article:**
 
 **Prompt:**
@@ -364,7 +357,6 @@ What is the DOI of the article "The FAIR Guiding Principles for scientific data 
 ```
 The DOI for the article "The FAIR Guiding Principles for scientific data management and stewardship" by Mark D. Wilkinson and colleagues is 10.1038/sdata.2016.44.
 ```
-
 
 I checked both on 15 October 2026.
 
@@ -454,7 +446,6 @@ Sure, I'd be happy to share some information about libraries! Here's a brief ove
 Remember, libraries are not just about books anymore. They offer a range of services and resources to support learning, research, and community engagement. If you have any specific questions about libraries, feel free to ask!
 ```
 
-
 And here is a repaired version:
 
 **Prompt:**
@@ -472,7 +463,6 @@ Community services, such as book clubs, author talks, and cultural events, bring
 
 In summary, public libraries are dynamic and integral to modern communities, offering a range of educational programs, community services, and digital resources that enhance the social, economic, and educational well-being of their patrons. This diverse role is both a challenge and an opportunity for library professionals, making it a rewarding career choice.
 ```
-
 
 The first answer is a 340-word tour of everything. The repaired one is about 150 words and aimed at the stated reader. It is not perfect (the opening sentence is awkward), but it is on target. The model handled "about 150 words" well. It is exact counts that it misses.
 
@@ -516,7 +506,6 @@ Pride and Prejudice by Jane Austen, 1813, original boards partially detached, pa
 ```
 {"title": "Pride and Prejudice", "author": "Jane Austen", "year": 1813, "condition": "Fine", "notes": "Bookplate present, boards partially detached, browning typical for age"}
 ```
-
 
 The JSON is valid, the keys are right and there is no valuation. The condition grade is a matter for debate: with the boards partially detached, "Fine" is generous, and "Fair" or "Good" would be easier to defend. The model followed the format and the constraints, and it chose the grade by pattern. A cataloger reads the grade and decides.
 
