@@ -16,22 +16,21 @@ markup:
 
 menu:
   main:
-    # v3 entries stay commented out until Task 4 creates content/v3/_index.md
-    # - name: Workshop
-    #   pageRef: /v3/
-    #   weight: 1
-    # - name: Before you start
-    #   pageRef: /v3/before-you-start/
-    #   weight: 2
-    # - name: Part 1
-    #   pageRef: /v3/part1/
-    #   weight: 3
-    # - name: Part 2
-    #   pageRef: /v3/part2/
-    #   weight: 4
-    # - name: Resources
-    #   pageRef: /v3/resources/
-    #   weight: 5
+    - name: Workshop
+      pageRef: /v3/
+      weight: 1
+    - name: Before you start
+      pageRef: /v3/before-you-start/
+      weight: 2
+    - name: Part 1
+      pageRef: /v3/part1/
+      weight: 3
+    - name: Part 2
+      pageRef: /v3/part2/
+      weight: 4
+    - name: Resources
+      pageRef: /v3/resources/
+      weight: 5
     - name: Archive
       weight: 6
       params:
