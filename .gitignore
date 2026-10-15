@@ -8,3 +8,7 @@ resources/
 
 # Git worktrees for isolated plan execution
 .worktrees/
+
+# local
+.DS_Store
+.claude/

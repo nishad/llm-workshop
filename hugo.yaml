@@ -1,9 +1,6 @@
 # Hugo configuration file
-title: LLM Workshop - SWIB 2025
-
-# Ignore theme documentation (reference only, not part of workshop)
-ignoreFiles:
-  - "content/theme-documentation/.*"
+baseURL: https://llm-workshop.thalhath.org/
+title: Local LLM Workshop
 
 # import hextra as module
 module:
@@ -11,34 +8,44 @@ module:
     - path: github.com/imfing/hextra
 
 markup:
-  # allow raw html
   goldmark:
     renderer:
       unsafe: true
-
-  # enable hextra syntax highlight
   highlight:
     noClasses: false
 
 menu:
   main:
-    - name: Workshop
-      pageRef: /v2/
-      weight: 1
-    - name: Part 1 - Fundamentals
-      pageRef: /v2/part1-fundamentals/
-      weight: 2
-    - name: Part 2 - Intermediate
-      pageRef: /v2/part2-intermediate/
-      weight: 3
-    - name: Resources
-      pageRef: /v2/resources/
-      weight: 4
-    - name: 2024 Archive
-      pageRef: /v1/
-      weight: 5
-    - name: Search
+    # v3 entries stay commented out until Task 4 creates content/v3/_index.md
+    # - name: Workshop
+    #   pageRef: /v3/
+    #   weight: 1
+    # - name: Before you start
+    #   pageRef: /v3/before-you-start/
+    #   weight: 2
+    # - name: Part 1
+    #   pageRef: /v3/part1/
+    #   weight: 3
+    # - name: Part 2
+    #   pageRef: /v3/part2/
+    #   weight: 4
+    # - name: Resources
+    #   pageRef: /v3/resources/
+    #   weight: 5
+    - name: Archive
       weight: 6
+      params:
+        type: dropdown   # falls back to a plain link if the theme version has no dropdown
+    - name: 2025 edition
+      pageRef: /v2/
+      parent: Archive
+      weight: 1
+    - name: 2024 edition
+      pageRef: /v1/
+      parent: Archive
+      weight: 2
+    - name: Search
+      weight: 7
       params:
         type: search
 
@@ -46,27 +53,18 @@ params:
   navbar:
     displayTitle: true
     displayLogo: false
-    logo:
-      # path: images/logo.svg
-      # dark: images/logo-dark.svg
-      # width: 60
-      # height: 20
-      # link: /
-      #width: wide
-
   page:
-    # full (100%), wide (90rem), normal (1280px)
     width: normal
-
+    tabs:
+      sync: true
   theme:
-    # light | dark | system
     default: light
     displayToggle: true
-
   footer:
     displayCopyright: false
     displayPoweredBy: false
-
+  imageZoom:
+    enable: true
   editURL:
     enable: true
     base: "https://github.com/nishad/llm-workshop/edit/main/content"
