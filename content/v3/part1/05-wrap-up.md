@@ -58,7 +58,7 @@ Part 2 runs notebooks on your machine. Before the break, tick these:
 - [ ] The notebooks repository is cloned.
 - [ ] `00_check_setup` is green on every line.
 
-The full steps are on [Am I ready?](/v3/before-you-start/check). If one box is not ticked, use the break to fix it, or ask for help. Part 2 starts with the environment check, described on [Part 2](/v3/part2).
+The full steps are on [Am I ready?](/v3/before-you-start/check). If one box is not ticked, use the break to fix it, or ask for help. Part 2 starts with the environment check, described on [Environment](/v3/part2/01-environment).
 
 ## Leaving now?
 
