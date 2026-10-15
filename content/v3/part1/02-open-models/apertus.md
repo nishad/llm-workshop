@@ -15,7 +15,7 @@ Apertus comes from the Swiss AI Initiative (EPFL, ETH Zurich and CSCS).
 
 ## What is open in 1.0
 
-- The weights.
+- The weights, under Apache-2.0. The Apertus LLM Acceptable Use Policy (version 1.0, 1 September 2025) applies to them.
 - Data reconstruction scripts (not a hosted corpus).
 - The SFT mixture.
 - Intermediate checkpoints.
@@ -40,7 +40,7 @@ A model that invents a value for a missing field is a reason to validate its out
 
 ## The acceptable-use policy in plain words
 
-Apertus comes with the Apertus LLM Acceptable Use Policy. In plain words:
+Apertus comes with the Apertus LLM Acceptable Use Policy (version 1.0, 1 September 2025). In plain words:
 
 - You indemnify ETH and EPFL.
 - If you redistribute the model, you pass the policy on.
@@ -59,7 +59,7 @@ flowchart LR
   C --> D[Your laptop]
 ```
 
-For v1.5 the chain is incomplete. There is no official GGUF yet, so the only text-only build is a community conversion, made by hand from the gated checkpoint. Version 1.0 has had native support for a year.
+For v1.5 the chain is incomplete. There is no official GGUF yet. Version 1.0 runs in llama.cpp, Ollama and LM Studio today; v1.5's architecture does not yet, so the only Ollama-ready v1.5 builds are community text-only conversions with no parity check.
 
 ## An audit, in September 2026
 
