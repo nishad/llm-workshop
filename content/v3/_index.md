@@ -5,7 +5,7 @@ cascade:
   type: docs
 ---
 
-Local large language models (LLMs) have moved on since the first edition of this workshop in 2024. The privacy and cost arguments still apply, but many capable models now run on an ordinary laptop, come with permissive licenses, and a few are fully open, with weights, training data, and training code all open. For libraries, this makes provenance, reproducibility, and vendor independence practical concerns. This third edition is built around Apertus, a fully open multilingual model family from the Swiss AI Initiative (EPFL, ETH Zurich, CSCS).
+Local large language models (LLMs) have moved on since the first edition of this workshop in 2024. The privacy and cost arguments still apply, but many capable models now run on an ordinary laptop and come with permissive licenses, and a few are fully open: weights, training data and training code are all published. For libraries, that turns provenance, reproducibility and vendor independence from talking points into practical choices. This third edition is built around Apertus, a fully open multilingual model family from the Swiss AI Initiative (EPFL, ETH Zurich, CSCS).
 
 **Part 1 - Fundamentals**
 

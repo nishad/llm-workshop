@@ -27,7 +27,7 @@ Do the same with `nishad/apertus:4b` (2.4 GB), or `ollama pull nishad/apertus:4b
 
 **Optional preview**
 
-`nishad/apertus:8b-v1.5-preview` is a community conversion for the curious.
+If you want to compare, `nishad/apertus:8b-v1.5-preview` is a community conversion of the newer v1.5. Nothing in the workshop needs it.
 
 **Embeddings for Part 2**
 
@@ -69,9 +69,9 @@ On the Hugging Face page, the "Use this model" button has an LM Studio entry.
 
 The total stays well under the 20 GB prerequisite. At 20 Mbit/s the 8B takes about 35 minutes.
 
-## If you are short on time in Part 2
+## Two index files for Part 2
 
-Notebook 03 builds two vector indexes: about 20,000 STW labels and the UNESCO English labels. This takes about seven minutes for both (about five for STW, two for UNESCO) on an Apple Silicon Mac with 64 GB, far longer on a CPU-only laptop. Prebuilt files will be linked here the week before the workshop (link to follow):
+Notebook 03 builds two vector indexes, one over about 20,000 STW labels and one over the UNESCO English labels. Building them takes about seven minutes on an Apple Silicon Mac with 64 GB (five for STW, two for UNESCO) and far longer on a CPU-only laptop. Prebuilt files will be linked here the week before the workshop (link to follow):
 
 - `stw-de-labels.sqlite` (85.7 MB)
 - `unesco-en-labels.sqlite` (34.4 MB)

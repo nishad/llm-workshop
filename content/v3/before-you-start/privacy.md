@@ -16,7 +16,7 @@ To switch the cloud features off, open Settings and turn the **Cloud** switch of
 The terminal equivalent is the environment variable `OLLAMA_NO_CLOUD=1`.
 
 {{< callout type="info" >}}
-One honest caveat: typing a model name in the picker sends that name to ollama.com to check that it exists. Downloads come from ollama.com or Hugging Face. Your prompts never leave the machine.
+One caveat: typing a model name in the picker sends that name to ollama.com to check that it exists. Downloads come from ollama.com or Hugging Face. Your prompts never leave the machine.
 {{< /callout >}}
 
 ## LM Studio
