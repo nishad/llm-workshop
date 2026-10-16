@@ -3,11 +3,11 @@ title: Techniques
 weight: 2
 ---
 
-Five techniques are live in the session. Five more, for self-study, are in a collapsed section at the end. Each live technique has a captured answer from nishad/apertus:8b (temperature 0.8, 15 October 2026).
+We cover five techniques live in the session. Five more, for self-study, are in a collapsed section at the end. Each live technique has a captured answer from nishad/apertus:8b at temperature 0.8 on 15 October 2026. Temperature is the setting that controls how much the answers vary.
 
 ## 1. Few-shot: show the pattern
 
-In **few-shot** prompting you put a few worked examples into the prompt. The model continues the pattern. This is the most reliable way to get an unusual label set or format.
+In **few-shot** prompting you put a few examples of input and output into the prompt. The model continues the pattern. This is the most reliable way to get an unusual set of labels or an unusual format.
 
 Without examples this is zero-shot, the plain request. With one example it is one-shot.
 
@@ -38,13 +38,13 @@ Now classify:
 4. "Annual Review of Psychology" -> JOURNAL
 ```
 
-The four labels are right. The examples carried the label set (BOOK, JOURNAL, DVD, DATABASE) and the output shape. The model even copied the "->" arrow from the examples.
+The four labels are right. The examples showed the model which labels to use (BOOK, JOURNAL, DVD, DATABASE) and what shape the output should take. The model even copied the "->" arrow from the examples.
 
-Few-shot works best when the format is unusual or domain-specific. Two to four examples are enough. Choose examples that differ from each other.
+Few-shot works best when the format is unusual or specific to your field. Two to four examples are enough. Choose examples that differ from each other.
 
 ## 2. Role and system prompt
 
-A **role** tells the model who it is speaking as. It sets vocabulary, depth and tone. A **system prompt** is a place for instructions that apply to the whole conversation, such as the role, so you do not repeat them in every message.
+A **role** tells the model who it is speaking as. It sets vocabulary, depth and tone. A **system prompt** holds instructions that apply to the whole conversation, such as the role. You set it once instead of repeating the instructions in every message.
 
 System prompt used here:
 
@@ -68,7 +68,7 @@ A patron brings in what they say is a first edition of Pride and Prejudice from 
 5. The presence of an inscription or ownership mark which could indicate a later addition.
 ```
 
-The answer is brief and practical, as the system prompt asked: five lines, one check each. A role changes the tone and the focus of an answer, not what the model knows. Whether this is the checklist a rare books specialist would give is for a specialist to judge.
+The answer is brief and practical, as the system prompt asked: five lines, one check each. A role changes the tone and the focus of an answer, not what the model knows. Only a specialist can judge whether this is the checklist a rare books specialist would give.
 
 ### Where to set a system prompt
 
@@ -78,7 +78,7 @@ The answer is brief and practical, as the system prompt asked: five lines, one c
 
 ## 3. Structured answers
 
-When the answer feeds a spreadsheet or a program, ask for a structure. Two common ones are a Markdown table and a JSON list. Both prompts below use the first paragraph of the sample text.
+When the answer will go into a spreadsheet or a program, ask for a structure. Two common ones are a Markdown table and a JSON list (JSON is a text format that programs can read directly). Both prompts below use the first paragraph of the sample text.
 
 **A Markdown table:**
 
@@ -143,7 +143,7 @@ Text:
 Both are correct for the four works. Look at what the model decided on its own: in the table it kept the romanized form in brackets, in the JSON it dropped it.
 
 {{< callout type="info" >}}
-Here the shape is only requested. A model can add a sentence before the JSON, wrap it in a code fence or leave out a key. In Part 2 the shape is enforced with a schema, and the answer is checked by code.
+Here the shape is only requested. A model can add a sentence before the JSON, wrap it in a code fence (the marks that show text as a code block) or leave out a key. In Part 2 the shape is enforced by a schema (a fixed list of the allowed fields), and code checks the answer.
 {{< /callout >}}
 
 ## 4. Constraints
@@ -162,7 +162,7 @@ Explain what a call number is in exactly 20 words. Do not use the word "shelf".
 A call number is a unique identifier assigned to a book, allowing it to be located in a library's catalog system.
 ```
 
-The prompt asked for exactly 20 words and no "shelf". The answer has 21 words and avoids the forbidden word. Small models do not count: they predict one token at a time and have no counter running. Expect "about 20", not "exactly 20". If a limit matters, count the words yourself or check them with a script.
+The prompt asked for exactly 20 words and no "shelf". The answer has 21 words and avoids the forbidden word. Small models do not count: they predict one token (a word or part of a word) at a time, and they have no counter running. Expect "about 20", not "exactly 20". If a limit matters, count the words yourself or check them with a script.
 
 ## 5. Multi-step with checkpoints
 
@@ -221,11 +221,11 @@ Quantitative
 Justification: The study uses surveys and quantitative methods to evaluate the effect of the course on participants' knowledge and attitudes. Interviews (45 participants) provide qualitative insights but are not the primary method of data collection.
 ```
 
-Each step fits on one screen, so you can see at which step the chain went wrong. At step 2 the model listed surveys and interviews. At step 3 it called the study "Quantitative", yet its own justification says the interviews provide qualitative insight. A study with both surveys and interviews is usually called mixed methods. If you had only looked at the final label, you would not have seen the shaky reasoning.
+Each step fits on one screen, so you can see at which step the chain went wrong. At step 2 the model listed surveys and interviews. At step 3 it called the study "Quantitative", yet its own justification says the interviews provide qualitative insight. A study with both surveys and interviews is usually called mixed methods. If you had looked only at the final label, you would not have seen the weak reasoning.
 
 ## Combining techniques
 
-The most capable prompts combine a few techniques. A bracket template makes the parts easy to see and reuse:
+The best prompts combine a few techniques. A bracket template makes the parts easy to see and reuse:
 
 ```
 [ROLE] You are a cataloguer specializing in literary metadata.
@@ -243,7 +243,7 @@ Do not use all techniques at once. Pick one or two that fit the task.
 
 ## Thinking models and Apertus
 
-Some newer models have a thinking mode: they write out a stretch of reasoning before the final answer, and the app may hide or show it. The reasoning costs tokens and time. In testing, a 4B thinking model spent 821 characters of hidden reasoning on a one-sentence answer, and 82 seconds on a short SPARQL query. Apertus 1.0 has no thinking mode. When you ask it to "think step by step", the steps are simply part of its answer. That helps with arithmetic and multi-part questions, but nobody checks the steps except you.
+Some newer models have a thinking mode: they write out their reasoning before the final answer, and the app may show or hide it. The reasoning costs tokens and time. In testing, a 4B thinking model spent 821 characters of hidden reasoning on a one-sentence answer, and 82 seconds on a short SPARQL query (SPARQL is the query language for linked data). Apertus 1.0 has no thinking mode. When you ask it to "think step by step", the steps are simply part of its answer. That helps with arithmetic and multi-part questions, but nobody checks the steps except you.
 
 ## Self-study: five more techniques
 
@@ -251,7 +251,7 @@ Some newer models have a thinking mode: they write out a stretch of reasoning be
 
 ### Chain-of-thought
 
-Ask the model to write its working before the answer. Compare these two prompts on the same problem.
+Ask the model to write out its steps before the answer. Compare these two prompts on the same problem.
 
 ```
 A library has 150 books. On Monday, 23 books were checked out and 15 were returned. On Tuesday, 30 books were checked out and 12 were returned. How many books are now in the library?
@@ -267,7 +267,7 @@ The correct answer is 124: Monday changes the count by 15 - 23 = -8, Tuesday by 
 
 ### Negative prompting
 
-Tell the model what to avoid: "Do not use mathematical equations", "Do not mention prices". It works for style. For small models there is a catch: naming the forbidden thing puts it in the context, and the model may then use it. If "no equations" produces an equation, say what you want instead: "Explain in words only".
+Tell the model what to avoid: "Do not use mathematical equations", "Do not mention prices". It works for style. With small models there is a risk: naming the forbidden thing puts that word into the text the model reads, and the model may then use it. If "no equations" produces an equation, say what you want instead: "Explain in words only".
 
 ### Templates
 
@@ -285,16 +285,16 @@ Keep templates in a text file. Then your results are comparable from one run to 
 
 ### Comparative prompts
 
-Ask for a comparison along named dimensions, as a table.
+Ask for a comparison on the points you name, as a table.
 
 ```
 Compare these two works in a table with the rows: language, period, form, and one theme. Works: Les Misérables, Pride and Prejudice.
 ```
 
-Named dimensions keep the answer from drifting into an essay.
+Naming the points of comparison keeps the answer from turning into an essay.
 
 ### Iterative refinement
 
-Use the model's answer as the start of the next prompt: "Here is your last answer. Shorten it to 50 words and keep the two examples." Treat each reply as a draft. Start a new chat when the thread gets long, because the whole thread counts against the context window.
+Use the model's answer as the start of the next prompt: "Here is your last answer. Shorten it to 50 words and keep the two examples." Treat each reply as a draft. Start a new chat when the conversation gets long. The whole conversation counts against the context window, the limit on how much text the model can hold at once.
 
 {{< /details >}}

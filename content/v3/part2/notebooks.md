@@ -3,7 +3,7 @@ title: Notebooks
 weight: 8
 ---
 
-The workshop uses six notebooks, numbered 00 to 05. Each one ends with a Checkpoint cell that says where you should be.
+The workshop uses six notebooks, numbered 00 to 05. Each one ends with a Checkpoint cell that tells you what you should have reached by that point.
 
 ## The six notebooks
 
@@ -16,7 +16,9 @@ The workshop uses six notebooks, numbered 00 to 05. Each one ends with a Checkpo
 | `04_rag` | 20 min | Chunk documents, retrieve, answer with numbered citations, hit the context limit on purpose | 8 GB tier: 3 chunks, 4,096-token window; copy in `tier-8gb/` | [04_rag.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/04_rag.ipynb) |
 | `05_tool_use` | 15 min | Let the model propose GND, Wikidata and SPARQL calls; approve, correct or refuse each one | 8 GB tier: single-tool cells only; copy in `tier-8gb/` | [05_tool_use.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/05_tool_use.ipynb) |
 
-The budgets are the notebooks' own, for self-study. In the live session they are compressed to fit the 110 minutes; the [Part 2 timeline](/v3/part2#timeline) has the session minutes.
+The tier notes refer to the two hardware tiers: a machine with 16 GB of memory or more runs the 8B model, an 8 GB machine runs the 4B.
+
+The budgets in the table are the times given in the notebooks, and they are meant for self-study. In the live session we shorten them to fit the 110 minutes. The [Part 2 timeline](/v3/part2#timeline) shows the minutes for each segment.
 
 <!-- screenshot nb-00-checkpoint.png: JupyterLab, notebook 00: the Checkpoint cell after a green run; add in Task 14 -->
 <!-- screenshot nb-01-checkpoint.png: JupyterLab, notebook 01: the Checkpoint cell; add in Task 14 -->
@@ -25,17 +27,17 @@ The budgets are the notebooks' own, for self-study. In the live session they are
 <!-- screenshot nb-04-checkpoint.png: JupyterLab, notebook 04: the Checkpoint cell; add in Task 14 -->
 <!-- screenshot nb-05-checkpoint.png: JupyterLab, notebook 05: the Checkpoint cell; add in Task 14 -->
 
-The chapters that follow the notebooks: [Python and Ollama](/v3/part2/02-python-and-ollama), [structured output](/v3/part2/03-structured-output), [embeddings](/v3/part2/04-embeddings), [RAG](/v3/part2/05-rag) and [tool use](/v3/part2/06-tool-use).
+The site chapters that go with notebooks 01 to 05 are [Python and Ollama](/v3/part2/02-python-and-ollama), [structured output](/v3/part2/03-structured-output), [embeddings](/v3/part2/04-embeddings), [RAG](/v3/part2/05-rag) and [tool use](/v3/part2/06-tool-use).
 
 ## How to run them
 
-Follow the [environment page](/v3/part2/01-environment): install uv, clone the repository, install the packages and start JupyterLab. Open `00_check_setup.ipynb` first; every line should show a check mark. Notebook 03 uses two prebuilt index files that you download into `runs/`; the steps and checksums are on the environment page, and the files are listed on the [data page](/v3/resources/data).
+Follow the [environment page](/v3/part2/01-environment): install uv, clone the repository, install the packages and start JupyterLab. Open `00_check_setup.ipynb` first; every line should show a check mark. Notebook 03 uses two prebuilt index files that you download into `runs/`. The steps and checksums are on the environment page, and the files are listed on the [data page](/v3/resources/data).
 
 An 8 GB machine runs the same notebooks with the 4B model: set the environment variable `WORKSHOP_TIER=8gb` before you start JupyterLab, or change `"16gb"` to `"8gb"` in the first cell of each notebook.
 
 ## Read them without running them
 
-Every notebook is committed with its executed outputs, so you can read it on GitHub without Python. The `tier-8gb/` folder holds notebooks 04 and 05 as executed on the 8 GB tier with `nishad/apertus:4b`, so a reader on a smaller machine can see what to expect.
+Every notebook is saved on GitHub with its outputs, so you can read it there without Python. The `tier-8gb/` folder holds notebooks 04 and 05 as they ran on the 8 GB tier with `nishad/apertus:4b`. If you have an 8 GB machine, open them to see what to expect.
 
 ## The 2025 notebooks
 

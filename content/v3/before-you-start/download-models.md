@@ -3,7 +3,7 @@ title: Download the models in advance
 weight: 5
 ---
 
-Download your model before the workshop. First find your tier on [Choose a model size for your hardware](/v3/before-you-start/hardware): 16 GB or more uses the 8B, 8 GB uses the 4B. Then follow the tab for the tool you installed.
+Download your model before the workshop. First find your tier on [Choose a model size for your hardware](/v3/before-you-start/hardware). The tier depends on your computer's memory. With 16 GB or more you use the 8B model, and with 8 GB you use the 4B model. Then follow the tab for the tool you installed, Ollama or LM Studio.
 
 {{< tabs >}}
 
@@ -13,9 +13,9 @@ Download your model before the workshop. First find your tier on [Choose a model
 1. In the Ollama app, open the model picker and type exactly `nishad/apertus:8b`.
 2. Select the entry with the download arrow and send any message. The download bar appears in the chat.
 
-Typing `apertus` alone shows "No models found". Always type the full tag.
+Typing `apertus` alone shows "No models found". Always type the full tag, which is the model's complete name.
 
-Terminal alternative:
+Or run this in a terminal:
 
 ```bash
 ollama pull nishad/apertus:8b
@@ -23,15 +23,15 @@ ollama pull nishad/apertus:8b
 
 **8 GB (4B)**
 
-Do the same with `nishad/apertus:4b` (2.4 GB), or `ollama pull nishad/apertus:4b`.
+Do the same with `nishad/apertus:4b` (2.4 GB), or run `ollama pull nishad/apertus:4b` in a terminal.
 
 **Optional preview**
 
-If you want to compare, `nishad/apertus:8b-v1.5-preview` is a community conversion of the newer v1.5. Nothing in the workshop needs it.
+If you want to compare, `nishad/apertus:8b-v1.5-preview` is the newer Apertus v1.5, converted for local use by a community member. Nothing in the workshop needs it.
 
 **Embeddings for Part 2**
 
-Part 2 needs an embedding model. This step works in the terminal only:
+Part 2 also needs an embedding model. This second model does not write answers. It turns text into lists of numbers that represent the text's meaning, and Part 2 uses those numbers for searching. This step works in the terminal only:
 
 ```bash
 ollama pull qwen3-embedding:0.6b
@@ -43,8 +43,8 @@ It is 639 MB.
 {{< tab name="LM Studio" >}}
 **16 GB or more (8B)**
 
-1. Open Discover and paste `https://huggingface.co/unsloth/Apertus-8B-Instruct-2509-GGUF`.
-2. Choose **Q4_K_M** (5.06 GB) and click Download.
+1. Open Discover (the magnifying glass) and paste `https://huggingface.co/unsloth/Apertus-8B-Instruct-2509-GGUF`.
+2. Choose **Q4_K_M** (5.06 GB) and click Download. Q4_K_M is a quantization label. Quantization shrinks a model file by storing its numbers with less precision.
 
 **8 GB (4B)**
 
@@ -52,7 +52,7 @@ Paste `https://huggingface.co/jondale/Apertus-v1.1-4B-Instruct-GGUF` and choose 
 
 **Alternative**
 
-On the Hugging Face page, the "Use this model" button has an LM Studio entry.
+In your browser, open the model's page on Hugging Face (the website where most open models are published). Click the "Use this model" button and choose the LM Studio entry.
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -67,18 +67,18 @@ On the Hugging Face page, the "Use this model" button has an LM Studio entry.
 | `qwen3-embedding:0.6b` | 639 MB |
 | Python environment | about 0.5 GB |
 
-The total stays well under the 20 GB prerequisite. At 20 Mbit/s the 8B takes about 35 minutes.
+The total stays well under the 20 GB of free disk space we ask for. On a 20 Mbit/s connection, the 8B model takes about 35 minutes to download.
 
 ## Two index files for Part 2
 
-Notebook 03 needs two vector index files, `stw-de-labels.sqlite` (85.7 MB) and `unesco-en-labels.sqlite` (34.4 MB). Building them yourself is slow on most laptops, so download the prebuilt files instead. The download link is in step 4 of [Before you start](/v3/before-you-start#4-part-2-only-python-and-the-notebooks). Put them in the `runs/` folder of the notebooks repository. The checksums and the command to check them are on the [environment page](/v3/part2/01-environment#download-the-prebuilt-index-files).
+Notebook 03 needs two vector index files, `stw-de-labels.sqlite` (85.7 MB) and `unesco-en-labels.sqlite` (34.4 MB). A vector index stores the lists of numbers that an embedding model makes from each text. It can then find texts with similar meanings quickly. Building these two yourself is slow on most laptops, so download the prebuilt files instead. The download link is in step 4 of [Before you start](/v3/before-you-start#4-part-2-only-python-and-the-notebooks). Put them in the `runs/` folder of the notebooks repository. To confirm that the files arrived complete and unchanged, use the checksums and the command on the [environment page](/v3/part2/01-environment#download-the-prebuilt-index-files).
 
 ## Offline alternative
 
 {{< details title="Show the offline options" >}}
-Copy the `manifests` and `blobs` folders from `~/.ollama/models` on a colleague's machine into your own models folder. Or point Settings, then Model location, at a USB stick.
+Copy the `manifests` and `blobs` folders from `~/.ollama/models` on a colleague's machine into your own models folder. Or open Settings, then Model location, and select a USB stick that holds a copy of those folders.
 
-Another route is to build the tag from a GGUF file, using the Modelfile from the `models/` folder of the notebooks repository:
+Another option is to create the tag yourself from a GGUF file, the single-file format used for local models. Use the Modelfile from the `models/` folder of the notebooks repository:
 
 ```bash
 ollama create nishad/apertus:8b -f Modelfile
@@ -87,19 +87,21 @@ ollama create nishad/apertus:8b -f Modelfile
 
 ## Verify
 
-Send this message:
+Open a chat with the model you downloaded and send this message:
 
 > Reply with the word OK and the model name you think you are.
 
-Read the answer. Then check the list:
+Read the answer. Then, if you use Ollama, run this in a terminal to list your models:
 
 ```bash
 ollama list
 ```
 
-It shows the tag. In LM Studio the model appears under My Models.
+Your tag should be in the list. In LM Studio, the model appears under My Models instead.
 
 ## Digests and sources
+
+A digest is a code computed from the model's contents; it identifies the exact file you downloaded, and `ollama list` shows its first 12 characters. Two tags with the same digest are the same model.
 
 | Tag | Source GGUF | GGUF sha256 | Digest (`ollama list`) |
 |---|---|---|---|

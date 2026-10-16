@@ -5,13 +5,13 @@ cascade:
   type: docs
 ---
 
-A catalog wants fields: a title, a creator, a place, a year. A chat answer gives you a paragraph. A person can read a paragraph. A spreadsheet, a record store or a validation script cannot. This chapter makes the model fill a fixed set of fields instead, and then checks every answer.
+A catalog needs separate fields: a title, a creator, a place, a year. A chat answer gives you a paragraph. A person can read a paragraph, but a spreadsheet, a record store or a validation script cannot. This chapter makes the model fill a fixed set of fields instead, and then checks every answer. That is what structured output means: an answer in a fixed format that a program can read.
 
-Notebook 02, `02_structured_output`, has a 25-minute budget; in the session it gets about 22 (minutes 28 to 50 of Part 2). We give the model a catalog card, get a record back, watch it invent a value the card never stated, add a rule that catches the invention, and then measure twenty cards against a gold file.
+Notebook 02, `02_structured_output`, has a 25-minute budget. In the session it gets about 22 minutes, from minute 28 to minute 50 of Part 2. We give the model a catalog card and get a record back. Then we watch it invent a value the card never stated, and we add a rule that catches the invention. Finally, we measure twenty cards against a gold file, which holds the correct answers.
 
 ## What the notebook covers
 
-1. Define the shape of the answer as a Pydantic model and hand its JSON schema to the model.
+1. Define the shape of the answer as a Pydantic model, a Python class that lists the fields and their types. Hand its JSON schema to the model.
 2. Validate what comes back, and learn what grammar-enforced output does and does not guarantee.
 3. See the model invent a missing field, and add a rule that catches it.
 4. Run twenty cards in a batch and measure field accuracy against a gold file.

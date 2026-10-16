@@ -5,7 +5,7 @@ weight: 2
 
 This page follows the cells of notebook 04 in order. Each code cell is quoted with the output it produced when the notebook was executed on 15 October 2026 with `nishad/apertus:8b` (the 16 GB tier). Where the 8 GB tier differed, the page says so and quotes the 8 GB copy in `tier-8gb/`. The notebook's HTML answers are shown here as plain text. Long outputs are cut and marked with "…".
 
-The corpus is two documents in `data/docs/`: the IFLA Library Reference Model and the DCMI Metadata Terms, both CC BY 4.0, as text extracts.
+The notebook works with two documents in `data/docs/`: the IFLA Library Reference Model and the DCMI Metadata Terms. Both are licensed under CC BY 4.0 and stored as text extracts.
 
 ## 04.01 Configuration
 
@@ -23,7 +23,7 @@ print("Model:", MODEL, "| context:", LIMIT, "| chunks per question:", K)
 Model: nishad/apertus:8b | context: 8192 | chunks per question: 4
 ```
 
-From the executed notebook 04, 15 October 2026. `K` is the number of chunks per question. On the 8 GB tier the same cell printed `Model: nishad/apertus:4b | context: 4096 | chunks per question: 3`, from the executed notebook 04 on the 8 GB tier, 15 October 2026. The 4B has a 4,096-token window, so it gets one chunk fewer.
+From the executed notebook 04, 15 October 2026. `K` is the number of chunks per question. On the 8 GB tier the same cell printed `Model: nishad/apertus:4b | context: 4096 | chunks per question: 3`, from the executed notebook 04 on the 8 GB tier, 15 October 2026. The 4B has a context window of 4,096 tokens, so it gets one chunk fewer.
 
 ## 04.02 Load and chunk
 
@@ -44,7 +44,7 @@ print(chunks[5].id, "→", chunks[5].text[:200], "...")
 dcmi-terms#5 → The distinction between titles and alternative titles is application-specific. Has Range http://www.w3.org/2000/01/rdf-schema#Literal Subproperty of Title (http://purl.org/dc/elements/1.1/title) Title ...
 ```
 
-From the executed notebook 04, 15 October 2026. Two documents became 173 chunks of about 300 words with 50 words of overlap. The id `dcmi-terms#5` is the source and the position, which a citation points back to. Chunk 5 starts in the middle of a term's description: the chunker cuts on word counts, not on the document's structure.
+From the executed notebook 04, 15 October 2026. Two documents became 173 chunks of about 300 words with 50 words of overlap. The id `dcmi-terms#5` names the source file and the chunk's position in it, and that is what a citation points back to. Chunk 5 starts in the middle of a term's description, because the chunking code cuts by word count and ignores the document's structure.
 
 ## 04.03 Embed once
 
@@ -60,7 +60,7 @@ print(f"indexed {len(chunks)} chunks in {time.time()-t:.0f} s")
 indexed 173 chunks in 19 s
 ```
 
-From the executed notebook 04, 15 October 2026. The embedding model is `qwen3-embedding:0.6b`. The index lives in memory for the session, so closing the notebook discards it. The 19 seconds are the time on the machine that executed the notebook; expect longer on a slower or CPU-only machine.
+From the executed notebook 04, 15 October 2026. The embedding model is `qwen3-embedding:0.6b`. The index is kept in memory only for the session, so closing the notebook discards it. The 19 seconds were measured on the machine that ran the notebook; expect a longer wait on a slower or CPU-only machine.
 
 ## 04.04 Look at what was retrieved first
 
@@ -84,7 +84,7 @@ for cid, text, score in search(question, index, k=K):
       resource. ### FileFormat Class More details → URI http://purl.org/dc/terms/FileFormat Label File Format Definition A digital resource format. Subclass of http:/...
 ```
 
-From the executed notebook 04, 15 October 2026. This is a retrieval failure. The expected answer is `dcterms:issued`, and none of the four chunks is the one that defines it. The top hit is the generic definition of Date; the others are neighbors about date subproperties, spatial coverage and file formats.
+From the executed notebook 04, 15 October 2026. This is a retrieval failure. The expected answer is `dcterms:issued`, and none of the four chunks is the one that defines it. The first result is the general definition of Date. The other three are nearby chunks about date subproperties, spatial coverage and file formats.
 
 ## 04.05 Ask with the documents in the prompt
 
@@ -110,9 +110,9 @@ Cited material:
 [4] dcmi-terms#24: resource. ### FileFormat Class More details → URI http://purl.org/dc/terms/FileFormat Label File For...
 ```
 
-From the executed notebook 04, 15 October 2026. The answer is wrong: `dateAccepted` is a different term. The top chunk, `dcmi-terms#7`, holds the generic definition of Date and the neighboring term `dateAccepted`; the passage that defines `dcterms:issued` was not in the top four. The model then answered confidently from the retrieved-but-wrong passage: the definition it quotes is in chunk [1]. Its last sentences claim that none of the four chunks provides the information, which contradicts its own answer.
+From the executed notebook 04, 15 October 2026. The answer is wrong: `dateAccepted` is a different term. The top chunk, `dcmi-terms#7`, holds the generic definition of Date and the neighboring term `dateAccepted`. The passage that defines `dcterms:issued` was not in the top four. The model then answered confidently from the wrong passage it was given: the definition it quotes is in chunk [1]. Its last sentences claim that none of the four chunks provides the information, which contradicts its own answer.
 
-Retrieval decided this; the passage that defines `dcterms:issued` was never in the prompt. And a wrong answer with a real citation is harder to spot than an invented one. Read the cited passage and check that it answers the question asked, not a neighboring one.
+The retrieval step decided this outcome: the passage that defines `dcterms:issued` was never in the prompt. A wrong answer with a real citation is also harder to notice than an invented one. Read the cited passage and check that it answers the question you asked, not a closely related one.
 
 On the 8 GB tier the 4B, with three chunks, answered with the single line `Date (http://purl.org/dc/terms/date)`, which is also wrong (from the executed notebook 04 on the 8 GB tier, 15 October 2026).
 
@@ -129,7 +129,7 @@ The documents do not answer the question. The question asks who won the 2026 Nob
 
 From the executed notebook 04, 15 October 2026. This is the refusal the prompt asks for: the model says the documents do not answer, with a reason.
 
-On the 8 GB tier the 4B did not refuse. Its whole answer was a bare citation:
+On the 8 GB tier the 4B did not refuse. Its whole answer was a bare citation, a chunk number and nothing else:
 
 ```text
 [2]
@@ -139,7 +139,7 @@ From the executed notebook 04 on the 8 GB tier, 15 October 2026. Chunk 2 is a pa
 
 ## 04.07 The context budget
 
-System text, retrieved chunks, the question and the answer must all fit in the model's window: 8,192 tokens for the 8B tag and 4,096 for the 4B tag. The helper estimates the size and refuses to build an oversized prompt. Ollama has its own check. The cell asks for 40 chunks, which is far too many, and shows both.
+The system prompt, the retrieved chunks, the question and the answer must all fit in the model's context window: 8,192 tokens for the 8B tag and 4,096 for the 4B tag. The helper estimates the size of the prompt and refuses to build one that is too large. Ollama has its own check. The cell asks for 40 chunks, which is far too many, and shows what each of the two checks does.
 
 ```python
 from workshop.rag import PromptTooLong
@@ -163,13 +163,13 @@ helper refused: About 25842 tokens of prompt for a 8192-token window. Use fewer 
 Ollama said: request (10162 tokens) exceeds the available context size (8192 tokens), try increasing it (status code: 400)
 ```
 
-From the executed notebook 04, 15 October 2026. The helper estimates the whole prompt at one token per 3.5 characters, which deliberately errs high, and keeps 25 percent of the window free for the system prompt and the answer. Ollama's number, 10,162 tokens, is a real count of the shorter text the cell sent. Both refuse.
+From the executed notebook 04, 15 October 2026. The helper estimates the whole prompt at one token per 3.5 characters, and that estimate is deliberately high. It also keeps 25 percent of the window free for the system prompt and the answer. Ollama's number, 10,162 tokens, is a real count of the shorter text the cell sent. Both refuse.
 
-The 8 GB tier behaved differently. The helper refused as before (`About 25842 tokens of prompt for a 4096-token window`), but then the cell printed `Ollama accepted the long prompt (it may have truncated silently; check num_ctx).` (from the executed notebook 04 on the 8 GB tier, 15 October 2026). Ollama's server log for that run recorded the 5,076-token prompt cut to 2,051 tokens. The part that was cut off is gone and nothing tells the model or you. The helper's refusal is the only guard you can rely on there.
+The 8 GB tier behaved differently. The helper refused as before (`About 25842 tokens of prompt for a 4096-token window`). But then the cell printed `Ollama accepted the long prompt (it may have truncated silently; check num_ctx).` (from the executed notebook 04 on the 8 GB tier, 15 October 2026). Ollama's server log for that run recorded that the 5,076-token prompt was cut to 2,051 tokens. The part that was cut off is gone, and neither you nor the model is told. On that tier, the helper's refusal is the only protection you can rely on.
 
 ## 04.08 Five questions, scored by you
 
-The questions come from `data/docs/questions.json`. The score is a judgment, not a string match; that is deliberate. Each answer was cut at 400 characters by the notebook.
+The questions come from `data/docs/questions.json`. You score each answer yourself, by reading it against the expected answer. The notebook does not compare the two texts automatically, and that is deliberate. The notebook cut each answer at 400 characters.
 
 ```python
 import json
@@ -187,14 +187,14 @@ for q in questions:
 | What is the range of dcterms:language? | `LinguisticSystem` | "The range of dcterms:language is Includes http://purl.org/dc/terms/LinguisticSystem [1]. This is specified in the document [1] which provides details on the dcterms:language property. The document [1] also mentions that the recommended practice is to use either a non-literal value representing a language from a controlled vocabulary such as ISO 639-2 or ISO 639-3, or a literal value consisting of…" | `[2]` |
 | Who won the 2026 Nobel Prize in Literature? | not in the documents (the model must say so) | "The documents do not answer the question. The question asks who won the 2026 Nobel Prize in Literature, but the documents are about bibliographic identities, context of use, and the recognition of distinct bibliographic identities. They do not contain information about the Nobel Prize in Literature or its winners." | `[2]` |
 
-Reading the 8B column: question 1 starts correctly and the visible part matches the expected entities; question 2 is wrong, as in 04.05; question 3 gets the item right and the manifestation roughly right; question 4 names `LinguisticSystem`, though the opening sentence is awkward; question 5 refuses correctly. Four out of five are usable, and you only know which four by reading. On the 4B every answer is a bare citation or a wrong term, so none of them can be trusted. The 4B column is from the executed notebook 04 on the 8 GB tier, 15 October 2026.
+Reading the 8B column: question 1 starts correctly, and the visible part matches the expected entities. Question 2 is wrong, as in 04.05. Question 3 gets the item right and the manifestation roughly right. Question 4 names `LinguisticSystem`, though its opening sentence is awkward. Question 5 refuses correctly. Four out of five are usable, and you only know which four by reading them. On the 4B every answer is a bare citation or a wrong term, so none of them can be trusted. The 4B column is from the executed notebook 04 on the 8 GB tier, 15 October 2026.
 
 ## 04.09 Bring your own document
 
-Drop a PDF, Markdown or text file into `data/my/` and run the cell. It chunks the files with the default sizes, builds an index, and asks one question. When the notebook runs unattended, as it did for the committed copy, it asks a fixed question, "What is this document about?"; in a live session it waits for yours. On the executed run `data/my/` was empty, so the cell printed `Put a .pdf, .md or .txt file into data/my/ and run this cell again.`
+Put a PDF, Markdown or text file into `data/my/` and run the cell. It cuts the files into chunks of the default sizes, builds an index, and asks one question. When the notebook runs unattended, as it did for the committed copy, it asks the fixed question "What is this document about?" In a live session it waits for your question. On the executed run `data/my/` was empty, so the cell printed `Put a .pdf, .md or .txt file into data/my/ and run this cell again.`
 
 {{< callout type="warning" >}}
-Text is read as UTF-8. Two-column PDFs extract badly: the text of the left and right columns can interleave line by line. Print a few hundred characters of the extracted text and compare it with the page before you trust any answer.
+Text is read as UTF-8. Two-column PDFs extract badly: the lines of the left and right columns can come out mixed together. Print a few hundred characters of the extracted text and compare it with the page before you trust any answer.
 {{< /callout >}}
 
 ## Three tiers
@@ -205,11 +205,11 @@ LM Studio's Chat with Documents does this retrieval without code. Attach `dcmi-t
 
 ### Run and change
 
-Set `K = 1` and re-run 04.08. Which questions break? Then try `size=150` in 04.02, which makes the chunks smaller, and see whether the `dcterms:issued` question retrieves a better passage. Then ask the same question in German: does retrieval over English documents still find the passage?
+Set `K = 1` and re-run 04.08. Which answers go wrong? Then try `size=150` in 04.02, which makes the chunks smaller, and see whether the `dcterms:issued` question retrieves a better passage. Finally, ask the same question in German: does retrieval over English documents still find the passage?
 
 ### Stretch
 
-Rerank. Ask the chat model, with `format=` and a tiny Pydantic model `{"relevant": bool, "reason": str}`, whether each of the top 10 chunks answers the question; keep only the relevant ones and answer again. Compare with 04.05. A second stretch: index this workshop's website pages (download them as Markdown) and ask the index about itself.
+Rerank the chunks, that is, let the chat model check the retrieved chunks before they are used. Use `format=` with a tiny Pydantic model `{"relevant": bool, "reason": str}`, and ask it whether each of the top 10 chunks answers the question. Keep only the relevant ones and answer again. Compare with 04.05. A second stretch: index this workshop's website pages (download them as Markdown) and ask the index about itself.
 
 ### On the 8 GB tier
 
@@ -223,5 +223,5 @@ The same notebook runs with `WORKSHOP_TIER=8gb`: three chunks per question and a
 - [ ] I know what happens when a prompt does not fit the window.
 
 {{< callout type="success" >}}
-**What you should see:** numbered citations in the answers, one retrieval miss that produced a confidently wrong answer, one refusal when the documents are silent, and a helper error for the oversized prompt. Next: [tool use](/v3/part2/06-tool-use), for the questions a document index cannot answer.
+**What you should see:** numbered citations in the answers, one retrieval failure that produced a confidently wrong answer, one refusal when the documents are silent, and a helper error for the oversized prompt. Next: [tool use](/v3/part2/06-tool-use), for the questions a document index cannot answer.
 {{< /callout >}}

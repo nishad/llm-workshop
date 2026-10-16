@@ -3,13 +3,13 @@ title: Limits
 weight: 4
 ---
 
-Small local models are useful, and they make mistakes in predictable ways. This page shows five, each with a captured example, so you can recognize them in your own work.
+Small local models are useful, and they make mistakes in predictable ways. This page shows five of them, each with a captured example, so you can recognize them in your own work.
 
-All captures: nishad/apertus:8b, temperature 0.8, 15 October 2026, unless stated.
+All captures come from nishad/apertus:8b at temperature 0.8 on 15 October 2026, unless stated otherwise. Temperature is the setting that controls how much the answers vary.
 
 ## 1. An invented place of publication
 
-This one comes from the notebooks in Part 2. Notebook 02 reads catalog cards and fills a record with a schema. Card 03 has no place of publication:
+This one comes from the notebooks in Part 2. Notebook 02 reads catalog cards and fills in a record that follows a schema, a fixed list of the allowed fields and what goes in each. Card 03 has no place of publication:
 
 ```
 Beauvoir, Simone de
@@ -19,14 +19,14 @@ Gallimard, 1949
 Collection Folio essais
 ```
 
-The instruction said to use an empty string for a field the card does not state, and never to guess a place. The extraction came back with this (from the executed notebook 02, 15 October 2026):
+The instruction said to use an empty string (a blank value) for any field the card does not state, and never to guess a place. The model returned this (from the executed notebook 02, 15 October 2026):
 
 ```
 {'title': 'Le deuxième sexe. I, Les faits et les mythes', 'creators': ['Beauvoir, Simone de'], 'place': 'Gallimard', 'publisher': 'Gallimard', 'date': '1949', 'language': 'en', 'identifier': ''}
 place should be empty; the model said: 'Gallimard'
 ```
 
-The model put the publisher's name into the place field. A second error sits in the same line: the language of this French book is marked 'en'. Both values look normal. Nothing in the answer signals a problem.
+The model put the publisher's name into the place field. A second error sits in the same line: the language of this French book is marked 'en', the code for English. Both values look normal. Nothing in the answer signals a problem.
 
 ## 2. A fabricated identifier
 
@@ -44,7 +44,7 @@ What is the ISBN of the book "Das Parfum" by Patrick Süskind, published by Diog
 The ISBN of the book "Das Parfum" by Patrick Süskind, published by Diogenes, is 9783257061675.
 ```
 
-The ISBN is not valid: its check digit is wrong, and the DNB catalog has no record of it. The same number with the correct check digit is a different book, "Verrechnet" by Dick Francis. The model gave one number, with no hedge. The DOI in the same exercise was real but belonged to a different article. The full check is on the exercises page.
+The ISBN is not valid: its check digit is wrong, and the DNB catalog has no record of it. The same number with the correct check digit is a different book, "Verrechnet" by Dick Francis. The model gave one number and showed no doubt. The DOI in the same exercise was real but belonged to a different article. The full check is on the exercises page.
 
 ## 3. A rule missed in a calculation
 
@@ -79,7 +79,7 @@ Now, let's add up the total late fees for all items: $6 (books) + $8 (DVD) + $0.
 Therefore, Sarah owes a total of $14.75 in late fees.
 ```
 
-Each multiplication is correct: 2 books at 12 days is 2 x 0.25 x 12 = $6. But the policy caps the fee at $5.00 per item, so the DVD should cost $5. The model ignored the cap and charged $8. The right total is $6 + $5 + $0.75 = $11.75. The model's $14.75 is $3 too much. The working is on the page and looks careful, which makes the mistake easy to miss.
+Each multiplication is correct: 2 books at 12 days is 2 x 0.25 x 12 = $6. But the policy caps the fee at $5.00 per item, so the DVD should cost $5. The model ignored the cap and charged $8. The right total is $6 + $5 + $0.75 = $11.75. The model's $14.75 is $3 too much. The steps are written out and look careful, which makes the mistake easy to miss.
 
 ## 4. A missed word limit
 
@@ -99,7 +99,7 @@ The prompt asked for no more than 15 words. The answer has 35, and it is a near 
 
 ## 5. A wrong term in translation
 
-German economics terms into English. The reference is the English label in the STW Thesaurus for Economics, version 9.20.
+The prompt below translates German economics terms into English. The reference is the English label in the STW Thesaurus for Economics, version 9.20.
 
 **Prompt:**
 
@@ -125,12 +125,12 @@ Translate these German economics terms into English, one per line: Schattenwirts
 | Urheberrecht | Copyright | Copyright law |
 | Eigentum | Ownership | Property |
 
-Four of the five are acceptable English that differs from the label in the thesaurus. Lenkungsabgabe is different in kind. In STW it is a levy whose main purpose is to steer behavior, and the model's "Regulatory Fee" does not say that. A reader who does not know German would not notice. When a vocabulary fixes the label, the model's translation is a suggestion at best.
+Four of the five are acceptable English, but each differs from the label in the thesaurus. Lenkungsabgabe is a different kind of problem. In STW it is a levy (a tax or charge) whose main purpose is to steer behavior, and the model's "Regulatory Fee" does not say that. A reader who does not know German would not notice. When a vocabulary sets the label, the model's translation is no more than a suggestion.
 
 ## Two checks anyone can do
 
 1. **Ask for the source, then look it up.** Ask "Where does this come from?" and check what you get against a catalog, Crossref, the thesaurus or the original text. If the model names a source, confirm that it exists and says what the model claims. If it cannot name one, treat the answer as unverified.
-2. **Ask the same question twice and compare.** Run the prompt again in a new chat (temperature 0.8 is the default in the apps). Facts the model really holds tend to come back the same. A guess changes between runs. If two runs disagree, treat both answers as unverified.
+2. **Ask the same question twice and compare.** Run the prompt again in a new chat. At temperature 0.8, the default in the apps, answers can vary between runs. Facts the model has actually learned tend to come back the same. A guess changes between runs. If two runs disagree, treat both answers as unverified.
 
 Neither check proves an answer is right. They only tell you where to look.
 
@@ -140,4 +140,4 @@ A confident tone is not evidence. Every example on this page was delivered as ca
 
 ## From here to Part 2
 
-In Part 2 you meet the tools that make these errors visible: a schema that rejects a wrong shape, a validator that rejects a place equal to a publisher, and a human who approves a record before it is used. See [Part 2](/v3/part2).
+In Part 2 you meet the tools that make these errors visible: a schema that rejects a wrong shape, a validator (a check written in code) that rejects a place that is the same as the publisher, and a human who approves a record before it is used. See [Part 2](/v3/part2).

@@ -3,11 +3,11 @@ title: Exercise
 weight: 2
 ---
 
-This page follows sections 02.03 to 02.05 of notebook 02. Each code cell is quoted with the output it produced when the notebook was executed on 15 October 2026. The `Record` model is on the [concepts page](/v3/part2/03-structured-output/concepts). On the 16 GB tier `MODEL` is `nishad/apertus:8b`.
+This page follows sections 02.03 to 02.05 of notebook 02. Each code cell is shown with the output it produced when the notebook was run on 15 October 2026. The `Record` model is on the [concepts page](/v3/part2/03-structured-output/concepts). On the 16 GB tier `MODEL` is `nishad/apertus:8b`.
 
 ## One card, one record
 
-The helper sends the card with instructions and the schema, at temperature 0.
+The `chat` helper sends the card, the instructions and the schema to the model, at temperature 0.
 
 ```python
 from pathlib import Path
@@ -39,7 +39,7 @@ Leipzig : Weygandsche Buchhandlung, 1774
 {'title': 'Die Leiden des jungen Werthers : Roman', 'creators': ['Goethe, Johann Wolfgang von'], 'place': 'Leipzig', 'publisher': 'Weygandsche Buchhandlung', 'date': '1774', 'language': 'de', 'identifier': ''}
 ```
 
-From the executed notebook 02, 15 October 2026. The structure is perfect and most values are right. The title still carries its subtitle ` : Roman`, although the description asked for the title proper. That slip comes back in the accuracy count below.
+From the executed notebook 02, 15 October 2026. The structure is perfect and most values are right. The title still carries its subtitle ` : Roman`, although the description asked for the title proper. That mistake appears again in the accuracy count below.
 
 ## A card that is silent about the place
 
@@ -64,11 +64,11 @@ Collection Folio essais
 place should be empty; the model said: 'Gallimard'
 ```
 
-From the executed notebook 02, 15 October 2026. Valid JSON, wrong fact: the model filled the missing place with the publisher's name. (It also labeled a French book `en`.) In the October 2026 tests both the 8B and the 4B did this. The grammar cannot catch it, so a rule has to.
+From the executed notebook 02, 15 October 2026. The JSON is valid, but a fact is wrong: the model filled the missing place with the publisher's name. (It also labeled a French book `en`.) In the October 2026 tests, both the 8B and the 4B models filled the missing place in the same way. The grammar cannot catch it, so a rule has to.
 
 ## A rule and a retry
 
-`CheckedRecord` adds one validator. `extract_checked` feeds the error back once.
+`CheckedRecord` adds one validator, a check that runs after parsing. `extract_checked` sends the error message back to the model once.
 
 ```python
 from pydantic import ValidationError, model_validator
@@ -103,11 +103,11 @@ attempt 1: validation failed: Value error, place equals publisher; the card prob
 {'title': 'Le deuxième sexe. I, Les faits et les mythes', 'creators': ['Beauvoir, Simone de'], 'place': '', 'publisher': 'Gallimard', 'date': '1949', 'language': 'en', 'identifier': ''}
 ```
 
-From the executed notebook 02, 15 October 2026. The rule caught the invented place and the retry returned an empty one. The wrong language is still there: no rule looked at it.
+From the executed notebook 02, 15 October 2026. The rule caught the invented place, and on the retry the model returned an empty string instead. The wrong language is still there, because no rule looked at it.
 
 ## Twenty cards, measured
 
-Run every card, write a CSV and compare with the gold file.
+Run every card, write a CSV and compare the results with the gold file, which holds the correct answers.
 
 ```python
 import csv, json
@@ -134,7 +134,7 @@ print(f"{len(rows)} cards, field accuracy {correct}/{total} = {correct/total:.0%
 **What you should see:** `20 cards, field accuracy 97/120 = 81%`. If your number is far from that, check that `MODEL` is the 8B tag.
 {{< /callout >}}
 
-Which fields fail most? This is where a human reviewer should look first.
+The next cell counts which fields fail most. Those fields are where a human reviewer should look first.
 
 ```python
 from collections import Counter
@@ -151,13 +151,13 @@ print(misses.most_common())
 [('title', 7), ('language', 7), ('identifier', 4), ('place', 4), ('publisher', 1)]
 ```
 
-From the executed notebook 02, 15 October 2026. Title and language are where the 8B slips most. It copies the subtitle after ` : ` although the description asks for the title proper, and it guesses the language of a French or Italian book as English from the imprint. A field description is a hint, not a guarantee; that is what the gold file and a human reviewer are for. The count is a measure of how much review the field needs.
+From the executed notebook 02, 15 October 2026. The 8B model makes most of its mistakes in the title and language fields. It copies the subtitle after ` : ` although the description asks for the title proper. It also labels a French or Italian book as English, guessing the language from the imprint. A field description is a hint, not a guarantee. Checking the values is the job of the gold file and a human reviewer. The miss count tells you how much review each field needs.
 
 ## Three tiers
 
 ### GUI
 
-Paste the text of `data/cards/card-03.txt` into the Ollama app together with the `INSTRUCTIONS` text from the first cell above and the field list from the `Record` model, and see whether the model invents a place of publication. Compare the answer with the enforced version above. Is its JSON always well-formed?
+Paste the text of `data/cards/card-03.txt` into the Ollama app, together with the `INSTRUCTIONS` text from the first cell above and the field list from the `Record` model. See whether the model invents a place of publication. Compare the app's answer with the grammar-enforced answer above. Is the app's JSON always well-formed?
 
 ### Run and change
 
@@ -165,7 +165,7 @@ Add a field `pages: str = Field(default="", max_length=40, ...)` with a descript
 
 ### Stretch
 
-Add `confidence: float = Field(description="0 to 1")`, run five cards, and compare the confidence values with the actual errors from the batch. Small models fill this field with numbers that do not track their errors. To judge reliability, compare the answers with the gold file instead.
+Add `confidence: float = Field(description="0 to 1")`, run five cards, and compare the confidence values with the actual errors from the batch. Small models fill this field with numbers that do not match their real errors. To judge how reliable the answers are, compare them with the gold file instead.
 
 A second stretch: run the same extraction through the OpenAI client, as shown at the end of the [concepts page](/v3/part2/03-structured-output/concepts).
 

@@ -17,16 +17,16 @@ Part 2 runs on Ollama. If you installed only LM Studio, install Ollama now (10 m
 
 After Part 2 you can:
 
-- call a local model from Python with controlled options and record what was used;
-- obtain schema-valid structured output and validate it, handling missing values;
-- embed vocabulary concepts and run cross-lingual semantic search;
-- build a small RAG pipeline that cites its sources and says so when the documents do not answer;
-- let a model propose a tool call (authority lookup, SPARQL) and approve or correct it before execution;
+- call a local model from Python, set its options yourself, and record which model and settings each call used;
+- get structured output (an answer that must follow a fixed format, usually JSON), validate it and handle missing values;
+- embed vocabulary concepts (turn each one into a list of numbers that stands for its meaning) and search them by meaning across languages;
+- build a small RAG pipeline that cites its sources and says so when the documents do not answer (RAG means fetching the relevant passages first and giving them to the model with the question);
+- let a model propose a tool call (a request for your program to run a function, such as an authority lookup or a SPARQL query) and approve or correct it before anything runs;
 - explain the limits of small local models from evidence they produced themselves.
 
 ## Timeline
 
-Minutes are counted from 06:10 UTC. Type-along means we run the cells together; an exercise means you work on your own or in a small breakout.
+Minutes are counted from 06:10 UTC. Type-along means we run the notebook cells together. An exercise means you work on your own or in a small breakout room.
 
 | Minutes | Segment | Mode | Notebook | Site pages |
 |---|---|---|---|---|
@@ -38,13 +38,13 @@ Minutes are counted from 06:10 UTC. Type-along means we run the cells together; 
 | 90-105 | Tool use with a human in the loop | demo then exercise | `05_tool_use` | [Tool use](/v3/part2/06-tool-use) |
 | 105-110 | Wrap-up: provenance checklist, next steps | demo | | [Wrap-up](/v3/part2/07-wrap-up) |
 
-If the half runs late, the Stretch tiers of RAG and tool use are cut first. They stay in the notebooks for self-study.
+If Part 2 runs late, we cut the Stretch tiers of RAG and tool use first. They stay in the notebooks for self-study.
 
 ## From manual to automated
 
 In Part 1 you worked by hand:
 
-- one prompt at a time in a chat window;
+- typing one prompt at a time into a chat window;
 - reading each answer yourself;
 - copying and pasting data in and out.
 
@@ -56,11 +56,11 @@ In Part 2 you work with code:
 
 ## Three ways to take part
 
-- **GUI only.** Part 1 entirely. In Part 2 you follow as a listener and watch the notebooks run.
-- **Run the notebooks.** You need the environment from the [next page](/v3/part2/01-environment) and the model pulled.
-- **Read afterwards.** Every notebook is committed with its outputs, so you can read it later without running anything.
+- **GUI only.** You work in a graphical chat app and write no code. That covers all of Part 1. In Part 2 you follow as a listener and watch the notebooks run.
+- **Run the notebooks.** You need the environment from the [next page](/v3/part2/01-environment), and the model must already be downloaded.
+- **Read afterwards.** Every notebook is saved with its outputs, so you can read it later without running anything.
 
-Each exercise has three tiers: GUI, Run-and-change and Stretch.
+Each exercise has three tiers: GUI (do the task in your chat window), Run and change (change one thing and compare) and Stretch (go one step further).
 
 ## The pages
 

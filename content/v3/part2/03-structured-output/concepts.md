@@ -9,7 +9,7 @@ A JSON schema is a small JSON document that says which keys an answer has, what 
 
 ## Pydantic is the way to write one in Python
 
-You rarely write a schema by hand. Pydantic lets you write a class, and it produces the schema for you with `model_json_schema()` and parses an answer back with `model_validate_json()`. This is the `Record` model from notebook 02:
+You rarely write a schema by hand. Pydantic is a Python library that defines data shapes as classes and checks data against them. You write a class, and Pydantic produces the schema for you with `model_json_schema()`. It also parses an answer back into the class with `model_validate_json()`. This is the `Record` model from notebook 02:
 
 ```python
 from typing import Literal
@@ -27,18 +27,18 @@ class Record(BaseModel):
 
 Four design choices are worth copying:
 
-- Every free-text field has a `max_length`. It travels into the schema. Without a limit, a small model can keep writing into an open-ended string field.
+- Every free-text field has a `max_length`, and that limit goes into the schema. Without a limit, a small model can keep writing into a string field and never stop.
 - An empty string means "the card does not say".
 - `Literal` limits the language to a fixed list.
 - The fields follow the order of the card itself, and the descriptions are written as instructions.
 
 ### Why not `Optional` with `null`?
 
-The notebook tried it, in October 2026. At temperature 0 the 8B model answered `null` for every optional field in turn, and then poured the whole imprint line into the first free-text field, sometimes repeating it until the window filled. The schema works as part of the prompt, so how you design it changes the answers. The call also passes `options={"num_predict": 300}`, a hard ceiling on output tokens, so a runaway answer cannot eat the session.
+We tried it in the notebook in October 2026. At temperature 0, the least random setting, the 8B model answered `null` for every optional field, one after another. It then wrote the whole imprint line into the first free-text field, sometimes repeating it until the context window was full. The schema works as part of the prompt, so how you design it changes the answers. The extraction call in the notebook also passes `options={"num_predict": 300}`, a hard limit on the number of output tokens. That way, an answer that does not stop cannot block the rest of the session.
 
 ## Enforced decoding: what `format=` guarantees
 
-When you pass `format=Record.model_json_schema()`, Ollama constrains the model while it writes, so that only tokens that fit the schema can be chosen. This is grammar-enforced decoding.
+When you pass `format=Record.model_json_schema()`, Ollama limits the model's choices while it writes: at each step, the model can choose only tokens that fit the schema. This is called grammar-enforced decoding.
 
 | It guarantees | It does not guarantee |
 |---|---|
@@ -51,11 +51,11 @@ Shape is enforced; truth is not. That gap is the subject of the exercise.
 
 ## Validation rules encode what you know about the data
 
-Pydantic can run your own checks after parsing. A rule such as "the place of publication is never identical to the publisher" is a few lines, and it catches a mistake the grammar cannot see.
+Pydantic can run your own checks after parsing. A rule such as "the place of publication is never the same as the publisher" takes a few lines of code, and it catches a mistake the grammar cannot see.
 
 ## Retry with the error
 
-When a rule fails, send the answer back with the error message and ask for a fix. The pattern is: call, validate, and on failure append the model's answer and the error to the conversation and call once more. One retry is usually enough, and you cap it so a stubborn case cannot loop.
+When a rule fails, send the answer back with the error message and ask for a fix. The pattern goes like this: call the model and validate the answer. If validation fails, add the model's answer and the error to the conversation, then call once more. One retry is usually enough. Set a limit on retries, so a case that never passes cannot loop forever.
 
 ## The same call through the OpenAI client
 

@@ -5,11 +5,11 @@ weight: 2
 
 A model does not read words. It reads **tokens**: pieces of text, some whole words, some word fragments, some single characters or digits.
 
-Common words are usually one token. Rare or long words, names and identifiers are assembled from several, and the split is rarely the one a person would make.
+Common words are usually one token. Rare or long words, names and identifiers are made of several tokens, and the pieces are rarely the ones a person would choose.
 
 ## What things cost
 
-Counts are for the Apertus tokenizer. Where another model's tokenizer gives a different count, it is shown in brackets.
+Counts are for the Apertus tokenizer, the set of rules that Apertus uses to cut text into tokens. Where another model's tokenizer gives a different count, it is shown in parentheses.
 
 | Text | Tokens |
 |---|---|
@@ -33,10 +33,10 @@ The SPARQL query costs about twice as many tokens per character as ordinary pros
 
 ## Why it matters
 
-- **Context costs tokens.** Everything you send and everything the model answers counts against the [context window](/v3/part1/01-how-llms-work/context).
-- **Identifiers are brittle.** An ISBN or a DOI is split into many small pieces, so the model handles it as a string of fragments, not as one thing. Copying one exactly is harder than it looks.
-- **Languages are not equal.** Depending on the tokenizer, non-English text can cost noticeably more. The Apertus tokenizer was built for broad multilingual coverage, so its counts for German, Japanese and Hindi stay modest.
+- **Context costs tokens.** Everything you send and everything the model answers uses up part of the [context window](/v3/part1/01-how-llms-work/context), the model's working memory.
+- **Identifiers are fragile.** An ISBN or a DOI is split into many small pieces, so the model handles it as a series of fragments, not as one thing. Copying one exactly is harder than it looks.
+- **Languages are not equal.** Depending on the tokenizer, text in other languages can cost noticeably more than English. The Apertus tokenizer was built to cover many languages well, so its counts for German, Japanese and Hindi stay moderate.
 
 ## Try it
 
-Paste your own sentences into the [tiktokenizer playground](https://tiktokenizer.vercel.app/) to see how the GPT and Llama tokenizers split them. Part 2 shows the real count for any text you send: the response object's `prompt_eval_count` and `eval_count` fields (see [Basics](/v3/part2/02-python-and-ollama/basics)).
+Paste your own sentences into the [tiktokenizer playground](https://tiktokenizer.vercel.app/) to see how the GPT and Llama tokenizers split them. Part 2 shows the real count for any text you send. The response you get back carries it in two fields, `prompt_eval_count` and `eval_count` (see [Basics](/v3/part2/02-python-and-ollama/basics)).

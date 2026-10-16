@@ -3,7 +3,7 @@ title: Human in the loop
 weight: 2
 ---
 
-This page follows the cells of notebook 05 in order. Each code cell is quoted with the output it produced when the notebook was executed on 15 October 2026 with `nishad/apertus:8b`, and notebook outputs are labeled as such. The 8 GB tier copy in `tier-8gb/` was executed with `nishad/apertus:4b`; where it differs, the page says so. Printed lines are cut at 300 characters by the notebook, and long lines are cut again here and marked "…". The notebook's HTML answers are shown as plain text.
+This page follows the cells of notebook 05 in order. Each code cell is quoted with the output it produced when we executed the notebook on 15 October 2026 with `nishad/apertus:8b`. Each of these outputs is labeled with the notebook and the date. The 8 GB tier copy in `tier-8gb/` was executed with `nishad/apertus:4b`; where it differs, the page says so. The notebook cuts printed lines at 300 characters. This page cuts long lines again and marks them "…". The notebook's HTML answers are shown as plain text.
 
 ## 05.02 Three tools
 
@@ -35,7 +35,7 @@ def sparql(query: str, endpoint: str = "wikidata") -> str:
     """
 ```
 
-If the network fails, each tool returns a recorded fixture and says so with `"fixture": true` in its result. The notebook calls each tool once without a model:
+If the network fails, each tool returns a fixture (a recorded copy of an earlier response) and says so with `"fixture": true` in its result. The notebook calls each tool once without a model:
 
 ```python
 from workshop.tools import search_gnd, wikidata_lookup, sparql, TOOLS
@@ -50,7 +50,7 @@ print(json.loads(sparql("SELECT ?item WHERE { ?item wdt:P227 '11850391X' }", "wi
 {'results': [{'item': 'http://www.wikidata.org/entity/Q60025'}], 'fixture': False, 'query': "SELECT ?item WHERE { ?item wdt:P227 '11850391X' }\nLIMIT 50"}
 ```
 
-From the executed notebook 05, 15 October 2026. These were live calls (`'fixture': False`). The SPARQL tool added `LIMIT 50` to the query before running it, and every GND result carries the bare number in `gnd`, so a model can pass it on as a string literal.
+From the executed notebook 05, 15 October 2026. These were live calls (`'fixture': False`). The SPARQL tool added `LIMIT 50` to the query before running it. Every GND result carries the bare number in `gnd`, so a model can pass it on as a string literal.
 
 ## 05.03 One proposed call, one decision
 
@@ -61,7 +61,7 @@ The model proposes: search_gnd({"name": "Hannah Arendt", "type": "Person"})
 Run it? [y]es / [n]o / or paste corrected JSON arguments:
 ```
 
-Type `y` to run it, `n` to refuse it, or paste corrected JSON arguments to run a different call. The prompt text comes from `workshop.tools.approve`. The committed run was unattended, so it approved every call automatically.
+Type `y` to run it, `n` to refuse it, or paste corrected JSON arguments to run a different call. The prompt text comes from `workshop.tools.approve`. The committed run (the one saved in the notebooks repository) was unattended, so it approved every call automatically.
 
 ```python
 from workshop.tools import run_tool_loop
@@ -92,7 +92,7 @@ Names get misspelled, by people in questions and by models in tool arguments. Th
 {"name": "Annemarie Schwarzenbach", "type": "Person"}
 ```
 
-You can also type `y` if the model has already fixed the spelling. The committed run cannot type at the gate, so a small function scripts the same correction and prints the proposed and the corrected call:
+You can also type `y` if the model has already fixed the spelling. The committed run cannot type at the gate, so a small function makes the same correction in code and prints both the proposed call and the corrected one:
 
 ```python
 from workshop.tools import approve
@@ -145,20 +145,20 @@ Each result carries the bare GND number in `gnd`. The most relevant result for t
 
 From the executed notebook 05, 15 October 2026. The GND number is 118997718. The ASSISTANT line keeps the call as the model proposed it, misspelling included; the TOOL line is the result of the corrected call. The same five lobid records are in `fixtures/search_gnd/annemarie_schwarzenbach_person.json` in the notebooks repository.
 
-Now compare the summary with the tool message. The notebook's own note says that the summary attached dates and professions that the lobid result does not contain:
+Now compare the model's summary with the tool result. The notebook's own note says that the summary attached dates and professions that the lobid result does not contain:
 
 - lobid has `Speerli, Annemarie | Künstlerin; Malerin` with no dates, and the summary gives her 1906–1999, which are Suzanne Schwarzenbach's dates.
 - lobid has `Schwarzenbach, Bettina Elisabeth Annemarie | 1979–` with no profession, and the summary calls her an agrarian scientist, which is Suzanne's profession.
 - The summary calls all five people Swiss, which no lobid label says.
 - It writes the writer's name with the question's misspelling, *Schwartzenbach*.
 
-Nothing was marked. The `[UNVERIFIED]` check verifies identifiers only, and 118997718 did come from the tool. Prose about a person must be checked against the tool message.
+The loop marked nothing. The `[UNVERIFIED]` check verifies identifiers only, and 118997718 did come from the tool. You must check the prose about a person against the tool result yourself.
 
 On the 8 GB tier this cell is skipped; the notebook prints `Skipped on the 4B: the single-tool cell above is the one to run on the 8 GB tier.`
 
 ## 05.05 Two tools in a row: GND, Wikidata, HLS
 
-Wikidata links authority files. Property P227 holds the GND identifier and P902 holds the article id in the Historical Dictionary of Switzerland (HLS, from its German name, Historisches Lexikon der Schweiz). One question needs two tool rounds, and because the loop runs one call per turn, the second call can only be made after the first result is in.
+Wikidata links authority files. Property P227 holds the GND identifier and P902 holds the article id in the Historical Dictionary of Switzerland (HLS, from its German name, Historisches Lexikon der Schweiz). One question needs two tool rounds. The loop runs one call per turn, so the model can make the second call only after it has the first result.
 
 ```mermaid
 flowchart LR
@@ -187,7 +187,7 @@ USER → Call the next tool now, or give your final answer.
 ASSISTANT → ```
 ```
 
-From the executed notebook 05, 15 October 2026. This is what the 8B did in the committed run: it made no tool call at all. It answered with an empty code fence, the loop gave its one reminder ("Call the next tool now, or give your final answer."), and the model answered with an empty code fence again, which ended the loop.
+From the executed notebook 05, 15 October 2026. This is what the 8B did in the committed run: it made no tool call at all. It answered with an empty code fence, which is three backtick characters and nothing else. The loop gave its one reminder ("Call the next tool now, or give your final answer."). The model answered with an empty code fence again, and that ended the loop.
 
 In earlier runs the model sometimes looked up the GND record and then stopped, either pasting the URL form of the identifier or announcing the second call without making it. Two-step chains are where an 8B model at this quantization gets unreliable. The model failed, but it invented nothing.
 
@@ -214,11 +214,11 @@ HLS id: ['012274'] (live)
 
 From the executed notebook 05, 15 October 2026. The hand-finish cell made the `search_gnd` call itself, took the GND number from the result, and asked Wikidata for the HLS id, which is 012274. The result was live, not a fixture. The chain works; the model is the unreliable link.
 
-On the 8 GB tier the chain cell is skipped, because the 4B can fall into a repetition loop that Ollama aborts with an error on multi-step prompts. The notebook prints `Skipped on the 4B; the next cell makes the two calls by hand.` and the hand-finish cell does the work.
+On the 8 GB tier the chain cell is skipped. On multi-step prompts the 4B can start repeating itself, and Ollama then aborts the run with an error. The notebook prints `Skipped on the 4B; the next cell makes the two calls by hand.` and the hand-finish cell does the work.
 
 ## 05.06 Failure modes the loop catches
 
-Try to provoke the identifier check by asking for a number from memory:
+Try to trigger the identifier check by asking the model for a number from memory:
 
 ```python
 try:
@@ -248,7 +248,7 @@ From the executed notebook 05 on the 8 GB tier, 15 October 2026. The marker is w
 
 ## 05.07 What the SPARQL guard does
 
-The `sparql` tool does not trust the query. `validate_sparql` parses it with a SPARQL parser and applies fixed rules: SELECT or ASK only; no `SERVICE` except Wikidata's label service; a `LIMIT` of at most 50, added when missing and re-checked after any rewriting. The `sparql` tool also accepts only the endpoints `wikidata`, `qlever`, `lindas`, `stw` and `bnf`.
+The `sparql` tool does not trust the query. `validate_sparql` parses the query with a SPARQL parser and applies fixed rules. Only SELECT or ASK queries pass. No `SERVICE` is allowed except Wikidata's label service. A `LIMIT` of at most 50 is enforced: the guard adds one when it is missing and checks it again after any rewriting. The `sparql` tool also accepts only the endpoints `wikidata`, `qlever`, `lindas`, `stw` and `bnf`.
 
 ```python
 from workshop.tools import validate_sparql, ToolError
@@ -265,9 +265,9 @@ OK   SELECT ?s WHERE { ?s ?p ?o } LIMIT 50
 REJECTED DELETE WHERE { ?s ?p ?o } → The query does not parse as SPARQL: Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'DELETE'  (at char 0), (line:1, col:1)
 ```
 
-From the executed notebook 05, 15 October 2026. The first query had no limit, so `LIMIT 50` was added. The second asked for 10,000 rows and was capped. The third is an update and was rejected.
+From the executed notebook 05, 15 October 2026. The first query had no limit, so `LIMIT 50` was added. The second asked for 10,000 rows and was capped at 50. The third is an update (a query that changes data) and was rejected.
 
-The table below comes from `validate_sparql` and its tests in `tests/test_tools.py` in the notebooks repository. The name of the test that checks each row is given.
+The table below comes from `validate_sparql` and its tests in `tests/test_tools.py` in the notebooks repository. Each row names the test that checks it.
 
 | Outcome | Query | Result | Test |
 |---|---|---|---|
@@ -291,9 +291,9 @@ The guard limits what a mistaken or tricked model can send, but it does not deci
 
 ## Endpoint etiquette and fixtures
 
-The allowed endpoints are public services run by other people. Identify yourself with a User-Agent, set timeouts, go one request at a time and cache what you get. The [Library endpoints](/v3/resources/endpoints) page lists the services with the etiquette in full.
+The allowed endpoints are public services run by other people. Identify yourself with a User-Agent header, set timeouts, send one request at a time, and save the responses so you can reuse them. The [Library endpoints](/v3/resources/endpoints) page lists the services with the etiquette in full.
 
-The notebooks repository records fixtures for the calls the notebooks make, taken on 15 October 2026 from lobid-gnd (CC0), Wikidata (CC0) and LINDAS. When a live call fails, the tool returns the fixture instead and sets `"fixture": true` in its result, so a flaky network does not stop the session. Look for that flag before you believe a result is current.
+The notebooks repository records fixtures for the calls the notebooks make, taken on 15 October 2026 from lobid-gnd (CC0), Wikidata (CC0) and LINDAS. When a live call fails, the tool returns the fixture instead and sets `"fixture": true` in its result, so an unreliable network does not stop the session. Look for that flag before you believe a result is current.
 
 ## Three tiers
 
@@ -303,7 +303,7 @@ Tool calls need code, so there is no tool-calling button in the chat apps. Inste
 
 ### Run and change
 
-Ask 05.03 in German: "Finde den GND-Normdatensatz für Hannah Arendt". Does the 8B still call the tool? If not, that is the documented weakness; ask again in English. Then write a question that needs `wikidata_lookup` first and `sparql` second, for example which works by Goethe Wikidata lists as novels, in German labels.
+Ask 05.03 in German: "Finde den GND-Normdatensatz für Hannah Arendt". Does the 8B still call the tool? If not, that is the documented weakness; ask again in English. Then write a question that needs `wikidata_lookup` first and `sparql` second. For example: which of Goethe's works does Wikidata list as novels, with their German labels?
 
 ### Stretch
 
@@ -311,7 +311,7 @@ Fetch the HLS article found in 05.05 (CC BY-SA) with `requests`, chunk it with `
 
 ### On the 8 GB tier
 
-Run 05.03 with `nishad/apertus:4b`. Its tag carries the wrapper template that makes tool calls work, and it copes only with simple tools, so use the single-parameter lookups and skip the chains. Compare its answer with the 8B's above: in the executed 8 GB copy it called the tool and gave the identifier as a URL.
+Run 05.03 with `nishad/apertus:4b`. Its tag carries the wrapper template that makes tool calls work. The 4B handles only simple tools, so use the lookups that take a single parameter and skip the chains. Compare its answer with the 8B's above: in the executed 8 GB copy it called the tool and gave the identifier as a URL.
 
 ## Check yourself
 
@@ -321,5 +321,5 @@ Run 05.03 with `nishad/apertus:4b`. Its tag carries the wrapper template that ma
 - [ ] I can say what the SPARQL guard stops.
 
 {{< callout type="success" >}}
-**What you should see:** a proposed call and your decision at each step, tool results flowing back into the answer, identifiers marked when they were not looked up, and, if the model writes a call as plain text, a loop that stops with an explanation. The [wrap-up](/v3/part2/07-wrap-up) collects what to record and what never to let the model do on its own.
+**What you should see:** a proposed call and your decision at each step, tool results flowing back into the answer, and identifiers marked when they were not looked up. If the model writes a call as plain text, the loop stops with an explanation. The [wrap-up](/v3/part2/07-wrap-up) collects what to record and what never to let the model do on its own.
 {{< /callout >}}

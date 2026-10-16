@@ -3,7 +3,7 @@ title: Library endpoints
 weight: 3
 ---
 
-Library and linked-data services you can call from the tool loop. Most need no key. Rows marked "October 2026" were tested live from Python in October 2026 at the URL shown, with a descriptive User-Agent. Rows marked "not checked" link to the service's documentation instead. Services change, so test before you depend on one.
+Library and linked-data services you can call from the tool loop, where the model asks for a lookup and your program runs it. Most need no key (an access code that some services require before they answer). We tested the rows marked "October 2026" live from Python in that month. We used the URL shown and a descriptive User-Agent (a header that says who is calling). Rows marked "not checked" link to the service's documentation instead. Services change, so test a service before you depend on it.
 
 ## Services
 
@@ -36,15 +36,15 @@ Library and linked-data services you can call from the tool loop. Most need no k
 | Crossref | `https://api.crossref.org/works` | No | October 2026 | Add a `mailto` parameter to join the polite pool, observed at 10 requests per second. |
 | Open Library | documentation: https://openlibrary.org/developers/api | No | not checked | 1 request per second anonymous, 3 when identified. |
 
-The notebooks and fixtures contain the exact request forms that were tested.
+The exact requests we tested are in the notebooks and in the recorded fixtures (saved responses kept for offline use).
 
 ## Etiquette
 
-- **Identify yourself.** Send a User-Agent with the tool name and a contact address, for example `swib26-workshop (you@example.org)`. Some services reject anonymous clients.
-- **Set timeouts.** Give every request a timeout, for example 60 seconds for SPARQL, so a slow service cannot hang your notebook.
-- **Go slowly.** Send one request at a time to Finto, and respect any stated rate limit.
-- **Cache results.** Save responses and reuse them. The notebooks ship recorded fixtures for offline use.
-- **Never scrape Dewey.** Its endpoint is gone and its terms are restrictive. See [Data and licenses](/v3/resources/data).
+- **Identify yourself.** Send a User-Agent with the tool name and a contact address, for example `swib26-workshop (you@example.org)`. Some services reject requests that do not say who sent them.
+- **Set timeouts.** Give every request a timeout, for example 60 seconds for SPARQL, so a slow service cannot leave your notebook waiting forever.
+- **Go slowly.** Send one request at a time to Finto, and respect any rate limit the service states (the number of requests it allows in a given time).
+- **Cache results.** Save responses and reuse them. The notebooks include recorded fixtures for offline use.
+- **Never scrape Dewey.** Do not use a script to collect Dewey Decimal Classification data from web pages. Its endpoint is gone and its terms are restrictive. See [Data and licenses](/v3/resources/data).
 
 {{< callout type="warning" >}}
 Part 2 lets a model draft SPARQL, but you read the query and approve it before it runs. Do not let a loop send queries to a public endpoint without a person approving each one.

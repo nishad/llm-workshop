@@ -3,7 +3,7 @@ title: Glossary
 weight: 2
 ---
 
-Short, model-agnostic definitions. Model names, sizes and speeds are on the [Model guide](/v3/resources/models).
+Short definitions that do not depend on any one model. Model names, sizes and speeds are on the [Model guide](/v3/resources/models).
 
 ## Core terms
 
@@ -11,15 +11,17 @@ Short, model-agnostic definitions. Model names, sizes and speeds are on the [Mod
 
 **Context window.** The maximum number of tokens a model can consider at once, prompt and answer together. Text beyond it is cut off or causes an error.
 
-**Parameters.** The learned numbers inside a model. More parameters usually mean better quality and a larger file.
+**Parameters.** The learned numbers inside a model, also called weights. More parameters usually mean better quality and a larger file.
 
-**Quantization.** Storing a model's numbers at lower precision to shrink the file and speed it up. Labels such as Q4_K_M (about 4 bits) and Q8_0 (8 bits) name the scheme.
+**Quantization.** Storing a model's numbers with less precision, so the file is smaller and the model runs faster. Labels such as Q4_K_M (about 4 bits) and Q8_0 (8 bits) name the method used.
 
 **Temperature.** A setting that controls how random the output is. Low values give steadier answers, high values give more varied ones.
 
 **Seed.** A number that fixes the random choices during generation. The same seed, prompt and settings can reproduce an answer.
 
 **System prompt.** Instructions placed before the conversation that set the model's role and rules. The user normally does not see them.
+
+**Tier.** On this site, either a hardware tier (a machine with 16 GB of memory or more runs the 8B model, an 8 GB machine runs the 4B) or one of the three exercise levels (GUI, Run and change, Stretch). The openness ladder in Part 1 also numbers its levels as tiers 0 to 3.
 
 ## Search and retrieval
 
@@ -35,17 +37,23 @@ Short, model-agnostic definitions. Model names, sizes and speeds are on the [Mod
 
 **Retrieval-augmented generation (RAG).** Fetching relevant passages first and giving them to the model with the question. The answer is then based on your documents.
 
+**Fine-tuning.** Training an existing model further on your own examples, which changes the model itself. RAG instead gives the model your documents at question time and leaves the model unchanged.
+
 **Grounding.** Tying an answer to supplied sources instead of the model's memory. A grounded answer can be checked against those sources.
 
 **Citation.** A pointer from a statement to the passage that supports it. In RAG it names the chunk the answer came from.
 
-**Hallucination.** Fluent output that is wrong or invented, such as an identifier that does not exist. Checking and review are the defense.
+**Hallucination.** Fluent output that is wrong or invented, such as an identifier that does not exist. The protection is to check and review the output.
 
 ## Structured work
 
-**Structured output.** A model answer constrained to a fixed format, usually JSON. It makes results machine-readable.
+**JSON.** A plain-text format for data: named fields and their values inside curly braces. Programs read and write it directly.
+
+**Structured output.** A model answer that must follow a fixed format, usually JSON (a plain-text data format). A program can then read the result directly.
 
 **JSON schema.** A description of the allowed fields, types and values of a JSON document. A server can use it to force valid output.
+
+**Grammar-enforced output.** The server restricts the model at each step to tokens that keep the output valid against the schema, so the result is always well-formed JSON. A well-formed answer can still hold a wrong value.
 
 **Pydantic.** A Python library that defines data shapes as classes and checks data against them. The notebooks use it to validate model output.
 
@@ -55,9 +63,13 @@ Short, model-agnostic definitions. Model names, sizes and speeds are on the [Mod
 
 **Human in the loop.** A person reviews or approves the model's output or actions. It is how errors are caught before they reach a catalog.
 
+**Gold file (gold set).** A file with the known correct answers for a set of inputs. The notebooks compare the model's output with it to measure accuracy and recall.
+
+**Fixture.** A recorded answer from a web service, saved in the notebooks repository. The tools use it when the live service cannot be reached and mark the result with `"fixture": true`; treat such results as examples, not live data.
+
 ## Library terms
 
-**SPARQL endpoint.** A web service that answers queries written in SPARQL against linked data. Wikidata and many library services offer one.
+**SPARQL endpoint.** A web service that answers queries written in SPARQL, the query language for linked data. Wikidata and many library services offer one.
 
 **Authority file (GND, VIAF, LCNAF).** A maintained list of unique identifiers for people, places, organizations and subjects. GND is German, LCNAF is the Library of Congress name file, and VIAF links authority files from many countries.
 
@@ -65,19 +77,19 @@ Short, model-agnostic definitions. Model names, sizes and speeds are on the [Mod
 
 **SKOS.** A web standard for publishing thesauri and vocabularies as linked data. It defines preferred labels, alternative labels and broader and narrower relations.
 
-**Reconciliation.** Matching a string such as a name to the identifier of the right entity in an authority file. Tools usually propose candidates and a person confirms.
+**Reconciliation.** Matching a piece of text, such as a name, to the identifier of the right entity in an authority file. Tools usually propose candidates and a person confirms.
 
 ## Openness and licensing
 
 **Open weights.** The trained parameters can be downloaded and run. The license may still restrict use, and data and code may be closed.
 
-**Open source (OSI).** Software or a model whose license meets the Open Source Initiative's definition, which grants the freedom to use, study, modify and share it. Open weights alone do not meet it.
+**Open source (OSI).** Software or a model whose license meets the Open Source Initiative's definition. That definition says anyone must be free to use, study, modify and share the work. Open weights alone do not meet it.
 
-**Fully open.** Weights, training code, and the training data or a way to rebuild it are all available, along with intermediate checkpoints. Others can inspect and reproduce the work.
+**Fully open.** The weights, the training code and the training data (or a way to rebuild it) are all available. So are intermediate checkpoints (versions of the model saved during training). Others can inspect and reproduce the work. On the [openness ladder](/v3/part1/02-open-models/openness-ladder) this is tier 3.
 
 **License.** The legal terms that say what you may do with a model or dataset. Read it before reuse.
 
-**Acceptable use policy.** Rules about permitted uses that come with a model in addition to its license. They can bind redistributors as well as users.
+**Acceptable use policy.** Rules about permitted uses that come with a model in addition to its license. They can apply to people who pass the model on, as well as to those who use it.
 
 **Training data.** The text a model learned from. Its sources and licenses affect trust and legal risk.
 
@@ -93,21 +105,25 @@ Short, model-agnostic definitions. Model names, sizes and speeds are on the [Mod
 
 **Hugging Face.** A website that hosts models, datasets and their documentation. Most open models are published there first.
 
+**Runtime.** The program that loads a model file and runs it on your computer. Ollama and LM Studio are the two runtimes used in this workshop; both use llama.cpp underneath.
+
 **Ollama.** A program that downloads and runs models locally, with a command line and a local server. Part 2 uses it.
 
-**LM Studio.** A graphical desktop application for running models locally. It can also serve them over a local API.
+**Model tag.** The name you give Ollama to download or run a model, for example `nishad/apertus:8b`: the publisher, the model name and, after the colon, the size or version. Always use the full tag.
+
+**LM Studio.** A graphical desktop application for running models locally. It can also run a local server, so that other programs on your computer can use the models.
 
 **llama.cpp.** An open C++ engine for running quantized models on ordinary hardware. Ollama and LM Studio are built on it.
 
-**MLX.** Apple's machine learning framework for Apple Silicon. Some runtimes use it instead of llama.cpp.
+**MLX.** Apple's machine learning framework for Apple Silicon. Some programs that run models use it instead of llama.cpp.
 
-**KV cache.** Memory that stores intermediate results for every token in the context. It grows with the context window and takes RAM beyond the model file.
+**KV cache.** Memory that stores intermediate results for every token in the context. It grows with the context window and adds to the memory that the model file already uses.
 
 **`num_ctx`.** The Ollama setting for the context window size in tokens. A larger value uses more memory.
 
-**Thinking model.** A model that writes out reasoning steps before its answer. It is slower and may need that mode switched off for structured output.
+**Thinking model.** A model that writes out reasoning steps before its answer. It is slower, and you may need to switch that mode off for structured output.
 
-**Digest.** A hash that identifies the exact contents of a downloaded model; `ollama list` shows its first 12 characters. Two tags with the same digest are the same model.
+**Digest.** A hash (a code computed from the model's contents) that identifies the exact model you downloaded; `ollama list` shows its first 12 characters. Two tags with the same digest are the same model.
 
 ## Units
 

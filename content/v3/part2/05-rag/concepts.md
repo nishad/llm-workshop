@@ -5,13 +5,13 @@ weight: 1
 
 ## The problem RAG solves
 
-A model on its own knows what its training data contained, up to a cutoff date. It has not read your finding aids, your policy documents or last month's standard revision. It may also state a wrong detail with full confidence, and it cannot tell you where an answer came from.
+A model on its own knows what its training data contained, up to a cutoff date. It has not read your finding aids, your policy documents or the revision of a standard that was published last month. It may also state a wrong detail with full confidence, and it cannot tell you where an answer came from.
 
-With RAG the model answers from passages you supply. That changes four things:
+With RAG, the model answers from passages that you supply, not from its memory alone. That changes four things:
 
 - It can use documents newer than its training data.
 - It can use your own documents, which stay on your machine.
-- Its answer is grounded in text you can read.
+- Its answer is grounded: it is based on text that you can read.
 - It can cite which passage it used, so you can check.
 
 {{< callout type="warning" >}}
@@ -20,8 +20,8 @@ A RAG system is only as current as what you indexed. If the standard changed aft
 
 ## The four steps
 
-1. **Prepare once.** Split the documents into chunks, embed each chunk, and keep the vectors with the chunk text and its source.
-2. **Retrieve.** Embed the question and take the top-k chunks by similarity.
+1. **Prepare once.** Split the documents into chunks and embed each chunk. To embed a chunk means to turn it into a vector, a list of numbers that represents its meaning. Keep each vector together with the chunk's text and its source.
+2. **Retrieve.** Embed the question and take the chunks whose vectors are most similar to the question vector. The number of chunks you take is called k, so these are the top-k chunks.
 3. **Augment.** Put the numbered chunks and the question into one prompt, with instructions on how to answer.
 4. **Generate.** The model answers and cites the chunk numbers it used.
 
@@ -51,17 +51,17 @@ Embeddings work best on a paragraph-sized piece of text, not a whole book, and a
 
 The notebook uses chunks of 300 words with an overlap of 50 words, the defaults of `workshop.rag.chunk_text`. Every chunk keeps its source file and position, such as `dcmi-terms#5`, and that is what a citation points to.
 
-Chunking is a setting you can change. Smaller chunks can find a short definition that a larger chunk buries; larger chunks keep more context together. The exercises on the [pipeline page](/v3/part2/05-rag/pipeline) let you try both.
+Chunk size and overlap are settings you can change. Smaller chunks can find a short definition that would be hidden inside a larger chunk. Larger chunks keep more context together. The exercises on the [pipeline page](/v3/part2/05-rag/pipeline) let you try both.
 
 ## The grounded prompt
 
-The prompt that the helper builds starts with these instructions, from `workshop.rag.RAG_INSTRUCTIONS`:
+The prompt that the notebook's helper function builds starts with these instructions, stored in `workshop.rag.RAG_INSTRUCTIONS`:
 
 ```text
 Answer the question using only the numbered documents below. Cite the documents you used as [1], [2] and so on after each statement. If the documents do not contain the answer, say that the documents do not answer the question. Do not use outside knowledge.
 ```
 
-The numbered chunks follow as `[1] ...`, `[2] ...`, then `Question: ...`. Two parts of this wording matter. The numbering makes a citation checkable: you can open chunk `[2]` and see whether it supports the statement. The refusal sentence gives the model a permitted way out, so it does not have to invent an answer when the documents are silent.
+The numbered chunks follow as `[1] ...`, `[2] ...`, then `Question: ...`. Two parts of this wording matter. The numbering makes a citation checkable: you can open chunk `[2]` and see whether it supports the statement. The refusal sentence gives the model something it is allowed to say when the documents are silent, so it does not have to invent an answer.
 
 Neither part is a guarantee. A small model follows the instructions most of the time and sometimes does not, as the pipeline page shows with real outputs.
 
@@ -82,12 +82,12 @@ This is why the notebook prints the retrieved chunks before the answer. It is al
 | Citations | Yes, from the chunks | No |
 | Best for | Answering from specific, changing documents | Teaching a style or a task format |
 
-Use RAG when the answer is in your documents and the documents change.
+Fine-tuning means training a model further on your own examples, which changes the model itself. Use RAG instead when the answer is in your documents and the documents change.
 
 ## When RAG is not the answer
 
-- **Exact lookups.** The GND number of a person is a fact in a database, not a passage to paraphrase. A model summarizing a chunk can still garble a number.
-- **Live data.** A document index is a snapshot. For current data, ask the service itself.
-- **Questions across the whole collection.** Top-k chunks cannot count or total over thousands of records.
+- **Exact lookups.** The GND number of a person is a fact in a database, not a passage to paraphrase. A model that summarizes a chunk can still get a number wrong.
+- **Live data.** A document index is a snapshot: it holds the documents as they were when you built it. For current data, ask the service itself.
+- **Questions across the whole collection.** The top-k chunks are only a few passages, so they cannot count or add up values across thousands of records.
 
 Exact and live lookups are the bridge to the next chapter: let the model propose a call to a service, and let a person approve it. That is [tool use](/v3/part2/06-tool-use).

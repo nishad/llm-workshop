@@ -18,11 +18,11 @@ The workshop uses an open model on purpose. For a library, "open" matters for th
 
 - **Provenance**: what did the model read, and can you check?
 - **Reproducibility**: can you get the same answer next year, with the same model file?
-- **Vendor independence**: if a provider changes its terms or its prices, can you move?
+- **Vendor independence**: if a provider changes its terms or its prices, can you switch to another one?
 
-The reasons from the earlier editions still hold too: privacy (your data stays on your machine), cost (no per-token bill), offline use, and control over the version you run.
+The reasons from earlier editions of this workshop still apply: privacy (your data stays on your machine), cost (no per-token bill), offline use, and control over which version you run.
 
-SWIB's own draft community AI policy (October 2026) points the same way. It prefers locally hosted, open models, and it says a model whose training data is unavailable should not be called open source.
+SWIB's own draft community AI policy (October 2026) takes the same view. It prefers locally hosted, open models, and it says a model whose training data is not available should not be called open source.
 
 {{< callout type="info" >}}
 "Open" is a spectrum, not a yes or no. The first page gives you a ladder to place any model on.

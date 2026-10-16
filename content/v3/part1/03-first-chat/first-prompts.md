@@ -3,9 +3,9 @@ title: First prompts
 weight: 3
 ---
 
-Five starter prompts, each with a real answer. Every answer was captured with nishad/apertus:8b on 15 October 2026 at temperature 0.8, the default in the apps. Yours will differ in wording, because the pick of each token has some randomness. See [Temperature](/v3/part1/01-how-llms-work/temperature).
+Here are five starter prompts, each with the answer the model gave. Every answer was captured with nishad/apertus:8b on 15 October 2026 at temperature 0.8, the default in the apps. Your answers will differ in wording. The model picks each token (a word or part of a word) with some randomness, and temperature controls how much. See [Temperature](/v3/part1/01-how-llms-work/temperature).
 
-Paste each prompt into your own chat and compare.
+Paste each prompt into your own chat and compare the answers.
 
 ## 1. Explain a term
 
@@ -55,7 +55,7 @@ List five subject headings a library might assign to a book about the history of
 5. Basel, Cultural History of, Printing
 ```
 
-The model gives plausible headings. Whether a real authority list contains them is for a cataloger to check.
+The headings look reasonable. Whether a real authority file contains them is for a cataloger to check.
 
 ## 4. Rewrite for another audience
 
@@ -73,7 +73,7 @@ At our library, we're excited to announce that we're integrating a state-of-the-
 
 ## 5. The hallucination probe
 
-This prompt asks for a fact the model cannot look up.
+This prompt asks for a fact the model cannot look up. It is a probe for hallucination: a fluent answer that is wrong or invented.
 
 **Prompt:**
 
@@ -87,20 +87,20 @@ What is the ISBN of 'Vita activa' by Hannah Arendt?
 The ISBN of 'Vita activa' by Hannah Arendt is 0141039689.
 ```
 
-The model states one ISBN, with no hedge. Now check it.
+The model states one ISBN, with no sign of doubt. Now check it.
 
 ### Verification
 
-Hannah Arendt, "Vita activa oder Vom tätigen Leben", Piper. The ISBNs on record:
+The book is "Vita activa oder Vom tätigen Leben" by Hannah Arendt, published by Piper. The ISBNs on record are:
 
 - 1960 first edition: none.
 - 1981 edition: 978-3-492-00517-3 (3-492-00517-9).
 - 1987 and 1989 editions: 978-3-492-10217-9 (3-492-10217-4).
 - 2005, 2008 and 2011 Piper paperbacks: 978-3-492-23623-2 (3-492-23623-5).
 
-The model's answer, 0141039689, matches none of them. It was invented. It even fails the ISBN-10 check, which would need X as the last digit. Yet the model gave it as calmly as it would give a correct answer.
+The model's answer, 0141039689, matches none of them. The model invented it. It even fails the ISBN-10 check: with these first nine digits, the last character would have to be X. Yet the model gave it as calmly as it would give a correct answer.
 
-Source: Checked against the DNB catalog through lobid-resources, 15 October 2026.
+Source: Checked against the catalog of the DNB (the German National Library) through lobid-resources, 15 October 2026.
 
 {{< callout type="warning" >}}
 A model answers confidently whether it knows or not. Check names, numbers, dates and identifiers against a catalog or another source before you use them.
@@ -110,12 +110,12 @@ A model answers confidently whether it knows or not. Check names, numbers, dates
 
 - A model file, a few gigabytes of numbers, was loaded into your computer's memory.
 - Your computer did all the computation for each token.
-- Your prompts and the answers were not sent anywhere. Only the picker lookup and the model download used the internet.
+- Your prompts and the answers were not sent anywhere. Your computer used the internet only to look up the model name and to download the model.
 
 ## Speed FAQ
 
-**How fast is it?** Speed is measured in tokens per second. For a number on your machine, run `ollama run nishad/apertus:8b --verbose` in a terminal. After each answer it prints statistics; the line to read is "eval rate". What to expect on different machines is on the [Hardware](/v3/before-you-start/hardware) page.
+**How fast is it?** Speed is measured in tokens per second. To measure it on your own machine, run `ollama run nishad/apertus:8b --verbose` in a terminal. After each answer, Ollama prints statistics. Look for the line "eval rate". The [Hardware](/v3/before-you-start/hardware) page shows what to expect on different machines.
 
-**Why is the first answer slower?** The model has to be loaded into memory first.
+**Why is the first answer slower?** Your computer has to load the model into memory first.
 
 **The answer is slow or cut off.** See [Troubleshooting](/v3/before-you-start/troubleshooting).

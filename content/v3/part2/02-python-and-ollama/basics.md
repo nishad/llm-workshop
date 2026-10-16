@@ -3,7 +3,7 @@ title: Basics
 weight: 1
 ---
 
-This page follows sections 01.02 to 01.05 of notebook 01. Each code cell is quoted with the output it produced when the notebook was executed on 15 October 2026. Setup (section 01.01) creates `settings` and `MODEL`; on the 16 GB tier `MODEL` is `nishad/apertus:8b`.
+This page follows sections 01.02 to 01.05 of notebook 01. Each code cell is quoted with the output it produced when we ran the notebook on 15 October 2026. Setup (section 01.01) creates `settings` and `MODEL`; on the 16 GB tier `MODEL` is `nishad/apertus:8b`.
 
 ## Which models do I have?
 
@@ -24,7 +24,7 @@ nishad/apertus:8b                               5.1 GB  digest 4a85a6fea0b8
 …
 ```
 
-From the executed notebook 01, 15 October 2026. This is the facilitator's list, cut to the workshop rows. Your list will be shorter: only what you pulled.
+From the executed notebook 01, 15 October 2026. This is the facilitator's list, cut down to the rows the workshop uses. Your list will be shorter: only the models you downloaded.
 
 A tag such as `nishad/apertus:8b` is a name that can point to different files over time. The digest is the fingerprint of the exact file. Keep that difference in mind for the [reproducibility page](/v3/part2/02-python-and-ollama/reproducibility).
 
@@ -53,9 +53,9 @@ From the executed notebook 01, 15 October 2026. Read it as a recap of Part 1:
 
 - **8.05B parameters** is the "8B" in the name.
 - **Q4_K_M** is the quantization: a few bits per parameter instead of 16, which is why the file is 5.1 GB.
-- **65,536** is the most the model can hold in its context window. Ollama's default is far below that, 4,096 tokens on most laptops (see [Context](/v3/part1/01-how-llms-work/context)). The notebooks set the value for your tier, as the next cell shows.
-- **tools** in the capabilities list says this build can propose tool calls in a form Ollama can read. Part 2 needs it for the last notebook.
-- The **template** header tells you which chat template is in use. `{# Unsloth template fixes #}` is the one the workshop tags carry.
+- **65,536** tokens is the most the model can hold in its context window. Ollama's default is far below that, 4,096 tokens on most laptops (see [Context](/v3/part1/01-how-llms-work/context)). The notebooks set the value for your tier, as the next cell shows.
+- **tools** in the capabilities list says this build of the model can propose tool calls in a form Ollama can read. A tool call is the model asking your program to run a function. Part 2 needs this capability for the last notebook.
+- The **template** header tells you which chat template is in use. A chat template is the format that turns your list of messages into the single text the model reads. `{# Unsloth template fixes #}` is the one the workshop tags carry.
 
 ## A first chat with a system prompt
 
@@ -93,7 +93,7 @@ The helper sets `temperature` to 0 and `num_ctx` to the value for your tier (8,1
 
 ## The response object
 
-`response` is more than the text. Besides `message`, it carries the numbers Ollama reports for the call: how many tokens it read from your prompt (`prompt_eval_count`), how many it generated (`eval_count`), and how long each phase took (`total_duration`, `load_duration` and the others, in nanoseconds). Those are the tokens and the speed from Part 1, now available to your code. Divide `eval_count` by `eval_duration` (converted from nanoseconds to seconds) and you have your own tokens per second, for every call you make.
+`response` is more than the text. Besides `message`, it carries the numbers Ollama reports for the call. `prompt_eval_count` is how many tokens the model read from your prompt, and `eval_count` is how many it generated. `total_duration`, `load_duration` and the other duration fields say how long each phase took, in nanoseconds. Those are the tokens and the speed from Part 1, now available to your code. Divide `eval_count` by `eval_duration` (converted from nanoseconds to seconds) and you have your own tokens per second, for every call you make.
 
 ## Temperature, seed and repeatability
 
@@ -119,11 +119,11 @@ for temp in (0, 0.8):
 3 "Library Open Data: Discovering Transparency and Accessibility"
 ```
 
-From the executed notebook 01, 15 October 2026. The output is quoted as committed (blank lines between the notebook's print calls removed).
+From the executed notebook 01, 15 October 2026. The output is quoted as it was committed, except that the blank lines between the notebook's print calls have been removed.
 
-Look at the six lines. At temperature 0 the three answers are identical, as expected. At 0.8 all three differ. A creative prompt has no single favored answer, so sampling picks different tokens on each run. Sampling makes variation possible, not certain: for a short factual question the top candidates dominate, and a higher temperature may change nothing. Try the 0.8 loop with a factual question such as "Name three controlled vocabularies used in libraries" and compare.
+Look at the six lines. At temperature 0 the three answers are identical, as expected. At 0.8 all three differ, because the model now samples: it picks each next token at random from the likely candidates. A creative prompt has no single favored answer, so sampling picks different tokens on each run. Sampling makes variation possible, not certain. For a short factual question the top candidates are far more likely than the rest, and a higher temperature may change nothing. Try the 0.8 loop with a factual question such as "Name three controlled vocabularies used in libraries" and compare.
 
-Run and change: change the seed in one of the temperature-0 runs. Does the answer change? Then ask the question in German and compare.
+Run and change: set a different seed in one of the temperature-0 runs. Does the answer change? Then ask the question in German and compare.
 
 ## Streaming
 
@@ -136,4 +136,4 @@ stream = chat([{"role": "user", "content": "Explain in five short bullet points 
 text = stream_markdown(stream)
 ```
 
-The cell prints the answer progressively and returns the full text in `text`. In the committed notebook the answer is five bullet points; the saved copy holds only the final display, so there is no per-token output to quote. Run the cell to watch it arrive.
+The cell prints the answer piece by piece as it arrives, and returns the full text in `text`. In the committed notebook the answer is five bullet points, but the saved copy holds only the final display, so there is no token-by-token output to quote. Run the cell to watch it arrive.

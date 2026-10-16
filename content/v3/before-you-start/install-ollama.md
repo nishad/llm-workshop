@@ -3,7 +3,7 @@ title: Install Ollama
 weight: 3
 ---
 
-Ollama is the runtime used in both halves of the workshop. Install it, open it once, and check the version.
+Ollama is the program that runs the models, and we use it in both halves of the workshop. Install it, open it once, and check the version.
 
 {{< tabs >}}
 
@@ -16,7 +16,7 @@ Get `Ollama.dmg` from https://ollama.com/download. You need macOS 14 or newer.
 
 ### Install
 
-Open the disk image and drag Ollama to Applications.
+Open the downloaded disk image and drag Ollama into the Applications folder.
 
 ### Open
 
@@ -34,11 +34,11 @@ Get `OllamaSetup.exe` from https://ollama.com/download. It is about 1.6 GB and n
 
 ### Install
 
-Run the installer. No administrator rights are needed. The installation uses about 4 GB.
+Run the installer. You do not need administrator rights. The installation uses about 4 GB of disk space.
 
 ### Allow it
 
-If SmartScreen appears, choose **More info**, then **Run anyway**.
+If a Windows SmartScreen warning appears, choose **More info**, then **Run anyway**.
 
 {{% /steps %}}
 {{< /tab >}}
@@ -54,7 +54,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 ### Leave the service alone
 
-The script installs a systemd service that is already running. Do not run `ollama serve` afterwards.
+The script sets up Ollama as a background service (a systemd service) and starts it for you. Do not run `ollama serve` afterwards, because the service is already running.
 
 ### Pick a chat window
 
@@ -67,11 +67,11 @@ There is no desktop app on Linux. Use the terminal, or install [LM Studio](/v3/b
 
 ## First run
 
-On the first start of the app (macOS and Windows), Ollama shows "Welcome to Ollama" and then a "Create an account" screen.
+When you open the app for the first time on macOS or Windows, Ollama shows "Welcome to Ollama" and then a "Create an account" screen.
 
 <!-- screenshot ollama-onboarding-account.png: Ollama first run, the "Create an account" screen with the "No thanks, I'll use Ollama locally" button visible; add in Task 14 -->
 
-Choose **No thanks, I'll use Ollama locally**. The account is only for Ollama's paid cloud models; you do not need it for this workshop. The next screen, "Run Ollama", shows a terminal command. You can close it.
+Choose **No thanks, I'll use Ollama locally**. The account is only for Ollama's paid cloud models; you do not need it for this workshop. The next screen, "Run Ollama", shows a terminal command. You can close that screen.
 
 {{< callout type="info" >}}
 If you skipped the account screen by accident, nothing is lost. Local use never needs an account.
@@ -86,7 +86,7 @@ ollama --version
 ```
 
 {{< callout type="success" >}}
-The command must print 0.40 or newer. The materials were tested on 0.40.4.
+The command must print 0.40 or newer. We tested the workshop materials on 0.40.4.
 {{< /callout >}}
 
 ## Where models live

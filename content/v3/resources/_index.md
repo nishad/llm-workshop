@@ -5,7 +5,7 @@ cascade:
   type: docs
 ---
 
-Reference pages for during and after the workshop. For model facts (tags, sizes, digests and licenses), start with the model guide.
+Reference pages to use during and after the workshop. For model facts (tags, sizes, digests and licenses), start with the model guide.
 
 ## The pages
 

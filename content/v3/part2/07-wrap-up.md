@@ -16,13 +16,13 @@ For any result you may use later, write down:
 - [ ] **Date.** When the run happened. Services and models change.
 - [ ] **Who approved what.** Which tool calls a person approved, corrected or refused, and who checked which outputs.
 
-Most of this is written for you. Every `workshop.llm.chat` call appends a line to `runs/log.jsonl` with the time, the model and its digest, the options, and the ends of the prompt and the answer. The RAG helper, the tool loop and the setup check go through the same function, so they are logged too. What is and is not logged is on the [reproducibility page](/v3/part2/02-python-and-ollama/reproducibility). Keep the file with your results.
+Most of this is recorded for you automatically. Every `workshop.llm.chat` call appends a line to `runs/log.jsonl` with the time, the model and its digest, the options, and the end of the prompt and the start of the answer. The RAG helper, the tool loop and the setup check go through the same function, so they are logged too. What is and is not logged is on the [reproducibility page](/v3/part2/02-python-and-ollama/reproducibility). Keep the file with your results.
 
 ## What never to let the model do unreviewed
 
-- **Mint identifiers.** A model will produce a number that looks like a GND number. The October 2026 runs showed it, and the loop marked the invented numbers as `[UNVERIFIED]`. An identifier belongs in a record only if a service returned it and a person saw it.
+- **Invent identifiers.** A model will produce a number that looks like a GND number. The October 2026 runs showed it, and the loop marked the invented numbers as `[UNVERIFIED]`. An identifier belongs in a record only if a service returned it and a person saw it.
 - **Write to the catalog.** Let the model propose a record, then have a person review and load it.
-- **Assign subject headings without a person choosing.** Let it suggest candidates from a vocabulary, as in the embeddings chapter, and let a cataloger accept or reject.
+- **Assign subject headings on its own.** Let the model suggest candidates from a vocabulary, as in the embeddings chapter, and let a cataloger accept or reject them.
 
 The pattern throughout Part 2 is the same: the model proposes, a check catches what it can, and a person decides.
 

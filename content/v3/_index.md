@@ -5,21 +5,21 @@ cascade:
   type: docs
 ---
 
-Local large language models (LLMs) have moved on since the first edition of this workshop in 2024. The privacy and cost arguments still apply, but many capable models now run on an ordinary laptop and come with permissive licenses, and a few are fully open: the weights, the training code, and the training data or the scripts to rebuild it are all published. For libraries, provenance, reproducibility and independence from a single vendor become things you can check on your own machine. This third edition is built around Apertus, a fully open multilingual model family from the Swiss AI Initiative (EPFL, ETH Zurich, CSCS).
+Local large language models (LLMs) run on your own computer. They have changed a great deal since the first edition of this workshop in 2024. Privacy and cost are still good reasons to run a model locally. What has changed is that many capable models now run on an ordinary laptop and come with permissive licenses. A few are fully open. Their weights (the learned numbers inside the model) are published, and so are the training code and the training data or the scripts to rebuild it. For libraries, this means you can check provenance and reproducibility on your own machine. It also means you do not depend on a single vendor. This third edition is built around Apertus, a fully open multilingual model family from the Swiss AI Initiative (EPFL, ETH Zurich, CSCS).
 
 **Part 1 - Fundamentals**
 
-How LLMs work (parameters, tokens, quantization, context); the difference between open source, open weights, and fully open models. Installing a local runtime (Ollama or LM Studio). Choosing a model size for your hardware and writing effective prompts. No programming experience required for this part.
+How LLMs work (parameters, tokens, quantization, context window). The difference between open source, open weights, and fully open models. Installing a local runtime (Ollama or LM Studio), the program that runs the model on your computer. Choosing a model size for your hardware and writing effective prompts. No programming experience is required for this part.
 
 **Part 2 - Working with your data**
 
-Working with LLMs from Python. Generating structured output and validating it. Embeddings and semantic search over controlled vocabularies. Retrieval-augmented generation (RAG) over your own documents. Basics of tool use, such as querying a SPARQL endpoint or an authority file, with a human in the loop.
+Working with LLMs from Python. Generating structured output (answers in a fixed format, usually JSON) and validating it. Embeddings (lists of numbers that represent the meaning of a text) and semantic search over controlled vocabularies. Retrieval-augmented generation (RAG): fetching relevant passages from your own documents and giving them to the model with the question. Basics of tool use, where the model asks your program to run a function, for example querying a SPARQL endpoint or an authority file. A person reviews the results (a human in the loop).
 
-This is a hands-on workshop. You can follow along with the graphical tools only, run the notebooks, or work through the materials afterwards. The four hours are split into two halves. Part 1 is for beginners and needs no prior experience. Part 2 assumes you can already run a local model and builds on it with Python. Each half stands on its own: you can leave at the break, or join at the break for Part 2.
+This is a hands-on workshop. You can follow it with the graphical tools only, run the notebooks (the Python code for Part 2), or work through the materials afterwards. The four hours are split into two halves. Part 1 is for beginners and needs no prior experience. Part 2 assumes you can already run a local model and builds on it with Python. Each half stands on its own: you can leave at the break, or join at the break for Part 2.
 
 ## What you need
 
-A computer running Windows, macOS or Linux with 20 GB of free storage. 8 GB of RAM is enough for the small model; 16 GB lets you run the larger one. You need an internet connection to download the models, or you can download them in advance; the steps are on [Before you start](before-you-start). For Part 2 you also need Python 3.12 or 3.13 (uv can install it for you).
+A computer running Windows, macOS or Linux with 20 GB of free storage. 8 GB of memory (RAM) is enough for the smaller model; 16 GB lets you run the larger one. You need an internet connection to download the models, unless you have downloaded them in advance. The steps are on [Before you start](before-you-start). For Part 2 you also need Python 3.12 or 3.13. The Python package manager uv can install it for you.
 
 ## When
 

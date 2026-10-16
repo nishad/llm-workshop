@@ -3,15 +3,15 @@ title: Exercises
 weight: 3
 ---
 
-Eight exercises. Each has three tiers:
+This page has eight exercises, and each has three tiers:
 
-- **GUI**: do the task in your chat window.
+- **GUI**: do the task in your chat window. GUI is short for graphical user interface, the kind of app you click and type in.
 - **Run and change**: change one thing in the prompt and compare.
 - **Stretch**: go one step further.
 
-Try your own prompt first. Then open the solution and compare. The solutions show one captured run (nishad/apertus:8b, temperature 0.8, 15 October 2026), so yours will differ.
+Try your own prompt first. Then open the solution and compare. The solutions show one captured run (nishad/apertus:8b, temperature 0.8, 15 October 2026). Temperature is the setting that controls how much the answers vary, so yours will differ.
 
-Exercises 1, 2, 4 and 6 are live in the session. Exercises 3, 5, 7 and 8 are for afterwards.
+We do Exercises 1, 2, 4 and 6 together in the live session. Exercises 3, 5, 7 and 8 are for you to do afterwards.
 
 {{< callout type="info" >}}
 Where an exercise uses "the sample text", paste the text from [Basics](/v3/part1/04-prompting/basics#the-sample-text).
@@ -23,7 +23,7 @@ Turn the sample text into a table with the columns Title, Author, Year, Language
 
 - **GUI:** write a prompt that gives that table from the sample text.
 - **Run and change:** add a column "Script" (Latin, Cyrillic, Han, and so on).
-- **Stretch:** ask for CSV instead of a table. Then paste in a sentence that has a title with a comma, for example a made-up title such as "Love, Death and Taxes", and check how the answer handles the comma.
+- **Stretch:** ask for CSV (comma-separated values, a plain-text format that spreadsheets can open) instead of a table. Then paste in a sentence with a title that contains a comma, such as the made-up title "Love, Death and Taxes". Check how the answer handles the comma.
 
 {{< details title="Show a solution" >}}
 
@@ -73,13 +73,13 @@ All 22 works are there, in the right order, with the right years and languages. 
 - For the Divina Commedia it wrote "La Divina Commedia", which is not in the text. It filled a gap from memory.
 - For the Japanese and Persian works it repeated the romanized or bracketed form from the text.
 
-A cell the text does not support should stay empty. The prompt already asked for that. Add "Do not use your own knowledge." and compare.
+When the text gives no value, the cell should stay empty. The prompt already asked for that. Add "Do not use your own knowledge." to the prompt and compare.
 
 {{< /details >}}
 
 ## Exercise 2: Few-shot classification (live)
 
-Classify library materials as BOOK, JOURNAL, DVD or DATABASE with these examples:
+Classify library materials as BOOK, JOURNAL, DVD or DATABASE. In a few-shot prompt you show the model a few examples first, like these:
 
 ```
 "Pride and Prejudice" -> BOOK
@@ -97,7 +97,7 @@ Items to classify:
 
 - **GUI:** write a few-shot prompt for these four items.
 - **Run and change:** ask for the answers in the form: Number. "Title" -> CATEGORY.
-- **Stretch:** add an ambiguous item, for example an audio recording that fits none of the four labels, and ask for a confidence word (high, medium or low) for each.
+- **Stretch:** add an ambiguous item, for example an audio recording that fits none of the four labels. Then ask for a confidence word (high, medium or low) for each item.
 
 {{< details title="Show a solution" >}}
 
@@ -134,7 +134,7 @@ Format: Number. "Title" -> CATEGORY (confidence: high, medium or low)
 5. "Hamlet (audio recording, 2 CDs)" -> DVD (confidence: high)
 ```
 
-The books and the journal are right. The other three are open to argument. The Documentary Collection could be DVDs or a streaming database. The audio recording of Hamlet fits none of the four labels, and the model forced it into DVD and called it "high" confidence. Every answer carries "high". The confidence word shows what the model writes, not how reliable it is.
+The book and the journal are right. You could argue about the other three. The Documentary Collection could be DVDs or a streaming database. The audio recording of Hamlet fits none of the four labels, and the model forced it into DVD and called it "high" confidence. Every answer carries "high". The confidence word shows what the model writes, not how reliable it is.
 
 When the labels do not fit, add a fifth label such as OTHER and say "use OTHER when none of the labels fits".
 
@@ -142,7 +142,7 @@ When the labels do not fit, add a fifth label such as OTHER and say "use OTHER w
 
 ## Exercise 3: Library events to JSON
 
-Turn this text into JSON.
+Turn this text into JSON, a text format that programs can read directly.
 
 ```
 Our library has the following upcoming events:
@@ -206,9 +206,9 @@ Author Talk with Jane Smith is scheduled for March 15th at 7pm in the Main Hall.
 
 The JSON is valid and the values are right.
 
-The prompt said "Return only valid JSON", and the model still wrapped it in a code fence (the answer above is shown as the model wrote it, so you see a fence inside a fence). A program that reads the answer has to strip that.
+The prompt said "Return only valid JSON", and the model still wrapped it in a code fence. A code fence is a pair of lines with three backtick characters that mark the start and end of a code block. The answer above is shown as the model wrote it, so you see a fence inside a fence. A program that reads the answer has to remove the fence first.
 
-The values are copied as written ("every Tuesday", "on Saturdays", "6pm"). That is faithful to the text and not yet clean data. Only one event has a date, and it has no year, so an ISO date would need a guess. For the stretch task, decide what should go into a date field for the three recurring events.
+The values are copied as written ("every Tuesday", "on Saturdays", "6pm"). That is faithful to the text and not yet clean data. Only one event has a date, and it has no year, so an ISO date would need a guess. For the stretch task, decide what should go into a date field for the three events that repeat.
 
 {{< /details >}}
 
@@ -240,7 +240,7 @@ Give the German, French and English preferred term for these concepts: inflation
 | Climate Change        | Klimawandel     | Changement climatique | Climate Change |
 ```
 
-The German and French terms are plausible and consistent. For comparison, the STW Thesaurus for Economics (version 9.20) uses Inflation, Urheberrecht with the English label "Copyright law", and Klimawandel with "Climate change".
+The German and French terms look reasonable and consistent. For comparison, the STW Thesaurus for Economics (version 9.20) uses Inflation, Urheberrecht (with the English label "Copyright law") and Klimawandel (with the English label "Climate change").
 
 **Step 2: do they exist in STW?**
 
@@ -260,7 +260,7 @@ Teuerung: yes
 Bibliotheksnutzung: yes
 ```
 
-We checked these five terms against the STW 9.20 data held in the notebooks repository, as preferred and as alternative labels, German and English:
+We checked these five terms against the STW 9.20 data held in the notebooks repository. We looked for each term as a preferred label and as an alternative label, in German and in English:
 
 | Term | The model said | In STW 9.20 |
 |---|---|---|
@@ -276,7 +276,7 @@ Four of five answers are wrong, and the model sounded equally sure of each. The 
 
 ## Exercise 5: Assign from a controlled list
 
-You get ten descriptors from the STW Thesaurus for Economics and three abstracts. Assign at most two descriptors to each.
+You get ten descriptors from the STW Thesaurus for Economics and three abstracts. Assign at most two descriptors to each abstract.
 
 Descriptors:
 
@@ -320,13 +320,13 @@ Abstract 2: Urheberrecht, Filmproduktion
 Abstract 3: Energiepolitik, Klimawandel
 ```
 
-Every descriptor comes from the list, and the pairs are sensible. Abstract 1 has three topics (prices, interest rates, unemployment) and room for only two, so the model dropped Arbeitslosigkeit. That is a judgment call. In the stretch version, a quote for each choice shows what the model relied on. An instruction such as "use only these descriptors" can still be broken, so check each answer against the list.
+Every descriptor comes from the list, and the pairs are sensible. Abstract 1 has three topics (prices, interest rates, unemployment) and room for only two, so the model dropped Arbeitslosigkeit. That is a matter of judgment. In the stretch version, a quote for each choice shows what the model relied on. The model can still break an instruction such as "use only these descriptors", so check each answer against the list.
 
 {{< /details >}}
 
 ## Exercise 6: The hallucination probe (live)
 
-Ask for identifiers the model cannot look up.
+Ask for identifiers the model cannot look up. When a model invents an answer and presents it as fact, we call that a hallucination.
 
 - **GUI:** ask for the ISBN of a book and the DOI of an article, both real. Look the answers up in a catalog (for example the DNB catalog or your own) and in Crossref. Write down what is wrong.
 - **Run and change:** ask for the same identifier twice in new chats. Do the two answers agree?
@@ -364,9 +364,9 @@ The DOI for the article "The FAIR Guiding Principles for scientific data managem
 
 We checked both on 15 October 2026.
 
-**The ISBN.** The number 9783257061675 is not a valid ISBN-13. Its check digit is wrong: the check digit for those twelve digits is 3, not 5. A search for it in the DNB catalog (through lobid-resources) returns no records. The same number with the correct check digit, 9783257061673, belongs to a different book: "Verrechnet" by Dick Francis, published by Diogenes (Zürich, 1998). The DNB records for Patrick Süskind, "Das Parfum", published by Diogenes include these ISBNs, among others: 978-3-257-22800-7, 978-3-257-06540-4, 978-3-257-80233-7, 978-3-257-80037-1, 978-3-257-01787-8 and 978-3-257-01678-9. None matches the model's answer.
+**The ISBN.** The number 9783257061675 is not a valid ISBN-13. Its check digit is wrong: for those first twelve digits, the correct check digit is 3, not 5. A search for it in the DNB catalog (through lobid-resources) returns no records. The same number with the correct check digit, 9783257061673, belongs to a different book: "Verrechnet" by Dick Francis, published by Diogenes (Zürich, 1998). The DNB records for Patrick Süskind, "Das Parfum", published by Diogenes include these ISBNs, among others: 978-3-257-22800-7, 978-3-257-06540-4, 978-3-257-80233-7, 978-3-257-80037-1, 978-3-257-01787-8 and 978-3-257-01678-9. None matches the model's answer.
 
-**The DOI.** Crossref lists the FAIR article by Wilkinson and colleagues (Scientific Data, 2016) under 10.1038/sdata.2016.18. The model's DOI, 10.1038/sdata.2016.44, is real, but it belongs to another paper: "The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments" (Scientific Data, 2016). So the model produced a DOI that resolves and points to the wrong article. That is worse than an invalid one, because a quick click on the link would look like success.
+**The DOI.** Crossref lists the FAIR article by Wilkinson and colleagues (Scientific Data, 2016) under 10.1038/sdata.2016.18. The model's DOI, 10.1038/sdata.2016.44, is real, but it belongs to another paper: "The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments" (Scientific Data, 2016). So the model produced a DOI that works as a link but points to the wrong article. That is worse than an invalid one, because a quick click on the link would look like success.
 
 Sources: DNB catalog via lobid-resources (lobid.org/resources) and the Crossref REST API, queried 15 October 2026.
 
@@ -390,15 +390,15 @@ How do I fix this?
 
 - **GUI:** write down what is wrong with each, in one line.
 - **Run and change:** rewrite the first prompt and compare the answers.
-- **Stretch:** split the second prompt into steps, and decide which steps need a checkpoint.
+- **Stretch:** split the second prompt into steps, and decide which steps need a checkpoint, a pause to check the result before going on.
 
 {{< details title="Show a solution" >}}
 
 What is wrong:
 
-- **Prompt 1:** "stuff" and "libraries" are both vague. No audience, no length, no angle.
-- **Prompt 2:** six unrelated tasks, no priority, no format. Split them.
-- **Prompt 3:** "this" has no referent, and there is no error message, system or goal.
+- **Prompt 1:** "stuff" and "libraries" are both vague, and the prompt names no audience, length or focus.
+- **Prompt 2:** six unrelated tasks with no priority and no format. Split them.
+- **Prompt 3:** "this" points to nothing the model can see, and there is no error message, system or goal.
 
 Here is the first prompt as written:
 
@@ -468,7 +468,7 @@ Community services, such as book clubs, author talks, and cultural events, bring
 In summary, public libraries are dynamic and integral to modern communities, offering a range of educational programs, community services, and digital resources that enhance the social, economic, and educational well-being of their patrons. This diverse role is both a challenge and an opportunity for library professionals, making it a rewarding career choice.
 ```
 
-The first answer is a 340-word tour of everything. The repaired one is about 150 words and aimed at the stated reader. It is not perfect (the opening sentence is awkward), but it is on target. The model handled "about 150 words" well. It is exact counts that it misses.
+The first answer is 340 words long and covers a bit of everything about libraries. The repaired one is about 150 words and written for the stated reader. It is not perfect (the opening sentence is awkward), but it does what was asked. The model handled "about 150 words" well. It is exact counts that it misses.
 
 {{< /details >}}
 
@@ -511,7 +511,7 @@ Pride and Prejudice by Jane Austen, 1813, original boards partially detached, pa
 {"title": "Pride and Prejudice", "author": "Jane Austen", "year": 1813, "condition": "Fine", "notes": "Bookplate present, boards partially detached, browning typical for age"}
 ```
 
-The JSON is valid, the keys are right and there is no valuation. The condition grade is a matter for debate: with the boards partially detached, "Fine" is generous, and "Fair" or "Good" would be easier to defend. The model followed the format and the constraints, and it chose the grade by pattern. A cataloger reads the grade and decides.
+The JSON is valid, the keys are right and there is no valuation. The condition grade is open to question: with the boards partially detached, "Fine" is generous, and "Fair" or "Good" would be easier to defend. The model followed the format and the constraints, and it chose the grade by matching patterns. A cataloger reads the grade and decides.
 
 {{< /details >}}
 
@@ -528,5 +528,5 @@ Tick what you can do now.
 - [ ] I can say why a confident answer is not the same as a correct one.
 
 {{< callout type="success" >}}
-**What you should see:** a table from Exercise 1, JSON that parses in Exercise 3, and in Exercise 6 a confident answer that your own check shows to be wrong. If a model ignored a numeric filter or invented an identifier, that is the expected result, not a mistake of yours.
+**What you should see:** a table from Exercise 1, valid JSON from Exercise 3, and in Exercise 6 a confident answer that your own check shows to be wrong. If a model ignored a numeric filter or invented an identifier, that is the expected result, not a mistake of yours.
 {{< /callout >}}

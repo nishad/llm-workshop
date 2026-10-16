@@ -5,9 +5,9 @@ cascade:
   type: docs
 ---
 
-In Part 1 you typed into a chat window. Here the same model answers your code. Once the call is in a script you can send a hundred records, keep every answer, and record exactly which model produced what.
+In Part 1 you typed into a chat window. Here the same model answers calls from your Python code. Once the call is in a script, you can send a hundred records, keep every answer, and record exactly which model produced each one.
 
-Notebook 01, `01_python_and_ollama`, has a 20-minute budget; in the session it gets about 18 (minutes 10 to 28 of Part 2). It is a type-along: we run the cells together and you change a few.
+Notebook 01, `01_python_and_ollama`, is planned for 20 minutes. In the session it gets about 18 minutes, from minute 10 to minute 28 of Part 2. It is a type-along: we run the cells together, and you change a few of them.
 
 ## What the notebook covers
 

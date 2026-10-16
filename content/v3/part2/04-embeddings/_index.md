@@ -5,9 +5,9 @@ cascade:
   type: docs
 ---
 
-Keyword search finds the words you typed. Semantic search finds the concept you meant, in any language the embedding model knows. This chapter builds semantic search over two controlled vocabularies, the STW Thesaurus for Economics and the UNESCO Thesaurus, and measures how well it works.
+Keyword search finds the words you typed. Semantic search finds the concept you meant, in any language the embedding model knows. An embedding model turns a text into a list of numbers that represents its meaning; similar meanings give similar lists. This chapter builds semantic search over two controlled vocabularies, the STW Thesaurus for Economics and the UNESCO Thesaurus. It then measures how well the search works.
 
-Notebook 03, `03_vocabulary_search`, has a 25-minute budget; in the session it gets about 22 (minutes 50 to 72 of Part 2).
+Notebook 03, `03_vocabulary_search`, has a 25-minute budget. In the session it gets about 22 minutes (minutes 50 to 72 of Part 2).
 
 ## Keywords versus meaning
 
@@ -35,7 +35,7 @@ Matches: similar vectors, representing:
 An embedding model can place "library" and "bibliothèque" close together, although the two words share almost no letters.
 {{< /callout >}}
 
-Imagine plotting labels in two dimensions (real embeddings have hundreds or thousands):
+Imagine plotting labels on a flat chart with two dimensions (real embeddings have hundreds or thousands of dimensions):
 
 ```text
                     "library" •
@@ -51,14 +51,14 @@ Imagine plotting labels in two dimensions (real embeddings have hundreds or thou
 
 ## A second model
 
-Apertus generates text and is not an embedding model. The workshop uses `qwen3-embedding:0.6b` beside it: Apache-2.0, 639 MB, 1,024 dimensions, a 32k-token context, and an instruction prefix on queries that the notebooks' helper adds. Two alternatives were measured on the same gold set (`bge-m3` and `embeddinggemma`); the numbers and licenses are on the [models page](/v3/resources/models).
+Apertus generates text and is not an embedding model. The workshop uses `qwen3-embedding:0.6b` beside it. Its license is Apache-2.0, its file is 639 MB, and it turns each text into 1,024 numbers (its dimensions). It has a 32k-token context window. It also expects a short instruction, called a prefix, in front of every query. The notebooks' helper adds that prefix for you. Two alternatives, `bge-m3` and `embeddinggemma`, were measured on the same gold set (a set of test queries with known correct answers). The numbers and licenses are on the [models page](/v3/resources/models).
 
 ## What the notebook covers
 
 1. Turn SKOS labels into index entries and embed them in one batch.
-2. Search by meaning: a free-text query, a cross-lingual query, a held-out synonym, a scope-note question.
-3. Decide with a threshold and a person: suggest three, pick one.
-4. Persist the index with sqlite-vec, measure recall on a gold set, and see why index design matters as much as the model.
+2. Search by meaning with four kinds of query: free text, a cross-lingual query (a query in one language against labels in another), a held-out synonym (an alternative label used as the query), and a scope-note question (asking which concept covers a topic).
+3. Set a score threshold, show up to three suggestions above it, and let a person pick one.
+4. Save the index to a file with sqlite-vec, measure recall (how often the right concept is found) on a gold set, and see why index design matters as much as the model.
 
 ## The pages
 
@@ -67,4 +67,4 @@ Apertus generates text and is not an embedding model. The workshop uses `qwen3-e
   {{< card link="/v3/part2/04-embeddings/vocabulary-search" title="Vocabulary search" icon="search" subtitle="STW and UNESCO queries, with a measured recall." >}}
 {{< /cards >}}
 
-The data and its licenses are listed on the [data page](/v3/resources/data). Embeddings feed the next chapter, [RAG](/v3/part2/05-rag).
+The data and its licenses are listed on the [data page](/v3/resources/data). The next chapter, [RAG](/v3/part2/05-rag), builds on embeddings.

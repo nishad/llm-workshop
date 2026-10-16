@@ -3,13 +3,13 @@ title: Vocabulary search
 weight: 2
 ---
 
-This page follows sections 03.02 to 03.08 of notebook 03. Each code cell is quoted with the output it produced when the notebook was executed on 15 October 2026. The embedding model is `qwen3-embedding:0.6b`; the helper adds its query prefix (see the [concepts page](/v3/part2/04-embeddings/concepts)). Setup creates `EMBED_MODEL`.
+This page follows sections 03.02 to 03.08 of notebook 03. Each code cell is quoted with the output it produced when the notebook was executed on 15 October 2026. The embedding model is `qwen3-embedding:0.6b`. The notebooks' helper adds the query prefix this model expects (see the [concepts page](/v3/part2/04-embeddings/concepts)). The setup cell creates `EMBED_MODEL`, the variable that holds the model name.
 
-The notebook's query tables are HTML; here they are Markdown with the same cells.
+The notebook shows its query results as HTML tables; here they are Markdown tables with the same contents.
 
 ## From SKOS to index entries
 
-Each preferred and alternative label becomes one entry that remembers its concept, so a one-word query meets one-word entries. In the October 2026 tests, with one long document per concept (label, all alternatives, scope note), the query "Fernsehproduktion" ranked *Produktionsprozess* above *Filmproduktion*, even though "Fernsehproduktion" is one of Filmproduktion's labels. With one entry per label, *Filmproduktion* comes first.
+Each preferred and alternative label becomes one entry that remembers which concept it belongs to, so a one-word query is compared with one-word entries. In the October 2026 tests, one index stored each concept as one long document (the label, all its alternatives and the scope note). With that index, the query "Fernsehproduktion" ranked *Produktionsprozess* above *Filmproduktion*, even though "Fernsehproduktion" is one of Filmproduktion's labels. With one entry per label, *Filmproduktion* comes first.
 
 ```python
 from scripts.build_vocab_extracts import load_vocab, concept_document
@@ -27,11 +27,11 @@ preferred: Bibliothek | alternatives: ['Bibliothekswesen', 'Bücherei']
 as one document: Bibliothek (Bibliothekswesen; Bücherei)
 ```
 
-From the executed notebook 03, 15 October 2026. This is one STW descriptor: the preferred label, its alternatives, and the one-document form. The notebook indexes every label separately instead; `concept_document` is kept for the gold set below.
+From the executed notebook 03, 15 October 2026. This is one STW descriptor (STW's word for a concept): the preferred label, its alternatives, and the same concept written as one document. The notebook indexes every label separately instead; it keeps `concept_document` for the gold set below (the test queries with known answers).
 
 ## Embed the German labels in one batch
 
-About 20,000 short labels. In the executed notebook the index was built in 313 s on an Apple Silicon Mac with 64 GB; a CPU-only laptop takes far longer. With the prebuilt file `runs/stw-de-labels.sqlite` in place (see the [environment page](/v3/part2/01-environment)), the cell loads it instead of building, which is how to follow this notebook live on an 8 GB machine. The helper adds the embedding model's prefix (qwen3-embedding wants an instruction in front of every query and nothing in front of documents) and returns unit vectors.
+There are about 20,000 short labels to embed. In the executed notebook, building the index took 313 s on an Apple Silicon Mac with 64 GB of memory; a CPU-only laptop takes far longer. If the prebuilt file `runs/stw-de-labels.sqlite` is in place (see the [environment page](/v3/part2/01-environment)), the cell loads it instead of building a new index. That is how to follow this notebook live on an 8 GB machine. The helper adds the prefix the embedding model expects: qwen3-embedding needs an instruction in front of every query and nothing in front of documents. The helper also returns unit vectors, that is, vectors scaled to length 1.
 
 ```python
 entries = []   # (entry id, label): every German preferred and alternative label, remembering its concept
@@ -55,11 +55,11 @@ else:
 embedded 19688 labels in 313 s, dimension 1024, saved to runs/stw-de-labels.sqlite
 ```
 
-From the executed notebook 03, 15 October 2026 (the imports are omitted). The warning line prints only if the file was built with a different embedding model than the one in use; here it stayed silent because the cell built the index.
+From the executed notebook 03, 15 October 2026 (the imports are omitted). The warning line prints only if the file was built with a different embedding model than the one in use. Here it did not print, because the cell built the index itself.
 
 ## Four kinds of query
 
-Hits are labels. `search_concepts` keeps the best label per concept and shows the concept's preferred label next to the label that matched.
+Each search hit is a label, not a concept. `search_concepts` keeps the best-scoring label for each concept and shows the concept's preferred label next to the label that matched.
 
 ```python
 def search_concepts(query, index, pref, k=3):
@@ -78,7 +78,7 @@ show("Fernsehproduktion")
 show("Which concept covers the taxation of inheritances?")
 ```
 
-From the executed notebook 03, 15 October 2026 (the `show` helper is cut here).
+From the executed notebook 03, 15 October 2026 (the `show` helper is omitted here).
 
 **1. Free text that is not a label:** "Geld, das Eltern für Kinder bekommen"
 
@@ -88,9 +88,9 @@ From the executed notebook 03, 15 October 2026 (the `show` helper is cut here).
 | 0.635 | Unterhaltsrecht | Elternunterhalt | 19839-2 |
 | 0.625 | Familienleistungsausgleich | Kindergeld | 11564-6 |
 
-The query describes child benefit without naming it. *Kindergeld* is third, under *Familienleistungsausgleich*; a person would pick it.
+The query describes child benefit without naming it. *Kindergeld* comes third, as a label of the concept *Familienleistungsausgleich*; a person reading the list would pick it.
 
-**2. Cross-lingual:** "wheat production" against the German index
+**2. Cross-lingual:** "wheat production", an English query against the German index
 
 | score | concept | matched label | id |
 |:--|:--|:--|:--|
@@ -98,7 +98,7 @@ The query describes child benefit without naming it. *Kindergeld* is third, unde
 | 0.580 | Agrarproduktion | Landwirtschaftliche Produktion | 18980-6 |
 | 0.545 | Getreideanbau | Getreideanbau | 18198-5 |
 
-**3. A held-out synonym:** "Fernsehproduktion" (the descriptor is *Filmproduktion*)
+**3. An alternative label as the query:** "Fernsehproduktion" (the descriptor is *Filmproduktion*)
 
 | score | concept | matched label | id |
 |:--|:--|:--|:--|
@@ -106,7 +106,7 @@ The query describes child benefit without naming it. *Kindergeld* is third, unde
 | 0.618 | Serienfertigung | Serienproduktion | 12727-6 |
 | 0.611 | Fernsehprogramm | Fernsehprogramm | 18934-6 |
 
-The alternative label matches itself, and the concept it belongs to comes back.
+"Fernsehproduktion" is an alternative label in the index, so it matches itself, and the concept it belongs to comes back.
 
 **4. A scope-note question:** "Which concept covers the taxation of inheritances?"
 
@@ -118,7 +118,7 @@ The alternative label matches itself, and the concept it belongs to comes back.
 
 ## Suggest three, let a person choose
 
-Below a threshold the notebook shows nothing; above it, it shows up to three candidates, a cataloger picks one or none, and the choice is recorded.
+If no candidate reaches the threshold, the notebook shows nothing. Above the threshold, it shows up to three candidates. A cataloger picks one or none, and the notebook records the choice.
 
 ```python
 def suggest(text, k=3, threshold=0.55):
@@ -139,11 +139,11 @@ print("chosen:", suggest("Streik der Lokführer"))
 chosen: http://zbw.eu/stw/descriptor/11348-5
 ```
 
-From the executed notebook 03, 15 October 2026. Only two candidates cleared the threshold, so only two are shown. The notebook was run unattended, so the first was chosen automatically; when you run it yourself, you choose.
+From the executed notebook 03, 15 October 2026. Only two candidates reached the threshold, so only two are shown. The notebook ran without a person at the keyboard, so it chose the first candidate automatically. When you run it yourself, you choose.
 
 ## The UNESCO Thesaurus in French and German
 
-A second label index from the English labels, queried in French and German. Cross-lingual retrieval is where embedding models differ most. The prebuilt file `runs/unesco-en-labels.sqlite` is the second file in the download post; with it in `runs/`, the notebook loads the index instead of building it.
+Here the notebook builds a second label index, this time from the English labels, and queries it in French and German. Cross-lingual retrieval (a query in one language, labels in another) is where embedding models differ most. The prebuilt file `runs/unesco-en-labels.sqlite` is the second of the two files linked from [Before you start](/v3/before-you-start#4-part-2-only-python-and-the-notebooks). With it in `runs/`, the notebook loads the index instead of building it.
 
 ```python
 for q in ("Grossesse", "bibliothèque numérique", "Rechte der Frau", "changement climatique"):
@@ -157,11 +157,11 @@ Rechte der Frau → [('Womens rights', 0.609), ('Womens status', 0.567), ('Civil
 changement climatique → [('Environmental degradation', 0.666), ('Climate change', 0.661), ('Climate change adaptation', 0.641)]
 ```
 
-From the executed notebook 03, 15 October 2026. Three of the four work. "Grossesse" (pregnancy) misses: the model matched the look of the word ("Gross national product", "Grade repetition"), not its meaning. All three scores are below 0.45, which a threshold would have caught. Even for the good queries, the right concept is not always first: *Digital libraries* and *Climate change* both come second.
+From the executed notebook 03, 15 October 2026. Three of the four queries work. "Grossesse" (pregnancy) fails: the model matched the look of the word ("Gross national product", "Grade repetition"), not its meaning. All three of its scores are below 0.45, so a threshold would have filtered them out. Even for the good queries, the right concept is not always first: *Digital libraries* and *Climate change* both come second.
 
 ## Recall on the gold set
 
-Fifty queries with known targets (held-out German synonyms, STW English to German, UNESCO French and English, scope-note questions), scored against one document per concept with the synonym removed. This is the hard case, and it is the same corpus for every model. recall@1 is the share of queries whose correct concept is the top hit; recall@5 is the share found in the top five. This cell embeds 15,198 documents and takes about six minutes; it is optional.
+The gold set is fifty queries with known correct concepts: held-out German synonyms (STW alternative labels used as queries), STW English to German, UNESCO French and English, and scope-note questions. Each query is scored against one document per concept, with the held-out synonym removed from its concept's document first. This is the hard case, and it is the same set of documents for every model. recall@1 is the share of queries whose correct concept is the top hit; recall@5 is the share whose correct concept is in the top five. This cell embeds 15,198 documents and takes about six minutes; it is optional.
 
 ```text
 qwen3-embedding:0.6b: recall@1 0.62, recall@5 0.82
@@ -183,11 +183,11 @@ From the executed notebook 03, 15 October 2026.
 | E | UNESCO scope-note question to concept | 2/6 | 4/6 |
 | All | 50 queries | 0.62 | 0.82 |
 
-The English-only model used in the SWIB25 edition, `nomic-embed-text`, scored 0.17 on kind B (English to German). On the same gold set, `embeddinggemma` scored higher under a license that is not open source, and `bge-m3` scored lower; the [models page](/v3/resources/models) has the numbers.
+`nomic-embed-text`, the English-only model used in the SWIB25 edition of this workshop, scored 0.17 on kind B (English to German). On the same gold set, `embeddinggemma` scored higher (but its license is not open source) and `bge-m3` scored lower. The [models page](/v3/resources/models) has the numbers.
 
 ### The same queries against the label index
 
-The same held-out queries against the label index, with the query's own label removed first. This keeps the model constant and changes only the index design.
+The notebook runs the same held-out queries against the label index, after removing each query's own label from the index. This keeps the model the same and changes only the index design.
 
 ```text
 label index  A_stw_de_alt_to_concept          recall@1 8/12  recall@5 11/12
@@ -203,11 +203,11 @@ From the executed notebook 03, 15 October 2026.
 | B, recall@1 | 8/12 | 6/12 |
 | B, recall@5 | 10/12 | 10/12 |
 
-The label index helps the synonym kind most and hurts the cross-lingual kind at rank 1 (8/12 down to 6/12): one-word labels carry less context for a translation than a document does. Index design changed recall as much as the model did.
+The label index helps kind A (synonyms) most and hurts kind B (English to German) at recall@1, from 8/12 down to 6/12. A one-word label gives the model less context for a translation than a whole document does. Index design changed recall as much as the choice of model did.
 
 ## sqlite-vec
 
-The index lives in one SQLite file. Any program that can open SQLite can query it, and the vector search is a SQL clause.
+The whole index is stored in one SQLite file. Any program that can open SQLite can query it, and the vector search is a SQL clause.
 
 ```python
 from workshop.search import knn_sqlite
@@ -222,21 +222,21 @@ distance 0.785  Anspruchsinflation
 distance 0.796  Inflationstheorie
 ```
 
-From the executed notebook 03, 15 October 2026. Here a smaller distance is better.
+From the executed notebook 03, 15 October 2026. Here the numbers are distances, not similarity scores, so a smaller value is better.
 
 ## Three tiers
 
 ### GUI
 
-This notebook has no chat-app equivalent. Read the four tables above and decide for each query which hit a cataloger would accept.
+There is no chat-app version of this notebook. Read the four tables above and decide for each query which hit a cataloger would accept.
 
 ### Run and change
 
-Lower the threshold in the suggest cell to 0.4 and query something outside economics, such as "Mondlandung". What does the model suggest, and would a cataloger accept it? Then query the German index in Italian or Spanish. Which kinds of terms survive translation, and which do not?
+Lower the threshold in the suggest cell to 0.4 and query something outside economics, such as "Mondlandung". What does the model suggest, and would a cataloger accept it? Then query the German index in Italian or Spanish. Which kinds of terms are still found when you ask in another language, and which are not?
 
 ### Stretch
 
-Swap the embedding model. Pull `embeddinggemma` (it is under Google's Gemma Terms of Use, which is not an open-source license). Delete or rename the two index files in `runs/`, because they hold qwen3-embedding vectors. Set `WORKSHOP_EMBED_MODEL=embeddinggemma`, restart the kernel, and run from the setup cell to the gold-set cell. Note the prefixes the helper adds for each model (`workshop.embed.prefix_for`). Or build an index over a GND subject-heading subset (the DNB publishes GND dumps under CC0 at https://data.dnb.de/opendata/) and query it with STW labels, a first step toward vocabulary mapping.
+Try a different embedding model. Download `embeddinggemma` with Ollama. Note that it is under Google's Gemma Terms of Use, which is not an open-source license. Delete or rename the two index files in `runs/`, because they hold qwen3-embedding vectors. Set `WORKSHOP_EMBED_MODEL=embeddinggemma`, restart the kernel, and run from the setup cell to the gold-set cell. Look at the prefixes the helper adds for each model (`workshop.embed.prefix_for`). Or build an index over a subset of the GND subject headings and query it with STW labels, a first step toward mapping one vocabulary to another. The German National Library (DNB) publishes GND dumps under CC0 at https://data.dnb.de/opendata/.
 
 ## Data and licenses
 

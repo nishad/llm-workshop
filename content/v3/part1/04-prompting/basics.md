@@ -25,11 +25,11 @@ In contemporary Chinese literature, Mo Yan’s 蛙 (Frog) was published in 2009.
 And don’t forget the Scandinavian gem “Pippi Longstocking” (Pippi Långstrump) by Astrid Lindgren, a Swedish novel published in 1945. “The Little Prince” (Le Petit Prince) by Antoine de Saint-Exupéry, a French novella, was released in 1943. In Italian literature, we have Dante Alighieri’s Divina Commedia (The Divine Comedy), written between 1308 and 1320 in Italian.
 ```
 
-In the prompts below, the placeholder [the sample text from above] stands for the whole text, and [the first paragraph of the sample text] stands for its first paragraph only (the four works from Steinbeck to Murakami). The model received the actual text each time; the placeholder only keeps this page short.
+In the prompts below, the placeholder [the sample text from above] stands for the whole text. The placeholder [the first paragraph of the sample text] stands for its first paragraph only (the four works from Steinbeck to Murakami). The model received the actual text each time; the placeholder only keeps this page short.
 
 ## From "List the books." to a usable list
 
-Prompting is iterative. Write a first version, read the answer, find the gap, and fix the prompt. Here is one task in four versions. Each version was run once.
+Prompting works in rounds. Write a first version, read the answer, find the gap, and fix the prompt. Here is one task in four versions. Each version was run once. The line above each output names the model, its digest, the temperature and the date of the capture. The digest is a code that identifies the exact copy of the model. The temperature is the setting that controls how much the answers vary.
 
 ### Version 1: too vague
 
@@ -153,7 +153,7 @@ Text:
 22. "Divina Commedia" (The Divine Comedy) by Dante Alighieri (Written between 1308 and 1320 in Italian)
 ```
 
-Most entries now follow Title by Author (Year). The exceptions: Homer's Odyssey puts the author first, and the Rubaiyat gets an "Attributed to" note. Several entries carry extra notes in brackets. Formats are followed approximately, not exactly.
+Most entries now follow Title by Author (Year). The exceptions: Homer's Odyssey puts the author first, and the Rubaiyat gets an "Attributed to" note. Several entries carry extra notes in brackets. The model follows a format approximately, not exactly.
 
 ### Version 4: sorting and a filter
 
@@ -196,10 +196,10 @@ Text:
 Version 4 asked for three things at once: the format, a chronological sort and a filter on the year. The model did the format and gave up on the rest.
 
 - **Not sorted.** The list starts 1937, 1967, 1813, 1987. It follows the order of the text.
-- **The filter let five works through.** Cien años de soledad (1967), Norwegian Wood (1987), Foundation (1951), Frog (2009) and The Namesake (2003) were published after 1950. Of the 18 entries, 13 belong and 5 do not.
+- **The filter kept five works it should have removed.** Cien años de soledad (1967), Norwegian Wood (1987), Foundation (1951), Frog (2009) and The Namesake (2003) were published after 1950. Of the 18 entries, 13 belong and 5 do not.
 - **One work that belongs is missing.** Don Quixote (1605 and 1615) is not on the list.
 
-A small model treats "before 1950" as a phrase to echo rather than a rule to apply to each year. Comparing numbers is exactly where small models slip. The usual repair is to split the task: first extract everything with the year, then filter and sort in a second prompt, or in a spreadsheet. [Techniques](/v3/part1/04-prompting/techniques) shows the multi-step version.
+A small model treats "before 1950" as a phrase to repeat, not as a rule to apply to each year. Comparing numbers is exactly where small models make mistakes. The usual repair is to split the task: first extract everything with the year, then filter and sort in a second prompt, or in a spreadsheet. [Techniques](/v3/part1/04-prompting/techniques) shows the multi-step version.
 
 {{< callout type="warning" >}}
 Read the answer before you trust it. A tidy list can still be wrong.
@@ -253,7 +253,7 @@ Explain in three sentences what a subject heading is, for a new library assistan
 Subject headings are like keywords that help people find books or resources in the library. They are used to describe the main topic or theme of a book, article, or other material. For example, if you're looking for books about cats, you could use the subject heading "cats" or "felines." This makes it easier for others to find what they need.
 ```
 
-The poor prompt returned a lecture of about 250 words that nobody can use at a reference desk. The better prompt names the audience, the length and the register. It returned about 60 words. (It also wrote four sentences where three were asked for, a first sign that length instructions are approximate.)
+The poor prompt returned a lecture of about 250 words that nobody can use at a reference desk. The better prompt names the audience, the length and the kind of language to use. It returned about 60 words. (It also wrote four sentences where three were asked for, a first sign that length instructions are approximate.)
 
 ### 2. Provide context
 
@@ -358,7 +358,7 @@ Output:
 Title: Homo faber | Author: Max Frisch | Year: 1957
 ```
 
-Both are correct. Only the second matches the format you wanted, so you can paste it into a spreadsheet or parse it.
+Both answers are correct. Only the second matches the format you wanted, so you can paste it into a spreadsheet or have a program read it.
 
 ### 4. Say how the answer should look
 
@@ -464,4 +464,4 @@ Before you press send, ask:
 - [ ] Have I set constraints that matter (length, scope, what to leave out)?
 - [ ] Am I asking for one task, or several unrelated ones?
 - [ ] For an unusual format or a tricky task, have I added an example?
-- [ ] Is the prompt self-contained, without assuming earlier conversation?
+- [ ] Does the prompt work on its own, without depending on an earlier conversation?
