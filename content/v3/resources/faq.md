@@ -81,8 +81,8 @@ Yes, under CC BY 4.0. Keep the attribution, and check the license of any data fi
 
 ### I missed it. What now?
 
-Everything is self-paced. Work through the pages and notebooks in your own time and ask questions in the forum topic.
+Everything is self-paced. Work through the pages and notebooks in your own time and ask questions in the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732).
 
 ### Will it be recorded?
 
-The organizers decide; the answer is posted in the forum topic once agreed.
+The organizers decide; the answer appears under "On the day" on [Before you start](/v3/before-you-start#on-the-day) once agreed.

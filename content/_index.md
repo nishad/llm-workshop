@@ -7,7 +7,7 @@ toc: false
 
 {{< cards >}}
   {{< card link="v3" title="SWIB26 edition (current)" icon="sparkles" subtitle="16 November 2026. Apertus, Ollama or LM Studio, structured output, vocabularies, RAG, tool use." >}}
-  {{< card link="v3/before-you-start" title="Start here" icon="play" subtitle="Check your hardware, install a runtime, download the model before the workshop." >}}
+  {{< card link="v3/before-you-start" title="Start here" icon="play" subtitle="Everything to do before the workshop, on one page." >}}
   {{< card link="v2" title="SWIB25 edition (archive)" icon="archive" subtitle="Ollama app, Llama models, embeddings and RAG. Kept for reference." >}}
   {{< card link="v1" title="SWIB24 edition (archive)" icon="archive" subtitle="The first edition. Kept for reference." >}}
 {{< /cards >}}

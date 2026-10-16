@@ -19,17 +19,11 @@ This is a hands-on workshop. You can follow along with the graphical tools only,
 
 ## What you need
 
-A computer running Windows, macOS or Linux with 20 GB of free storage. 8 GB of RAM is enough for the small model; 16 GB lets you run the larger one. You need an internet connection to download the models, or you can download them in advance (the instructions are posted about a week before). For Part 2 you also need Python 3.12 or 3.13 (uv can install it for you).
+A computer running Windows, macOS or Linux with 20 GB of free storage. 8 GB of RAM is enough for the small model; 16 GB lets you run the larger one. You need an internet connection to download the models, or you can download them in advance; the steps are on [Before you start](before-you-start). For Part 2 you also need Python 3.12 or 3.13 (uv can install it for you).
 
 ## When
 
-| | UTC | Tokyo | Sydney | Delhi | Berlin / Zurich | New York |
-|---|---|---|---|---|---|---|
-| Part 1 | 04:00-06:00 | 13:00-15:00 | 15:00-17:00 | 09:30-11:30 | 05:00-07:00 | 23:00 Sun - 01:00 |
-| Break | 06:00-06:10 | | | | | |
-| Part 2 | 06:10-08:00 | 15:10-17:00 | 17:10-19:00 | 11:40-13:30 | 07:10-09:00 | 01:10-03:00 |
-
-Zoom opens at 03:30 UTC for installation help.
+Monday 16 November 2026, 04:00-08:00 UTC, with a ten-minute break at 06:00. Zoom opens at 03:30 UTC for installation help. Local times, the Zoom details and the setup steps are on [Before you start](before-you-start).
 
 ## Three ways to take part
 
@@ -42,7 +36,7 @@ Zoom opens at 03:30 UTC for installation help.
 ## Before the workshop
 
 {{< cards >}}
-  {{< card link="before-you-start" title="Before you start" icon="play" subtitle="Check your hardware and install a runtime." >}}
+  {{< card link="before-you-start" title="Before you start" icon="play" subtitle="Everything to do before the day, in order." >}}
   {{< card link="before-you-start/download-models" title="Download the model" icon="download" subtitle="Get the model files before the session." >}}
   {{< card link="before-you-start/check" title="Am I ready?" icon="check-circle" subtitle="A short check that everything works." >}}
 {{< /cards >}}
@@ -55,12 +49,5 @@ Zoom opens at 03:30 UTC for installation help.
   {{< card link="resources" title="Resources" icon="book-open" subtitle="Reading, links and reference pages." >}}
   {{< card link="https://github.com/nishad/llm-workshop-notebooks" title="Notebooks" icon="external-link" subtitle="The companion repository on GitHub." >}}
 {{< /cards >}}
-
-## How we work together
-
-- Questions go into the shared document (link added the week before).
-- Use the green check and red X in Zoom's participant panel to tell us how you are doing.
-- Helpers join breakout rooms when you ask.
-- Cameras are optional.
 
 Facilitator: Nishad Thalhath, RIKEN Center for Integrative Medical Sciences. Materials CC BY 4.0, code MIT.

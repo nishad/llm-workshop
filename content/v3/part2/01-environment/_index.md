@@ -109,7 +109,7 @@ jupyter lab
 
 ## Download the prebuilt index files
 
-Notebook 03 builds two vocabulary indexes. Building them takes about seven minutes on an Apple Silicon Mac with 64 GB (five for STW, two for UNESCO) and far longer on a CPU-only laptop, so download the prebuilt files instead. The link is in the download post on the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732). Put both files in the `runs/` folder of the repository (create it if it does not exist); the notebook then loads them instead of building.
+Notebook 03 builds two vocabulary indexes. Building them takes about seven minutes on an Apple Silicon Mac with 64 GB (five for STW, two for UNESCO) and far longer on a CPU-only laptop, so download the prebuilt files instead. The download link is in step 4 of [Before you start](/v3/before-you-start#4-part-2-only-python-and-the-notebooks). Put both files in the `runs/` folder of the repository (create it if it does not exist); the notebook then loads them instead of building.
 
 | File | Size | sha256 |
 | --- | --- | --- |

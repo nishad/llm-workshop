@@ -20,7 +20,7 @@ The data files for Part 2 live in the notebooks repository under `data/`. Each f
 
 ## Prebuilt index files
 
-Notebook 03 builds two label indexes and loads them from `runs/` when the files exist. The prebuilt files are not in the repository; the download post on the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732) links to them. They are built from the two vocabularies above, so their labels keep the source licenses.
+Notebook 03 builds two label indexes and loads them from `runs/` when the files exist. The prebuilt files are not in the repository; step 4 of [Before you start](/v3/before-you-start#4-part-2-only-python-and-the-notebooks) links to them. They are built from the two vocabularies above, so their labels keep the source licenses.
 
 | File | Size | sha256 |
 | --- | --- | --- |
