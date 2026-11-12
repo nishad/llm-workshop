@@ -171,4 +171,4 @@ ollama ps
 Invoke-RestMethod http://localhost:11434/api/version
 ```
 
-Add your operating system, how much memory your computer has, and the exact error text. Post all of this in the forum topic (https://forum.swib.org/t/getting-started-with-local-llms/1732).
+Add your operating system, how much memory your computer has, and the exact error text. Post all of this in the forum topic (<https://forum.swib.org/t/getting-started-with-local-llms/1732>).

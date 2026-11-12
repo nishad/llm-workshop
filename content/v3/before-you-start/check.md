@@ -62,7 +62,7 @@ We built and tested the materials with Ollama 0.40.4 on 15 October 2026.
 
 ## What to paste when asking for help
 
-Post in the forum topic (https://forum.swib.org/t/getting-started-with-local-llms/1732) and include:
+Post in the forum topic (<https://forum.swib.org/t/getting-started-with-local-llms/1732>) and include:
 
 1. The output of the last cell of `00_check_setup.ipynb`.
 2. The exact error text.
