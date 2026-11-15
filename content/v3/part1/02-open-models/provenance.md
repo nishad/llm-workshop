@@ -13,7 +13,7 @@ Common Crawl is a public archive of web pages, and many training sets start from
 https://index.commoncrawl.org/CC-MAIN-2026-39-index?url=*.swib.org&output=json&limit=5
 ```
 
-Each line is one captured page. A result shows that your pages were crawled. It does not prove they were used for training. That depends on how the model's builders filtered the data, and on your robots.txt file (where a website tells crawlers which pages they may not collect). The site swib.org publishes no robots.txt.
+Each line is one captured page. A result shows that your pages were crawled. It does not prove they were used for training. That depends on how the model's builders filtered the data, and on your robots.txt file (where a website tells crawlers which pages they may not collect). As of 15 November 2026, the site swib.org published no robots.txt.
 
 ## Lookup 2: infini-gram
 

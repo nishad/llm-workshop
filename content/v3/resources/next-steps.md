@@ -25,14 +25,14 @@ Ideas for continuing after the workshop. Start small, keep a person in the loop 
 - **The lobid reconciliation service** for matching against GND from OpenRefine.
 - **Skosmos** for publishing and browsing SKOS vocabularies, as the STW thesaurus does.
 
-## SWIB26 sessions on the same day
+## Related SWIB26 sessions
 
 - The keynote on critical AI literacies
 - The CUNY talk on a human-in-the-loop approach to authority work
 - The talk on open LLMs for keyword assignment
 - The AI policy community session
 
-See the SWIB26 program for times.
+The SWIB26 program has the times.
 
 ## Communities
 

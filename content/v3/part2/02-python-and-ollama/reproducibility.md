@@ -42,7 +42,7 @@ print("appended to runs/log.jsonl")
 appended to runs/log.jsonl
 ```
 
-From the executed notebook 01, 15 October 2026. Your digest should match this one if you downloaded the same tag. Your version and time will differ.
+From the executed notebook 01, 15 October 2026. Your digest matches this one as long as the tag still points to the same file. Your version and time will differ.
 
 Notebook 00 shows the full record as JSON. Besides the fields above, it has `parameter_size` (`8.05B`), `context_length` (65536) and `template_header`.
 

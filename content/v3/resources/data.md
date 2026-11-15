@@ -20,7 +20,7 @@ The data files for Part 2 are in the notebooks repository under `data/`. The sou
 
 ## Prebuilt index files
 
-Notebook 03 builds two label indexes, or loads them from `runs/` if the files are already there. The prebuilt files are not in the repository; step 4 of [Before you start](/v3/before-you-start#4-part-2-only-python-and-the-notebooks) links to them. The indexes are built from the two vocabularies above, so their labels keep the source licenses.
+Notebook 03 builds two label indexes, or loads them from `runs/` if the files are already there. The prebuilt files are not in the repository. Download them from the [swib26 release](https://github.com/nishad/llm-workshop-notebooks/releases/tag/swib26) of the notebooks repository; the direct links are in step 4 of [Before you start](/v3/before-you-start#4-part-2-only-python-and-the-notebooks). The indexes are built from the two vocabularies above, so their labels keep the source licenses.
 
 | File | Size | sha256 |
 | --- | --- | --- |

@@ -57,7 +57,7 @@ In Part 2 you work with code:
 ## Three ways to take part
 
 - **GUI only.** You work in a graphical chat app and write no code. That covers all of Part 1. In Part 2 you follow as a listener and watch the notebooks run.
-- **Run the notebooks.** You need the environment from the [next page](/v3/part2/01-environment), and the model must already be downloaded.
+- **Run the notebooks.** You need the environment from the [next page](/v3/part2/01-environment) and the model from [Download the models](/v3/before-you-start/download-models).
 - **Read afterwards.** Every notebook is saved with its outputs, so you can read it later without running anything.
 
 Each exercise has three tiers: GUI (do the task in your chat window), Run and change (change one thing and compare) and Stretch (go one step further).

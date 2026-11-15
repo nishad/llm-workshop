@@ -25,7 +25,7 @@ Minutes are counted from 04:00 UTC.
 
 | Minutes | Segment | Mode |
 |---|---|---|
-| 0-10 | Welcome: what changed since 2024, why libraries care, how the four hours work, how to get help (shared document, Zoom reactions) | demo |
+| 0-10 | Welcome: what changed since 2024, why libraries care, how the four hours work, how to get help (Zoom chat and reactions) | demo |
 | 10-35 | How an LLM works: next-token prediction; tokens (live tokenizer, multilingual costs); context window and its memory cost; parameters and quantization (file size equals memory); live `ollama ps` | demo with prediction checks |
 | 35-55 | Open source, open weights, fully open: the ladder; Apertus as the case; the EU public summary; "was my library in the training data?" | demo |
 | 55-80 | Setup recap and privacy settings; first chat with Apertus in the Ollama app or LM Studio; choosing a model size; measure your own speed | type-along (GUI) |

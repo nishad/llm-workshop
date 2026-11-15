@@ -9,8 +9,6 @@ LM Studio is a graphical desktop application and an alternative to Ollama. It is
 The download page lists **LM Studio Bionic** first. That is a different product with paid cloud plans. Download the second entry, **LM Studio** (0.4.26 or newer).
 {{< /callout >}}
 
-<!-- screenshot lmstudio-download-page.png: the LM Studio download page with the second entry, "LM Studio", marked and "LM Studio Bionic" listed first; add in Task 14 -->
-
 ## Requirements
 
 - macOS 14 or newer on Apple Silicon only. Intel Macs should use Ollama.
@@ -28,8 +26,6 @@ Install LM Studio for your system and open it.
 ### Choose User mode
 
 User mode is enough to finish the installation and download a model. You switch to Developer mode later, in the First chat chapter. That mode shows a sidebar with the two settings the Part 1 exercises use. One is the system prompt, which gives the model its role and rules. The other is the temperature, which controls how varied the answers are.
-
-<!-- screenshot lmstudio-mode.png: the LM Studio mode switch with User selected; add in Task 14 -->
 
 ### Install the runtime
 

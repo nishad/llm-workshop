@@ -19,11 +19,11 @@ This is a hands-on workshop. You can follow it with the graphical tools only, ru
 
 ## What you need
 
-A computer running Windows, macOS or Linux with 20 GB of free storage. 8 GB of memory (RAM) is enough for the smaller model; 16 GB lets you run the larger one. You need an internet connection to download the models, unless you have downloaded them in advance. The steps are on [Before you start](before-you-start). For Part 2 you also need Python 3.12 or 3.13. The Python package manager uv can install it for you.
+A computer running Windows, macOS or Linux with 20 GB of free storage. 8 GB of memory (RAM) is enough for the smaller model; 16 GB lets you run the larger one. You need an internet connection to download the models, unless you already have them. The steps are on [Before you start](before-you-start). For Part 2 you also need Python 3.12 or 3.13. The Python package manager uv can install it for you.
 
 ## When
 
-Monday 16 November 2026, 04:00-08:00 UTC, with a ten-minute break at 06:00. Zoom opens at 03:30 UTC for installation help. Local times, the Zoom details and the setup steps are on [Before you start](before-you-start).
+Monday 16 November 2026, 04:00-08:00 UTC, with a ten-minute break at 06:00. Zoom opens at 03:30 UTC for installation help. Local times and the setup steps are on [Before you start](before-you-start). The Zoom link comes from the SWIB organizers.
 
 ## Three ways to take part
 
@@ -33,15 +33,15 @@ Monday 16 November 2026, 04:00-08:00 UTC, with a ten-minute break at 06:00. Zoom
 | Run the notebooks | Follow Part 2 hands-on | Python 3.12 or 3.13, uv, the notebooks repository, Ollama |
 | Read afterwards | Work through the executed notebooks and these pages | Nothing to install |
 
-## Before the workshop
+## Setup
 
 {{< cards >}}
-  {{< card link="before-you-start" title="Before you start" icon="play" subtitle="Everything to do before the day, in order." >}}
-  {{< card link="before-you-start/download-models" title="Download the model" icon="download" subtitle="Get the model files before the session." >}}
+  {{< card link="before-you-start" title="Before you start" icon="play" subtitle="All the setup steps, in order." >}}
+  {{< card link="before-you-start/download-models" title="Download the model" icon="download" subtitle="Get the model files for your machine." >}}
   {{< card link="before-you-start/check" title="Am I ready?" icon="check-circle" subtitle="A short check that everything works." >}}
 {{< /cards >}}
 
-## During the workshop
+## The material
 
 {{< cards >}}
   {{< card link="part1" title="Part 1" icon="academic-cap" subtitle="Fundamentals: models, runtimes, prompts." >}}

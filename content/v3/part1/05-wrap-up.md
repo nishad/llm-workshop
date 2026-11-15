@@ -49,7 +49,7 @@ Look it up in a real source: a library catalog such as the DNB catalog for an IS
 
 ## What Part 2 assumes
 
-Part 2 runs notebooks on your machine. Before the break, tick these:
+Part 2 runs notebooks on your machine. Before you start Part 2, tick these:
 
 - [ ] `ollama pull nishad/apertus:8b` (or `nishad/apertus:4b` on an 8 GB machine) has finished.
 - [ ] `ollama pull qwen3-embedding:0.6b` has finished.
@@ -59,8 +59,8 @@ Part 2 runs notebooks on your machine. Before the break, tick these:
 - [ ] The notebooks repository is cloned.
 - [ ] `00_check_setup` is green on every line.
 
-The full steps are on [Am I ready?](/v3/before-you-start/check). If any box is not ticked, use the break to fix it, or ask for help. Part 2 starts with the environment check, described on [Environment](/v3/part2/01-environment).
+The full steps are on [Am I ready?](/v3/before-you-start/check). If any box is not ticked, fix it before Part 2 starts. In the live session, use the break for this and ask for help if you get stuck. Part 2 starts with the environment check, described on [Environment](/v3/part2/01-environment).
 
-## Leaving now?
+## Stopping after Part 1?
 
-You can stop here. Part 1 stands on its own. Everything in Part 2 is available afterwards as executed notebooks with their outputs, in the notebooks repository: [github.com/nishad/llm-workshop-notebooks](https://github.com/nishad/llm-workshop-notebooks). Read them at your own pace, and run them when you are ready. [Part 2](/v3/part2) describes what they cover.
+You can stop here. Part 1 stands on its own. Everything in Part 2 is also available as executed notebooks with their outputs, in the notebooks repository: [github.com/nishad/llm-workshop-notebooks](https://github.com/nishad/llm-workshop-notebooks). Read them at your own pace, and run them when you are ready. [Part 2](/v3/part2) describes what they cover.

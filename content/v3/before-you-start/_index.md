@@ -5,9 +5,9 @@ cascade:
   type: docs
 ---
 
-This page lists everything you need to do before the workshop, in the order you do it. Each step links to a longer page with the details for your computer. Expect the setup to take 20 to 30 minutes, plus download time. You will download a model, the large file that your computer uses to produce answers. The larger of the two models is 5.1 GB, so if your connection is slow, start a few days early.
+This page lists the setup steps in the order you do them. Each step links to a longer page with the details for your computer. Expect the setup to take 20 to 30 minutes, plus download time. You will download a model, the large file that your computer uses to produce answers. The larger of the two models is 5.1 GB, so if your connection is slow, start that download first and read on while it runs.
 
-Post questions and problems in the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732). Everything else is on this page, and we update it when something changes.
+Post questions and problems in the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732). Everything else is on this page.
 
 ## When
 
@@ -91,8 +91,7 @@ Part 2 needs Ollama, one more model, two tools and the notebooks repository (the
 
 5. Download the two ready-made index files for notebook 03, `stw-de-labels.sqlite` (85.7 MB) and `unesco-en-labels.sqlite` (34.4 MB), and put them in the `runs/` folder of the repository. Create the folder if it does not exist. Building these files yourself takes about seven minutes on a fast Mac and much longer on a laptop without a graphics card.
 
-   <!-- INDEX FILES: replace the next line with the download link once the two files are published, for example "Download both files from <URL>." -->
-   The download link appears here in the week before the workshop.
+   Download both from the [swib26 release](https://github.com/nishad/llm-workshop-notebooks/releases/tag/swib26) of the notebooks repository: [stw-de-labels.sqlite](https://github.com/nishad/llm-workshop-notebooks/releases/download/swib26/stw-de-labels.sqlite) and [unesco-en-labels.sqlite](https://github.com/nishad/llm-workshop-notebooks/releases/download/swib26/unesco-en-labels.sqlite).
 
    The checksums and the command to check them are on the [environment page](/v3/part2/01-environment#download-the-prebuilt-index-files). They let you confirm that the files downloaded correctly.
 
@@ -112,17 +111,15 @@ Part 1 needs the first four. [Am I ready?](check) has the same checks with the c
 
 ## If something does not work
 
-Look up the symptom on [Troubleshooting](troubleshooting); most problems are there. If yours is not there, post in the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732). Include your operating system, how much memory your computer has, and the exact error text. If you are doing Part 2, also include the output of the last cell of `00_check_setup.ipynb`. Or come to the Zoom room at 03:30 UTC on the day.
+Look up the symptom on [Troubleshooting](troubleshooting); most problems are there. If yours is not there, post in the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732). Include your operating system, how much memory your computer has, and the exact error text. If you are doing Part 2, also include the output of the last cell of `00_check_setup.ipynb`. Or ask in the Zoom room, which opens at 03:30 UTC on the workshop day for installation help.
 
 ## On the day
 
-<!-- ON THE DAY: in the week before the workshop, fill in the Zoom link with meeting ID and passcode, the shared document link, and the recording decision. -->
-
-- **Zoom:** the link and the meeting details appear here in the week before the workshop. The room opens at 03:30 UTC.
-- **Questions and notes:** a shared document. Its link also appears here in the week before the workshop. When you ask for help, paste the output of the last cell of `00_check_setup.ipynb` there.
-- **Recording:** we are deciding this with the organizers; the answer will appear here.
+- **Zoom:** the SWIB organizers send the link to registered participants; it is not on this site. The room opens at 03:30 UTC for installation help.
+- **Questions:** ask in the Zoom chat during the session, or in the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732) at any time. When you ask for help with the setup, paste the output of the last cell of `00_check_setup.ipynb`.
+- **Recording:** the SWIB organizers decide this; ask at the start of the session.
 - Use the green check and red X in Zoom's participant panel to tell us how you are doing.
-- Helpers join breakout rooms when you ask.
+- If you are stuck, say so in the chat and we help you in a breakout room.
 - Cameras are optional.
 
 On the day, have these open: this site and Ollama with your model downloaded. For Part 2, also have the `llm-workshop-notebooks` folder open, with `uv sync` finished.
@@ -133,7 +130,7 @@ On the day, have these open: this site and Ollama with your model downloaded. Fo
   {{< card link="hardware" title="Hardware" icon="chip" subtitle="Choose a model size for your machine." >}}
   {{< card link="install-ollama" title="Install Ollama" icon="download" subtitle="macOS, Windows and Linux." >}}
   {{< card link="install-lm-studio" title="Install LM Studio" icon="desktop-computer" subtitle="The graphical alternative." >}}
-  {{< card link="download-models" title="Download the models" icon="cloud-download" subtitle="Get the files before the session." >}}
+  {{< card link="download-models" title="Download the models" icon="cloud-download" subtitle="Model files, sizes and checksums." >}}
   {{< card link="check" title="Am I ready?" icon="check-circle" subtitle="Check Part 1 and Part 2." >}}
   {{< card link="privacy" title="Privacy" icon="shield-check" subtitle="What stays on your machine." >}}
   {{< card link="troubleshooting" title="Troubleshooting" icon="support" subtitle="Find your symptom, apply the fix." >}}

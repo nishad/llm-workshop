@@ -21,7 +21,7 @@ Yes, when you run the model on your own machine. The Apertus Acceptable Use Poli
 
 ### Is Apertus open source?
 
-It is fully open. All of it is published under Apache-2.0 with an acceptable use policy: the weights, the training code, the scripts that rebuild the training data, and the intermediate checkpoints (versions of the model saved during training). Whether that policy fits the Open Source Definition is not yet settled. Part 1 explains the openness ladder.
+It is fully open. All of it is published under Apache-2.0 with an acceptable use policy: the weights, the training code, the scripts that rebuild the training data, and the intermediate checkpoints (versions of the model saved during training). As of 15 November 2026, whether that policy fits the Open Source Definition is not settled. Part 1 explains the openness ladder.
 
 ### Why not Llama?
 
@@ -85,4 +85,4 @@ Everything is self-paced. Work through the pages and notebooks in your own time 
 
 ### Will it be recorded?
 
-The organizers decide. Once they have decided, the answer will appear under "On the day" on [Before you start](/v3/before-you-start#on-the-day).
+The SWIB organizers decide this. Ask at the start of the session.

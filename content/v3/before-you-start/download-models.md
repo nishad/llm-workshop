@@ -1,9 +1,9 @@
 ---
-title: Download the models in advance
+title: Download the models
 weight: 5
 ---
 
-Download your model before the workshop. First find your tier on [Choose a model size for your hardware](/v3/before-you-start/hardware). The tier depends on your computer's memory. With 16 GB or more you use the 8B model, and with 8 GB you use the 4B model. Then follow the tab for the tool you installed, Ollama or LM Studio.
+Download the model for your machine. First find your tier on [Choose a model size for your hardware](/v3/before-you-start/hardware). The tier depends on your computer's memory. With 16 GB or more you use the 8B model, and with 8 GB you use the 4B model. Then follow the tab for the tool you installed, Ollama or LM Studio.
 
 {{< tabs >}}
 
@@ -71,7 +71,7 @@ The total stays well under the 20 GB of free disk space we ask for. On a 20 Mbit
 
 ## Two index files for Part 2
 
-Notebook 03 needs two vector index files, `stw-de-labels.sqlite` (85.7 MB) and `unesco-en-labels.sqlite` (34.4 MB). A vector index stores the lists of numbers that an embedding model makes from each text. It can then find texts with similar meanings quickly. Building these two yourself is slow on most laptops, so download the prebuilt files instead. The download link is in step 4 of [Before you start](/v3/before-you-start#4-part-2-only-python-and-the-notebooks). Put them in the `runs/` folder of the notebooks repository. To confirm that the files arrived complete and unchanged, use the checksums and the command on the [environment page](/v3/part2/01-environment#download-the-prebuilt-index-files).
+Notebook 03 needs two vector index files, `stw-de-labels.sqlite` (85.7 MB) and `unesco-en-labels.sqlite` (34.4 MB). A vector index stores the lists of numbers that an embedding model makes from each text. It can then find texts with similar meanings quickly. Building these two yourself is slow on most laptops, so download the prebuilt files instead. Download them from the [swib26 release](https://github.com/nishad/llm-workshop-notebooks/releases/tag/swib26) of the notebooks repository; the direct links are in step 4 of [Before you start](/v3/before-you-start#4-part-2-only-python-and-the-notebooks). Put them in the `runs/` folder of the notebooks repository. To confirm that the files arrived complete and unchanged, use the checksums and the command on the [environment page](/v3/part2/01-environment#download-the-prebuilt-index-files).
 
 ## Offline alternative
 

@@ -25,8 +25,6 @@ Choose the Q4_K_M file (5.06 GB). The label describes the quantization: the mode
 
 Click Download and wait for it to finish.
 
-<!-- screenshot lmstudio-discover.png: the LM Studio Discover view with the Hugging Face URL pasted and the Q4_K_M file (5.06 GB) selected; add in Task 14 -->
-
 ### Load with context length 8192
 
 Load the model and set the context length to 8192 (4096 for the 4B) before you confirm. The context length is how much text the model can hold at once, prompt and answer together. You can only set it when the model loads.
@@ -38,8 +36,6 @@ Type a message in the chat box and send it.
 ### Open the sidebar
 
 Switch to Developer mode to see the sidebar. There you can set a **system prompt**, change the **temperature** and **save as preset**, which stores these settings under a name so you can reuse them later.
-
-<!-- screenshot lmstudio-sidebar.png: the LM Studio sidebar in Developer mode with the system prompt, temperature and save as preset visible; add in Task 14 -->
 
 {{% /steps %}}
 
@@ -58,8 +54,6 @@ Attach a PDF to your message in a chat.
 Ask something the document can answer. For example, ask for a summary of one section.
 
 {{% /steps %}}
-
-<!-- screenshot lmstudio-documents.png: an LM Studio chat with a PDF attached and a question about it; add in Task 14 -->
 
 LM Studio handles an attached document in one of two ways:
 

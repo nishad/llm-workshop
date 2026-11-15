@@ -7,7 +7,7 @@ Every model the workshop uses or mentions, with the facts that decide whether it
 
 ## Apertus models
 
-Apertus is the fully open model family from the Swiss AI Initiative (EPFL, ETH Zurich, CSCS). The workshop tags below are the names you give Ollama to download each model. The facilitator built them from GGUF files (a single-file model format) shared by the community. The Modelfiles that define them are in the notebooks repository under `models/`. All three tags set `temperature 0.8` and `top_p 0.9`.
+Apertus is the fully open model family from the Swiss AI Initiative (EPFL, ETH Zurich, CSCS). The workshop tags below are the names you give Ollama to download each model. We built them from GGUF files (a single-file model format) shared by the community. The Modelfiles that define them are in the notebooks repository under `models/`. All three tags set `temperature 0.8` and `top_p 0.9`.
 
 ### `nishad/apertus:8b`
 
@@ -115,9 +115,9 @@ These are open weights only: the weights are downloadable and the license is Apa
 | `ollama ps` | Show models loaded in memory |
 | `ollama stop NAME` | Unload a model from memory |
 
-## What may change after October 2026
+## What could still change
 
-We checked these facts in October 2026 and will check them again the week before the workshop. Each of the changes below would affect you:
+We checked these facts in October 2026 and again on 15 November 2026. None of the changes below had happened by then. Each of them would affect you:
 
 - An official Apertus entry in the Ollama library, or an official GGUF from the Apertus team, would replace the community builds behind the workshop tags.
 - Support for the v1.5 architecture in llama.cpp and Ollama would make the preview tag unnecessary.

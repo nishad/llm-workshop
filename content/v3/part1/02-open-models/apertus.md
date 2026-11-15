@@ -44,9 +44,9 @@ The Apertus LLM Acceptable Use Policy (version 1.0, 1 September 2025) comes with
 
 - You indemnify ETH and EPFL: if your use of the model leads to legal claims against them, the cost falls on you.
 - If you share the model with others, you must pass the policy on to them.
-- An output filter, reviewed every six months, is "strongly advised". An output filter is software that checks the model's answers before they reach users. No such filter has been published yet.
+- An output filter, reviewed every six months, is "strongly advised". An output filter is software that checks the model's answers before they reach users. As of October 2026, no such filter had been published.
 
-A thread on the Open Source Initiative (OSI) forum asked whether this policy fits the Open Source Definition. The OSI has not given a ruling.
+A thread on the Open Source Initiative (OSI) forum asked whether this policy fits the Open Source Definition. As of October 2026, the OSI had not given a ruling.
 
 ## Why the workshop teaches 1.0 and only shows 1.5
 
@@ -59,7 +59,7 @@ flowchart LR
   C --> D[Your laptop]
 ```
 
-Version 1.0 runs in llama.cpp, Ollama and LM Studio today. For v1.5 the chain is incomplete. There is no official GGUF yet, and llama.cpp does not yet support the v1.5 architecture (the model's internal design). So the only v1.5 builds that Ollama can run are conversions made by community members. They cover only the text part of the model, and there is no check that they match the original.
+Version 1.0 runs in llama.cpp, Ollama and LM Studio. For v1.5 the chain is incomplete as of 15 November 2026: there is no official GGUF, and the llama.cpp pull request that adds the v1.5 architecture (the model's internal design) is still open. So the only v1.5 builds that Ollama can run are conversions made by community members. They cover only the text part of the model, and there is no check that they match the original.
 
 ## An audit, in September 2026
 

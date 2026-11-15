@@ -38,6 +38,6 @@ Every notebook is committed with its executed outputs, so you can read it later 
 - [Data and licenses](/v3/resources/data): what is in `data/` and under which terms.
 - [FAQ](/v3/resources/faq) and [Glossary](/v3/resources/glossary).
 
-## The same day at SWIB26
+## At SWIB26
 
-The workshop runs alongside the conference sessions on the same day. The program is on the SWIB site; questions about this workshop go to the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732). The [next steps page](/v3/resources/next-steps) names the sessions that fit this topic.
+The workshop is part of SWIB26, on 16 November 2026, alongside the conference sessions of that day. The program is on the SWIB site; questions about this workshop go to the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732). The [next steps page](/v3/resources/next-steps) names the sessions that fit this topic.

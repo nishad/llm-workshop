@@ -11,8 +11,6 @@ When you first open Ollama, a screen offers you an account. The account is for O
 
 To switch the cloud features off, open Settings and turn the **Cloud** switch off. This hides the `:cloud` models and turns off web search.
 
-<!-- screenshot ollama-settings.png: Ollama Settings with the Cloud switch turned off; add in Task 14 -->
-
 If you use the terminal instead, set the environment variable `OLLAMA_NO_CLOUD=1`. An environment variable is a setting that a program reads when it starts. This one has the same effect as the Cloud switch.
 
 {{< callout type="info" >}}

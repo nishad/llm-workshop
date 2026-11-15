@@ -25,8 +25,6 @@ Type `nishad/apertus:8b` exactly. Use `nishad/apertus:4b` if your computer has l
 Typing `apertus` alone shows "No models found". The picker looks up the name on ollama.com, so it needs the full name. Only this lookup uses the internet; chatting afterwards does not.
 {{< /callout >}}
 
-<!-- screenshot ollama-picker-typed.png: the Ollama model picker with nishad/apertus:8b typed and the entry with the download arrow; add in Task 14 -->
-
 ### Choose the entry with the download arrow
 
 The entry with the download arrow is the model that is not on your machine yet. Click it.
@@ -39,8 +37,6 @@ Type a short message such as "Hello" and send it. The download starts.
 
 A bar shows the download progress. The 8B model is about 5 GB, so the download takes some time on a slow connection. If you already downloaded the model as described in [Download the models](/v3/before-you-start/download-models), there is no bar and the answer appears immediately.
 
-<!-- screenshot ollama-download-bar.png: the Ollama chat window with the download progress bar under the first message; add in Task 14 -->
-
 ### Read the answer
 
 When the download ends, the model answers in the same window. You are chatting with a model that runs on your own computer.
@@ -48,8 +44,6 @@ When the download ends, the model answers in the same window. You are chatting w
 {{% /steps %}}
 
 ## Interface tour
-
-<!-- screenshot ollama-chat.png: the Ollama chat window with the new chat button, the model picker, the + attach button and the settings entry marked; add in Task 14 -->
 
 - **New chat**: starts a fresh conversation with an empty context, so the model does not remember the earlier chat.
 - **Model picker**: switches between the models on your machine.

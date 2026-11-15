@@ -55,7 +55,7 @@ else:
 embedded 19688 labels in 313 s, dimension 1024, saved to runs/stw-de-labels.sqlite
 ```
 
-From the executed notebook 03, 15 October 2026 (the imports are omitted). The warning line prints only if the file was built with a different embedding model than the one in use. Here it did not print, because the cell built the index itself.
+From the executed notebook 03, 15 October 2026 (the imports are omitted). The warning line prints only if the file was built with a different embedding model than the one in use. Here it did not print, because the cell built the index itself. If you downloaded the prebuilt file, the cell prints a `loaded ... label vectors from runs/stw-de-labels.sqlite` line instead of the `embedded ...` line.
 
 ## Four kinds of query
 
@@ -143,7 +143,7 @@ From the executed notebook 03, 15 October 2026. Only two candidates reached the 
 
 ## The UNESCO Thesaurus in French and German
 
-Here the notebook builds a second label index, this time from the English labels, and queries it in French and German. Cross-lingual retrieval (a query in one language, labels in another) is where embedding models differ most. The prebuilt file `runs/unesco-en-labels.sqlite` is the second of the two files linked from [Before you start](/v3/before-you-start#4-part-2-only-python-and-the-notebooks). With it in `runs/`, the notebook loads the index instead of building it.
+Here the notebook builds a second label index, this time from the English labels, and queries it in French and German. Cross-lingual retrieval (a query in one language, labels in another) is where embedding models differ most. The prebuilt file `runs/unesco-en-labels.sqlite` is the second of the two files from the [swib26 release](https://github.com/nishad/llm-workshop-notebooks/releases/tag/swib26), as described on the [environment page](/v3/part2/01-environment#download-the-prebuilt-index-files). With it in `runs/`, the notebook loads the index instead of building it.
 
 ```python
 for q in ("Grossesse", "bibliothèque numérique", "Rechte der Frau", "changement climatique"):

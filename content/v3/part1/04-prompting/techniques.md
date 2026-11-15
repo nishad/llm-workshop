@@ -243,7 +243,7 @@ Do not use all techniques at once. Pick one or two that fit the task.
 
 ## Thinking models and Apertus
 
-Some newer models have a thinking mode: they write out their reasoning before the final answer, and the app may show or hide it. The reasoning costs tokens and time. In testing, a 4B thinking model spent 821 characters of hidden reasoning on a one-sentence answer, and 82 seconds on a short SPARQL query (SPARQL is the query language for linked data). Apertus 1.0 has no thinking mode. When you ask it to "think step by step", the steps are simply part of its answer. That helps with arithmetic and multi-part questions, but nobody checks the steps except you.
+Some models have a thinking mode: they write out their reasoning before the final answer, and the app may show or hide it. The reasoning costs tokens and time. In testing, a 4B thinking model spent 821 characters of hidden reasoning on a one-sentence answer, and 82 seconds on a short SPARQL query (SPARQL is the query language for linked data). Apertus 1.0 has no thinking mode. When you ask it to "think step by step", the steps are simply part of its answer. That helps with arithmetic and multi-part questions, but nobody checks the steps except you.
 
 ## Self-study: five more techniques
 

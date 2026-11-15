@@ -20,13 +20,6 @@ The tier notes refer to the two hardware tiers: a machine with 16 GB of memory o
 
 The budgets in the table are the times given in the notebooks, and they are meant for self-study. In the live session we shorten them to fit the 110 minutes. The [Part 2 timeline](/v3/part2#timeline) shows the minutes for each segment.
 
-<!-- screenshot nb-00-checkpoint.png: JupyterLab, notebook 00: the Checkpoint cell after a green run; add in Task 14 -->
-<!-- screenshot nb-01-checkpoint.png: JupyterLab, notebook 01: the Checkpoint cell; add in Task 14 -->
-<!-- screenshot nb-02-checkpoint.png: JupyterLab, notebook 02: the Checkpoint cell with the accuracy line above it; add in Task 14 -->
-<!-- screenshot nb-03-checkpoint.png: JupyterLab, notebook 03: the Checkpoint cell with the recall lines above it; add in Task 14 -->
-<!-- screenshot nb-04-checkpoint.png: JupyterLab, notebook 04: the Checkpoint cell; add in Task 14 -->
-<!-- screenshot nb-05-checkpoint.png: JupyterLab, notebook 05: the Checkpoint cell; add in Task 14 -->
-
 The site chapters that go with notebooks 01 to 05 are [Python and Ollama](/v3/part2/02-python-and-ollama), [structured output](/v3/part2/03-structured-output), [embeddings](/v3/part2/04-embeddings), [RAG](/v3/part2/05-rag) and [tool use](/v3/part2/06-tool-use).
 
 ## How to run them

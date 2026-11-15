@@ -14,7 +14,7 @@ This chapter takes about 25 minutes in the workshop.
 3. Run five starter prompts and judge the answers.
 4. Recognize a confident wrong answer in the hallucination probe, a prompt that tempts the model to invent a fact.
 
-This chapter is the first hands-on block. There is nothing new to install: the tools and the model come from [Before you start](/v3/before-you-start). If you missed a step there, go back to [Download the models](/v3/before-you-start/download-models) first.
+This chapter is the first hands-on block. There is nothing new to install: the tools and the model come from [Before you start](/v3/before-you-start). If you have not done those steps, do [Download the models](/v3/before-you-start/download-models) first.
 
 ## The two tools side by side
 

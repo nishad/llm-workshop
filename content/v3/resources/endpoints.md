@@ -9,7 +9,7 @@ Library and linked-data services you can call from the tool loop, where the mode
 
 | Service | URL | Key needed | Checked | Notes |
 |---|---|---|---|---|
-| Wikidata SPARQL | `https://query.wikidata.org/sparql` | No | October 2026 | A descriptive User-Agent is required; generic Python agents get 403. Queries stop after 60 s. The label service (`SERVICE wikibase:label`) is slow on large result sets and not every mirror supports it; fetch labels with `rdfs:label` and a language filter where you can. QLever v2 endpoints are due to open to the community in November 2026. |
+| Wikidata SPARQL | `https://query.wikidata.org/sparql` | No | October 2026 | A descriptive User-Agent is required; generic Python agents get 403. Queries stop after 60 s. The label service (`SERVICE wikibase:label`) is slow on large result sets and not every mirror supports it; fetch labels with `rdfs:label` and a language filter where you can. QLever announced v2 endpoints for the community for November 2026. |
 | QLever (Wikidata fallback) | `https://qlever.dev/api/wikidata` | No | October 2026 | A working fallback for Wikidata queries. |
 | lobid-gnd | `https://lobid.org/gnd/search` | No | October 2026 | Use `format=json:suggest` for lookups. |
 | lobid-gnd reconciliation | `https://lobid.org/gnd/reconcile` | No | October 2026 | OpenRefine reconciliation API. |
@@ -19,7 +19,7 @@ Library and linked-data services you can call from the tool loop, where the mode
 | culturegraph Entity Facts | `https://hub.culturegraph.org/entityfacts/118540238` | No | October 2026 | Replace the number with a GND identifier. CC0. |
 | id.loc.gov suggest2 | `https://id.loc.gov/authorities/subjects/suggest2` | No | October 2026 | Pass the search text as `q`. A label service also exists. |
 | VIAF | `https://viaf.org/viaf/AutoSuggest` | No | October 2026 | Send `Accept: application/json`, otherwise an HTML page comes back. Bulk files have been frozen since 2024. |
-| Getty vocabularies SPARQL | `https://vocab.getty.edu/sparql.json` | No | October 2026 | Bulk downloads return errors in 2026; a platform change is announced for autumn 2026. |
+| Getty vocabularies SPARQL | `https://vocab.getty.edu/sparql.json` | No | October 2026 | Bulk downloads returned errors in 2026, and a platform change was announced for autumn 2026. |
 | data.bnf.fr | `https://data.bnf.fr/sparql` | No | October 2026 | SPARQL access to the French National Library's data. |
 | Europeana SPARQL | `https://api.europeana.eu/sparql` | No | October 2026 | The Search API needs a free key. |
 | Finto REST | `https://api.finto.fi/rest/v1/vocabularies` | No | October 2026 | 52 vocabularies. Send one request at a time. |

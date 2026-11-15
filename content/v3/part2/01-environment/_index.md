@@ -109,7 +109,7 @@ jupyter lab
 
 ## Download the prebuilt index files
 
-Notebook 03 builds search indexes for two vocabularies, STW and UNESCO. On an Apple Silicon Mac with 64 GB, building them takes about seven minutes: five for STW and two for UNESCO. On a CPU-only laptop it takes far longer, so download the prebuilt files instead. On an 8 GB machine this download is the only way to follow notebook 03 live. The download link is in step 4 of [Before you start](/v3/before-you-start#4-part-2-only-python-and-the-notebooks). Put both files in the `runs/` folder of the repository (create the folder if it does not exist). The notebook then loads the files instead of building them.
+Notebook 03 builds search indexes for two vocabularies, STW and UNESCO. On an Apple Silicon Mac with 64 GB, building them takes about seven minutes: five for STW and two for UNESCO. On a CPU-only laptop it takes far longer, so download the prebuilt files instead. On an 8 GB machine this download is the only way to follow notebook 03 live. Download both files from the [swib26 release](https://github.com/nishad/llm-workshop-notebooks/releases/tag/swib26) of the notebooks repository. Put both files in the `runs/` folder of the repository (create the folder if it does not exist). The notebook then loads the files instead of building them.
 
 | File | Size | sha256 |
 | --- | --- | --- |
@@ -131,7 +131,7 @@ Open the cloned folder in VS Code and select the `.venv` interpreter as the kern
 
 ## What a ready machine shows
 
-The readiness report is cell 00.02 of notebook 00. This is how it looks on a current install, with every line green.
+The readiness report is cell 00.02 of notebook 00. This is how it looks on a machine where everything is in place, with every line green.
 
 ```text
 ✅ Python 3.12 or newer: found 3.12.12
@@ -151,4 +151,4 @@ This output comes from notebook 00, run on Ollama 0.40.4 on 15 October 2026.
 
 Your memory and disk numbers will differ. The Memory line tells you which tier you are on, and so which model to use: 16 GB or more uses `nishad/apertus:8b`, 8 GB uses `nishad/apertus:4b`. On an 8 GB laptop, set the environment variable `WORKSHOP_TIER=8gb` before you start JupyterLab, or change `"16gb"` to `"8gb"` in the first cell of each notebook. The `tier-8gb/` folder of the repository also holds notebooks 04 and 05 with the outputs of a run on the 8 GB tier, so you can see what the 4B model does before you run it.
 
-If a line is red, follow the hint in it and run the cell again. Paste the output into the shared document when you ask for help. More fixes are on [Troubleshooting](/v3/before-you-start/troubleshooting).
+If a line is red, follow the hint in it and run the cell again. Paste the output into your message when you ask for help, in the session or in the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732). More fixes are on [Troubleshooting](/v3/before-you-start/troubleshooting).
