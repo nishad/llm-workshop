@@ -115,7 +115,7 @@ Look up the symptom on [Troubleshooting](troubleshooting); most problems are the
 
 ## On the day
 
-- **Zoom:** the SWIB organizers send the link to registered participants; it is not on this site. The room opens at 03:30 UTC for installation help.
+- **Zoom:** the link is in the event block at the top of the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732). The room opens at 03:30 UTC for installation help.
 - **Questions:** ask in the Zoom chat during the session, or in the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732) at any time. When you ask for help with the setup, paste the output of the last cell of `00_check_setup.ipynb`.
 - **Recording:** the SWIB organizers decide this; ask at the start of the session.
 - Use the green check and red X in Zoom's participant panel to tell us how you are doing.

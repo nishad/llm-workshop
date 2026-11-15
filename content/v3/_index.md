@@ -23,7 +23,7 @@ A computer running Windows, macOS or Linux with 20 GB of free storage. 8 GB of m
 
 ## When
 
-Monday 16 November 2026, 04:00-08:00 UTC, with a ten-minute break at 06:00. Zoom opens at 03:30 UTC for installation help. Local times and the setup steps are on [Before you start](before-you-start). The Zoom link comes from the SWIB organizers.
+Monday 16 November 2026, 04:00-08:00 UTC, with a ten-minute break at 06:00. Zoom opens at 03:30 UTC for installation help. Local times and the setup steps are on [Before you start](before-you-start). The Zoom link is in the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732).
 
 ## Three ways to take part
 
