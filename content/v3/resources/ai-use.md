@@ -5,7 +5,7 @@ weight: 7
 
 We used generative AI tools while preparing these materials. This page says how.
 
-- Most of the text began as dictation. We spoke it and transcribed it with a speech-to-text tool.
+- Most of the text began as dictation. We spoke it and transcribed it with [Cohere Transcribe](https://cohere.com/transcribe).
 - Claude models from Anthropic cleaned up the transcribed text, structured it, added section headings to the pages and the notebooks, restructured and cleaned up the code blocks, and improved some of the code quality and logic. Claude Code helped with structuring the material. Anthropic models also produced some of the diagrams.
 - OpenAI models generated examples, helped brainstorm ideas for the materials, and translated some of the examples.
 - Grammarly checked the grammar and corrected some passages.
