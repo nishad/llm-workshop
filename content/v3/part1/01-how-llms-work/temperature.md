@@ -15,7 +15,7 @@ A **seed** is a number that fixes the random choices, so the same prompt, settin
 
 ## Two captured experiments
 
-We ran each experiment three times per setting with nishad/apertus:8b on 15 October 2026. The model's digest, a code that identifies the exact download, was 4a85a6fea0b8.
+We ran each experiment three times per setting with thalhath/apertus:8b on 15 October 2026. The model's digest, a code that identifies the exact download, was 4a85a6fea0b8.
 
 ### Experiment 1: a question with one answer
 

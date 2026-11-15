@@ -3,7 +3,7 @@ title: Exercise
 weight: 2
 ---
 
-This page follows sections 02.03 to 02.05 of notebook 02. Each code cell is shown with the output it produced when the notebook was run on 15 October 2026. The `Record` model is on the [concepts page](/v3/part2/03-structured-output/concepts). On the 16 GB tier `MODEL` is `nishad/apertus:8b`.
+This page follows sections 02.03 to 02.05 of notebook 02. Each code cell is shown with the output it produced when the notebook was run on 15 October 2026. The `Record` model is on the [concepts page](/v3/part2/03-structured-output/concepts). On the 16 GB tier `MODEL` is `thalhath/apertus:8b`.
 
 ## One card, one record
 

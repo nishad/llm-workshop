@@ -33,8 +33,8 @@ Tool calling is where small models are least reliable, so we measured it before 
 
 | Tag | Tool prompts with a structured call | Controls clean | Multi-turn loops | Structured output |
 |---|---|---|---|---|
-| `nishad/apertus:8b` | 16 of 20 | 10 of 10 | 5 of 5 | 5 of 6 |
-| `nishad/apertus:4b` | 11 of 20 | 10 of 10 | 3 of 5 | 5 of 6 |
+| `thalhath/apertus:8b` | 16 of 20 | 10 of 10 | 5 of 5 | 5 of 6 |
+| `thalhath/apertus:4b` | 11 of 20 | 10 of 10 | 3 of 5 | 5 of 6 |
 
 The 8B failed on 4 of the 20 tool prompts: twice it wrote the call as plain text instead of a structured call, and twice it made no call at all. Controls are prompts that should not trigger a tool. The sixth structured-output request uses a schema with an empty enum (a field that allows no values) and returns HTTP 400 as expected. The numbers are in the notebooks repository, in `models/README.md`.
 

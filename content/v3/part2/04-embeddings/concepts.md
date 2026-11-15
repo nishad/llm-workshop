@@ -25,7 +25,7 @@ Picture two arrows from the same point. A small angle between them gives a score
 |---|---|---|
 | Purpose | Turn text into a vector | Generate text |
 | Output | A fixed-length list of numbers | Tokens, one after another |
-| Workshop example | `qwen3-embedding:0.6b` | `nishad/apertus:8b` |
+| Workshop example | `qwen3-embedding:0.6b` | `thalhath/apertus:8b` |
 | Size | Small (639 MB here) | Large (5.1 GB here) |
 | Used for | Search, matching, clustering | Writing, extracting, answering |
 

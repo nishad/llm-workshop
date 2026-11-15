@@ -9,9 +9,9 @@ Every model the workshop uses or mentions, with the facts that decide whether it
 
 Apertus is the fully open model family from the Swiss AI Initiative (EPFL, ETH Zurich, CSCS). The workshop tags below are the names you give Ollama to download each model. We built them from GGUF files (a single-file model format) shared by the community. The Modelfiles that define them are in the notebooks repository under `models/`. All three tags set `temperature 0.8` and `top_p 0.9`.
 
-### `nishad/apertus:8b`
+### `thalhath/apertus:8b`
 
-The reference model for both parts. Also available as `nishad/apertus:latest`.
+The reference model for both parts. Also available as `thalhath/apertus:latest`.
 
 | Field | Value |
 |---|---|
@@ -28,7 +28,7 @@ The reference model for both parts. Also available as `nishad/apertus:latest`.
 
 It is good at extracting fields from catalog-style text, at German, French and Italian, at structured output, and at calling tools when the prompt is in English. It is weak at code, math and following instructions (a score of 71.7 on IFEval, a benchmark for instruction following). When a field is missing, it sometimes fills it from a neighboring field, for example by putting the publisher in the place field (see notebook 02). A chat template is the text pattern that wraps each message before it reaches the model. The tag uses the chat template stored in the GGUF file itself, with Unsloth's fixes for tool arguments.
 
-### `nishad/apertus:4b`
+### `thalhath/apertus:4b`
 
 For machines with 8 GB of memory.
 
@@ -47,7 +47,7 @@ For machines with 8 GB of memory.
 
 The tag uses a wrapper template written for the workshop. It presents tools to the model in Apertus's TypeScript-style format, so Ollama can read the model's tool calls. Without it, tool requests never finish. Quality is clearly below the 8B. In our tests it could not recall a fact from the previous turn, and it could not find one fact hidden in a 2,300-token text.
 
-### `nishad/apertus:8b-v1.5-preview`
+### `thalhath/apertus:8b-v1.5-preview`
 
 An optional preview for people with 16 GB or more who want to compare.
 
@@ -76,8 +76,8 @@ We ran these checks on Ollama 0.35.1 and repeated them on 0.40.4 on 15 October 2
 
 | Tag | Tool prompts with a structured call | Controls clean | Multi-turn loops | Structured output |
 |---|---|---|---|---|
-| `nishad/apertus:8b` | 16 of 20 | 10 of 10 | 5 of 5 | 5 of 6 |
-| `nishad/apertus:4b` | 11 of 20 | 10 of 10 | 3 of 5 | 5 of 6 |
+| `thalhath/apertus:8b` | 16 of 20 | 10 of 10 | 5 of 5 | 5 of 6 |
+| `thalhath/apertus:4b` | 11 of 20 | 10 of 10 | 3 of 5 | 5 of 6 |
 
 The one structured-output request that fails uses a schema with an empty enum (a list of allowed values with nothing in it), and the server rejects it with HTTP 400 as expected. The 4B fills a missing ISBN with the text `"2 Bände"`; the 8B correctly returns null.
 

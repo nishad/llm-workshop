@@ -5,7 +5,7 @@ weight: 4
 
 Small local models are useful, and they make mistakes in predictable ways. This page shows five of them, each with a captured example, so you can recognize them in your own work.
 
-All captures come from nishad/apertus:8b at temperature 0.8 on 15 October 2026, unless stated otherwise. Temperature is the setting that controls how much the answers vary.
+All captures come from thalhath/apertus:8b at temperature 0.8 on 15 October 2026, unless stated otherwise. Temperature is the setting that controls how much the answers vary.
 
 ## 1. An invented place of publication
 
@@ -38,7 +38,7 @@ The probe from [Exercise 6](/v3/part1/04-prompting/exercises#exercise-6-the-hall
 What is the ISBN of the book "Das Parfum" by Patrick Süskind, published by Diogenes?
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 The ISBN of the book "Das Parfum" by Patrick Süskind, published by Diogenes, is 9783257061675.
@@ -56,7 +56,7 @@ A late-fee problem with a maximum fee per item:
 A library's late fee policy: books cost $0.25 per day, DVDs cost $1.00 per day, and the maximum fee is $5.00 per item. Sarah has 2 books that are 12 days late, 1 DVD that is 8 days late and 1 book that is 3 days late. How much does Sarah owe in total?
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 To calculate Sarah's total late fee, we need to calculate the late fees for each item and then add them together.
@@ -89,7 +89,7 @@ Each multiplication is correct: 2 books at 12 days is 2 x 0.25 x 12 = $6. But th
 Summarize in no more than 15 words: The library will close for two weeks in August to replace the roof, move the periodicals to the basement and install a new self-service checkout system. All loans are automatically extended until the day after reopening.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 The library will close for two weeks in August to replace the roof, move periodicals to the basement, and install a new self-service checkout system. All loans are automatically extended until the day after reopening.
@@ -107,7 +107,7 @@ The prompt below translates German economics terms into English. The reference i
 Translate these German economics terms into English, one per line: Schattenwirtschaft, Lenkungsabgabe, Nutzungsdauer, Urheberrecht, Eigentum
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 1. Shadow Economy

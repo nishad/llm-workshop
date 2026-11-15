@@ -9,7 +9,7 @@ This page has eight exercises, and each has three tiers:
 - **Run and change**: change one thing in the prompt and compare.
 - **Stretch**: go one step further.
 
-Try your own prompt first. Then open the solution and compare. The solutions show one captured run (nishad/apertus:8b, temperature 0.8, 15 October 2026). Temperature is the setting that controls how much the answers vary, so yours will differ.
+Try your own prompt first. Then open the solution and compare. The solutions show one captured run (thalhath/apertus:8b, temperature 0.8, 15 October 2026). Temperature is the setting that controls how much the answers vary, so yours will differ.
 
 We do Exercises 1, 2, 4 and 6 together in the live session. Exercises 3, 5, 7 and 8 are for you to do afterwards.
 
@@ -37,7 +37,7 @@ Text:
 [the sample text from above]
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 | Title                | Author       | Year | Language | Original title |
@@ -124,7 +124,7 @@ Now classify these:
 Format: Number. "Title" -> CATEGORY (confidence: high, medium or low)
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 1. "National Geographic Documentary Collection" -> DATABASE (confidence: high)
@@ -171,7 +171,7 @@ Tech Help sessions are offered Wednesdays at 2pm in the Computer Lab.
 Author Talk with Jane Smith is scheduled for March 15th at 7pm in the Main Hall.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ````
 ```json
@@ -230,7 +230,7 @@ Give the German, French and English preferred term for three concepts. Then ask 
 Give the German, French and English preferred term for these concepts: inflation, copyright, climate change. Answer as a table.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 | Concept              | German          | French          | English       |
@@ -250,7 +250,7 @@ The German and French terms look reasonable and consistent. For comparison, the 
 Which of these terms exist in the STW Thesaurus for Economics? Answer yes or no for each: Inflation, Urheberrecht, Klimawandel, Teuerung, Bibliotheksnutzung.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 Inflation: yes
@@ -312,7 +312,7 @@ Abstract 3: We compare national energy and climate policies and estimate how car
 Answer in the form: Abstract number: descriptor, descriptor
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 Abstract 1: Geldpolitik, Inflation
@@ -342,7 +342,7 @@ Ask for identifiers the model cannot look up. When a model invents an answer and
 What is the ISBN of the book "Das Parfum" by Patrick Süskind, published by Diogenes?
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 The ISBN of the book "Das Parfum" by Patrick Süskind, published by Diogenes, is 9783257061675.
@@ -356,7 +356,7 @@ The ISBN of the book "Das Parfum" by Patrick Süskind, published by Diogenes, is
 What is the DOI of the article "The FAIR Guiding Principles for scientific data management and stewardship" by Mark D. Wilkinson and colleagues, published in Scientific Data in 2016?
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 The DOI for the article "The FAIR Guiding Principles for scientific data management and stewardship" by Mark D. Wilkinson and colleagues is 10.1038/sdata.2016.44.
@@ -408,7 +408,7 @@ Here is the first prompt as written:
 tell me stuff about libraries
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 Sure, I'd be happy to share some information about libraries! Here's a brief overview:
@@ -458,7 +458,7 @@ And here is a repaired version:
 Explain the role of public libraries in modern communities. Focus on educational programs, community services and digital resources. Target audience: someone considering a career in library science. Length: about 150 words. Tone: informative and encouraging.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 As a potential career in library science, understanding the role of public libraries in modern communities is crucial. Public libraries act as vibrant community hubs, offering educational programs that range from literacy classes for adults to coding workshops for children. These programs foster a love of learning and support skill development.
@@ -505,7 +505,7 @@ Now catalogue this book:
 Pride and Prejudice by Jane Austen, 1813, original boards partially detached, pages complete with some browning and no tears, bookplate of a previous owner present.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 {"title": "Pride and Prejudice", "author": "Jane Austen", "year": 1813, "condition": "Fine", "notes": "Bookplate present, boards partially detached, browning typical for age"}

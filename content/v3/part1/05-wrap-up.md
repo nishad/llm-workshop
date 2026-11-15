@@ -51,7 +51,7 @@ Look it up in a real source: a library catalog such as the DNB catalog for an IS
 
 Part 2 runs notebooks on your machine. Before you start Part 2, tick these:
 
-- [ ] `ollama pull nishad/apertus:8b` (or `nishad/apertus:4b` on an 8 GB machine) has finished.
+- [ ] `ollama pull thalhath/apertus:8b` (or `thalhath/apertus:4b` on an 8 GB machine) has finished.
 - [ ] `ollama pull qwen3-embedding:0.6b` has finished.
 - [ ] `ollama ps` shows the model while it is loaded.
 - [ ] Python 3.12 or 3.13 is installed.

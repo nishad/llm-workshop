@@ -64,7 +64,7 @@ chromadb is a vector database library. It installs about 250 MB of other package
 Check these in order:
 
 1. Write the prompt in English. When the prompt is in German or French, the 8B may describe the tool call in words instead of making it.
-2. Use a model tag with a working tool template: `nishad/apertus:8b`, or `nishad/apertus:4b`, which has a wrapper template so that Ollama can read its tool calls.
+2. Use a model tag with a working tool template: `thalhath/apertus:8b`, or `thalhath/apertus:4b`, which has a wrapper template so that Ollama can read its tool calls.
 3. Know what the loop does. The notebooks run one tool call per turn. If the model's answer contains an identifier that no tool returned, they mark it as unverified. If the model announces a call but does not make it, they remind it once.
 
 When the notebook ran without anyone guiding it, the 8B did not complete the two-step chain from GND to Wikidata. You will need to finish that step by hand.

@@ -9,7 +9,7 @@ The workshop uses six notebooks, numbered 00 to 05. Each one ends with a Checkpo
 
 | Notebook | Budget | What you do | Tier notes | On GitHub |
 |---|---|---|---|---|
-| `00_check_setup` | 10 min | Check Python, memory, disk, Ollama, the chat and embedding models (on 8 GB machines it checks for `nishad/apertus:4b` instead of the 8B) and one smoke call each | Same notebook on both tiers | [00_check_setup.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/00_check_setup.ipynb) |
+| `00_check_setup` | 10 min | Check Python, memory, disk, Ollama, the chat and embedding models (on 8 GB machines it checks for `thalhath/apertus:4b` instead of the 8B) and one smoke call each | Same notebook on both tiers | [00_check_setup.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/00_check_setup.ipynb) |
 | `01_python_and_ollama` | 20 min | Chat, system prompts, temperature, streaming, the OpenAI client, provenance logging | Same notebook on both tiers | [01_python_and_ollama.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/01_python_and_ollama.ipynb) |
 | `02_structured_output` | 25 min | Extract catalog card records into a Pydantic schema, validate them, measure against a gold file | Same notebook on both tiers | [02_structured_output.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/02_structured_output.ipynb) |
 | `03_vocabulary_search` | 25 min | Embeddings, cross-lingual search over STW and UNESCO labels, a sqlite-vec index | On the 8 GB tier, download the prebuilt index files | [03_vocabulary_search.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/03_vocabulary_search.ipynb) |
@@ -30,7 +30,7 @@ An 8 GB machine runs the same notebooks with the 4B model: set the environment v
 
 ## Read them without running them
 
-Every notebook is saved on GitHub with its outputs, so you can read it there without Python. The `tier-8gb/` folder holds notebooks 04 and 05 as they ran on the 8 GB tier with `nishad/apertus:4b`. If you have an 8 GB machine, open them to see what to expect.
+Every notebook is saved on GitHub with its outputs, so you can read it there without Python. The `tier-8gb/` folder holds notebooks 04 and 05 as they ran on the 8 GB tier with `thalhath/apertus:4b`. If you have an 8 GB machine, open them to see what to expect.
 
 ## The 2025 notebooks
 

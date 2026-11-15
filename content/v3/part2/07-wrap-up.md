@@ -9,7 +9,7 @@ Part 2 is done. You called a local model from Python, got structured records out
 
 For any result you may use later, write down:
 
-- [ ] **Model tag and digest.** For example `nishad/apertus:8b`, digest `4a85a6fea0b8` (`ollama list` shows it). A tag can be rebuilt; the digest says which build you used.
+- [ ] **Model tag and digest.** For example `thalhath/apertus:8b`, digest `4a85a6fea0b8` (`ollama list` shows it). A tag can be rebuilt; the digest says which build you used.
 - [ ] **Options.** Temperature, `num_ctx`, and any others you set. The notebooks' helper uses temperature 0 and the tier's context size.
 - [ ] **Prompt.** The system prompt and the user prompt, in full, with the instructions and the schema if you used one.
 - [ ] **Data version.** Which documents, which vocabulary release, which index file, and when you retrieved them.

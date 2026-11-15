@@ -21,7 +21,7 @@ Windows SmartScreen, the built-in security check, showed "Windows protected your
 
 ## "No models found" in the picker
 
-Type the full name `nishad/apertus:8b` (or `nishad/apertus:4b`). The picker only knows names that exist on ollama.com, so a partial name finds nothing.
+Type the full name `thalhath/apertus:8b` (or `thalhath/apertus:4b`). The picker only knows names that exist on ollama.com, so a partial name finds nothing.
 
 ## A download stalls
 
@@ -46,7 +46,7 @@ ollama ps
 Look at the PROCESSOR column. `100% GPU` is best. A CPU percentage means part of the model runs on the CPU, which is slower. Try these fixes in order:
 
 1. Close browsers and other large applications.
-2. On a machine with 8 GB of memory, use the 4B model, `nishad/apertus:4b`.
+2. On a machine with 8 GB of memory, use the 4B model, `thalhath/apertus:4b`.
 
 On Windows laptops with integrated graphics (no separate graphics card), Ollama runs on the CPU, so slower answers are normal.
 

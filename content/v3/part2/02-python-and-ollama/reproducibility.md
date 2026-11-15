@@ -9,7 +9,7 @@ A result cannot be checked later without its provenance, the record of how it wa
 
 Write these down with every result:
 
-- **Tag**, for example `nishad/apertus:8b`.
+- **Tag**, for example `thalhath/apertus:8b`.
 - **Digest**, the fingerprint of the exact file and template.
 - **Quantization**, for example Q4_K_M.
 - **Options**, such as temperature, seed and `num_ctx`.
@@ -38,7 +38,7 @@ print("appended to runs/log.jsonl")
 ```
 
 ```text
-{'model': 'nishad/apertus:8b', 'digest': '4a85a6fea0b8748229840a797cdeb5f45075b681040dc538f8ed17bf9e55059e', 'quantization': 'Q4_K_M', 'ollama_version': '0.40.4', 'captured_at': '2026-10-15T10:32:13+00:00'}
+{'model': 'thalhath/apertus:8b', 'digest': '4a85a6fea0b8748229840a797cdeb5f45075b681040dc538f8ed17bf9e55059e', 'quantization': 'Q4_K_M', 'ollama_version': '0.40.4', 'captured_at': '2026-10-15T10:32:13+00:00'}
 appended to runs/log.jsonl
 ```
 
@@ -54,7 +54,7 @@ Notebook 00 shows the full record as JSON. Besides the fields above, it has `par
 
 Name the model by tag and digest, not by tag alone. For example:
 
-> Records were generated with `nishad/apertus:8b` (digest `4a85a6fea0b8`, Q4_K_M), run through Ollama 0.40.4 at temperature 0 with seed 42, context 8,192 tokens, on 15 October 2026. Prompts and answers are in `runs/log.jsonl`.
+> Records were generated with `thalhath/apertus:8b` (digest `4a85a6fea0b8`, Q4_K_M), run through Ollama 0.40.4 at temperature 0 with seed 42, context 8,192 tokens, on 15 October 2026. Prompts and answers are in `runs/log.jsonl`.
 
 Add the full digest in an appendix or the log.
 

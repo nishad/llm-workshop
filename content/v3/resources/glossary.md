@@ -109,7 +109,7 @@ Short definitions that do not depend on any one model. Model names, sizes and sp
 
 **Ollama.** A program that downloads and runs models locally, with a command line and a local server. Part 2 uses it.
 
-**Model tag.** The name you give Ollama to download or run a model, for example `nishad/apertus:8b`: the publisher, the model name and, after the colon, the size or version. Always use the full tag.
+**Model tag.** The name you give Ollama to download or run a model, for example `thalhath/apertus:8b`: the publisher, the model name and, after the colon, the size or version. Always use the full tag.
 
 **LM Studio.** A graphical desktop application for running models locally. It can also run a local server, so that other programs on your computer can use the models.
 

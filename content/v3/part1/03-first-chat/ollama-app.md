@@ -19,7 +19,7 @@ Click the model name in the chat window. This opens the model picker, the list w
 
 ### Type the full model name
 
-Type `nishad/apertus:8b` exactly. Use `nishad/apertus:4b` if your computer has limited memory (see [Hardware](/v3/before-you-start/hardware)).
+Type `thalhath/apertus:8b` exactly. Use `thalhath/apertus:4b` if your computer has limited memory (see [Hardware](/v3/before-you-start/hardware)).
 
 {{< callout type="info" >}}
 Typing `apertus` alone shows "No models found". The picker looks up the name on ollama.com, so it needs the full name. Only this lookup uses the internet; chatting afterwards does not.
@@ -51,7 +51,7 @@ When the download ends, the model answers in the same window. You are chatting w
 - **Settings**: a Cloud switch, a Context length slider and the Model location.
 
 {{< callout type="warning" >}}
-The app has no temperature setting, so you cannot change how random the output is. It also has no system prompt, the set of instructions that gives the model its role and rules for the whole conversation. For both settings, use [LM Studio](/v3/part1/03-first-chat/lm-studio) or the terminal, for example `ollama run nishad/apertus:8b`.
+The app has no temperature setting, so you cannot change how random the output is. It also has no system prompt, the set of instructions that gives the model its role and rules for the whole conversation. For both settings, use [LM Studio](/v3/part1/03-first-chat/lm-studio) or the terminal, for example `ollama run thalhath/apertus:8b`.
 {{< /callout >}}
 
 To see what temperature does, read [Temperature](/v3/part1/01-how-llms-work/temperature). Next, try the [first prompts](/v3/part1/03-first-chat/first-prompts).

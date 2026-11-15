@@ -23,9 +23,9 @@ flowchart LR
 
 | Your memory | Model tag | File | In memory | Context | What it cannot do |
 |---|---|---|---|---|---|
-| 8 GB | `nishad/apertus:4b` | 2.4 GB | about 2.8 GB | 4,096 tokens (hard limit) | Long documents in RAG; tool calls less reliable (11 of 20 in testing); quality below the 8B |
-| 16 GB or more | `nishad/apertus:8b` | 5.1 GB | about 5.3 GB at 4,096 and 5.8 GB at 8,192 context | 8,192 tokens by default, up to 65,536 | Nothing in this workshop |
-| 16 GB, curious | `nishad/apertus:8b-v1.5-preview` | 5.1 GB | as the 8B | 8,192 by default | Unofficial build, not checked against the original; see the [Model guide](/v3/resources/models) |
+| 8 GB | `thalhath/apertus:4b` | 2.4 GB | about 2.8 GB | 4,096 tokens (hard limit) | Long documents in RAG; tool calls less reliable (11 of 20 in testing); quality below the 8B |
+| 16 GB or more | `thalhath/apertus:8b` | 5.1 GB | about 5.3 GB at 4,096 and 5.8 GB at 8,192 context | 8,192 tokens by default, up to 65,536 | Nothing in this workshop |
+| 16 GB, curious | `thalhath/apertus:8b-v1.5-preview` | 5.1 GB | as the 8B | 8,192 by default | Unofficial build, not checked against the original; see the [Model guide](/v3/resources/models) |
 
 {{< callout type="warning" >}}
 Do not try the 8B on an 8 GB machine. It will not fit in memory, so the computer will move parts of it to disk, and every answer will take minutes.
@@ -55,7 +55,7 @@ The model must read the whole prompt before it answers. This step, called prompt
 Run this in a terminal:
 
 ```bash
-ollama run nishad/apertus:8b --verbose
+ollama run thalhath/apertus:8b --verbose
 ```
 
 Ask one question and read the `eval rate` line, which gives the speed in tokens per second. While the model is still loaded, `ollama ps` shows SIZE, PROCESSOR (100% GPU, or a split between CPU and GPU) and CONTEXT.

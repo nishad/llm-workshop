@@ -58,7 +58,7 @@ Two refinements improve on plain quantization. QAT (quantization-aware training)
 
 ## How to read a tag
 
-`nishad/apertus:8b` has three parts: a namespace (`nishad`, the account that published it), a model name (`apertus`) and a tag (`8b`).
+`thalhath/apertus:8b` has three parts: a namespace (`nishad`, the account that published it), a model name (`apertus`) and a tag (`8b`).
 
 `8b-instruct-q4_K_M` has three parts too: a size (`8b`), a variant (`instruct`, a version trained to follow instructions) and a quantization (`q4_K_M`).
 

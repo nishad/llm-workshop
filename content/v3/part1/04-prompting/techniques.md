@@ -3,7 +3,7 @@ title: Techniques
 weight: 2
 ---
 
-We cover five techniques live in the session. Five more, for self-study, are in a collapsed section at the end. Each live technique has a captured answer from nishad/apertus:8b at temperature 0.8 on 15 October 2026. Temperature is the setting that controls how much the answers vary.
+We cover five techniques live in the session. Five more, for self-study, are in a collapsed section at the end. Each live technique has a captured answer from thalhath/apertus:8b at temperature 0.8 on 15 October 2026. Temperature is the setting that controls how much the answers vary.
 
 ## 1. Few-shot: show the pattern
 
@@ -29,7 +29,7 @@ Now classify:
 "Annual Review of Psychology"
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 1. "National Geographic Documentary Collection" -> DVD
@@ -58,7 +58,7 @@ You are a rare books librarian with twenty years of experience in authenticating
 A patron brings in what they say is a first edition of Pride and Prejudice from 1813. List the five things you would check first, one line each.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 1. The publisher's name and location.
@@ -73,7 +73,7 @@ The answer is brief and practical, as the system prompt asked: five lines, one c
 ### Where to set a system prompt
 
 - **LM Studio:** open the sidebar in Developer mode and fill in the system prompt field. See [LM Studio](/v3/part1/03-first-chat/lm-studio).
-- **Ollama in the terminal:** start `ollama run nishad/apertus:8b`, then type `/set system` followed by your text. The setting lasts for that session.
+- **Ollama in the terminal:** start `ollama run thalhath/apertus:8b`, then type `/set system` followed by your text. The setting lasts for that session.
 - **The Ollama app:** it has no system prompt field. Put the role at the start of your first message instead.
 
 ## 3. Structured answers
@@ -91,7 +91,7 @@ Text:
 [the first paragraph of the sample text]
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 | Title | Author | Year |
@@ -113,7 +113,7 @@ Text:
 [the first paragraph of the sample text]
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 [
@@ -156,7 +156,7 @@ Constraints limit length, vocabulary, scope or style. They work best when they a
 Explain what a call number is in exactly 20 words. Do not use the word "shelf".
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 A call number is a unique identifier assigned to a book, allowing it to be located in a library's catalog system.
@@ -178,7 +178,7 @@ Summarize this abstract in two sentences.
 Public libraries in three cities ran a six-week course on computer skills for adults. The authors surveyed 450 participants before and after the course and interviewed 45 of them. Participants reported better basic computer skills and more awareness of online safety. The largest gains were among participants over 60.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 This abstract is about a six-week course on computer skills for adults in public libraries in three cities. The course involved 450 participants, who were surveyed before and after the course, and 45 were interviewed. The results showed that participants had better basic computer skills and a greater awareness of online safety, particularly among those over 60.
@@ -194,7 +194,7 @@ From this summary, list the research methods used and the number of participants
 This abstract is about a six-week course on computer skills for adults in public libraries in three cities. The course involved 450 participants, who were surveyed before and after the course, and 45 were interviewed. The results showed that participants had better basic computer skills and a greater awareness of online safety, particularly among those over 60.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 1. Surveys (before and after the course) involving 450 participants.
@@ -213,7 +213,7 @@ Methods:
 2. Interviews (45 participants).
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 Quantitative

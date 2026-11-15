@@ -42,7 +42,7 @@ Text:
 [the sample text from above]
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 The list of books includes:
@@ -84,7 +84,7 @@ Text:
 [the sample text from above]
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 Books mentioned in the text:
@@ -126,7 +126,7 @@ Text:
 [the sample text from above]
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 1. "Of Mice and Men" by John Steinbeck (1937)
@@ -168,7 +168,7 @@ Text:
 [the sample text from above]
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 1. Of Mice and Men by John Steinbeck (1937)
@@ -219,7 +219,7 @@ Each principle comes with a poor prompt, a better one and the captured answers. 
 Tell me about subject headings.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 Subject headings are terms or phrases used to identify the content of a resource, such as a book, article, or database record. They are assigned by catalogers, librarians, or other subject experts to help users find information on a specific topic.
@@ -247,7 +247,7 @@ Overall, subject headings play a critical role in information retrieval and orga
 Explain in three sentences what a subject heading is, for a new library assistant who has never catalogued. Use plain words.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 Subject headings are like keywords that help people find books or resources in the library. They are used to describe the main topic or theme of a book, article, or other material. For example, if you're looking for books about cats, you could use the subject heading "cats" or "felines." This makes it easier for others to find what they need.
@@ -265,7 +265,7 @@ The poor prompt returned a lecture of about 250 words that nobody can use at a r
 How do I organize this?
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 If you are asking about organizing a project, document, or tasks, it depends on the context. Here are a few general tips:
@@ -305,7 +305,7 @@ Please provide more context so I can give you more specific advice.
 I am a librarian organizing 500 historical photographs from the 1920s to the 1940s. In five bullet points, how should I categorize them so researchers can search them?
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 - **Subject Matter**: Categorize photographs by the subject they feature, such as landscapes, portraits, events, historical figures, or cultural icons.
@@ -327,7 +327,7 @@ Without context the model guessed at three different meanings of "organize" (a p
 Extract the book information from this sentence: Homo faber by Max Frisch came out in 1957.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 Book Title: Homo faber
@@ -352,7 +352,7 @@ Input: Homo faber by Max Frisch came out in 1957.
 Output:
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 Title: Homo faber | Author: Max Frisch | Year: 1957
@@ -373,7 +373,7 @@ Text:
 [the first paragraph of the sample text]
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 1. "Of Mice and Men" by John Steinbeck (1937)
@@ -393,7 +393,7 @@ Text:
 [the first paragraph of the sample text]
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 [
@@ -432,7 +432,7 @@ The second answer is JSON, ready for a program to read. The first is text a pers
 Summarize why libraries keep authority files.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 Libraries keep authority files to maintain consistency in the way they organize and record information about entities such as authors, subjects, and geographic locations. This ensures that all records relating to a particular entity are treated in the same way, which helps to improve the accuracy and reliability of the library's catalog and database. Authority files are also used to provide a standardized vocabulary for searching and retrieving information, making it easier for users to find what they are looking for. By maintaining authority files, libraries can also ensure that information is correctly linked and cross-referenced, which is essential for creating a comprehensive and cohesive collection of resources.
@@ -446,7 +446,7 @@ Libraries keep authority files to maintain consistency in the way they organize 
 Summarize why libraries keep authority files. Use at most 40 words. Mention one benefit only. Do not use bullet points.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 Libraries keep authority files to ensure consistency in cataloging. A benefit of this is that it helps users find and access information more efficiently and accurately.

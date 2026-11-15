@@ -3,7 +3,7 @@ title: Human in the loop
 weight: 2
 ---
 
-This page follows the cells of notebook 05 in order. Each code cell is quoted with the output it produced when we executed the notebook on 15 October 2026 with `nishad/apertus:8b`. Each of these outputs is labeled with the notebook and the date. The 8 GB tier copy in `tier-8gb/` was executed with `nishad/apertus:4b`; where it differs, the page says so. The notebook cuts printed lines at 300 characters. This page cuts long lines again and marks them "…". The notebook's HTML answers are shown as plain text.
+This page follows the cells of notebook 05 in order. Each code cell is quoted with the output it produced when we executed the notebook on 15 October 2026 with `thalhath/apertus:8b`. Each of these outputs is labeled with the notebook and the date. The 8 GB tier copy in `tier-8gb/` was executed with `thalhath/apertus:4b`; where it differs, the page says so. The notebook cuts printed lines at 300 characters. This page cuts long lines again and marks them "…". The notebook's HTML answers are shown as plain text.
 
 ## 05.02 Three tools
 
@@ -311,7 +311,7 @@ Fetch the HLS article found in 05.05 (CC BY-SA) with `requests`, chunk it with `
 
 ### On the 8 GB tier
 
-Run 05.03 with `nishad/apertus:4b`. Its tag carries the wrapper template that makes tool calls work. The 4B handles only simple tools, so use the lookups that take a single parameter and skip the chains. Compare its answer with the 8B's above: in the executed 8 GB copy it called the tool and gave the identifier as a URL.
+Run 05.03 with `thalhath/apertus:4b`. Its tag carries the wrapper template that makes tool calls work. The 4B handles only simple tools, so use the lookups that take a single parameter and skip the chains. Compare its answer with the 8B's above: in the executed 8 GB copy it called the tool and gave the identifier as a URL.
 
 ## Check yourself
 

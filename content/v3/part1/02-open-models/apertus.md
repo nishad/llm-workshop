@@ -50,7 +50,7 @@ A thread on the Open Source Initiative (OSI) forum asked whether this policy fit
 
 ## Why the workshop teaches 1.0 and only shows 1.5
 
-The workshop uses `nishad/apertus:8b`, which is Apertus-8B-Instruct-2509 in the GGUF build made by Unsloth. (GGUF is the single-file model format that llama.cpp, Ollama and LM Studio read.) We show version 1.5 only as a preview. The reason is software support: a model runs on a laptop only once every tool in the chain below supports it.
+The workshop uses `thalhath/apertus:8b`, which is Apertus-8B-Instruct-2509 in the GGUF build made by Unsloth. (GGUF is the single-file model format that llama.cpp, Ollama and LM Studio read.) We show version 1.5 only as a preview. The reason is software support: a model runs on a laptop only once every tool in the chain below supports it.
 
 ```mermaid
 flowchart LR

@@ -3,7 +3,7 @@ title: Basics
 weight: 1
 ---
 
-This page follows sections 01.02 to 01.05 of notebook 01. Each code cell is quoted with the output it produced when we ran the notebook on 15 October 2026. Setup (section 01.01) creates `settings` and `MODEL`; on the 16 GB tier `MODEL` is `nishad/apertus:8b`.
+This page follows sections 01.02 to 01.05 of notebook 01. Each code cell is quoted with the output it produced when we ran the notebook on 15 October 2026. Setup (section 01.01) creates `settings` and `MODEL`; on the 16 GB tier `MODEL` is `thalhath/apertus:8b`.
 
 ## Which models do I have?
 
@@ -18,15 +18,15 @@ for m in client.list().models:
 
 ```text
 qwen3-embedding:0.6b                            0.6 GB  digest ac6da0dfba84
-nishad/apertus:8b-v1.5-preview                  5.1 GB  digest 6f25f6ba0b62
-nishad/apertus:4b                               2.4 GB  digest 87ca69a79aed
-nishad/apertus:8b                               5.1 GB  digest 4a85a6fea0b8
+thalhath/apertus:8b-v1.5-preview                  5.1 GB  digest 6f25f6ba0b62
+thalhath/apertus:4b                               2.4 GB  digest 87ca69a79aed
+thalhath/apertus:8b                               5.1 GB  digest 4a85a6fea0b8
 …
 ```
 
 From the executed notebook 01, 15 October 2026. This is our list, cut down to the rows the workshop uses. Your list will be shorter: only the models you downloaded.
 
-A tag such as `nishad/apertus:8b` is a name that can point to different files over time. The digest is the fingerprint of the exact file. Keep that difference in mind for the [reproducibility page](/v3/part2/02-python-and-ollama/reproducibility).
+A tag such as `thalhath/apertus:8b` is a name that can point to different files over time. The digest is the fingerprint of the exact file. Keep that difference in mind for the [reproducibility page](/v3/part2/02-python-and-ollama/reproducibility).
 
 ## What is in the file?
 
@@ -85,7 +85,7 @@ The helper adds two defaults and a log line (see the [reproducibility page](/v3/
 ```python
 import ollama
 client = ollama.Client(host="http://localhost:11434")
-client.chat(model="nishad/apertus:8b", messages=[{"role": "user", "content": "..."}], options={"temperature": 0, "num_ctx": 8192})
+client.chat(model="thalhath/apertus:8b", messages=[{"role": "user", "content": "..."}], options={"temperature": 0, "num_ctx": 8192})
 ```
 
 The helper sets `temperature` to 0 and `num_ctx` to the value for your tier (8,192 on the 16 GB tier, shown in the setup cell). You can override either through its `options` argument.

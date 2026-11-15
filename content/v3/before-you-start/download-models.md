@@ -10,7 +10,7 @@ Download the model for your machine. First find your tier on [Choose a model siz
 {{< tab name="Ollama" >}}
 **16 GB or more (8B)**
 
-1. In the Ollama app, open the model picker and type exactly `nishad/apertus:8b`.
+1. In the Ollama app, open the model picker and type exactly `thalhath/apertus:8b`.
 2. Select the entry with the download arrow and send any message. The download bar appears in the chat.
 
 Typing `apertus` alone shows "No models found". Always type the full tag, which is the model's complete name.
@@ -18,16 +18,16 @@ Typing `apertus` alone shows "No models found". Always type the full tag, which 
 Or run this in a terminal:
 
 ```bash
-ollama pull nishad/apertus:8b
+ollama pull thalhath/apertus:8b
 ```
 
 **8 GB (4B)**
 
-Do the same with `nishad/apertus:4b` (2.4 GB), or run `ollama pull nishad/apertus:4b` in a terminal.
+Do the same with `thalhath/apertus:4b` (2.4 GB), or run `ollama pull thalhath/apertus:4b` in a terminal.
 
 **Optional preview**
 
-If you want to compare, `nishad/apertus:8b-v1.5-preview` is the newer Apertus v1.5, converted for local use by a community member. Nothing in the workshop needs it.
+If you want to compare, `thalhath/apertus:8b-v1.5-preview` is the newer Apertus v1.5, converted for local use by a community member. Nothing in the workshop needs it.
 
 **Embeddings for Part 2**
 
@@ -62,8 +62,8 @@ In your browser, open the model's page on Hugging Face (the website where most o
 | Item | Size |
 |---|---|
 | Ollama install (Windows) | about 4 GB |
-| `nishad/apertus:8b` | 5.1 GB |
-| `nishad/apertus:4b` | 2.4 GB |
+| `thalhath/apertus:8b` | 5.1 GB |
+| `thalhath/apertus:4b` | 2.4 GB |
 | `qwen3-embedding:0.6b` | 639 MB |
 | Python environment | about 0.5 GB |
 
@@ -81,7 +81,7 @@ Copy the `manifests` and `blobs` folders from `~/.ollama/models` on a colleague'
 Another option is to create the tag yourself from a GGUF file, the single-file format used for local models. Use the Modelfile from the `models/` folder of the notebooks repository:
 
 ```bash
-ollama create nishad/apertus:8b -f Modelfile
+ollama create thalhath/apertus:8b -f Modelfile
 ```
 {{< /details >}}
 
@@ -105,6 +105,6 @@ A digest is a code computed from the model's contents; it identifies the exact f
 
 | Tag | Source GGUF | GGUF sha256 | Digest (`ollama list`) |
 |---|---|---|---|
-| `nishad/apertus:8b` (also `:latest`) | `unsloth/Apertus-8B-Instruct-2509-GGUF`, Q4_K_M | `87e7f0eb5a1d33e1a8ea4e7fdd2363764e0465061dd92962e0073aec31a7944d` | `4a85a6fea0b8` |
-| `nishad/apertus:4b` | `jondale/Apertus-v1.1-4B-Instruct-GGUF`, Q4_K_M | not recorded | `87ca69a79aed` |
-| `nishad/apertus:8b-v1.5-preview` | `Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF`, Q4_K_M | `a037df8d87ff6caacee794ee85f55342f2152e0d359b7389033300c3bee5f299` | `6f25f6ba0b62` |
+| `thalhath/apertus:8b` (also `:latest`) | `unsloth/Apertus-8B-Instruct-2509-GGUF`, Q4_K_M | `87e7f0eb5a1d33e1a8ea4e7fdd2363764e0465061dd92962e0073aec31a7944d` | `4a85a6fea0b8` |
+| `thalhath/apertus:4b` | `jondale/Apertus-v1.1-4B-Instruct-GGUF`, Q4_K_M | not recorded | `87ca69a79aed` |
+| `thalhath/apertus:8b-v1.5-preview` | `Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF`, Q4_K_M | `a037df8d87ff6caacee794ee85f55342f2152e0d359b7389033300c3bee5f299` | `6f25f6ba0b62` |

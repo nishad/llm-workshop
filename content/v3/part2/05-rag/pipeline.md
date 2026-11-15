@@ -3,7 +3,7 @@ title: Pipeline
 weight: 2
 ---
 
-This page follows the cells of notebook 04 in order. Each code cell is quoted with the output it produced when the notebook was executed on 15 October 2026 with `nishad/apertus:8b` (the 16 GB tier). Where the 8 GB tier differed, the page says so and quotes the 8 GB copy in `tier-8gb/`. The notebook's HTML answers are shown here as plain text. Long outputs are cut and marked with "…".
+This page follows the cells of notebook 04 in order. Each code cell is quoted with the output it produced when the notebook was executed on 15 October 2026 with `thalhath/apertus:8b` (the 16 GB tier). Where the 8 GB tier differed, the page says so and quotes the 8 GB copy in `tier-8gb/`. The notebook's HTML answers are shown here as plain text. Long outputs are cut and marked with "…".
 
 The notebook works with two documents in `data/docs/`: the IFLA Library Reference Model and the DCMI Metadata Terms. Both are licensed under CC BY 4.0 and stored as text extracts.
 
@@ -20,10 +20,10 @@ print("Model:", MODEL, "| context:", LIMIT, "| chunks per question:", K)
 ```
 
 ```text
-Model: nishad/apertus:8b | context: 8192 | chunks per question: 4
+Model: thalhath/apertus:8b | context: 8192 | chunks per question: 4
 ```
 
-From the executed notebook 04, 15 October 2026. `K` is the number of chunks per question. On the 8 GB tier the same cell printed `Model: nishad/apertus:4b | context: 4096 | chunks per question: 3`, from the executed notebook 04 on the 8 GB tier, 15 October 2026. The 4B has a context window of 4,096 tokens, so it gets one chunk fewer.
+From the executed notebook 04, 15 October 2026. `K` is the number of chunks per question. On the 8 GB tier the same cell printed `Model: thalhath/apertus:4b | context: 4096 | chunks per question: 3`, from the executed notebook 04 on the 8 GB tier, 15 October 2026. The 4B has a context window of 4,096 tokens, so it gets one chunk fewer.
 
 ## 04.02 Load and chunk
 

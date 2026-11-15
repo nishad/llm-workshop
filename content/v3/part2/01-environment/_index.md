@@ -135,10 +135,10 @@ The readiness report is cell 00.02 of notebook 00. This is how it looks on a mac
 
 ```text
 ✅ Python 3.12 or newer: found 3.12.12
-✅ Memory: 64 GB, use nishad/apertus:8b (16 GB tier)
+✅ Memory: 64 GB, use thalhath/apertus:8b (16 GB tier)
 ✅ Free disk 20 GB: 635 GB free
 ✅ Ollama 0.40 or newer: version 0.40.4 at http://localhost:11434
-✅ Model nishad/apertus:8b: present
+✅ Model thalhath/apertus:8b: present
 ✅ Chat template (Unsloth fixes): present
 ✅ Embedding model qwen3-embedding:0.6b: 1024 dimensions
 ✅ Smoke chat: model said: 'OK'
@@ -149,6 +149,6 @@ All good.
 
 This output comes from notebook 00, run on Ollama 0.40.4 on 15 October 2026.
 
-Your memory and disk numbers will differ. The Memory line tells you which tier you are on, and so which model to use: 16 GB or more uses `nishad/apertus:8b`, 8 GB uses `nishad/apertus:4b`. On an 8 GB laptop, set the environment variable `WORKSHOP_TIER=8gb` before you start JupyterLab, or change `"16gb"` to `"8gb"` in the first cell of each notebook. The `tier-8gb/` folder of the repository also holds notebooks 04 and 05 with the outputs of a run on the 8 GB tier, so you can see what the 4B model does before you run it.
+Your memory and disk numbers will differ. The Memory line tells you which tier you are on, and so which model to use: 16 GB or more uses `thalhath/apertus:8b`, 8 GB uses `thalhath/apertus:4b`. On an 8 GB laptop, set the environment variable `WORKSHOP_TIER=8gb` before you start JupyterLab, or change `"16gb"` to `"8gb"` in the first cell of each notebook. The `tier-8gb/` folder of the repository also holds notebooks 04 and 05 with the outputs of a run on the 8 GB tier, so you can see what the 4B model does before you run it.
 
 If a line is red, follow the hint in it and run the cell again. Paste the output into your message when you ask for help, in the session or in the [forum topic](https://forum.swib.org/t/getting-started-with-local-llms/1732). More fixes are on [Troubleshooting](/v3/before-you-start/troubleshooting).

@@ -3,7 +3,7 @@ title: First prompts
 weight: 3
 ---
 
-Here are five starter prompts, each with the answer the model gave. Every answer was captured with nishad/apertus:8b on 15 October 2026 at temperature 0.8, the default in the apps. Your answers will differ in wording. The model picks each token (a word or part of a word) with some randomness, and temperature controls how much. See [Temperature](/v3/part1/01-how-llms-work/temperature).
+Here are five starter prompts, each with the answer the model gave. Every answer was captured with thalhath/apertus:8b on 15 October 2026 at temperature 0.8, the default in the apps. Your answers will differ in wording. The model picks each token (a word or part of a word) with some randomness, and temperature controls how much. See [Temperature](/v3/part1/01-how-llms-work/temperature).
 
 Paste each prompt into your own chat and compare the answers.
 
@@ -15,7 +15,7 @@ Paste each prompt into your own chat and compare the answers.
 Explain in three sentences what an authority file is and why a library catalogue uses one.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 An authority file is a centralized list of standardized terms used to refer to an entity, such as a person, organization, or concept. Library catalogues use authority files to ensure consistency in the way information about an entity is recorded and retrieved. This helps in providing accurate and efficient access to information.
@@ -29,7 +29,7 @@ An authority file is a centralized list of standardized terms used to refer to a
 Übersetze ins Englische und Französische: 'Herstellung von Kino-, TV- oder Werbefilmen.'
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 Übersetzung ins Englische: 'Production of cinema, television or advertisement films.'
@@ -45,7 +45,7 @@ An authority file is a centralized list of standardized terms used to refer to a
 List five subject headings a library might assign to a book about the history of printing in Basel. One line each.
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 1. History of Printing
@@ -65,7 +65,7 @@ The headings look reasonable. Whether a real authority file contains them is for
 Rewrite this for a public-library newsletter in two sentences: 'The repository ingests metadata via OAI-PMH and exposes it as linked data.'
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 At our library, we're excited to announce that we're integrating a state-of-the-art repository that not only harvests metadata through the open archive interface (OAI-PMH) but also presents it as interconnected data, making it easier for users to discover and access a wealth of information. This innovation allows us to create a more accessible and user-friendly platform for our patrons to explore and enjoy a broad spectrum of digital resources.
@@ -81,7 +81,7 @@ This prompt asks for a fact the model cannot look up. It is a probe for hallucin
 What is the ISBN of 'Vita activa' by Hannah Arendt?
 ```
 
-**Output** (captured with nishad/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
+**Output** (captured with thalhath/apertus:8b, digest 4a85a6fea0b8, temperature 0.8, 15 October 2026):
 
 ```
 The ISBN of 'Vita activa' by Hannah Arendt is 0141039689.
@@ -114,7 +114,7 @@ A model answers confidently whether it knows or not. Check names, numbers, dates
 
 ## Speed FAQ
 
-**How fast is it?** Speed is measured in tokens per second. To measure it on your own machine, run `ollama run nishad/apertus:8b --verbose` in a terminal. After each answer, Ollama prints statistics. Look for the line "eval rate". The [Hardware](/v3/before-you-start/hardware) page shows what to expect on different machines.
+**How fast is it?** Speed is measured in tokens per second. To measure it on your own machine, run `ollama run thalhath/apertus:8b --verbose` in a terminal. After each answer, Ollama prints statistics. Look for the line "eval rate". The [Hardware](/v3/before-you-start/hardware) page shows what to expect on different machines.
 
 **Why is the first answer slower?** Your computer has to load the model into memory first.
 

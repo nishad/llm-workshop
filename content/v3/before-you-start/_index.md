@@ -25,8 +25,8 @@ You can attend either half on its own. Part 1 needs no programming, and you can 
 
 | Your memory | Model | Download |
 |---|---|---|
-| 16 GB or more | `nishad/apertus:8b` | 5.1 GB |
-| 8 GB | `nishad/apertus:4b` | 2.4 GB |
+| 16 GB or more | `thalhath/apertus:8b` | 5.1 GB |
+| 8 GB | `thalhath/apertus:4b` | 2.4 GB |
 
 Keep 20 GB of disk space free in total. Do not try the 8B model on an 8 GB machine: it does not fit in memory, so the computer moves parts of it to disk, and every answer takes minutes. Speed estimates, special cases and how to measure your own machine are on [Choose a model size](hardware).
 
@@ -39,13 +39,13 @@ Install [Ollama](https://ollama.com/download) and open it once. We use it in bot
 **Ollama.** In the app, open the model picker and type the full model tag (the model's complete name) from the table above. Then select the entry with the download arrow and send any message. If you type only `apertus`, the app shows "No models found". Or run this in a terminal:
 
 ```bash
-ollama pull nishad/apertus:8b
+ollama pull thalhath/apertus:8b
 ```
 
 On an 8 GB machine:
 
 ```bash
-ollama pull nishad/apertus:4b
+ollama pull thalhath/apertus:4b
 ```
 
 **LM Studio.** Open Discover and paste `https://huggingface.co/unsloth/Apertus-8B-Instruct-2509-GGUF`, then choose the file marked Q4_K_M (the compressed version the workshop uses). On an 8 GB machine, paste `https://huggingface.co/jondale/Apertus-v1.1-4B-Instruct-GGUF` instead.
