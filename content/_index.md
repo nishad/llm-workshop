@@ -3,7 +3,7 @@ title: Local LLM Workshop
 toc: false
 ---
 
-**Getting started with local LLMs** is a hands-on workshop about running large language models on your own computer. It takes place at the Semantic Web in Libraries conference (SWIB). Nishad Thalhath has run it since 2024.
+**Getting started with local LLMs** is a hands-on workshop on running large language models on your own computer, held at the Semantic Web in Libraries conference (SWIB). This site holds the material of each edition since 2024.
 
 {{< cards >}}
   {{< card link="v3" title="SWIB26 edition (current)" icon="sparkles" subtitle="16 November 2026. Apertus, Ollama or LM Studio, structured output, vocabularies, RAG, tool use." >}}
