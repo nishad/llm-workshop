@@ -5,8 +5,6 @@ cascade:
   type: docs
 ---
 
-This chapter takes about 25 minutes in the workshop.
-
 ## What you will be able to do
 
 1. Explain in plain words how a model predicts the next token.

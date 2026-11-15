@@ -7,7 +7,7 @@ cascade:
 
 Keyword search finds the words you typed. Semantic search finds the concept you meant, in any language the embedding model knows. An embedding model turns a text into a list of numbers that represents its meaning; similar meanings give similar lists. This chapter builds semantic search over two controlled vocabularies, the STW Thesaurus for Economics and the UNESCO Thesaurus. It then measures how well the search works.
 
-Notebook 03, `03_vocabulary_search`, has a 25-minute budget. In the session it gets about 22 minutes (minutes 50 to 72 of Part 2).
+The notebook for this chapter is `03_vocabulary_search`.
 
 ## Keywords versus meaning
 

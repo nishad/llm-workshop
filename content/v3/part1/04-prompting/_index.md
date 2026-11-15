@@ -5,7 +5,7 @@ cascade:
   type: docs
 ---
 
-Prompting is how you tell a model what you want. This chapter is the main exercise block of Part 1 (minutes 80 to 110). You need only the chat window from the previous chapter. Nothing here needs programming.
+Prompting is how you tell a model what you want. This chapter is the main exercise block of Part 1. You need only the chat window from the previous chapter. Nothing here needs programming.
 
 Every example output on these pages was captured with thalhath/apertus:8b at temperature 0.8, on 15 October 2026. Temperature is the setting that controls how much the answers vary, so yours will differ in wording. The lessons hold anyway, and the places where the model gets it wrong are kept on purpose.
 

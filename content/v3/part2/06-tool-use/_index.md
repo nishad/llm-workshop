@@ -7,7 +7,7 @@ cascade:
 
 A tool call is the model asking your program to do something: look up a name in the GND authority file, ask Wikidata a question, run a SPARQL query. The model only proposes the call. A person approves, corrects or refuses it, Python runs it, and the result goes back to the model.
 
-Notebook 05, `05_tool_use`, takes about 15 minutes in the workshop. It defines three tools as plain Python functions and shows the gate, the step where you decide whether a call runs. It then corrects a misspelled name, chains a GND lookup to Wikidata and the Historical Dictionary of Switzerland, and deliberately triggers the failure the loop is built to catch: an identifier the model made up.
+Notebook 05, `05_tool_use`, defines three tools as plain Python functions and shows the gate, the step where you decide whether a call runs. It then corrects a misspelled name, chains a GND lookup to Wikidata and the Historical Dictionary of Switzerland, and deliberately triggers the failure the loop is built to catch: an identifier the model made up.
 
 ## What the notebook covers
 

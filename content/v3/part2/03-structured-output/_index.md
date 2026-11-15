@@ -7,7 +7,7 @@ cascade:
 
 A catalog needs separate fields: a title, a creator, a place, a year. A chat answer gives you a paragraph. A person can read a paragraph, but a spreadsheet, a record store or a validation script cannot. This chapter makes the model fill a fixed set of fields instead, and then checks every answer. That is what structured output means: an answer in a fixed format that a program can read.
 
-Notebook 02, `02_structured_output`, has a 25-minute budget. In the session it gets about 22 minutes, from minute 28 to minute 50 of Part 2. We give the model a catalog card and get a record back. Then we watch it invent a value the card never stated, and we add a rule that catches the invention. Finally, we measure twenty cards against a gold file, which holds the correct answers.
+In notebook 02, `02_structured_output`, we give the model a catalog card and get a record back. Then we watch it invent a value the card never stated, and we add a rule that catches the invention. Finally, we measure twenty cards against a gold file, which holds the correct answers.
 
 ## What the notebook covers
 

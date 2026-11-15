@@ -7,18 +7,16 @@ The workshop uses six notebooks, numbered 00 to 05. Each one ends with a Checkpo
 
 ## The six notebooks
 
-| Notebook | Budget | What you do | Tier notes | On GitHub |
-|---|---|---|---|---|
-| `00_check_setup` | 10 min | Check Python, memory, disk, Ollama, the chat and embedding models (on 8 GB machines it checks for `thalhath/apertus:4b` instead of the 8B) and one smoke call each | Same notebook on both tiers | [00_check_setup.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/00_check_setup.ipynb) |
-| `01_python_and_ollama` | 20 min | Chat, system prompts, temperature, streaming, the OpenAI client, provenance logging | Same notebook on both tiers | [01_python_and_ollama.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/01_python_and_ollama.ipynb) |
-| `02_structured_output` | 25 min | Extract catalog card records into a Pydantic schema, validate them, measure against a gold file | Same notebook on both tiers | [02_structured_output.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/02_structured_output.ipynb) |
-| `03_vocabulary_search` | 25 min | Embeddings, cross-lingual search over STW and UNESCO labels, a sqlite-vec index | On the 8 GB tier, download the prebuilt index files | [03_vocabulary_search.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/03_vocabulary_search.ipynb) |
-| `04_rag` | 20 min | Chunk documents, retrieve, answer with numbered citations, hit the context limit on purpose | 8 GB tier: 3 chunks, 4,096-token window; copy in `tier-8gb/` | [04_rag.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/04_rag.ipynb) |
-| `05_tool_use` | 15 min | Let the model propose GND, Wikidata and SPARQL calls; approve, correct or refuse each one | 8 GB tier: single-tool cells only; copy in `tier-8gb/` | [05_tool_use.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/05_tool_use.ipynb) |
+| Notebook | What you do | Tier notes | On GitHub |
+|---|---|---|---|
+| `00_check_setup` | Check Python, memory, disk, Ollama, the chat and embedding models (on 8 GB machines it checks for `thalhath/apertus:4b` instead of the 8B) and one smoke call each | Same notebook on both tiers | [00_check_setup.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/00_check_setup.ipynb) |
+| `01_python_and_ollama` | Chat, system prompts, temperature, streaming, the OpenAI client, provenance logging | Same notebook on both tiers | [01_python_and_ollama.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/01_python_and_ollama.ipynb) |
+| `02_structured_output` | Extract catalog card records into a Pydantic schema, validate them, measure against a gold file | Same notebook on both tiers | [02_structured_output.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/02_structured_output.ipynb) |
+| `03_vocabulary_search` | Embeddings, cross-lingual search over STW and UNESCO labels, a sqlite-vec index | On the 8 GB tier, download the prebuilt index files | [03_vocabulary_search.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/03_vocabulary_search.ipynb) |
+| `04_rag` | Chunk documents, retrieve, answer with numbered citations, hit the context limit on purpose | 8 GB tier: 3 chunks, 4,096-token window; copy in `tier-8gb/` | [04_rag.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/04_rag.ipynb) |
+| `05_tool_use` | Let the model propose GND, Wikidata and SPARQL calls; approve, correct or refuse each one | 8 GB tier: single-tool cells only; copy in `tier-8gb/` | [05_tool_use.ipynb](https://github.com/nishad/llm-workshop-notebooks/blob/main/05_tool_use.ipynb) |
 
 The tier notes refer to the two hardware tiers: a machine with 16 GB of memory or more runs the 8B model, an 8 GB machine runs the 4B.
-
-The budgets in the table are the times given in the notebooks, and they are meant for self-study. In the live session we shorten them to fit the 110 minutes. The [Part 2 timeline](/v3/part2#timeline) shows the minutes for each segment.
 
 The site chapters that go with notebooks 01 to 05 are [Python and Ollama](/v3/part2/02-python-and-ollama), [structured output](/v3/part2/03-structured-output), [embeddings](/v3/part2/04-embeddings), [RAG](/v3/part2/05-rag) and [tool use](/v3/part2/06-tool-use).
 

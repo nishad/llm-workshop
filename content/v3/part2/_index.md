@@ -7,7 +7,7 @@ cascade:
   type: docs
 ---
 
-Part 2 runs from 06:10 to 08:00 UTC, 110 minutes. You move from typing into a chat window to calling the same model from Python, with notebooks that you run, change and keep.
+Part 2 runs from 06:10 to 08:00 UTC. You move from typing into a chat window to calling the same model from Python, with notebooks that you run, change and keep.
 
 {{< callout type="warning" >}}
 Part 2 runs on Ollama. If you installed only LM Studio, install Ollama now (10 minutes) or follow as a listener. The steps are on [Install Ollama](/v3/before-you-start/install-ollama).
@@ -24,19 +24,19 @@ After Part 2 you can:
 - let a model propose a tool call (a request for your program to run a function, such as an authority lookup or a SPARQL query) and approve or correct it before anything runs;
 - explain the limits of small local models from evidence they produced themselves.
 
-## Timeline
+## Program
 
-Minutes are counted from 06:10 UTC. Type-along means we run the notebook cells together. An exercise means you work on your own or in a small breakout room.
+Type-along means we run the notebook cells together. An exercise means you work on your own or in a small breakout room.
 
-| Minutes | Segment | Mode | Notebook | Site pages |
-|---|---|---|---|---|
-| 0-10 | Re-entry check: environment, server, model | type-along | `00_check_setup` | [Environment](/v3/part2/01-environment) |
-| 10-28 | Python and Ollama: chat, system prompt, options, streaming, the OpenAI-client switch, provenance logging | type-along | `01_python_and_ollama` | [Python and Ollama](/v3/part2/02-python-and-ollama) |
-| 28-50 | Structured output and validation | exercise | `02_structured_output` | [Structured output](/v3/part2/03-structured-output) |
-| 50-72 | Embeddings and semantic search over a controlled vocabulary | exercise | `03_vocabulary_search` | [Embeddings](/v3/part2/04-embeddings) |
-| 72-90 | RAG over your own documents | exercise | `04_rag` | [RAG](/v3/part2/05-rag) |
-| 90-105 | Tool use with a human in the loop | demo then exercise | `05_tool_use` | [Tool use](/v3/part2/06-tool-use) |
-| 105-110 | Wrap-up: provenance checklist, next steps | demo | | [Wrap-up](/v3/part2/07-wrap-up) |
+| Segment | Mode | Notebook | Site pages |
+|---|---|---|---|
+| Re-entry check: environment, server, model | type-along | `00_check_setup` | [Environment](/v3/part2/01-environment) |
+| Python and Ollama: chat, system prompt, options, streaming, the OpenAI-client switch, provenance logging | type-along | `01_python_and_ollama` | [Python and Ollama](/v3/part2/02-python-and-ollama) |
+| Structured output and validation | exercise | `02_structured_output` | [Structured output](/v3/part2/03-structured-output) |
+| Embeddings and semantic search over a controlled vocabulary | exercise | `03_vocabulary_search` | [Embeddings](/v3/part2/04-embeddings) |
+| RAG over your own documents | exercise | `04_rag` | [RAG](/v3/part2/05-rag) |
+| Tool use with a human in the loop | demo then exercise | `05_tool_use` | [Tool use](/v3/part2/06-tool-use) |
+| Wrap-up: provenance checklist, next steps | demo | | [Wrap-up](/v3/part2/07-wrap-up) |
 
 If Part 2 runs late, we cut the Stretch tiers of RAG and tool use first. They stay in the notebooks for self-study.
 

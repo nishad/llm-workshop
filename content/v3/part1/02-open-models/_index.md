@@ -5,8 +5,6 @@ cascade:
   type: docs
 ---
 
-This chapter takes about 20 minutes in the workshop.
-
 ## What you will be able to do
 
 1. Place any model on the four-tier openness ladder.
