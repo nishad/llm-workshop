@@ -85,7 +85,7 @@ Open `00_check_setup.ipynb` and choose Run All Cells.
 
 {{< /tabs >}}
 
-{{< details title="pip and venv instead of uv" >}}
+{{< details title="pip and venv instead of uv" closed="true" >}}
 You need Python 3.12 or 3.13 installed. Run these four commands inside the cloned folder.
 
 macOS and Linux:

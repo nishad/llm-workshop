@@ -39,7 +39,7 @@ Check the license of the exact version you download. Terms can change between ve
 
 Pick a model you have heard of. Open its page on Hugging Face (the website where most open models are published) and find two things: the license, and whether the training data is listed. Then choose its tier.
 
-{{< details title="Show a solution" >}}
+{{< details title="Show a solution" closed="true" >}}
 Three examples, as of October 2026:
 
 - **Llama 3**: tier 1. The weights are downloadable, but the license is custom, with use restrictions.

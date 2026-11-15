@@ -247,7 +247,7 @@ Some models have a thinking mode: they write out their reasoning before the fina
 
 ## Self-study: five more techniques
 
-{{< details title="Show the five self-study techniques" >}}
+{{< details title="Show the five self-study techniques" closed="true" >}}
 
 ### Chain-of-thought
 

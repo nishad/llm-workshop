@@ -93,7 +93,7 @@ Ollama downloads the model file from Hugging Face by itself. The result is the s
 
 ## Offline alternative
 
-{{< details title="Show the offline options" >}}
+{{< details title="Show the offline options" closed="true" >}}
 Copy the `manifests` and `blobs` folders from `~/.ollama/models` on a colleague's machine into your own models folder. Or open Settings, then Model location, and select a USB stick that holds a copy of those folders.
 
 Another option is to create the tag yourself from a GGUF file, the single-file format used for local models. Use the Modelfiles from the section above; they are also in the `models/` folder of the notebooks repository:

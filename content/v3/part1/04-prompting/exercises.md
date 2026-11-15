@@ -25,7 +25,7 @@ Turn the sample text into a table with the columns Title, Author, Year, Language
 - **Run and change:** add a column "Script" (Latin, Cyrillic, Han, and so on).
 - **Stretch:** ask for CSV (comma-separated values, a plain-text format that spreadsheets can open) instead of a table. Then paste in a sentence with a title that contains a comma, such as the made-up title "Love, Death and Taxes". Check how the answer handles the comma.
 
-{{< details title="Show a solution" >}}
+{{< details title="Show a solution" closed="true" >}}
 
 **Prompt:**
 
@@ -99,7 +99,7 @@ Items to classify:
 - **Run and change:** ask for the answers in the form: Number. "Title" -> CATEGORY.
 - **Stretch:** add an ambiguous item, for example an audio recording that fits none of the four labels. Then ask for a confidence word (high, medium or low) for each item.
 
-{{< details title="Show a solution" >}}
+{{< details title="Show a solution" closed="true" >}}
 
 This solution is for the stretch version: five items, one of them ambiguous, with a confidence word.
 
@@ -156,7 +156,7 @@ Author Talk with Jane Smith is scheduled for March 15th at 7pm in the Main Hall.
 - **Run and change:** ask for times in 24-hour format.
 - **Stretch:** ask for ISO dates (2026-03-15) and check them. Which events have a date, and which repeat?
 
-{{< details title="Show a solution" >}}
+{{< details title="Show a solution" closed="true" >}}
 
 **Prompt:**
 
@@ -220,7 +220,7 @@ Give the German, French and English preferred term for three concepts. Then ask 
 - **Run and change:** add two concepts of your own from your field.
 - **Stretch:** ask in a new chat for the same translations and compare the two answers.
 
-{{< details title="Show a solution" >}}
+{{< details title="Show a solution" closed="true" >}}
 
 **Step 1: the terms**
 
@@ -294,7 +294,7 @@ Abstracts (written for this exercise):
 - **Run and change:** remove "at most two" and see whether the model adds descriptors that are not in the list.
 - **Stretch:** ask the model to justify each assignment with a quote from the abstract.
 
-{{< details title="Show a solution" >}}
+{{< details title="Show a solution" closed="true" >}}
 
 **Prompt:**
 
@@ -332,7 +332,7 @@ Ask for identifiers the model cannot look up. When a model invents an answer and
 - **Run and change:** ask for the same identifier twice in new chats. Do the two answers agree?
 - **Stretch:** ask "How sure are you? Where did you get this?" and see what the model offers.
 
-{{< details title="Show a solution" >}}
+{{< details title="Show a solution" closed="true" >}}
 
 **Book:**
 
@@ -392,7 +392,7 @@ How do I fix this?
 - **Run and change:** rewrite the first prompt and compare the answers.
 - **Stretch:** split the second prompt into steps, and decide which steps need a checkpoint, a pause to check the result before going on.
 
-{{< details title="Show a solution" >}}
+{{< details title="Show a solution" closed="true" >}}
 
 What is wrong:
 
@@ -486,7 +486,7 @@ Ask for a catalog entry with title, author, year, condition and notes. Do not as
 - **Run and change:** change the condition scale and see if the model follows it.
 - **Stretch:** ask for a second field with the reason for the condition grade, in at most ten words.
 
-{{< details title="Show a solution" >}}
+{{< details title="Show a solution" closed="true" >}}
 
 **Prompt:**
 

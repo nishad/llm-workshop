@@ -79,7 +79,7 @@ The notebook displays the answer as formatted text:
 
 From the executed notebook 01, 15 October 2026.
 
-{{< details title="How the helper differs from calling ollama directly" >}}
+{{< details title="How the helper differs from calling ollama directly" closed="true" >}}
 The helper adds two defaults and a log line (see the [reproducibility page](/v3/part2/02-python-and-ollama/reproducibility)). Without it, the same call is three lines:
 
 ```python

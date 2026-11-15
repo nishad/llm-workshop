@@ -60,7 +60,7 @@ Do as many of these as you like.
 2. Count your institution's name in infini-gram.
 3. A harder one: compare two institutions and explain the difference.
 
-{{< details title="Show a solution" >}}
+{{< details title="Show a solution" closed="true" >}}
 A domain with no results in the index may not have been captured in this crawl. Try another crawl. A name with a low count may be spelled differently in other languages, so try variants.
 {{< /details >}}
 
