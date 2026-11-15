@@ -60,7 +60,7 @@ An optional preview for people with 16 GB or more who want to compare.
 | Context | 8,192 set in the tag; the file's metadata says 262k |
 | License | Apache-2.0, with the Apertus Acceptable Use Policy v1.5 (14 July 2026) |
 | Openness tier | Fully open (tier 3) for Apertus 1.5 itself |
-| Digest | `6f25f6ba0b62` in the October quotes; the digest after `ollama pull` differs, see [Digests and sources](/v3/before-you-start/download-models#digests-and-sources) |
+| Digest | `34451d40a276` after `ollama pull`; `6f25f6ba0b62` in the October quotes |
 | Source | `hf.co/Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF:Q4_K_M` |
 | GGUF sha256 | `a037df8d87ff6caacee794ee85f55342f2152e0d359b7389033300c3bee5f299` |
 
