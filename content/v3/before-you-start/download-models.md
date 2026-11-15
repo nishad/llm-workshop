@@ -119,10 +119,12 @@ Your tag should be in the list. In LM Studio, the model appears under My Models 
 
 ## Digests and sources
 
-A digest is a code computed from the model's contents; it identifies the exact file you downloaded, and `ollama list` shows its first 12 characters. Two tags with the same digest are the same model.
+A digest is a code computed from a tag's contents, and `ollama list` shows its first 12 characters. Two tags with the same digest are the same model. The digest covers the tag's manifest, the small file that lists the model's parts, and Ollama writes that file differently after a local build than after a pull. So the same model can show two digests, as the table explains. The sha256 column identifies the model file itself.
 
-| Tag | Source GGUF | GGUF sha256 | Digest (`ollama list`) |
+| Tag | Source GGUF | GGUF sha256 | Digest after `ollama pull` | Digest in the October quotes |
 |---|---|---|---|
-| `thalhath/apertus:8b` (also `:latest`) | `unsloth/Apertus-8B-Instruct-2509-GGUF`, Q4_K_M | `87e7f0eb5a1d33e1a8ea4e7fdd2363764e0465061dd92962e0073aec31a7944d` | `4a85a6fea0b8` |
-| `thalhath/apertus:4b` | `jondale/Apertus-v1.1-4B-Instruct-GGUF`, Q4_K_M | not recorded | `87ca69a79aed` |
-| `thalhath/apertus:8b-v1.5-preview` | `Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF`, Q4_K_M | `a037df8d87ff6caacee794ee85f55342f2152e0d359b7389033300c3bee5f299` | `6f25f6ba0b62` |
+| `thalhath/apertus:8b` (also `:latest`) | `unsloth/Apertus-8B-Instruct-2509-GGUF`, Q4_K_M | `87e7f0eb5a1d33e1a8ea4e7fdd2363764e0465061dd92962e0073aec31a7944d` | `61041b337fa9` | `4a85a6fea0b8` |
+| `thalhath/apertus:4b` | `jondale/Apertus-v1.1-4B-Instruct-GGUF`, Q4_K_M | not recorded | `0782f56ea89a` | `87ca69a79aed` |
+| `thalhath/apertus:8b-v1.5-preview` | `Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF`, Q4_K_M | `a037df8d87ff6caacee794ee85f55342f2152e0d359b7389033300c3bee5f299` | not yet checked | `6f25f6ba0b62` |
+
+The executed notebooks and the outputs quoted on this site were produced in October 2026 with tags built on our machine from the same model files. On that machine `ollama list` showed the digests in the last column, and those are the digests named in the quotes. After `ollama pull` from ollama.com, `ollama list` shows the digests in the fourth column (checked with Ollama 0.40.16 on 15 November 2026).

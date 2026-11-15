@@ -22,7 +22,7 @@ The reference model for both parts. Also available as `thalhath/apertus:latest`.
 | Context | 65,536 tokens supported; 8,192 set in the tag |
 | License | Apache-2.0 plus the Apertus Acceptable Use Policy |
 | Openness tier | Fully open (tier 3) |
-| Digest | `4a85a6fea0b8` |
+| Digest | `61041b337fa9` after `ollama pull`; `4a85a6fea0b8` in the October quotes, see [Digests and sources](/v3/before-you-start/download-models#digests-and-sources) |
 | Source | `hf.co/unsloth/Apertus-8B-Instruct-2509-GGUF:Q4_K_M` |
 | GGUF sha256 | `87e7f0eb5a1d33e1a8ea4e7fdd2363764e0465061dd92962e0073aec31a7944d` |
 
@@ -41,7 +41,7 @@ For machines with 8 GB of memory.
 | Context | 4,096 tokens (hard limit) |
 | License | Apache-2.0 weights, with the Apertus LLM Acceptable Use Policy |
 | Openness tier | Fully open (tier 3) |
-| Digest | `87ca69a79aed` |
+| Digest | `0782f56ea89a` after `ollama pull`; `87ca69a79aed` in the October quotes |
 | Source | `hf.co/jondale/Apertus-v1.1-4B-Instruct-GGUF:Q4_K_M` |
 | GGUF sha256 | checksum not recorded |
 
@@ -60,7 +60,7 @@ An optional preview for people with 16 GB or more who want to compare.
 | Context | 8,192 set in the tag; the file's metadata says 262k |
 | License | Apache-2.0, with the Apertus Acceptable Use Policy v1.5 (14 July 2026) |
 | Openness tier | Fully open (tier 3) for Apertus 1.5 itself |
-| Digest | `6f25f6ba0b62` |
+| Digest | `6f25f6ba0b62` in the October quotes; the digest after `ollama pull` differs, see [Digests and sources](/v3/before-you-start/download-models#digests-and-sources) |
 | Source | `hf.co/Colby/apertus-v1.5-8b-text-Q4_K_M-GGUF:Q4_K_M` |
 | GGUF sha256 | `a037df8d87ff6caacee794ee85f55342f2152e0d359b7389033300c3bee5f299` |
 

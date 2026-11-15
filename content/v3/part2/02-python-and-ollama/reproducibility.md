@@ -42,7 +42,7 @@ print("appended to runs/log.jsonl")
 appended to runs/log.jsonl
 ```
 
-From the executed notebook 01, 15 October 2026. Your digest matches this one as long as the tag still points to the same file. Your version and time will differ.
+From the executed notebook 01, 15 October 2026. If you pulled the tag from ollama.com, your digest is `61041b337fa9` rather than `4a85a6fea0b8`; both name the same model file, see [Digests and sources](/v3/before-you-start/download-models#digests-and-sources). Your version and time will differ.
 
 Notebook 00 shows the full record as JSON. Besides the fields above, it has `parameter_size` (`8.05B`), `context_length` (65536) and `template_header`.
 

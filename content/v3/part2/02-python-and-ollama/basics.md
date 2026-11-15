@@ -24,7 +24,7 @@ thalhath/apertus:8b                               5.1 GB  digest 4a85a6fea0b8
 …
 ```
 
-From the executed notebook 01, 15 October 2026. This is our list, cut down to the rows the workshop uses. Your list will be shorter: only the models you downloaded.
+From the executed notebook 01, 15 October 2026. This is our list, cut down to the rows the workshop uses. Your list will be shorter: only the models you downloaded. Your digests also differ: a tag pulled from ollama.com shows `61041b337fa9` for the 8B and `0782f56ea89a` for the 4B. The model files are the same, see [Digests and sources](/v3/before-you-start/download-models#digests-and-sources).
 
 A tag such as `thalhath/apertus:8b` is a name that can point to different files over time. The digest is the fingerprint of the exact file. Keep that difference in mind for the [reproducibility page](/v3/part2/02-python-and-ollama/reproducibility).
 
