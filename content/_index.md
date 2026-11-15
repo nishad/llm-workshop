@@ -12,6 +12,6 @@ toc: false
   {{< card link="v1" title="SWIB24 edition (archive)" icon="archive" subtitle="The first edition. Kept for reference." >}}
 {{< /cards >}}
 
-Facilitator: Nishad Thalhath, RIKEN Center for Integrative Medical Sciences (IMS), Japan.
+Facilitator: Nishad Thalhath, Technical Scientist, RIKEN Center for Integrative Medical Sciences (IMS), Japan.
 
 Materials are published under CC BY 4.0 (text) and MIT (code). Source: [github.com/nishad/llm-workshop](https://github.com/nishad/llm-workshop) and [github.com/nishad/llm-workshop-notebooks](https://github.com/nishad/llm-workshop-notebooks).

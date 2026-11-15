@@ -50,4 +50,4 @@ Monday 16 November 2026, 04:00-08:00 UTC, with a ten-minute break at 06:00. Zoom
   {{< card link="https://github.com/nishad/llm-workshop-notebooks" title="Notebooks" icon="external-link" subtitle="The companion repository on GitHub." >}}
 {{< /cards >}}
 
-Facilitator: Nishad Thalhath, RIKEN Center for Integrative Medical Sciences (IMS), Japan. Materials CC BY 4.0, code MIT.
+Facilitator: Nishad Thalhath, Technical Scientist, RIKEN Center for Integrative Medical Sciences (IMS), Japan. Materials CC BY 4.0, code MIT.
