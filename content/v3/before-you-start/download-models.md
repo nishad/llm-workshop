@@ -73,12 +73,30 @@ The total stays well under the 20 GB of free disk space we ask for. On a 20 Mbit
 
 Notebook 03 needs two vector index files, `stw-de-labels.sqlite` (85.7 MB) and `unesco-en-labels.sqlite` (34.4 MB). A vector index stores the lists of numbers that an embedding model makes from each text. It can then find texts with similar meanings quickly. Building these two yourself is slow on most laptops, so download the prebuilt files instead. Download them from the [swib26 release](https://github.com/nishad/llm-workshop-notebooks/releases/tag/swib26) of the notebooks repository; the direct links are in step 4 of [Before you start](/v3/before-you-start#4-part-2-only-python-and-the-notebooks). Put them in the `runs/` folder of the notebooks repository. To confirm that the files arrived complete and unchanged, use the checksums and the command on the [environment page](/v3/part2/01-environment#download-the-prebuilt-index-files).
 
+## If Ollama cannot find the tag
+
+The workshop tags are built from model files on Hugging Face. If `ollama pull thalhath/apertus:8b` says that the model was not found, build the same tag yourself from its Modelfile, a short text file that tells Ollama which file to download and how to set it up. Run these two lines in a terminal. In Windows PowerShell, write `curl.exe` instead of `curl`.
+
+```bash
+curl -LO https://llm-workshop.thalhath.org/models/apertus-8b.Modelfile
+ollama create thalhath/apertus:8b -f apertus-8b.Modelfile
+```
+
+On an 8 GB machine:
+
+```bash
+curl -LO https://llm-workshop.thalhath.org/models/apertus-4b.Modelfile
+ollama create thalhath/apertus:4b -f apertus-4b.Modelfile
+```
+
+Ollama downloads the model file from Hugging Face by itself. The result is the same model with the same digest as the published tag, and everything else in the workshop works unchanged.
+
 ## Offline alternative
 
 {{< details title="Show the offline options" >}}
 Copy the `manifests` and `blobs` folders from `~/.ollama/models` on a colleague's machine into your own models folder. Or open Settings, then Model location, and select a USB stick that holds a copy of those folders.
 
-Another option is to create the tag yourself from a GGUF file, the single-file format used for local models. Use the Modelfile from the `models/` folder of the notebooks repository:
+Another option is to create the tag yourself from a GGUF file, the single-file format used for local models. Use the Modelfiles from the section above; they are also in the `models/` folder of the notebooks repository:
 
 ```bash
 ollama create thalhath/apertus:8b -f Modelfile
