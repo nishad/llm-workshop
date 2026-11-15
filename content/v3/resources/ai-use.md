@@ -3,7 +3,7 @@ title: Use of generative AI
 weight: 7
 ---
 
-I used generative AI tools while preparing these materials. This page says how.
+I used generative AI tools while preparing these materials, in the following ways.
 
 - Most of the text began as dictation. I spoke it and transcribed it with [Cohere Transcribe](https://cohere.com/transcribe).
 - Claude models from Anthropic cleaned up the transcribed text, structured it, added section headings to the pages and the notebooks, restructured and cleaned up the code blocks, and improved some of the code quality and logic. Claude Code helped with structuring the material. Anthropic models also produced some of the diagrams.
