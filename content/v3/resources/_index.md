@@ -16,6 +16,7 @@ Reference pages to use during and after the workshop. For model facts (tags, siz
   {{< card link="data" title="Data and licenses" icon="database" subtitle="What the workshop data is and under which terms." >}}
   {{< card link="next-steps" title="Next steps" icon="arrow-circle-right" subtitle="Tasks, tools, sessions and reading after the workshop." >}}
   {{< card link="faq" title="FAQ" icon="question-mark-circle" subtitle="Quick answers, grouped by topic." >}}
+  {{< card link="ai-use" title="Use of generative AI" icon="sparkles" subtitle="Which AI tools helped prepare the materials, and for what." >}}
 {{< /cards >}}
 
 ## Official documentation
